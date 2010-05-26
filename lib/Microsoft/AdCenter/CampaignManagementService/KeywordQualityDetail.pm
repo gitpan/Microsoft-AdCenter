@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::KeywordQualityDetail;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -66,18 +69,29 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AdQualityScore
 
-=over 8
+Gets/sets AdQualityScore (QualityScore)
 
-AdQualityScore (QualityScore)
-LandingPageQualityScore (QualityScore)
-MinimumBid (double)
-OverAllQualityScore (QualityScore)
-SuggestedMainLineBid (double)
-SuggestedSideBarBid (double)
+=head2 LandingPageQualityScore
 
-=back
+Gets/sets LandingPageQualityScore (QualityScore)
+
+=head2 MinimumBid
+
+Gets/sets MinimumBid (double)
+
+=head2 OverAllQualityScore
+
+Gets/sets OverAllQualityScore (QualityScore)
+
+=head2 SuggestedMainLineBid
+
+Gets/sets SuggestedMainLineBid (double)
+
+=head2 SuggestedSideBarBid
+
+Gets/sets SuggestedSideBarBid (double)
 
 =cut
 

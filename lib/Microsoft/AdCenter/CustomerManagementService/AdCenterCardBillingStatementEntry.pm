@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardBillingStatementEntry;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -64,23 +67,31 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Amount
 
-=over 8
+Gets/sets Amount (double)
 
-Amount (double)
-Balance (double)
-BillingInvoiceHandle (AdCenterCardInvoiceHandle)
-Charge (double)
-Credit (double)
+=head2 Balance
 
-Inherited attributes are not listed.
+Gets/sets Balance (double)
 
-=back
+=head2 BillingInvoiceHandle
+
+Gets/sets BillingInvoiceHandle (AdCenterCardInvoiceHandle)
+
+=head2 Charge
+
+Gets/sets Charge (double)
+
+=head2 Credit
+
+Gets/sets Credit (double)
 
 =cut
 

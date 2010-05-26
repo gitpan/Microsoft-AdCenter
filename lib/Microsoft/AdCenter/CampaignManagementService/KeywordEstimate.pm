@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::KeywordEstimate;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -66,18 +69,29 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AverageMonthlyCost
 
-=over 8
+Gets/sets AverageMonthlyCost (double)
 
-AverageMonthlyCost (double)
-AverageMonthlyPosition (int)
-BroadKeywordEstimate (MatchTypeEstimate)
-EstimatedTotalMonthlyImpressions (int)
-ExactKeywordEstimate (MatchTypeEstimate)
-PhraseKeywordEstimate (MatchTypeEstimate)
+=head2 AverageMonthlyPosition
 
-=back
+Gets/sets AverageMonthlyPosition (int)
+
+=head2 BroadKeywordEstimate
+
+Gets/sets BroadKeywordEstimate (MatchTypeEstimate)
+
+=head2 EstimatedTotalMonthlyImpressions
+
+Gets/sets EstimatedTotalMonthlyImpressions (int)
+
+=head2 ExactKeywordEstimate
+
+Gets/sets ExactKeywordEstimate (MatchTypeEstimate)
+
+=head2 PhraseKeywordEstimate
+
+Gets/sets PhraseKeywordEstimate (MatchTypeEstimate)
 
 =cut
 

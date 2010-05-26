@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::NotificationManagementService::UnableToChargeCreditCardNotification;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -68,25 +71,39 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AccountFinancialStatus
 
-=over 8
+Gets/sets AccountFinancialStatus (AccountFinancialStatusType)
 
-AccountFinancialStatus (AccountFinancialStatusType)
-AccountId (int)
-AccountNumber (string)
-BalanceAmount (double)
-CreditCardLastFour (string)
-CreditCardTypeName (string)
-PreferredCurrencyCode (string)
+=head2 AccountId
 
-Inherited attributes are not listed.
+Gets/sets AccountId (int)
 
-=back
+=head2 AccountNumber
+
+Gets/sets AccountNumber (string)
+
+=head2 BalanceAmount
+
+Gets/sets BalanceAmount (double)
+
+=head2 CreditCardLastFour
+
+Gets/sets CreditCardLastFour (string)
+
+=head2 CreditCardTypeName
+
+Gets/sets CreditCardTypeName (string)
+
+=head2 PreferredCurrencyCode
+
+Gets/sets PreferredCurrencyCode (string)
 
 =cut
 

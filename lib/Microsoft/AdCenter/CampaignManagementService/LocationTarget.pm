@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::LocationTarget;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -68,19 +71,33 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 BusinessTarget
 
-=over 8
+Gets/sets BusinessTarget (BusinessTarget)
 
-BusinessTarget (BusinessTarget)
-CityTarget (CityTarget)
-CountryTarget (CountryTarget)
-MetroAreaTarget (MetroAreaTarget)
-RadiusTarget (RadiusTarget)
-StateTarget (StateTarget)
-TargetAllLocations (boolean)
+=head2 CityTarget
 
-=back
+Gets/sets CityTarget (CityTarget)
+
+=head2 CountryTarget
+
+Gets/sets CountryTarget (CountryTarget)
+
+=head2 MetroAreaTarget
+
+Gets/sets MetroAreaTarget (MetroAreaTarget)
+
+=head2 RadiusTarget
+
+Gets/sets RadiusTarget (RadiusTarget)
+
+=head2 StateTarget
+
+Gets/sets StateTarget (StateTarget)
+
+=head2 TargetAllLocations
+
+Gets/sets TargetAllLocations (boolean)
 
 =cut
 

@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::ReportingService::CampaignPerformanceReportFilter;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -58,14 +61,13 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AdDistribution
 
-=over 8
+Gets/sets AdDistribution (AdDistributionReportFilter)
 
-AdDistribution (AdDistributionReportFilter)
-Status (CampaignStatusReportFilter)
+=head2 Status
 
-=back
+Gets/sets Status (CampaignStatusReportFilter)
 
 =cut
 

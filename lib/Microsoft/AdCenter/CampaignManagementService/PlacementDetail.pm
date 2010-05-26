@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::PlacementDetail;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -62,16 +65,21 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 ImpressionsRangePerDay
 
-=over 8
+Gets/sets ImpressionsRangePerDay (ImpressionsPerDayRange)
 
-ImpressionsRangePerDay (ImpressionsPerDayRange)
-PathName (string)
-PlacementId (long)
-SupportedMediaTypes (ArrayOfMediaType)
+=head2 PathName
 
-=back
+Gets/sets PathName (string)
+
+=head2 PlacementId
+
+Gets/sets PlacementId (long)
+
+=head2 SupportedMediaTypes
+
+Gets/sets SupportedMediaTypes (ArrayOfMediaType)
 
 =cut
 

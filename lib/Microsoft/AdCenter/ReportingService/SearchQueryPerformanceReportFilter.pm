@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::ReportingService::SearchQueryPerformanceReportFilter;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -66,18 +69,29 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AdStatus
 
-=over 8
+Gets/sets AdStatus (AdStatusReportFilter)
 
-AdStatus (AdStatusReportFilter)
-AdType (AdTypeReportFilter)
-CampaignStatus (CampaignStatusReportFilter)
-DeliveredMatchType (DeliveredMatchTypeReportFilter)
-LanguageAndRegion (LanguageAndRegionReportFilter)
-SearchQueries (ArrayOfstring)
+=head2 AdType
 
-=back
+Gets/sets AdType (AdTypeReportFilter)
+
+=head2 CampaignStatus
+
+Gets/sets CampaignStatus (CampaignStatusReportFilter)
+
+=head2 DeliveredMatchType
+
+Gets/sets DeliveredMatchType (DeliveredMatchTypeReportFilter)
+
+=head2 LanguageAndRegion
+
+Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+
+=head2 SearchQueries
+
+Gets/sets SearchQueries (ArrayOfstring)
 
 =cut
 

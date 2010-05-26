@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::SegmentTargetBid;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -70,20 +73,37 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 CashBackInfo
 
-=over 8
+Gets/sets CashBackInfo (CashBackInfo)
 
-CashBackInfo (CashBackInfo)
-IncrementalBid (IncrementalBidPercentage)
-Param1 (string)
-Param2 (string)
-Param3 (string)
-SegmentId (long)
-SegmentParam1 (string)
-SegmentParam2 (string)
+=head2 IncrementalBid
 
-=back
+Gets/sets IncrementalBid (IncrementalBidPercentage)
+
+=head2 Param1
+
+Gets/sets Param1 (string)
+
+=head2 Param2
+
+Gets/sets Param2 (string)
+
+=head2 Param3
+
+Gets/sets Param3 (string)
+
+=head2 SegmentId
+
+Gets/sets SegmentId (long)
+
+=head2 SegmentParam1
+
+Gets/sets SegmentParam1 (string)
+
+=head2 SegmentParam2
+
+Gets/sets SegmentParam2 (string)
 
 =cut
 

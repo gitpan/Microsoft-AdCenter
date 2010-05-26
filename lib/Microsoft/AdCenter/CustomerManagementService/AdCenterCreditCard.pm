@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCreditCard;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -70,26 +73,43 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 CreditCardExpirationDate
 
-=over 8
+Gets/sets CreditCardExpirationDate (dateTime)
 
-CreditCardExpirationDate (dateTime)
-CreditCardFirstName (string)
-CreditCardLastFour (string)
-CreditCardLastName (string)
-CreditCardMiddleInitial (string)
-CreditCardNumber (string)
-CreditCardSecurityCode (string)
-CreditCardTypeId (CreditCardType)
+=head2 CreditCardFirstName
 
-Inherited attributes are not listed.
+Gets/sets CreditCardFirstName (string)
 
-=back
+=head2 CreditCardLastFour
+
+Gets/sets CreditCardLastFour (string)
+
+=head2 CreditCardLastName
+
+Gets/sets CreditCardLastName (string)
+
+=head2 CreditCardMiddleInitial
+
+Gets/sets CreditCardMiddleInitial (string)
+
+=head2 CreditCardNumber
+
+Gets/sets CreditCardNumber (string)
+
+=head2 CreditCardSecurityCode
+
+Gets/sets CreditCardSecurityCode (string)
+
+=head2 CreditCardTypeId
+
+Gets/sets CreditCardTypeId (CreditCardType)
 
 =cut
 

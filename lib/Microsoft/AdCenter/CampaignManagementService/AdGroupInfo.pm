@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::AdGroupInfo;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -82,26 +85,61 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AdDistribution
 
-=over 8
+Gets/sets AdDistribution (AdDistribution)
 
-AdDistribution (AdDistribution)
-BiddingModel (BiddingModel)
-BroadMatchBid (Bid)
-CashBackInfo (CashBackInfo)
-ContentMatchBid (Bid)
-EndDate (Date)
-ExactMatchBid (Bid)
-Id (long)
-LanguageAndRegion (string)
-Name (string)
-PhraseMatchBid (Bid)
-PricingModel (PricingModel)
-StartDate (Date)
-Status (AdGroupStatus)
+=head2 BiddingModel
 
-=back
+Gets/sets BiddingModel (BiddingModel)
+
+=head2 BroadMatchBid
+
+Gets/sets BroadMatchBid (Bid)
+
+=head2 CashBackInfo
+
+Gets/sets CashBackInfo (CashBackInfo)
+
+=head2 ContentMatchBid
+
+Gets/sets ContentMatchBid (Bid)
+
+=head2 EndDate
+
+Gets/sets EndDate (Date)
+
+=head2 ExactMatchBid
+
+Gets/sets ExactMatchBid (Bid)
+
+=head2 Id
+
+Gets/sets Id (long)
+
+=head2 LanguageAndRegion
+
+Gets/sets LanguageAndRegion (string)
+
+=head2 Name
+
+Gets/sets Name (string)
+
+=head2 PhraseMatchBid
+
+Gets/sets PhraseMatchBid (Bid)
+
+=head2 PricingModel
+
+Gets/sets PricingModel (PricingModel)
+
+=head2 StartDate
+
+Gets/sets StartDate (Date)
+
+=head2 Status
+
+Gets/sets Status (AdGroupStatus)
 
 =cut
 

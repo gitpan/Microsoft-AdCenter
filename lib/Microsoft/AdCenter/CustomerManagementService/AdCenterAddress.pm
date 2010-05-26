@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterAddress;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -72,21 +75,41 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AddressId
 
-=over 8
+Gets/sets AddressId (int)
 
-AddressId (int)
-AddressLine1 (string)
-AddressLine2 (string)
-AddressLine3 (string)
-AddressLine4 (string)
-City (string)
-Country (CountryCode)
-StateOrProvince (string)
-ZipOrPostalCode (string)
+=head2 AddressLine1
 
-=back
+Gets/sets AddressLine1 (string)
+
+=head2 AddressLine2
+
+Gets/sets AddressLine2 (string)
+
+=head2 AddressLine3
+
+Gets/sets AddressLine3 (string)
+
+=head2 AddressLine4
+
+Gets/sets AddressLine4 (string)
+
+=head2 City
+
+Gets/sets City (string)
+
+=head2 Country
+
+Gets/sets Country (CountryCode)
+
+=head2 StateOrProvince
+
+Gets/sets StateOrProvince (string)
+
+=head2 ZipOrPostalCode
+
+Gets/sets ZipOrPostalCode (string)
 
 =cut
 

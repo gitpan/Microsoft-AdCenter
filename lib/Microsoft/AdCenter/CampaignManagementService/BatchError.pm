@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::BatchError;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -64,17 +67,25 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Code
 
-=over 8
+Gets/sets Code (int)
 
-Code (int)
-Details (string)
-ErrorCode (string)
-Index (int)
-Message (string)
+=head2 Details
 
-=back
+Gets/sets Details (string)
+
+=head2 ErrorCode
+
+Gets/sets ErrorCode (string)
+
+=head2 Index
+
+Gets/sets Index (int)
+
+=head2 Message
+
+Gets/sets Message (string)
 
 =cut
 

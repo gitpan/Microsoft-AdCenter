@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardInvoiceHandle;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -68,19 +71,33 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AccountId
 
-=over 8
+Gets/sets AccountId (int)
 
-AccountId (int)
-BillingDocumentId (int)
-CustomerId (int)
-EndDateTicks (long)
-NoActivity (short)
-StartDateTicks (long)
-UserId (int)
+=head2 BillingDocumentId
 
-=back
+Gets/sets BillingDocumentId (int)
+
+=head2 CustomerId
+
+Gets/sets CustomerId (int)
+
+=head2 EndDateTicks
+
+Gets/sets EndDateTicks (long)
+
+=head2 NoActivity
+
+Gets/sets NoActivity (short)
+
+=head2 StartDateTicks
+
+Gets/sets StartDateTicks (long)
+
+=head2 UserId
+
+Gets/sets UserId (int)
 
 =cut
 

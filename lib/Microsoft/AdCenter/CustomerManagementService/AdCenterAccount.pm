@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterAccount;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -76,23 +79,49 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AccountId
 
-=over 8
+Gets/sets AccountId (int)
 
-AccountId (int)
-AccountName (string)
-AccountNumber (string)
-AgencyContactName (string)
-BillToCustomerId (int)
-CreditCard (AdCenterCreditCard)
-PaymentOptionsType (PaymentOption)
-PreferredCurrencyType (CurrencyType)
-PreferredLanguageType (LanguageType)
-SalesHouseCustomerId (int)
-Status (AccountStatus)
+=head2 AccountName
 
-=back
+Gets/sets AccountName (string)
+
+=head2 AccountNumber
+
+Gets/sets AccountNumber (string)
+
+=head2 AgencyContactName
+
+Gets/sets AgencyContactName (string)
+
+=head2 BillToCustomerId
+
+Gets/sets BillToCustomerId (int)
+
+=head2 CreditCard
+
+Gets/sets CreditCard (AdCenterCreditCard)
+
+=head2 PaymentOptionsType
+
+Gets/sets PaymentOptionsType (PaymentOption)
+
+=head2 PreferredCurrencyType
+
+Gets/sets PreferredCurrencyType (CurrencyType)
+
+=head2 PreferredLanguageType
+
+Gets/sets PreferredLanguageType (LanguageType)
+
+=head2 SalesHouseCustomerId
+
+Gets/sets SalesHouseCustomerId (int)
+
+=head2 Status
+
+Gets/sets Status (AccountStatus)
 
 =cut
 

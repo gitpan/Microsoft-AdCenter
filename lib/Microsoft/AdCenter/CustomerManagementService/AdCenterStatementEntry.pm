@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterStatementEntry;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -64,17 +67,25 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Detail
 
-=over 8
+Gets/sets Detail (string)
 
-Detail (string)
-DetailCode (string)
-InvoiceEndDate (dateTime)
-InvoiceNumber (string)
-InvoiceStartDate (dateTime)
+=head2 DetailCode
 
-=back
+Gets/sets DetailCode (string)
+
+=head2 InvoiceEndDate
+
+Gets/sets InvoiceEndDate (dateTime)
+
+=head2 InvoiceNumber
+
+Gets/sets InvoiceNumber (string)
+
+=head2 InvoiceStartDate
+
+Gets/sets InvoiceStartDate (dateTime)
 
 =cut
 

@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportRequest;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -64,23 +67,31 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Aggregation
 
-=over 8
+Gets/sets Aggregation (ReportAggregation)
 
-Aggregation (ReportAggregation)
-Columns (ArrayOfAdGroupPerformanceReportColumn)
-Filter (AdGroupPerformanceReportFilter)
-Scope (AccountThroughAdGroupReportScope)
-Time (ReportTime)
+=head2 Columns
 
-Inherited attributes are not listed.
+Gets/sets Columns (ArrayOfAdGroupPerformanceReportColumn)
 
-=back
+=head2 Filter
+
+Gets/sets Filter (AdGroupPerformanceReportFilter)
+
+=head2 Scope
+
+Gets/sets Scope (AccountThroughAdGroupReportScope)
+
+=head2 Time
+
+Gets/sets Time (ReportTime)
 
 =cut
 

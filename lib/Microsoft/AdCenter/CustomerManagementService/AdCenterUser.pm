@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterUser;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -88,29 +91,73 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 ContactInfo
 
-=over 8
+Gets/sets ContactInfo (AdCenterContactInfo)
 
-ContactInfo (AdCenterContactInfo)
-CustomerId (int)
-Email (string)
-FirstName (string)
-JobTitle (string)
-LanguageLCID (LCID)
-LastName (string)
-MiddleInitial (string)
-Password (string)
-SecretAnswer (string)
-SecretQuestion (SecretQuestions)
-UserAddress (AdCenterAddress)
-UserContactEmailFormat (EmailFormat)
-UserContactPhone (boolean)
-UserContactPost (boolean)
-UserId (int)
-UserName (string)
+=head2 CustomerId
 
-=back
+Gets/sets CustomerId (int)
+
+=head2 Email
+
+Gets/sets Email (string)
+
+=head2 FirstName
+
+Gets/sets FirstName (string)
+
+=head2 JobTitle
+
+Gets/sets JobTitle (string)
+
+=head2 LanguageLCID
+
+Gets/sets LanguageLCID (LCID)
+
+=head2 LastName
+
+Gets/sets LastName (string)
+
+=head2 MiddleInitial
+
+Gets/sets MiddleInitial (string)
+
+=head2 Password
+
+Gets/sets Password (string)
+
+=head2 SecretAnswer
+
+Gets/sets SecretAnswer (string)
+
+=head2 SecretQuestion
+
+Gets/sets SecretQuestion (SecretQuestions)
+
+=head2 UserAddress
+
+Gets/sets UserAddress (AdCenterAddress)
+
+=head2 UserContactEmailFormat
+
+Gets/sets UserContactEmailFormat (EmailFormat)
+
+=head2 UserContactPhone
+
+Gets/sets UserContactPhone (boolean)
+
+=head2 UserContactPost
+
+Gets/sets UserContactPost (boolean)
+
+=head2 UserId
+
+Gets/sets UserId (int)
+
+=head2 UserName
+
+Gets/sets UserName (string)
 
 =cut
 

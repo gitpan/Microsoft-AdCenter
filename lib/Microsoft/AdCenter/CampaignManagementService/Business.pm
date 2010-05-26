@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::Business;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -96,33 +99,89 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AddressLine1
 
-=over 8
+Gets/sets AddressLine1 (string)
 
-AddressLine1 (string)
-AddressLine2 (string)
-BusinessImageIcon (BusinessImageIcon)
-City (string)
-CountryOrRegion (string)
-Description (string)
-Email (string)
-GeoCodeStatus (BusinessGeoCodeStatus)
-HrsOfOperation (ArrayOfHoursOfOperation)
-Id (long)
-IsOpen24Hours (boolean)
-LatitudeDegrees (double)
-LongitudeDegrees (double)
-Name (string)
-OtherPaymentTypeDesc (string)
-Payment (ArrayOfPaymentType)
-Phone (string)
-StateOrProvince (string)
-Status (BusinessStatus)
-URL (string)
-ZipOrPostalCode (string)
+=head2 AddressLine2
 
-=back
+Gets/sets AddressLine2 (string)
+
+=head2 BusinessImageIcon
+
+Gets/sets BusinessImageIcon (BusinessImageIcon)
+
+=head2 City
+
+Gets/sets City (string)
+
+=head2 CountryOrRegion
+
+Gets/sets CountryOrRegion (string)
+
+=head2 Description
+
+Gets/sets Description (string)
+
+=head2 Email
+
+Gets/sets Email (string)
+
+=head2 GeoCodeStatus
+
+Gets/sets GeoCodeStatus (BusinessGeoCodeStatus)
+
+=head2 HrsOfOperation
+
+Gets/sets HrsOfOperation (ArrayOfHoursOfOperation)
+
+=head2 Id
+
+Gets/sets Id (long)
+
+=head2 IsOpen24Hours
+
+Gets/sets IsOpen24Hours (boolean)
+
+=head2 LatitudeDegrees
+
+Gets/sets LatitudeDegrees (double)
+
+=head2 LongitudeDegrees
+
+Gets/sets LongitudeDegrees (double)
+
+=head2 Name
+
+Gets/sets Name (string)
+
+=head2 OtherPaymentTypeDesc
+
+Gets/sets OtherPaymentTypeDesc (string)
+
+=head2 Payment
+
+Gets/sets Payment (ArrayOfPaymentType)
+
+=head2 Phone
+
+Gets/sets Phone (string)
+
+=head2 StateOrProvince
+
+Gets/sets StateOrProvince (string)
+
+=head2 Status
+
+Gets/sets Status (BusinessStatus)
+
+=head2 URL
+
+Gets/sets URL (string)
+
+=head2 ZipOrPostalCode
+
+Gets/sets ZipOrPostalCode (string)
 
 =cut
 

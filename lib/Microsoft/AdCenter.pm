@@ -10,10 +10,6 @@ use warnings;
 
 Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
-=head1 VERSION
-
-Version 6.01
-
 =cut
 
 our $VERSION = '6.00';

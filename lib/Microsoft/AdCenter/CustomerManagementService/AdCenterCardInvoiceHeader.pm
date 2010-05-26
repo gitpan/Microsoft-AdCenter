@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardInvoiceHeader;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -94,32 +97,85 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 AccountName
 
-=over 8
+Gets/sets AccountName (string)
 
-AccountName (string)
-AccountNumber (string)
-ActivityEndDate (dateTime)
-ActivityStartDate (dateTime)
-AttnAddress1 (string)
-AttnAddress2 (string)
-AttnAddress3 (string)
-AttnCity (string)
-AttnName (string)
-AttnPostalCode (string)
-AttnStateOrProvince (string)
-BillingInquiriesURL (string)
-CountryCode (CountryCode)
-CurrencyCode (Currency)
-CustomerName (string)
-DocumentType (string)
-InvoiceNumber (string)
-PreferredLanguageId (LanguageType)
-TaxId (string)
-UserLCID (LCID)
+=head2 AccountNumber
 
-=back
+Gets/sets AccountNumber (string)
+
+=head2 ActivityEndDate
+
+Gets/sets ActivityEndDate (dateTime)
+
+=head2 ActivityStartDate
+
+Gets/sets ActivityStartDate (dateTime)
+
+=head2 AttnAddress1
+
+Gets/sets AttnAddress1 (string)
+
+=head2 AttnAddress2
+
+Gets/sets AttnAddress2 (string)
+
+=head2 AttnAddress3
+
+Gets/sets AttnAddress3 (string)
+
+=head2 AttnCity
+
+Gets/sets AttnCity (string)
+
+=head2 AttnName
+
+Gets/sets AttnName (string)
+
+=head2 AttnPostalCode
+
+Gets/sets AttnPostalCode (string)
+
+=head2 AttnStateOrProvince
+
+Gets/sets AttnStateOrProvince (string)
+
+=head2 BillingInquiriesURL
+
+Gets/sets BillingInquiriesURL (string)
+
+=head2 CountryCode
+
+Gets/sets CountryCode (CountryCode)
+
+=head2 CurrencyCode
+
+Gets/sets CurrencyCode (Currency)
+
+=head2 CustomerName
+
+Gets/sets CustomerName (string)
+
+=head2 DocumentType
+
+Gets/sets DocumentType (string)
+
+=head2 InvoiceNumber
+
+Gets/sets InvoiceNumber (string)
+
+=head2 PreferredLanguageId
+
+Gets/sets PreferredLanguageId (LanguageType)
+
+=head2 TaxId
+
+Gets/sets TaxId (string)
+
+=head2 UserLCID
+
+Gets/sets UserLCID (LCID)
 
 =cut
 

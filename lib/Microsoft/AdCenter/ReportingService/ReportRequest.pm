@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::ReportingService::ReportRequest;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -62,16 +65,21 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Format
 
-=over 8
+Gets/sets Format (ReportFormat)
 
-Format (ReportFormat)
-Language (ReportLanguage)
-ReportName (string)
-ReturnOnlyCompleteData (boolean)
+=head2 Language
 
-=back
+Gets/sets Language (ReportLanguage)
+
+=head2 ReportName
+
+Gets/sets ReportName (string)
+
+=head2 ReturnOnlyCompleteData
+
+Gets/sets ReturnOnlyCompleteData (boolean)
 
 =cut
 

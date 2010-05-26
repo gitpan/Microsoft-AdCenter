@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::Target;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -74,22 +77,45 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Age
 
-=over 8
+Gets/sets Age (AgeTarget)
 
-Age (AgeTarget)
-Behavior (BehavioralTarget)
-Day (DayTarget)
-Gender (GenderTarget)
-Hour (HourTarget)
-Id (long)
-IsLibraryTarget (boolean)
-Location (LocationTarget)
-Name (string)
-Segment (SegmentTarget)
+=head2 Behavior
 
-=back
+Gets/sets Behavior (BehavioralTarget)
+
+=head2 Day
+
+Gets/sets Day (DayTarget)
+
+=head2 Gender
+
+Gets/sets Gender (GenderTarget)
+
+=head2 Hour
+
+Gets/sets Hour (HourTarget)
+
+=head2 Id
+
+Gets/sets Id (long)
+
+=head2 IsLibraryTarget
+
+Gets/sets IsLibraryTarget (boolean)
+
+=head2 Location
+
+Gets/sets Location (LocationTarget)
+
+=head2 Name
+
+Gets/sets Name (string)
+
+=head2 Segment
+
+Gets/sets Segment (SegmentTarget)
 
 =cut
 

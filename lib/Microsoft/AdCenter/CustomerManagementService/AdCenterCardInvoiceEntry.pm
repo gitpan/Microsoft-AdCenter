@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardInvoiceEntry;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -66,24 +69,35 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Amount
 
-=over 8
+Gets/sets Amount (double)
 
-Amount (double)
-CPC (double)
-CampaignName (string)
-Clicks (int)
-IndentLevel (int)
-OrderId (int)
+=head2 CPC
 
-Inherited attributes are not listed.
+Gets/sets CPC (double)
 
-=back
+=head2 CampaignName
+
+Gets/sets CampaignName (string)
+
+=head2 Clicks
+
+Gets/sets Clicks (int)
+
+=head2 IndentLevel
+
+Gets/sets IndentLevel (int)
+
+=head2 OrderId
+
+Gets/sets OrderId (int)
 
 =cut
 

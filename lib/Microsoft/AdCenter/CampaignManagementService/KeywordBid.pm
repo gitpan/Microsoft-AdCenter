@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::KeywordBid;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -62,16 +65,21 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 BroadMatchBid
 
-=over 8
+Gets/sets BroadMatchBid (double)
 
-BroadMatchBid (double)
-ExactMatchBid (double)
-Keyword (string)
-PhraseMatchBid (double)
+=head2 ExactMatchBid
 
-=back
+Gets/sets ExactMatchBid (double)
+
+=head2 Keyword
+
+Gets/sets Keyword (string)
+
+=head2 PhraseMatchBid
+
+Gets/sets PhraseMatchBid (double)
 
 =cut
 

@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::AdApiFaultDetail;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -56,19 +59,15 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head1 METHODS
 
+Remark: Inherited methods are not listed.
+
 =head2 new
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 Errors
 
-=over 8
-
-Errors (ArrayOfAdApiError)
-
-Inherited attributes are not listed.
-
-=back
+Gets/sets Errors (ArrayOfAdApiError)
 
 =cut
 

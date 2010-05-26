@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardBillingStatement;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -62,16 +65,21 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 BillingCycleDay
 
-=over 8
+Gets/sets BillingCycleDay (int)
 
-BillingCycleDay (int)
-CurrencyCode (string)
-StatementEntries (ArrayOfAdCenterCardBillingStatementEntry)
-ThresholdBalance (double)
+=head2 CurrencyCode
 
-=back
+Gets/sets CurrencyCode (string)
+
+=head2 StatementEntries
+
+Gets/sets StatementEntries (ArrayOfAdCenterCardBillingStatementEntry)
+
+=head2 ThresholdBalance
+
+Gets/sets ThresholdBalance (double)
 
 =cut
 

@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::Campaign;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -82,26 +85,61 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 BudgetType
 
-=over 8
+Gets/sets BudgetType (BudgetLimitType)
 
-BudgetType (BudgetLimitType)
-CashBackInfo (CashBackInfo)
-ConversionTrackingEnabled (boolean)
-ConversionTrackingScript (string)
-DailyBudget (double)
-DaylightSaving (boolean)
-Description (string)
-Id (long)
-MonthlyBudget (double)
-Name (string)
-NegativeKeywords (ArrayOfstring)
-NegativeSiteUrls (ArrayOfstring)
-Status (CampaignStatus)
-TimeZone (string)
+=head2 CashBackInfo
 
-=back
+Gets/sets CashBackInfo (CashBackInfo)
+
+=head2 ConversionTrackingEnabled
+
+Gets/sets ConversionTrackingEnabled (boolean)
+
+=head2 ConversionTrackingScript
+
+Gets/sets ConversionTrackingScript (string)
+
+=head2 DailyBudget
+
+Gets/sets DailyBudget (double)
+
+=head2 DaylightSaving
+
+Gets/sets DaylightSaving (boolean)
+
+=head2 Description
+
+Gets/sets Description (string)
+
+=head2 Id
+
+Gets/sets Id (long)
+
+=head2 MonthlyBudget
+
+Gets/sets MonthlyBudget (double)
+
+=head2 Name
+
+Gets/sets Name (string)
+
+=head2 NegativeKeywords
+
+Gets/sets NegativeKeywords (ArrayOfstring)
+
+=head2 NegativeSiteUrls
+
+Gets/sets NegativeSiteUrls (ArrayOfstring)
+
+=head2 Status
+
+Gets/sets Status (CampaignStatus)
+
+=head2 TimeZone
+
+Gets/sets TimeZone (string)
 
 =cut
 

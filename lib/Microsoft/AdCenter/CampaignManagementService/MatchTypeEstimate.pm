@@ -1,4 +1,7 @@
 package Microsoft::AdCenter::CampaignManagementService::MatchTypeEstimate;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -60,15 +63,17 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 get/set methods
+=head2 MonthlyCost
 
-=over 8
+Gets/sets MonthlyCost (double)
 
-MonthlyCost (double)
-MonthlyImpressions (int)
-Position (int)
+=head2 MonthlyImpressions
 
-=back
+Gets/sets MonthlyImpressions (int)
+
+=head2 Position
+
+Gets/sets Position (int)
 
 =cut
 
