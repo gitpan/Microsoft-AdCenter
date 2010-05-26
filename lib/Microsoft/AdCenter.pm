@@ -1,0 +1,282 @@
+package Microsoft::AdCenter;
+# Copyright (C) 2010 Xerxes Tsang
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of Perl Artistic License.
+
+use strict;
+use warnings;
+
+=head1 NAME
+
+Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
+
+=head1 VERSION
+
+Version 6.00
+
+=cut
+
+our $VERSION = '6.00';
+
+=head1 SYNOPSIS
+
+This collection of modules makes interacting with Microsoft adCenter APIs as easy as possible.
+
+B<Note that this version (6.x) is intended to be used with version 6 of Microsoft adCenter API.>
+
+Sample Usage:
+
+    use Microsoft::AdCenter::CampaignManagementService;
+    use Microsoft::AdCenter::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+
+    # Create the service client
+    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+        ApplicationToken  => "your_application_token",
+        CustomerAccountId => "your_customer_account_id",
+        CustomerId        => "your_customer_id",
+        DeveloperToken    => "your_developer_token",
+        Password          => "your_password",
+        UserName          => "your_user_name"
+    );
+
+    # Create a Keyword object
+    my $keyword = Microsoft::AdCenter::CampaignManagementService::Keyword->new
+        ->Text("some text")
+        ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
+        ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1));
+
+    # Call AddKeywords
+    my $response = $campaign_mgmt_service->AddKeywords(
+        AdGroupId => "",
+        Keywords => [$keyword]
+    );
+
+    # Check the response
+    my $keyword_ids = $response->KeywordIds;
+    ...
+
+=head1 VERSIONING
+
+This version of Microsoft::AdCenter is intended to be used with V6 of Microsoft adCenter API.  If you need to access both V5 and V6 simultaneously, you'll need to install 2 versions of Microsoft::AdCenter.  In order to have 2 versions of the same perl module installed, you'll need to put one in a non-standard location, for example ~/perl/.  See perldoc CPAN for more information.
+
+=head1 OVERVIEW
+
+Microsoft adCenter API allows you to manage your adCenter account in an automated fashion rather than manually.  The API is exposed as a standard SOAP service that you can make calls to.  This set of modules is designed to make using the SOAP service easier than using SOAP::Lite (for example) directly.  There are 2 main types of modules available.  The service modules (AdministrationService, CampaignManagementService, CustomerManagementService, etc) are used to make the actual calls to each of the SOAP services in the API.  The other type of module provided are the complex type modules, each of which represents one of the complex types defined in one of the WSDLs of the SOAP service.  Examples include Campaign, AdGroup, Ad, Keyword, etc.
+
+The calls you can make to the various services are documented on MSDN.  See
+
+L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx>
+
+Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate
+Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that a Campaign be passed in:
+
+    use Microsoft::AdCenter::CampaignManagementService;
+    use Microsoft::AdCenter::CampaignManagementService::Campaign;
+
+    # Create the service client
+    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+        ApplicationToken  => "your_application_token",
+        CustomerAccountId => "your_customer_account_id",
+        CustomerId        => "your_customer_id",
+        DeveloperToken    => "your_developer_token",
+        Password          => "your_password",
+        UserName          => "your_user_name"
+    );
+
+    # Create a Campaign object
+    my $campaign = Microsoft::AdCenter::CampaignManagementService::Campaign->new
+        ->BudgetType("MonthlyBudgetDivideDailyAcrossMonth")
+        ->ConversionTrackingEnabled("false")
+        ->DaylightSaving("true")
+        ->Description("the campaign description")
+        ->MonthlyBudget(1000)
+        ->Name("the campaign name")
+        ->TimeZone("EasternTimeUSCanada")
+
+    # Call AddCampaigns
+    my $response = $campaign_mgmt_service->AddCampaigns(
+        AccountId => "",
+        Campaigns => [$campaign]
+    );
+
+    # Check the response
+    my $campaign_ids = $response->CampaignIds;
+    ...
+
+Note that all simpleTypes referenced in the WSDLs are automatically handled for you - just pass in an appropriate string, and let Microsoft::AdCenter do the rest.
+
+When a method expects that multiple values will be set for a parameter, you must pass an array reference.
+
+If the SOAP call succeeded, you will receive a response object.  See the perldoc for the specific service client module for the return types.
+
+If a SOAP Fault is encountered (whenever a call fails), the service client will throw a Microsoft::AdCenter::SOAPFault object.
+
+=head1 METHODS
+
+There are no methods available in Microsoft::AdCenter directly.  All functionality is exposed by the various service client modules and complex types.
+
+=head1 EXAMPLES
+
+=head2 Example Code
+
+=head2 Example 1 - Create a new campaign
+
+    use Microsoft::AdCenter::CampaignManagementService;
+    use Microsoft::AdCenter::CampaignManagementService::Campaign;
+
+    # Create the service client
+    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new
+        ->ApplicationToken("your_application_token")
+        ->CustomerAccountId("your_customer_account_id")
+        ->CustomerId("your_customer_id")
+        ->DeveloperToken("your_developer_token")
+        ->Password("your_password")
+        ->UserName("your_user_name");
+
+    # Create a Campaign object
+    my $campaign = Microsoft::AdCenter::CampaignManagementService::Campaign->new
+        ->BudgetType("MonthlyBudgetDivideDailyAcrossMonth")
+        ->ConversionTrackingEnabled("false")
+        ->DaylightSaving("true")
+        ->Description("the campaign description")
+        ->MonthlyBudget(1000)
+        ->Name("the campaign name")
+        ->TimeZone("EasternTimeUSCanada")
+
+    # Call AddCampaigns
+    my $response = $campaign_mgmt_service->AddCampaigns(
+        AccountId => "",
+        Campaigns => [$campaign]
+    );
+
+    # Check the response header
+    my $tracking_id = $campaign_mgmt_service->response_header->{TrackingId};
+
+    # Check the response
+    my $campaign_ids = $response->CampaignIds;
+    ...
+
+=head2 Example 2 - Get accounts
+
+    use Microsoft::AdCenter::CustomerManagementService;
+    use Microsoft::AdCenter::CustomerManagementService::ApiUserAuthHeader;
+
+    # Create the service client
+    my $customer_mgmt_service = Microsoft::AdCenter::CustomerManagementService->new(
+        EndPoint      => "https://sandboxapi.adcenter.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx",
+        UserAccessKey => "your user access key",
+        UserName      => "your user name",
+        Password      => "your password"
+    );
+
+    # Get accounts
+    my $response = $customer_mgmt_service->GetAccounts(APIFlags => 0);
+
+    # Check the response
+    foreach my $account (@{$response->GetAccountsResult}) {
+        ...
+    }
+
+=head2 Example 3 - Error handling
+
+    use Microsoft::AdCenter::CampaignManagementService;
+    use Microsoft::AdCenter::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+
+    # Create the service client
+    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+        ApplicationToken  => "your_application_token",
+        CustomerAccountId => "your_customer_account_id",
+        CustomerId        => "your_customer_id",
+        DeveloperToken    => "your_developer_token",
+        Password          => "INVALID PASSWORD", # An invalid password
+        UserName          => "your_user_name"
+    );
+
+    my $response;
+    eval {
+        $response = $campaign_mgmt_service->AddKeywords(
+            AdGroupId => "",
+            Keywords => [
+                Microsoft::AdCenter::CampaignManagementService::Keyword->new
+                    ->Text("some text")
+                    ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
+                    ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
+            ]
+        );
+    };
+    if (my $e = $@) {
+        print "Fault code: @{[$e->faultcode]}\n";
+        print "Fault string: @{[$e->faultstring]}\n";
+        print "Error messages:\n";
+        print $_->Message . "\n" foreach @{$e->detail->Errors};
+    }
+
+=head1 DEBUGGING
+
+If you'd like to see the SOAP requests and responses, or other debugging information available from SOAP::Lite, you can turn it on just as you would for SOAP::Lite.  See perldoc SOAP::Trace.  As an example, if you wanted to see all trace information available, you could add the following to whatever module or script you use Microsoft::AdCenter in:
+
+ use SOAP::Lite +trace;
+
+=head1 AUTHOR
+
+Xerxes Tsang
+
+=head1 BUGS
+
+Please report any bugs or feature requests to
+C<bug-microsoft-adcenter at rt.cpan.org>, or through the web interface at
+L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Microsoft-AdCenter>.
+I will be notified, and then you'll automatically be notified of progress on
+your bug as I make changes.
+
+=head1 SUPPORT
+
+You can find documentation for this module with the perldoc command.
+
+    perldoc Microsoft::AdCenter
+
+You can also look for information at:
+
+=over 4
+
+=item * AnnoCPAN: Annotated CPAN documentation
+
+L<http://annocpan.org/dist/Microsoft-AdCenter>
+
+=item * CPAN Ratings
+
+L<http://cpanratings.perl.org/d/Microsoft-AdCenter>
+
+=item * RT: CPAN's request tracker
+
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Microsoft-AdCenter>
+
+=item * Search CPAN
+
+L<http://search.cpan.org/dist/Microsoft-AdCenter>
+
+=back
+
+=head1 COPYRIGHT & LICENSE
+
+Copyright (C) 2010 Xerxes Tsang
+
+This program is free software; you can redistribute it and/or modify it under the terms of Perl Artistic License.
+
+=head1 TODO
+
+The TODO list is empty - if you have suggestions, please file a wishlist entry in RT (link above)
+
+=cut
+
+sub new {
+    my ($class, %args) = @_;
+    die "Cannot instantiate @{[ __PACKAGE__ ]} directly"
+        if $class eq __PACKAGE__;
+    my $self = bless %args, $class;
+    return $self;
+}
+
+1; # End of Microsoft::AdCenter

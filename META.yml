@@ -1,0 +1,22 @@
+--- #YAML:1.0
+name:                Microsoft-AdCenter
+version:             6.00
+abstract:            An interface which abstracts Microsoft adCenter API.
+license:             artistic
+author:              
+    - Xerxes Tsang
+generated_by:        ExtUtils::MakeMaker version 6.44
+distribution_type:   module
+requires:     
+    Class::Accessor::Chained:      0
+    Crypt::SSLeay:                 0
+    Data::Dumper:                  0
+    DateTime::Format::ISO8601:     0
+    DateTime::Format::W3CDTF:      0
+    Scalar::Util:                  0
+    SOAP::Lite:                    0.71
+    Test::Class:                   0
+    Test::More:                    0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
