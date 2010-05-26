@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardInvoiceEntry;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -77,14 +74,14 @@ Creates a new instance
 
 =over 8
 
-    Amount (double)
-    CPC (double)
-    CampaignName (string)
-    Clicks (int)
-    IndentLevel (int)
-    OrderId (int)
+Amount (double)
+CPC (double)
+CampaignName (string)
+Clicks (int)
+IndentLevel (int)
+OrderId (int)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

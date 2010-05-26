@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::AccountPerformanceReportRequest;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -75,13 +72,13 @@ Creates a new instance
 
 =over 8
 
-    Aggregation (ReportAggregation)
-    Columns (ArrayOfAccountPerformanceReportColumn)
-    Filter (AccountPerformanceReportFilter)
-    Scope (AccountReportScope)
-    Time (ReportTime)
+Aggregation (ReportAggregation)
+Columns (ArrayOfAccountPerformanceReportColumn)
+Filter (AccountPerformanceReportFilter)
+Scope (AccountReportScope)
+Time (ReportTime)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCreditCard;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -81,16 +78,16 @@ Creates a new instance
 
 =over 8
 
-    CreditCardExpirationDate (dateTime)
-    CreditCardFirstName (string)
-    CreditCardLastFour (string)
-    CreditCardLastName (string)
-    CreditCardMiddleInitial (string)
-    CreditCardNumber (string)
-    CreditCardSecurityCode (string)
-    CreditCardTypeId (CreditCardType)
+CreditCardExpirationDate (dateTime)
+CreditCardFirstName (string)
+CreditCardLastFour (string)
+CreditCardLastName (string)
+CreditCardMiddleInitial (string)
+CreditCardNumber (string)
+CreditCardSecurityCode (string)
+CreditCardTypeId (CreditCardType)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

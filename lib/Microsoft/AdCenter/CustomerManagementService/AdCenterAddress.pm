@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterAddress;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -79,15 +76,15 @@ Creates a new instance
 
 =over 8
 
-    AddressId (int)
-    AddressLine1 (string)
-    AddressLine2 (string)
-    AddressLine3 (string)
-    AddressLine4 (string)
-    City (string)
-    Country (CountryCode)
-    StateOrProvince (string)
-    ZipOrPostalCode (string)
+AddressId (int)
+AddressLine1 (string)
+AddressLine2 (string)
+AddressLine3 (string)
+AddressLine4 (string)
+City (string)
+Country (CountryCode)
+StateOrProvince (string)
+ZipOrPostalCode (string)
 
 =back
 

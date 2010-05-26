@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -12,21 +9,21 @@ Microsoft::AdCenter::CustomerManagementService - Service client for Microsoft Ad
 
 =head1 SYNOPSIS
 
-use Microsoft::AdCenter::CustomerManagementService;
+    use Microsoft::AdCenter::CustomerManagementService;
 
-my $service_client = Microsoft::AdCenter::CustomerManagementService->new
-    ->Password("password");
-    ->UserAccessKey("user access key")
-    ->UserName("user name")
+    my $service_client = Microsoft::AdCenter::CustomerManagementService->new
+        ->Password("password");
+        ->UserAccessKey("user access key")
+        ->UserName("user name")
 
-my $response = $service_client->CustomerSignUp(
-    apiFlags => ...
-    user => ...
-    customer => ...
-    account => ...
-    consentToTermsAndConditions => ...
-    couponCode => ...
-);
+    my $response = $service_client->CustomerSignUp(
+        apiFlags => ...
+        user => ...
+        customer => ...
+        account => ...
+        consentToTermsAndConditions => ...
+        couponCode => ...
+    );
 
 See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
 
@@ -34,22 +31,22 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head2 EndPoint
 
-  Changes the end point for this service client.
+Changes the end point for this service client.
 
-  Default value:
-    https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx
+Default value:
+https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx
 
 =head2 Password
 
-  Gets/sets Password (string) in the request header
+Gets/sets Password (string) in the request header
 
 =head2 UserAccessKey
 
-  Gets/sets UserAccessKey (string) in the request header
+Gets/sets UserAccessKey (string) in the request header
 
 =head2 UserName
 
-  Gets/sets UserName (string) in the request header
+Gets/sets UserName (string) in the request header
 
 =cut
 
@@ -109,16 +106,16 @@ sub _response_headers_expanded {
 
 =head2 CustomerSignUp
 
-  Parameters:
-    apiFlags (int)
-    user (AdCenterUser)
-    customer (AdCenterCustomer)
-    account (AdCenterAccount)
-    consentToTermsAndConditions (boolean)
-    couponCode (string)
+Parameters:
+  apiFlags (int)
+  user (AdCenterUser)
+  customer (AdCenterCustomer)
+  account (AdCenterAccount)
+  consentToTermsAndConditions (boolean)
+  couponCode (string)
 
-  Returns:
-    CustomerSignUpResponse
+Returns:
+  CustomerSignUpResponse
 
 =cut
 
@@ -146,15 +143,15 @@ sub CustomerSignUp {
 
 =head2 GetAccountBillingInfo
 
-  Parameters:
-    apiFlags (int)
-    accountId (int)
-    customerId (int)
-    userId (int)
-    activityDays (int)
+Parameters:
+  apiFlags (int)
+  accountId (int)
+  customerId (int)
+  userId (int)
+  activityDays (int)
 
-  Returns:
-    GetAccountBillingInfoResponse
+Returns:
+  GetAccountBillingInfoResponse
 
 =cut
 
@@ -181,11 +178,11 @@ sub GetAccountBillingInfo {
 
 =head2 GetAccounts
 
-  Parameters:
-    APIFlags (int)
+Parameters:
+  APIFlags (int)
 
-  Returns:
-    GetAccountsResponse
+Returns:
+  GetAccountsResponse
 
 =cut
 
@@ -208,12 +205,12 @@ sub GetAccounts {
 
 =head2 GetAccountsByIds
 
-  Parameters:
-    APIFlags (int)
-    accountIds (ArrayOfInt)
+Parameters:
+  APIFlags (int)
+  accountIds (ArrayOfInt)
 
-  Returns:
-    GetAccountsByIdsResponse
+Returns:
+  GetAccountsByIdsResponse
 
 =cut
 
@@ -237,14 +234,14 @@ sub GetAccountsByIds {
 
 =head2 GetCardInvoice
 
-  Parameters:
-    apiFlags (int)
-    customerId (int)
-    userId (int)
-    handle (AdCenterCardInvoiceHandle)
+Parameters:
+  apiFlags (int)
+  customerId (int)
+  userId (int)
+  handle (AdCenterCardInvoiceHandle)
 
-  Returns:
-    GetCardInvoiceResponse
+Returns:
+  GetCardInvoiceResponse
 
 =cut
 
@@ -270,12 +267,12 @@ sub GetCardInvoice {
 
 =head2 GetCustomer
 
-  Parameters:
-    apiFlags (int)
-    customerId (int)
+Parameters:
+  apiFlags (int)
+  customerId (int)
 
-  Returns:
-    GetCustomerResponse
+Returns:
+  GetCustomerResponse
 
 =cut
 
@@ -299,12 +296,12 @@ sub GetCustomer {
 
 =head2 GetPaymentInstrument
 
-  Parameters:
-    apiFlags (int)
-    accountId (int)
+Parameters:
+  apiFlags (int)
+  accountId (int)
 
-  Returns:
-    GetPaymentInstrumentResponse
+Returns:
+  GetPaymentInstrumentResponse
 
 =cut
 
@@ -328,12 +325,12 @@ sub GetPaymentInstrument {
 
 =head2 UpdateCustomer
 
-  Parameters:
-    apiFlags (int)
-    customer (AdCenterCustomer)
+Parameters:
+  apiFlags (int)
+  customer (AdCenterCustomer)
 
-  Returns:
-    UpdateCustomerResponse
+Returns:
+  UpdateCustomerResponse
 
 =cut
 
@@ -357,13 +354,13 @@ sub UpdateCustomer {
 
 =head2 UpdatePaymentInstrument
 
-  Parameters:
-    apiFlags (int)
-    accountId (int)
-    creditCard (AdCenterCreditCard)
+Parameters:
+  apiFlags (int)
+  accountId (int)
+  creditCard (AdCenterCreditCard)
 
-  Returns:
-    UpdatePaymentInstrumentResponse
+Returns:
+  UpdatePaymentInstrumentResponse
 
 =cut
 

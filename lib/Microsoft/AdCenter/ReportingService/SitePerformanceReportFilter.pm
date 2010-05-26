@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::SitePerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -71,11 +68,11 @@ Creates a new instance
 
 =over 8
 
-    AdDistribution (AdDistributionReportFilter)
-    AdType (AdTypeReportFilter)
-    DeliveredMatchType (DeliveredMatchTypeReportFilter)
-    LanguageAndRegion (LanguageAndRegionReportFilter)
-    SiteIds (ArrayOflong)
+AdDistribution (AdDistributionReportFilter)
+AdType (AdTypeReportFilter)
+DeliveredMatchType (DeliveredMatchTypeReportFilter)
+LanguageAndRegion (LanguageAndRegionReportFilter)
+SiteIds (ArrayOflong)
 
 =back
 

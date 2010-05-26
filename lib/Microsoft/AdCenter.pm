@@ -12,7 +12,7 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =head1 VERSION
 
-Version 6.00
+Version 6.01
 
 =cut
 
@@ -69,7 +69,7 @@ The calls you can make to the various services are documented on MSDN.  See
 L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx>
 
 Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate
-Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that a Campaign be passed in:
+Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that an array of Campaigns be passed in:
 
     use Microsoft::AdCenter::CampaignManagementService;
     use Microsoft::AdCenter::CampaignManagementService::Campaign;
@@ -104,9 +104,9 @@ Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService
     my $campaign_ids = $response->CampaignIds;
     ...
 
-Note that all simpleTypes referenced in the WSDLs are automatically handled for you - just pass in an appropriate string, and let Microsoft::AdCenter do the rest.
+Note that all simple types referenced in the WSDLs are automatically handled for you - just pass in an appropriate string, and let Microsoft::AdCenter do the rest.
 
-When a method expects that multiple values will be set for a parameter, you must pass an array reference.
+When a method expects an array of objects / strings / numbers / etc., you must pass an array reference.
 
 If the SOAP call succeeded, you will receive a response object.  See the perldoc for the specific service client module for the return types.
 
@@ -117,8 +117,6 @@ If a SOAP Fault is encountered (whenever a call fails), the service client will 
 There are no methods available in Microsoft::AdCenter directly.  All functionality is exposed by the various service client modules and complex types.
 
 =head1 EXAMPLES
-
-=head2 Example Code
 
 =head2 Example 1 - Create a new campaign
 
@@ -215,7 +213,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
 =head1 DEBUGGING
 
-If you'd like to see the SOAP requests and responses, or other debugging information available from SOAP::Lite, you can turn it on just as you would for SOAP::Lite.  See perldoc SOAP::Trace.  As an example, if you wanted to see all trace information available, you could add the following to whatever module or script you use Microsoft::AdCenter in:
+If you'd like to see the SOAP requests and responses, or other debugging information available from SOAP::Lite, you can turn it on just as you would for SOAP::Lite.  See perldoc SOAP::Trace.  As an example, if you wanted to see all trace information available, you could add the following to the module or script you use Microsoft::AdCenter in:
 
  use SOAP::Lite +trace;
 

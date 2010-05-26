@@ -15,7 +15,7 @@ use Scalar::Util qw/blessed/;
 
 =head1 NAME
 
-Microsoft::AdCenter::ComplexType - a base class for complex types.
+Microsoft::AdCenter::ComplexType - The base class for complex types.
 
 =cut
 
@@ -25,9 +25,15 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 This module is not intended to be used directly.  Documentation for each of the complex types is in the appropriate module.
 
+=head1 METHODS
+
 =head2 attributes
 
 Returns the name of all attributes
+
+=head2 attribute_type
+
+Returns the expected type of the supplied attribute name
 
 =cut
 

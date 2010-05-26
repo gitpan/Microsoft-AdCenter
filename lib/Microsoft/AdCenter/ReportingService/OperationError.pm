@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::OperationError;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -69,10 +66,10 @@ Creates a new instance
 
 =over 8
 
-    Code (int)
-    Details (string)
-    ErrorCode (string)
-    Message (string)
+Code (int)
+Details (string)
+ErrorCode (string)
+Message (string)
 
 =back
 

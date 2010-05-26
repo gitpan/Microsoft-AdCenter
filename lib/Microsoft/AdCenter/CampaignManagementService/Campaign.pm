@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::Campaign;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -89,20 +86,20 @@ Creates a new instance
 
 =over 8
 
-    BudgetType (BudgetLimitType)
-    CashBackInfo (CashBackInfo)
-    ConversionTrackingEnabled (boolean)
-    ConversionTrackingScript (string)
-    DailyBudget (double)
-    DaylightSaving (boolean)
-    Description (string)
-    Id (long)
-    MonthlyBudget (double)
-    Name (string)
-    NegativeKeywords (ArrayOfstring)
-    NegativeSiteUrls (ArrayOfstring)
-    Status (CampaignStatus)
-    TimeZone (string)
+BudgetType (BudgetLimitType)
+CashBackInfo (CashBackInfo)
+ConversionTrackingEnabled (boolean)
+ConversionTrackingScript (string)
+DailyBudget (double)
+DaylightSaving (boolean)
+Description (string)
+Id (long)
+MonthlyBudget (double)
+Name (string)
+NegativeKeywords (ArrayOfstring)
+NegativeSiteUrls (ArrayOfstring)
+Status (CampaignStatus)
+TimeZone (string)
 
 =back
 

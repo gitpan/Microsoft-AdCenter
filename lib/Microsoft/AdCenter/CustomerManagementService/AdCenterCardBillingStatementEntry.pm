@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardBillingStatementEntry;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -75,13 +72,13 @@ Creates a new instance
 
 =over 8
 
-    Amount (double)
-    Balance (double)
-    BillingInvoiceHandle (AdCenterCardInvoiceHandle)
-    Charge (double)
-    Credit (double)
+Amount (double)
+Balance (double)
+BillingInvoiceHandle (AdCenterCardInvoiceHandle)
+Charge (double)
+Credit (double)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

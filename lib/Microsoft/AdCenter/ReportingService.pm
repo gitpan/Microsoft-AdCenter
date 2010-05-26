@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -12,19 +9,19 @@ Microsoft::AdCenter::ReportingService - Service client for Microsoft AdCenter Re
 
 =head1 SYNOPSIS
 
-use Microsoft::AdCenter::ReportingService;
+    use Microsoft::AdCenter::ReportingService;
 
-my $service_client = Microsoft::AdCenter::ReportingService->new
-    ->ApplicationToken("application token")
-    ->CustomerAccountId("customer account id")
-    ->CustomerId("customer id")
-    ->DeveloperToken("developer token")
-    ->Password("password")
-    ->UserName("user name");
+    my $service_client = Microsoft::AdCenter::ReportingService->new
+        ->ApplicationToken("application token")
+        ->CustomerAccountId("customer account id")
+        ->CustomerId("customer id")
+        ->DeveloperToken("developer token")
+        ->Password("password")
+        ->UserName("user name");
 
-my $response = $service_client->PollGenerateReport(
-    ReportRequestId => ...
-);
+    my $response = $service_client->PollGenerateReport(
+        ReportRequestId => ...
+    );
 
 See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
 
@@ -32,38 +29,38 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head2 EndPoint
 
-  Changes the end point for this service client.
+Changes the end point for this service client.
 
-  Default value:
-    https://adcenterapi.microsoft.com/Api/Advertiser/V6/Reporting/ReportingService.svc
+Default value:
+https://adcenterapi.microsoft.com/Api/Advertiser/V6/Reporting/ReportingService.svc
 
 =head2 ApplicationToken
 
-  Gets/sets ApplicationToken (string) in the request header
+Gets/sets ApplicationToken (string) in the request header
 
 =head2 CustomerAccountId
 
-  Gets/sets CustomerAccountId (string) in the request header
+Gets/sets CustomerAccountId (string) in the request header
 
 =head2 CustomerId
 
-  Gets/sets CustomerId (string) in the request header
+Gets/sets CustomerId (string) in the request header
 
 =head2 DeveloperToken
 
-  Gets/sets DeveloperToken (string) in the request header
+Gets/sets DeveloperToken (string) in the request header
 
 =head2 Password
 
-  Gets/sets Password (string) in the request header
+Gets/sets Password (string) in the request header
 
 =head2 UserName
 
-  Gets/sets UserName (string) in the request header
+Gets/sets UserName (string) in the request header
 
 =head2 TrackingId
 
-  Gets TrackingId (string) in the response header
+Gets TrackingId (string) in the response header
 
 =cut
 
@@ -133,11 +130,11 @@ sub _response_headers_expanded {
 
 =head2 PollGenerateReport
 
-  Parameters:
-    ReportRequestId (string)
+Parameters:
+  ReportRequestId (string)
 
-  Returns:
-    PollGenerateReportResponse
+Returns:
+  PollGenerateReportResponse
 
 =cut
 
@@ -160,11 +157,11 @@ sub PollGenerateReport {
 
 =head2 SubmitGenerateReport
 
-  Parameters:
-    ReportRequest (ReportRequest)
+Parameters:
+  ReportRequest (ReportRequest)
 
-  Returns:
-    SubmitGenerateReportResponse
+Returns:
+  SubmitGenerateReportResponse
 
 =cut
 

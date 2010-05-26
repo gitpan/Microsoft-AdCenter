@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterCardInvoiceHeader;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -101,26 +98,26 @@ Creates a new instance
 
 =over 8
 
-    AccountName (string)
-    AccountNumber (string)
-    ActivityEndDate (dateTime)
-    ActivityStartDate (dateTime)
-    AttnAddress1 (string)
-    AttnAddress2 (string)
-    AttnAddress3 (string)
-    AttnCity (string)
-    AttnName (string)
-    AttnPostalCode (string)
-    AttnStateOrProvince (string)
-    BillingInquiriesURL (string)
-    CountryCode (CountryCode)
-    CurrencyCode (Currency)
-    CustomerName (string)
-    DocumentType (string)
-    InvoiceNumber (string)
-    PreferredLanguageId (LanguageType)
-    TaxId (string)
-    UserLCID (LCID)
+AccountName (string)
+AccountNumber (string)
+ActivityEndDate (dateTime)
+ActivityStartDate (dateTime)
+AttnAddress1 (string)
+AttnAddress2 (string)
+AttnAddress3 (string)
+AttnCity (string)
+AttnName (string)
+AttnPostalCode (string)
+AttnStateOrProvince (string)
+BillingInquiriesURL (string)
+CountryCode (CountryCode)
+CurrencyCode (Currency)
+CustomerName (string)
+DocumentType (string)
+InvoiceNumber (string)
+PreferredLanguageId (LanguageType)
+TaxId (string)
+UserLCID (LCID)
 
 =back
 

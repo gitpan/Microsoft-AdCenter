@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::EditorialError;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -73,12 +70,12 @@ Creates a new instance
 
 =over 8
 
-    Appealable (boolean)
-    Code (int)
-    DisapprovedText (string)
-    ErrorCode (string)
-    Index (int)
-    Message (string)
+Appealable (boolean)
+Code (int)
+DisapprovedText (string)
+ErrorCode (string)
+Index (int)
+Message (string)
 
 =back
 

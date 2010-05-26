@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CustomerManagementService::AdCenterUser;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -95,23 +92,23 @@ Creates a new instance
 
 =over 8
 
-    ContactInfo (AdCenterContactInfo)
-    CustomerId (int)
-    Email (string)
-    FirstName (string)
-    JobTitle (string)
-    LanguageLCID (LCID)
-    LastName (string)
-    MiddleInitial (string)
-    Password (string)
-    SecretAnswer (string)
-    SecretQuestion (SecretQuestions)
-    UserAddress (AdCenterAddress)
-    UserContactEmailFormat (EmailFormat)
-    UserContactPhone (boolean)
-    UserContactPost (boolean)
-    UserId (int)
-    UserName (string)
+ContactInfo (AdCenterContactInfo)
+CustomerId (int)
+Email (string)
+FirstName (string)
+JobTitle (string)
+LanguageLCID (LCID)
+LastName (string)
+MiddleInitial (string)
+Password (string)
+SecretAnswer (string)
+SecretQuestion (SecretQuestions)
+UserAddress (AdCenterAddress)
+UserContactEmailFormat (EmailFormat)
+UserContactPhone (boolean)
+UserContactPost (boolean)
+UserId (int)
+UserName (string)
 
 =back
 

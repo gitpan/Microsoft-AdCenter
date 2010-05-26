@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::AdGroup;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -93,22 +90,22 @@ Creates a new instance
 
 =over 8
 
-    AdDistribution (AdDistribution)
-    BiddingModel (BiddingModel)
-    BroadMatchBid (Bid)
-    CashBackInfo (CashBackInfo)
-    ContentMatchBid (Bid)
-    EndDate (Date)
-    ExactMatchBid (Bid)
-    Id (long)
-    LanguageAndRegion (string)
-    Name (string)
-    NegativeKeywords (ArrayOfstring)
-    NegativeSiteUrls (ArrayOfstring)
-    PhraseMatchBid (Bid)
-    PricingModel (PricingModel)
-    StartDate (Date)
-    Status (AdGroupStatus)
+AdDistribution (AdDistribution)
+BiddingModel (BiddingModel)
+BroadMatchBid (Bid)
+CashBackInfo (CashBackInfo)
+ContentMatchBid (Bid)
+EndDate (Date)
+ExactMatchBid (Bid)
+Id (long)
+LanguageAndRegion (string)
+Name (string)
+NegativeKeywords (ArrayOfstring)
+NegativeSiteUrls (ArrayOfstring)
+PhraseMatchBid (Bid)
+PricingModel (PricingModel)
+StartDate (Date)
+Status (AdGroupStatus)
 
 =back
 

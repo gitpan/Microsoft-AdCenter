@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::AdministrationService;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -12,18 +9,18 @@ Microsoft::AdCenter::AdministrationService - Service client for Microsoft AdCent
 
 =head1 SYNOPSIS
 
-use Microsoft::AdCenter::AdministrationService;
+    use Microsoft::AdCenter::AdministrationService;
 
-my $service_client = Microsoft::AdCenter::AdministrationService->new
-    ->ApplicationToken("application token")
-    ->CustomerAccountId("customer account id")
-    ->CustomerId("customer id")
-    ->DeveloperToken("developer token")
-    ->Password("password")
-    ->UserName("user name");
+    my $service_client = Microsoft::AdCenter::AdministrationService->new
+        ->ApplicationToken("application token")
+        ->CustomerAccountId("customer account id")
+        ->CustomerId("customer id")
+        ->DeveloperToken("developer token")
+        ->Password("password")
+        ->UserName("user name");
 
-my $response = $service_client->GetAssignedQuota(
-);
+    my $response = $service_client->GetAssignedQuota(
+    );
 
 See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
 
@@ -31,38 +28,38 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head2 EndPoint
 
-  Changes the end point for this service client.
+Changes the end point for this service client.
 
-  Default value:
-    https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc
+Default value:
+https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc
 
 =head2 ApplicationToken
 
-  Gets/sets ApplicationToken (string) in the request header
+Gets/sets ApplicationToken (string) in the request header
 
 =head2 CustomerAccountId
 
-  Gets/sets CustomerAccountId (string) in the request header
+Gets/sets CustomerAccountId (string) in the request header
 
 =head2 CustomerId
 
-  Gets/sets CustomerId (string) in the request header
+Gets/sets CustomerId (string) in the request header
 
 =head2 DeveloperToken
 
-  Gets/sets DeveloperToken (string) in the request header
+Gets/sets DeveloperToken (string) in the request header
 
 =head2 Password
 
-  Gets/sets Password (string) in the request header
+Gets/sets Password (string) in the request header
 
 =head2 UserName
 
-  Gets/sets UserName (string) in the request header
+Gets/sets UserName (string) in the request header
 
 =head2 TrackingId
 
-  Gets TrackingId (string) in the response header
+Gets TrackingId (string) in the response header
 
 =cut
 
@@ -132,10 +129,10 @@ sub _response_headers_expanded {
 
 =head2 GetAssignedQuota
 
-  Parameters:
+Parameters:
 
-  Returns:
-    GetAssignedQuotaResponse
+Returns:
+  GetAssignedQuotaResponse
 
 =cut
 
@@ -157,10 +154,10 @@ sub GetAssignedQuota {
 
 =head2 GetRemainingQuota
 
-  Parameters:
+Parameters:
 
-  Returns:
-    GetRemainingQuotaResponse
+Returns:
+  GetRemainingQuotaResponse
 
 =cut
 

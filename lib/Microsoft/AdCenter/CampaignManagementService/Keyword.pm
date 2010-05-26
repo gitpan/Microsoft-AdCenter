@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::Keyword;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -89,20 +86,20 @@ Creates a new instance
 
 =over 8
 
-    BroadMatchBid (Bid)
-    CashBackInfo (CashBackInfo)
-    ContentMatchBid (Bid)
-    EditorialStatus (KeywordEditorialStatus)
-    ExactMatchBid (Bid)
-    Id (long)
-    NegativeKeywords (ArrayOfstring)
-    OverridePriority (OverridePriority)
-    Param1 (string)
-    Param2 (string)
-    Param3 (string)
-    PhraseMatchBid (Bid)
-    Status (KeywordStatus)
-    Text (string)
+BroadMatchBid (Bid)
+CashBackInfo (CashBackInfo)
+ContentMatchBid (Bid)
+EditorialStatus (KeywordEditorialStatus)
+ExactMatchBid (Bid)
+Id (long)
+NegativeKeywords (ArrayOfstring)
+OverridePriority (OverridePriority)
+Param1 (string)
+Param2 (string)
+Param3 (string)
+PhraseMatchBid (Bid)
+Status (KeywordStatus)
+Text (string)
 
 =back
 

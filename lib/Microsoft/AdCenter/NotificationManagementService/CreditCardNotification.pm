@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::NotificationManagementService::CreditCardNotification;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -77,14 +74,14 @@ Creates a new instance
 
 =over 8
 
-    AccountId (int)
-    AccountNumber (string)
-    CreditCardExpirationDate (dateTime)
-    CreditCardLastFour (string)
-    CreditCardTypeName (string)
-    NoticeNumber (int)
+AccountId (int)
+AccountNumber (string)
+CreditCardExpirationDate (dateTime)
+CreditCardLastFour (string)
+CreditCardTypeName (string)
+NoticeNumber (int)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

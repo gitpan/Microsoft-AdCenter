@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::BehavioralTargetReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -67,9 +64,9 @@ Creates a new instance
 
 =over 8
 
-    AdDistribution (AdDistributionReportFilter)
-    BehavioralIds (ArrayOflong)
-    LanguageAndRegion (LanguageAndRegionReportFilter)
+AdDistribution (AdDistributionReportFilter)
+BehavioralIds (ArrayOflong)
+LanguageAndRegion (LanguageAndRegionReportFilter)
 
 =back
 

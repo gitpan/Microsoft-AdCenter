@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::KeywordPerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -73,12 +70,12 @@ Creates a new instance
 
 =over 8
 
-    AdDistribution (AdDistributionReportFilter)
-    AdType (AdTypeReportFilter)
-    Cashback (CashbackReportFilter)
-    DeliveredMatchType (DeliveredMatchTypeReportFilter)
-    Keywords (ArrayOfstring)
-    LanguageAndRegion (LanguageAndRegionReportFilter)
+AdDistribution (AdDistributionReportFilter)
+AdType (AdTypeReportFilter)
+Cashback (CashbackReportFilter)
+DeliveredMatchType (DeliveredMatchTypeReportFilter)
+Keywords (ArrayOfstring)
+LanguageAndRegion (LanguageAndRegionReportFilter)
 
 =back
 

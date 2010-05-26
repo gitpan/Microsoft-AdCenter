@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::NotificationManagementService::EditorialRejectionNotification;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -117,34 +114,34 @@ Creates a new instance
 
 =over 8
 
-    AccountId (int)
-    AccountName (string)
-    AccountNumber (string)
-    AdDescription (string)
-    AdId (int)
-    AdTitle (string)
-    CampaignId (int)
-    CampaignName (string)
-    CustomerName (string)
-    DestinationURL (string)
-    DisplayURL (string)
-    KeywordsAccepted (int)
-    KeywordsPending (int)
-    KeywordsRejected (int)
-    OrderId (int)
-    OrderName (string)
-    Top1Keyword (string)
-    Top1KeywordReason (string)
-    Top2Keyword (string)
-    Top2KeywordReason (string)
-    Top3Keyword (string)
-    Top3KeywordReason (string)
-    Top4Keyword (string)
-    Top4KeywordReason (string)
-    Top5Keyword (string)
-    Top5KeywordReason (string)
+AccountId (int)
+AccountName (string)
+AccountNumber (string)
+AdDescription (string)
+AdId (int)
+AdTitle (string)
+CampaignId (int)
+CampaignName (string)
+CustomerName (string)
+DestinationURL (string)
+DisplayURL (string)
+KeywordsAccepted (int)
+KeywordsPending (int)
+KeywordsRejected (int)
+OrderId (int)
+OrderName (string)
+Top1Keyword (string)
+Top1KeywordReason (string)
+Top2Keyword (string)
+Top2KeywordReason (string)
+Top3Keyword (string)
+Top3KeywordReason (string)
+Top4Keyword (string)
+Top4KeywordReason (string)
+Top5Keyword (string)
+Top5KeywordReason (string)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 

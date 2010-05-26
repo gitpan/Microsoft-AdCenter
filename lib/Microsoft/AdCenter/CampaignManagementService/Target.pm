@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::Target;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -81,16 +78,16 @@ Creates a new instance
 
 =over 8
 
-    Age (AgeTarget)
-    Behavior (BehavioralTarget)
-    Day (DayTarget)
-    Gender (GenderTarget)
-    Hour (HourTarget)
-    Id (long)
-    IsLibraryTarget (boolean)
-    Location (LocationTarget)
-    Name (string)
-    Segment (SegmentTarget)
+Age (AgeTarget)
+Behavior (BehavioralTarget)
+Day (DayTarget)
+Gender (GenderTarget)
+Hour (HourTarget)
+Id (long)
+IsLibraryTarget (boolean)
+Location (LocationTarget)
+Name (string)
+Segment (SegmentTarget)
 
 =back
 

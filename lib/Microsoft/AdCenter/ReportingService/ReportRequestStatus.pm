@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::ReportingService::ReportRequestStatus;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -65,8 +62,8 @@ Creates a new instance
 
 =over 8
 
-    ReportDownloadUrl (string)
-    Status (ReportRequestStatusType)
+ReportDownloadUrl (string)
+Status (ReportRequestStatusType)
 
 =back
 

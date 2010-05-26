@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::NotificationManagementService;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -12,18 +9,18 @@ Microsoft::AdCenter::NotificationManagementService - Service client for Microsof
 
 =head1 SYNOPSIS
 
-use Microsoft::AdCenter::NotificationManagementService;
+    use Microsoft::AdCenter::NotificationManagementService;
 
-my $service_client = Microsoft::AdCenter::NotificationManagementService->new
-    ->Password("password");
-    ->UserAccessKey("user access key")
-    ->UserName("user name")
+    my $service_client = Microsoft::AdCenter::NotificationManagementService->new
+        ->Password("password");
+        ->UserAccessKey("user access key")
+        ->UserName("user name")
 
-my $response = $service_client->GetArchivedNotifications(
-    APIFlags => ...
-    StartDate => ...
-    EndDate => ...
-);
+    my $response = $service_client->GetArchivedNotifications(
+        APIFlags => ...
+        StartDate => ...
+        EndDate => ...
+    );
 
 See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
 
@@ -31,22 +28,22 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 =head2 EndPoint
 
-  Changes the end point for this service client.
+Changes the end point for this service client.
 
-  Default value:
-    https://adcenterapi.microsoft.com/Api/Advertiser/v6/NotificationManagement/NotificationManagement.asmx
+Default value:
+https://adcenterapi.microsoft.com/Api/Advertiser/v6/NotificationManagement/NotificationManagement.asmx
 
 =head2 Password
 
-  Gets/sets Password (string) in the request header
+Gets/sets Password (string) in the request header
 
 =head2 UserAccessKey
 
-  Gets/sets UserAccessKey (string) in the request header
+Gets/sets UserAccessKey (string) in the request header
 
 =head2 UserName
 
-  Gets/sets UserName (string) in the request header
+Gets/sets UserName (string) in the request header
 
 =cut
 
@@ -106,13 +103,13 @@ sub _response_headers_expanded {
 
 =head2 GetArchivedNotifications
 
-  Parameters:
-    APIFlags (int)
-    StartDate (dateTime)
-    EndDate (dateTime)
+Parameters:
+  APIFlags (int)
+  StartDate (dateTime)
+  EndDate (dateTime)
 
-  Returns:
-    GetArchivedNotificationsResponse
+Returns:
+  GetArchivedNotificationsResponse
 
 =cut
 
@@ -137,11 +134,11 @@ sub GetArchivedNotifications {
 
 =head2 GetNotifications
 
-  Parameters:
-    APIFlags (int)
+Parameters:
+  APIFlags (int)
 
-  Returns:
-    GetNotificationsResponse
+Returns:
+  GetNotificationsResponse
 
 =cut
 
@@ -164,12 +161,12 @@ sub GetNotifications {
 
 =head2 GetNotificationsByType
 
-  Parameters:
-    APIFlags (int)
-    NotificationType (NotificationType)
+Parameters:
+  APIFlags (int)
+  NotificationType (NotificationType)
 
-  Returns:
-    GetNotificationsByTypeResponse
+Returns:
+  GetNotificationsByTypeResponse
 
 =cut
 

@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::HoursOfOperation;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -67,9 +64,9 @@ Creates a new instance
 
 =over 8
 
-    Day (Day)
-    openTime1 (DayTimeInterval)
-    openTime2 (DayTimeInterval)
+Day (Day)
+openTime1 (DayTimeInterval)
+openTime2 (DayTimeInterval)
 
 =back
 

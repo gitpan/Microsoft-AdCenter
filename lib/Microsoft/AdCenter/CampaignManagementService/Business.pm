@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::Business;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -103,27 +100,27 @@ Creates a new instance
 
 =over 8
 
-    AddressLine1 (string)
-    AddressLine2 (string)
-    BusinessImageIcon (BusinessImageIcon)
-    City (string)
-    CountryOrRegion (string)
-    Description (string)
-    Email (string)
-    GeoCodeStatus (BusinessGeoCodeStatus)
-    HrsOfOperation (ArrayOfHoursOfOperation)
-    Id (long)
-    IsOpen24Hours (boolean)
-    LatitudeDegrees (double)
-    LongitudeDegrees (double)
-    Name (string)
-    OtherPaymentTypeDesc (string)
-    Payment (ArrayOfPaymentType)
-    Phone (string)
-    StateOrProvince (string)
-    Status (BusinessStatus)
-    URL (string)
-    ZipOrPostalCode (string)
+AddressLine1 (string)
+AddressLine2 (string)
+BusinessImageIcon (BusinessImageIcon)
+City (string)
+CountryOrRegion (string)
+Description (string)
+Email (string)
+GeoCodeStatus (BusinessGeoCodeStatus)
+HrsOfOperation (ArrayOfHoursOfOperation)
+Id (long)
+IsOpen24Hours (boolean)
+LatitudeDegrees (double)
+LongitudeDegrees (double)
+Name (string)
+OtherPaymentTypeDesc (string)
+Payment (ArrayOfPaymentType)
+Phone (string)
+StateOrProvince (string)
+Status (BusinessStatus)
+URL (string)
+ZipOrPostalCode (string)
 
 =back
 

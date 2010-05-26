@@ -1,7 +1,4 @@
 package Microsoft::AdCenter::CampaignManagementService::MobileAd;
-# Copyright (C) 2010 Xerxes Tsang
-# This program is free software; you can redistribute it and/or modify it
-# under the terms of Perl Artistic License.
 
 use strict;
 use warnings;
@@ -77,14 +74,14 @@ Creates a new instance
 
 =over 8
 
-    BusinessName (string)
-    DestinationUrl (string)
-    DisplayUrl (string)
-    PhoneNumber (string)
-    Text (string)
-    Title (string)
+BusinessName (string)
+DestinationUrl (string)
+DisplayUrl (string)
+PhoneNumber (string)
+Text (string)
+Title (string)
 
-    Inherited attributes are not listed.
+Inherited attributes are not listed.
 
 =back
 
