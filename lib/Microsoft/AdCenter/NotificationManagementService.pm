@@ -33,8 +33,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value:
-https://adcenterapi.microsoft.com/Api/Advertiser/v6/NotificationManagement/NotificationManagement.asmx
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v6/NotificationManagement/NotificationManagement.asmx
 
 =head2 Password
 
@@ -108,13 +107,13 @@ sub _response_headers_expanded {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     APIFlags (int)
     StartDate (dateTime)
     EndDate (dateTime)
 
-=item Returns
+=item Returns:
 
     GetArchivedNotificationsResponse
 
@@ -145,11 +144,11 @@ sub GetArchivedNotifications {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     APIFlags (int)
 
-=item Returns
+=item Returns:
 
     GetNotificationsResponse
 
@@ -178,12 +177,12 @@ sub GetNotifications {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     APIFlags (int)
     NotificationType (NotificationType)
 
-=item Returns
+=item Returns:
 
     GetNotificationsByTypeResponse
 

@@ -33,8 +33,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value:
-https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc
 
 =head2 ApplicationToken
 
@@ -132,12 +131,12 @@ sub _response_headers_expanded {
 
 =head2 GetAssignedQuota
 
-=over 3
+=over
 
-=item Parameters
+=item Parameters:
 
 
-=item Returns
+=item Returns:
 
     GetAssignedQuotaResponse
 
@@ -163,12 +162,12 @@ sub GetAssignedQuota {
 
 =head2 GetRemainingQuota
 
-=over 3
+=over
 
-=item Parameters
+=item Parameters:
 
 
-=item Returns
+=item Returns:
 
     GetRemainingQuotaResponse
 

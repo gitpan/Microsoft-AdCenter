@@ -34,8 +34,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value:
-https://adcenterapi.microsoft.com/Api/Advertiser/V6/Reporting/ReportingService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V6/Reporting/ReportingService.svc
 
 =head2 ApplicationToken
 
@@ -135,11 +134,11 @@ sub _response_headers_expanded {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     ReportRequestId (string)
 
-=item Returns
+=item Returns:
 
     PollGenerateReportResponse
 
@@ -168,11 +167,11 @@ sub PollGenerateReport {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     ReportRequest (ReportRequest)
 
-=item Returns
+=item Returns:
 
     SubmitGenerateReportResponse
 

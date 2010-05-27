@@ -36,8 +36,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value:
-https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx
 
 =head2 Password
 
@@ -111,7 +110,7 @@ sub _response_headers_expanded {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     user (AdCenterUser)
@@ -120,7 +119,7 @@ sub _response_headers_expanded {
     consentToTermsAndConditions (boolean)
     couponCode (string)
 
-=item Returns
+=item Returns:
 
     CustomerSignUpResponse
 
@@ -154,7 +153,7 @@ sub CustomerSignUp {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     accountId (int)
@@ -162,7 +161,7 @@ sub CustomerSignUp {
     userId (int)
     activityDays (int)
 
-=item Returns
+=item Returns:
 
     GetAccountBillingInfoResponse
 
@@ -195,11 +194,11 @@ sub GetAccountBillingInfo {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     APIFlags (int)
 
-=item Returns
+=item Returns:
 
     GetAccountsResponse
 
@@ -228,12 +227,12 @@ sub GetAccounts {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     APIFlags (int)
     accountIds (ArrayOfInt)
 
-=item Returns
+=item Returns:
 
     GetAccountsByIdsResponse
 
@@ -263,14 +262,14 @@ sub GetAccountsByIds {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     customerId (int)
     userId (int)
     handle (AdCenterCardInvoiceHandle)
 
-=item Returns
+=item Returns:
 
     GetCardInvoiceResponse
 
@@ -302,12 +301,12 @@ sub GetCardInvoice {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     customerId (int)
 
-=item Returns
+=item Returns:
 
     GetCustomerResponse
 
@@ -337,12 +336,12 @@ sub GetCustomer {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     accountId (int)
 
-=item Returns
+=item Returns:
 
     GetPaymentInstrumentResponse
 
@@ -372,12 +371,12 @@ sub GetPaymentInstrument {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     customer (AdCenterCustomer)
 
-=item Returns
+=item Returns:
 
     UpdateCustomerResponse
 
@@ -407,13 +406,13 @@ sub UpdateCustomer {
 
 =over
 
-=item Parameters
+=item Parameters:
 
     apiFlags (int)
     accountId (int)
     creditCard (AdCenterCreditCard)
 
-=item Returns
+=item Returns:
 
     UpdatePaymentInstrumentResponse
 
