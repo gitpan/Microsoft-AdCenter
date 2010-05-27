@@ -132,10 +132,16 @@ sub _response_headers_expanded {
 
 =head2 GetAssignedQuota
 
-Parameters:
+=over 3
 
-Returns:
-  GetAssignedQuotaResponse
+=item Parameters
+
+
+=item Returns
+
+    GetAssignedQuotaResponse
+
+=back
 
 =cut
 
@@ -157,10 +163,16 @@ sub GetAssignedQuota {
 
 =head2 GetRemainingQuota
 
-Parameters:
+=over 3
 
-Returns:
-  GetRemainingQuotaResponse
+=item Parameters
+
+
+=item Returns
+
+    GetRemainingQuotaResponse
+
+=back
 
 =cut
 

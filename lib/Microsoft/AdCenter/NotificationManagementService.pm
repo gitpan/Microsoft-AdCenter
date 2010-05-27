@@ -106,13 +106,19 @@ sub _response_headers_expanded {
 
 =head2 GetArchivedNotifications
 
-Parameters:
-  APIFlags (int)
-  StartDate (dateTime)
-  EndDate (dateTime)
+=over
 
-Returns:
-  GetArchivedNotificationsResponse
+=item Parameters
+
+    APIFlags (int)
+    StartDate (dateTime)
+    EndDate (dateTime)
+
+=item Returns
+
+    GetArchivedNotificationsResponse
+
+=back
 
 =cut
 
@@ -137,11 +143,17 @@ sub GetArchivedNotifications {
 
 =head2 GetNotifications
 
-Parameters:
-  APIFlags (int)
+=over
 
-Returns:
-  GetNotificationsResponse
+=item Parameters
+
+    APIFlags (int)
+
+=item Returns
+
+    GetNotificationsResponse
+
+=back
 
 =cut
 
@@ -164,12 +176,18 @@ sub GetNotifications {
 
 =head2 GetNotificationsByType
 
-Parameters:
-  APIFlags (int)
-  NotificationType (NotificationType)
+=over
 
-Returns:
-  GetNotificationsByTypeResponse
+=item Parameters
+
+    APIFlags (int)
+    NotificationType (NotificationType)
+
+=item Returns
+
+    GetNotificationsByTypeResponse
+
+=back
 
 =cut
 

@@ -109,16 +109,22 @@ sub _response_headers_expanded {
 
 =head2 CustomerSignUp
 
-Parameters:
-  apiFlags (int)
-  user (AdCenterUser)
-  customer (AdCenterCustomer)
-  account (AdCenterAccount)
-  consentToTermsAndConditions (boolean)
-  couponCode (string)
+=over
 
-Returns:
-  CustomerSignUpResponse
+=item Parameters
+
+    apiFlags (int)
+    user (AdCenterUser)
+    customer (AdCenterCustomer)
+    account (AdCenterAccount)
+    consentToTermsAndConditions (boolean)
+    couponCode (string)
+
+=item Returns
+
+    CustomerSignUpResponse
+
+=back
 
 =cut
 
@@ -146,15 +152,21 @@ sub CustomerSignUp {
 
 =head2 GetAccountBillingInfo
 
-Parameters:
-  apiFlags (int)
-  accountId (int)
-  customerId (int)
-  userId (int)
-  activityDays (int)
+=over
 
-Returns:
-  GetAccountBillingInfoResponse
+=item Parameters
+
+    apiFlags (int)
+    accountId (int)
+    customerId (int)
+    userId (int)
+    activityDays (int)
+
+=item Returns
+
+    GetAccountBillingInfoResponse
+
+=back
 
 =cut
 
@@ -181,11 +193,17 @@ sub GetAccountBillingInfo {
 
 =head2 GetAccounts
 
-Parameters:
-  APIFlags (int)
+=over
 
-Returns:
-  GetAccountsResponse
+=item Parameters
+
+    APIFlags (int)
+
+=item Returns
+
+    GetAccountsResponse
+
+=back
 
 =cut
 
@@ -208,12 +226,18 @@ sub GetAccounts {
 
 =head2 GetAccountsByIds
 
-Parameters:
-  APIFlags (int)
-  accountIds (ArrayOfInt)
+=over
 
-Returns:
-  GetAccountsByIdsResponse
+=item Parameters
+
+    APIFlags (int)
+    accountIds (ArrayOfInt)
+
+=item Returns
+
+    GetAccountsByIdsResponse
+
+=back
 
 =cut
 
@@ -237,14 +261,20 @@ sub GetAccountsByIds {
 
 =head2 GetCardInvoice
 
-Parameters:
-  apiFlags (int)
-  customerId (int)
-  userId (int)
-  handle (AdCenterCardInvoiceHandle)
+=over
 
-Returns:
-  GetCardInvoiceResponse
+=item Parameters
+
+    apiFlags (int)
+    customerId (int)
+    userId (int)
+    handle (AdCenterCardInvoiceHandle)
+
+=item Returns
+
+    GetCardInvoiceResponse
+
+=back
 
 =cut
 
@@ -270,12 +300,18 @@ sub GetCardInvoice {
 
 =head2 GetCustomer
 
-Parameters:
-  apiFlags (int)
-  customerId (int)
+=over
 
-Returns:
-  GetCustomerResponse
+=item Parameters
+
+    apiFlags (int)
+    customerId (int)
+
+=item Returns
+
+    GetCustomerResponse
+
+=back
 
 =cut
 
@@ -299,12 +335,18 @@ sub GetCustomer {
 
 =head2 GetPaymentInstrument
 
-Parameters:
-  apiFlags (int)
-  accountId (int)
+=over
 
-Returns:
-  GetPaymentInstrumentResponse
+=item Parameters
+
+    apiFlags (int)
+    accountId (int)
+
+=item Returns
+
+    GetPaymentInstrumentResponse
+
+=back
 
 =cut
 
@@ -328,12 +370,18 @@ sub GetPaymentInstrument {
 
 =head2 UpdateCustomer
 
-Parameters:
-  apiFlags (int)
-  customer (AdCenterCustomer)
+=over
 
-Returns:
-  UpdateCustomerResponse
+=item Parameters
+
+    apiFlags (int)
+    customer (AdCenterCustomer)
+
+=item Returns
+
+    UpdateCustomerResponse
+
+=back
 
 =cut
 
@@ -357,13 +405,19 @@ sub UpdateCustomer {
 
 =head2 UpdatePaymentInstrument
 
-Parameters:
-  apiFlags (int)
-  accountId (int)
-  creditCard (AdCenterCreditCard)
+=over
 
-Returns:
-  UpdatePaymentInstrumentResponse
+=item Parameters
+
+    apiFlags (int)
+    accountId (int)
+    creditCard (AdCenterCreditCard)
+
+=item Returns
+
+    UpdatePaymentInstrumentResponse
+
+=back
 
 =cut
 

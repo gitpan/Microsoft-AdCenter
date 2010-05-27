@@ -134,12 +134,18 @@ sub _response_headers_expanded {
 
 =head2 AddAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroups (ArrayOfAdGroup)
+=over 3
 
-Returns:
-  AddAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroups (ArrayOfAdGroup)
+
+=item Returns
+
+    AddAdGroupsResponse
+
+=back
 
 =cut
 
@@ -163,12 +169,18 @@ sub AddAdGroups {
 
 =head2 AddAds
 
-Parameters:
-  AdGroupId (long)
-  Ads (ArrayOfAd)
+=over 3
 
-Returns:
-  AddAdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    Ads (ArrayOfAd)
+
+=item Returns
+
+    AddAdsResponse
+
+=back
 
 =cut
 
@@ -192,12 +204,18 @@ sub AddAds {
 
 =head2 AddBehavioralBids
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBids (ArrayOfBehavioralBid)
+=over 3
 
-Returns:
-  AddBehavioralBidsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBids (ArrayOfBehavioralBid)
+
+=item Returns
+
+    AddBehavioralBidsResponse
+
+=back
 
 =cut
 
@@ -221,11 +239,17 @@ sub AddBehavioralBids {
 
 =head2 AddBusinesses
 
-Parameters:
-  Businesses (ArrayOfBusiness)
+=over 3
 
-Returns:
-  AddBusinessesResponse
+=item Parameters
+
+    Businesses (ArrayOfBusiness)
+
+=item Returns
+
+    AddBusinessesResponse
+
+=back
 
 =cut
 
@@ -248,12 +272,18 @@ sub AddBusinesses {
 
 =head2 AddCampaigns
 
-Parameters:
-  AccountId (long)
-  Campaigns (ArrayOfCampaign)
+=over 3
 
-Returns:
-  AddCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    Campaigns (ArrayOfCampaign)
+
+=item Returns
+
+    AddCampaignsResponse
+
+=back
 
 =cut
 
@@ -277,12 +307,18 @@ sub AddCampaigns {
 
 =head2 AddKeywords
 
-Parameters:
-  AdGroupId (long)
-  Keywords (ArrayOfKeyword)
+=over 3
 
-Returns:
-  AddKeywordsResponse
+=item Parameters
+
+    AdGroupId (long)
+    Keywords (ArrayOfKeyword)
+
+=item Returns
+
+    AddKeywordsResponse
+
+=back
 
 =cut
 
@@ -306,11 +342,17 @@ sub AddKeywords {
 
 =head2 AddSegments
 
-Parameters:
-  Segments (ArrayOfSegment)
+=over 3
 
-Returns:
-  AddSegmentsResponse
+=item Parameters
+
+    Segments (ArrayOfSegment)
+
+=item Returns
+
+    AddSegmentsResponse
+
+=back
 
 =cut
 
@@ -333,12 +375,18 @@ sub AddSegments {
 
 =head2 AddSitePlacements
 
-Parameters:
-  AdGroupId (long)
-  SitePlacements (ArrayOfSitePlacement)
+=over 3
 
-Returns:
-  AddSitePlacementsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacements (ArrayOfSitePlacement)
+
+=item Returns
+
+    AddSitePlacementsResponse
+
+=back
 
 =cut
 
@@ -362,12 +410,18 @@ sub AddSitePlacements {
 
 =head2 AddTarget
 
-Parameters:
-  AdGroupId (long)
-  Target (Target)
+=over 3
 
-Returns:
-  AddTargetResponse
+=item Parameters
+
+    AdGroupId (long)
+    Target (Target)
+
+=item Returns
+
+    AddTargetResponse
+
+=back
 
 =cut
 
@@ -391,11 +445,17 @@ sub AddTarget {
 
 =head2 AddTargetsToLibrary
 
-Parameters:
-  Targets (ArrayOfTarget)
+=over 3
 
-Returns:
-  AddTargetsToLibraryResponse
+=item Parameters
+
+    Targets (ArrayOfTarget)
+
+=item Returns
+
+    AddTargetsToLibraryResponse
+
+=back
 
 =cut
 
@@ -418,12 +478,18 @@ sub AddTargetsToLibrary {
 
 =head2 DeleteAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    DeleteAdGroupsResponse
+
+=back
 
 =cut
 
@@ -447,12 +513,18 @@ sub DeleteAdGroups {
 
 =head2 DeleteAds
 
-Parameters:
-  AdGroupId (long)
-  AdIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteAdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    AdIds (ArrayOflong)
+
+=item Returns
+
+    DeleteAdsResponse
+
+=back
 
 =cut
 
@@ -476,12 +548,18 @@ sub DeleteAds {
 
 =head2 DeleteBehavioralBids
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBidIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteBehavioralBidsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBidIds (ArrayOflong)
+
+=item Returns
+
+    DeleteBehavioralBidsResponse
+
+=back
 
 =cut
 
@@ -505,11 +583,17 @@ sub DeleteBehavioralBids {
 
 =head2 DeleteBusinesses
 
-Parameters:
-  BusinessIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteBusinessesResponse
+=item Parameters
+
+    BusinessIds (ArrayOflong)
+
+=item Returns
+
+    DeleteBusinessesResponse
+
+=back
 
 =cut
 
@@ -532,12 +616,18 @@ sub DeleteBusinesses {
 
 =head2 DeleteCampaigns
 
-Parameters:
-  AccountId (long)
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    DeleteCampaignsResponse
+
+=back
 
 =cut
 
@@ -561,12 +651,18 @@ sub DeleteCampaigns {
 
 =head2 DeleteKeywords
 
-Parameters:
-  AdGroupId (long)
-  KeywordIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteKeywordsResponse
+=item Parameters
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns
+
+    DeleteKeywordsResponse
+
+=back
 
 =cut
 
@@ -590,11 +686,17 @@ sub DeleteKeywords {
 
 =head2 DeleteSegments
 
-Parameters:
-  SegmentIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteSegmentsResponse
+=item Parameters
+
+    SegmentIds (ArrayOflong)
+
+=item Returns
+
+    DeleteSegmentsResponse
+
+=back
 
 =cut
 
@@ -617,12 +719,18 @@ sub DeleteSegments {
 
 =head2 DeleteSitePlacements
 
-Parameters:
-  AdGroupId (long)
-  SitePlacementIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteSitePlacementsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacementIds (ArrayOflong)
+
+=item Returns
+
+    DeleteSitePlacementsResponse
+
+=back
 
 =cut
 
@@ -646,11 +754,17 @@ sub DeleteSitePlacements {
 
 =head2 DeleteTarget
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  DeleteTargetResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    DeleteTargetResponse
+
+=back
 
 =cut
 
@@ -673,11 +787,17 @@ sub DeleteTarget {
 
 =head2 DeleteTargetFromAdGroup
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  DeleteTargetFromAdGroupResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    DeleteTargetFromAdGroupResponse
+
+=back
 
 =cut
 
@@ -700,11 +820,17 @@ sub DeleteTargetFromAdGroup {
 
 =head2 DeleteTargetFromCampaign
 
-Parameters:
-  CampaignId (long)
+=over 3
 
-Returns:
-  DeleteTargetFromCampaignResponse
+=item Parameters
+
+    CampaignId (long)
+
+=item Returns
+
+    DeleteTargetFromCampaignResponse
+
+=back
 
 =cut
 
@@ -727,11 +853,17 @@ sub DeleteTargetFromCampaign {
 
 =head2 DeleteTargetsFromLibrary
 
-Parameters:
-  TargetIds (ArrayOflong)
+=over 3
 
-Returns:
-  DeleteTargetsFromLibraryResponse
+=item Parameters
+
+    TargetIds (ArrayOflong)
+
+=item Returns
+
+    DeleteTargetsFromLibraryResponse
+
+=back
 
 =cut
 
@@ -754,11 +886,17 @@ sub DeleteTargetsFromLibrary {
 
 =head2 DeleteUsersFromSegment
 
-Parameters:
-  UserHash (ArrayOfbase64Binary)
+=over 3
 
-Returns:
-  DeleteUsersFromSegmentResponse
+=item Parameters
+
+    UserHash (ArrayOfbase64Binary)
+
+=item Returns
+
+    DeleteUsersFromSegmentResponse
+
+=back
 
 =cut
 
@@ -781,11 +919,17 @@ sub DeleteUsersFromSegment {
 
 =head2 GetAdGroupsByCampaignId
 
-Parameters:
-  CampaignId (long)
+=over 3
 
-Returns:
-  GetAdGroupsByCampaignIdResponse
+=item Parameters
+
+    CampaignId (long)
+
+=item Returns
+
+    GetAdGroupsByCampaignIdResponse
+
+=back
 
 =cut
 
@@ -808,12 +952,18 @@ sub GetAdGroupsByCampaignId {
 
 =head2 GetAdGroupsByIds
 
-Parameters:
-  CampaignId (long)
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetAdGroupsByIdsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    GetAdGroupsByIdsResponse
+
+=back
 
 =cut
 
@@ -837,11 +987,17 @@ sub GetAdGroupsByIds {
 
 =head2 GetAdGroupsInfoByCampaignId
 
-Parameters:
-  CampaignId (long)
+=over 3
 
-Returns:
-  GetAdGroupsInfoByCampaignIdResponse
+=item Parameters
+
+    CampaignId (long)
+
+=item Returns
+
+    GetAdGroupsInfoByCampaignIdResponse
+
+=back
 
 =cut
 
@@ -864,11 +1020,17 @@ sub GetAdGroupsInfoByCampaignId {
 
 =head2 GetAdsByAdGroupId
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  GetAdsByAdGroupIdResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    GetAdsByAdGroupIdResponse
+
+=back
 
 =cut
 
@@ -891,12 +1053,18 @@ sub GetAdsByAdGroupId {
 
 =head2 GetAdsByEditorialStatus
 
-Parameters:
-  AdGroupId (long)
-  EditorialStatus (AdEditorialStatus)
+=over 3
 
-Returns:
-  GetAdsByEditorialStatusResponse
+=item Parameters
+
+    AdGroupId (long)
+    EditorialStatus (AdEditorialStatus)
+
+=item Returns
+
+    GetAdsByEditorialStatusResponse
+
+=back
 
 =cut
 
@@ -920,12 +1088,18 @@ sub GetAdsByEditorialStatus {
 
 =head2 GetAdsByIds
 
-Parameters:
-  AdGroupId (long)
-  AdIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetAdsByIdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    AdIds (ArrayOflong)
+
+=item Returns
+
+    GetAdsByIdsResponse
+
+=back
 
 =cut
 
@@ -949,11 +1123,17 @@ sub GetAdsByIds {
 
 =head2 GetBehavioralBidsByAdGroupId
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  GetBehavioralBidsByAdGroupIdResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    GetBehavioralBidsByAdGroupIdResponse
+
+=back
 
 =cut
 
@@ -976,12 +1156,18 @@ sub GetBehavioralBidsByAdGroupId {
 
 =head2 GetBehavioralBidsByIds
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBidIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetBehavioralBidsByIdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBidIds (ArrayOflong)
+
+=item Returns
+
+    GetBehavioralBidsByIdsResponse
+
+=back
 
 =cut
 
@@ -1005,11 +1191,17 @@ sub GetBehavioralBidsByIds {
 
 =head2 GetBusinessesByIds
 
-Parameters:
-  BusinessIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetBusinessesByIdsResponse
+=item Parameters
+
+    BusinessIds (ArrayOflong)
+
+=item Returns
+
+    GetBusinessesByIdsResponse
+
+=back
 
 =cut
 
@@ -1032,10 +1224,16 @@ sub GetBusinessesByIds {
 
 =head2 GetBusinessesInfo
 
-Parameters:
+=over 3
 
-Returns:
-  GetBusinessesInfoResponse
+=item Parameters
+
+
+=item Returns
+
+    GetBusinessesInfoResponse
+
+=back
 
 =cut
 
@@ -1057,11 +1255,17 @@ sub GetBusinessesInfo {
 
 =head2 GetCampaignsByAccountId
 
-Parameters:
-  AccountId (long)
+=over 3
 
-Returns:
-  GetCampaignsByAccountIdResponse
+=item Parameters
+
+    AccountId (long)
+
+=item Returns
+
+    GetCampaignsByAccountIdResponse
+
+=back
 
 =cut
 
@@ -1084,12 +1288,18 @@ sub GetCampaignsByAccountId {
 
 =head2 GetCampaignsByIds
 
-Parameters:
-  AccountId (long)
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetCampaignsByIdsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    GetCampaignsByIdsResponse
+
+=back
 
 =cut
 
@@ -1113,11 +1323,17 @@ sub GetCampaignsByIds {
 
 =head2 GetCampaignsInfoByAccountId
 
-Parameters:
-  AccountId (long)
+=over 3
 
-Returns:
-  GetCampaignsInfoByAccountIdResponse
+=item Parameters
+
+    AccountId (long)
+
+=item Returns
+
+    GetCampaignsInfoByAccountIdResponse
+
+=back
 
 =cut
 
@@ -1140,10 +1356,16 @@ sub GetCampaignsInfoByAccountId {
 
 =head2 GetCustomSegments
 
-Parameters:
+=over 3
 
-Returns:
-  GetCustomSegmentsResponse
+=item Parameters
+
+
+=item Returns
+
+    GetCustomSegmentsResponse
+
+=back
 
 =cut
 
@@ -1165,15 +1387,21 @@ sub GetCustomSegments {
 
 =head2 GetKeywordEstimatesByBids
 
-Parameters:
-  AccountId (long)
-  LanguageAndRegion (string)
-  Currency (string)
-  KeywordBids (ArrayOfKeywordBid)
-  PricingModel (PricingModel)
+=over 3
 
-Returns:
-  GetKeywordEstimatesByBidsResponse
+=item Parameters
+
+    AccountId (long)
+    LanguageAndRegion (string)
+    Currency (string)
+    KeywordBids (ArrayOfKeywordBid)
+    PricingModel (PricingModel)
+
+=item Returns
+
+    GetKeywordEstimatesByBidsResponse
+
+=back
 
 =cut
 
@@ -1200,12 +1428,18 @@ sub GetKeywordEstimatesByBids {
 
 =head2 GetKeywordQualityScoresByIds
 
-Parameters:
-  AdGroupId (long)
-  KeywordIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetKeywordQualityScoresByIdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns
+
+    GetKeywordQualityScoresByIdsResponse
+
+=back
 
 =cut
 
@@ -1229,11 +1463,17 @@ sub GetKeywordQualityScoresByIds {
 
 =head2 GetKeywordsByAdGroupId
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  GetKeywordsByAdGroupIdResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    GetKeywordsByAdGroupIdResponse
+
+=back
 
 =cut
 
@@ -1256,12 +1496,18 @@ sub GetKeywordsByAdGroupId {
 
 =head2 GetKeywordsByEditorialStatus
 
-Parameters:
-  AdGroupId (long)
-  EditorialStatus (KeywordEditorialStatus)
+=over 3
 
-Returns:
-  GetKeywordsByEditorialStatusResponse
+=item Parameters
+
+    AdGroupId (long)
+    EditorialStatus (KeywordEditorialStatus)
+
+=item Returns
+
+    GetKeywordsByEditorialStatusResponse
+
+=back
 
 =cut
 
@@ -1285,12 +1531,18 @@ sub GetKeywordsByEditorialStatus {
 
 =head2 GetKeywordsByIds
 
-Parameters:
-  AdGroupId (long)
-  KeywordIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetKeywordsByIdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns
+
+    GetKeywordsByIdsResponse
+
+=back
 
 =cut
 
@@ -1314,12 +1566,18 @@ sub GetKeywordsByIds {
 
 =head2 GetNegativeKeywordsByAdGroupIds
 
-Parameters:
-  CampaignId (long)
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetNegativeKeywordsByAdGroupIdsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    GetNegativeKeywordsByAdGroupIdsResponse
+
+=back
 
 =cut
 
@@ -1343,12 +1601,18 @@ sub GetNegativeKeywordsByAdGroupIds {
 
 =head2 GetNegativeKeywordsByCampaignIds
 
-Parameters:
-  AccountId (long)
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetNegativeKeywordsByCampaignIdsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    GetNegativeKeywordsByCampaignIdsResponse
+
+=back
 
 =cut
 
@@ -1372,11 +1636,17 @@ sub GetNegativeKeywordsByCampaignIds {
 
 =head2 GetPlacementDetailsForUrls
 
-Parameters:
-  Urls (ArrayOfstring)
+=over 3
 
-Returns:
-  GetPlacementDetailsForUrlsResponse
+=item Parameters
+
+    Urls (ArrayOfstring)
+
+=item Returns
+
+    GetPlacementDetailsForUrlsResponse
+
+=back
 
 =cut
 
@@ -1399,10 +1669,16 @@ sub GetPlacementDetailsForUrls {
 
 =head2 GetSegments
 
-Parameters:
+=over 3
 
-Returns:
-  GetSegmentsResponse
+=item Parameters
+
+
+=item Returns
+
+    GetSegmentsResponse
+
+=back
 
 =cut
 
@@ -1424,11 +1700,17 @@ sub GetSegments {
 
 =head2 GetSegmentsByIds
 
-Parameters:
-  SegmentIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetSegmentsByIdsResponse
+=item Parameters
+
+    SegmentIds (ArrayOflong)
+
+=item Returns
+
+    GetSegmentsByIdsResponse
+
+=back
 
 =cut
 
@@ -1451,11 +1733,17 @@ sub GetSegmentsByIds {
 
 =head2 GetSitePlacementsByAdGroupId
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  GetSitePlacementsByAdGroupIdResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    GetSitePlacementsByAdGroupIdResponse
+
+=back
 
 =cut
 
@@ -1478,12 +1766,18 @@ sub GetSitePlacementsByAdGroupId {
 
 =head2 GetSitePlacementsByIds
 
-Parameters:
-  AdGroupId (long)
-  SitePlacementIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetSitePlacementsByIdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacementIds (ArrayOflong)
+
+=item Returns
+
+    GetSitePlacementsByIdsResponse
+
+=back
 
 =cut
 
@@ -1507,11 +1801,17 @@ sub GetSitePlacementsByIds {
 
 =head2 GetTargetByAdGroupId
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  GetTargetByAdGroupIdResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    GetTargetByAdGroupIdResponse
+
+=back
 
 =cut
 
@@ -1534,11 +1834,17 @@ sub GetTargetByAdGroupId {
 
 =head2 GetTargetsByAdGroupIds
 
-Parameters:
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetTargetsByAdGroupIdsResponse
+=item Parameters
+
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    GetTargetsByAdGroupIdsResponse
+
+=back
 
 =cut
 
@@ -1561,11 +1867,17 @@ sub GetTargetsByAdGroupIds {
 
 =head2 GetTargetsByCampaignIds
 
-Parameters:
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetTargetsByCampaignIdsResponse
+=item Parameters
+
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    GetTargetsByCampaignIdsResponse
+
+=back
 
 =cut
 
@@ -1588,11 +1900,17 @@ sub GetTargetsByCampaignIds {
 
 =head2 GetTargetsByIds
 
-Parameters:
-  TargetIds (ArrayOflong)
+=over 3
 
-Returns:
-  GetTargetsByIdsResponse
+=item Parameters
+
+    TargetIds (ArrayOflong)
+
+=item Returns
+
+    GetTargetsByIdsResponse
+
+=back
 
 =cut
 
@@ -1615,10 +1933,16 @@ sub GetTargetsByIds {
 
 =head2 GetTargetsInfoFromLibrary
 
-Parameters:
+=over 3
 
-Returns:
-  GetTargetsInfoFromLibraryResponse
+=item Parameters
+
+
+=item Returns
+
+    GetTargetsInfoFromLibraryResponse
+
+=back
 
 =cut
 
@@ -1640,12 +1964,18 @@ sub GetTargetsInfoFromLibrary {
 
 =head2 PauseAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    PauseAdGroupsResponse
+
+=back
 
 =cut
 
@@ -1669,12 +1999,18 @@ sub PauseAdGroups {
 
 =head2 PauseAds
 
-Parameters:
-  AdGroupId (long)
-  AdIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseAdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    AdIds (ArrayOflong)
+
+=item Returns
+
+    PauseAdsResponse
+
+=back
 
 =cut
 
@@ -1698,12 +2034,18 @@ sub PauseAds {
 
 =head2 PauseBehavioralBids
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBidIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseBehavioralBidsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBidIds (ArrayOflong)
+
+=item Returns
+
+    PauseBehavioralBidsResponse
+
+=back
 
 =cut
 
@@ -1727,12 +2069,18 @@ sub PauseBehavioralBids {
 
 =head2 PauseCampaigns
 
-Parameters:
-  AccountId (long)
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    PauseCampaignsResponse
+
+=back
 
 =cut
 
@@ -1756,12 +2104,18 @@ sub PauseCampaigns {
 
 =head2 PauseKeywords
 
-Parameters:
-  AdGroupId (long)
-  KeywordIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseKeywordsResponse
+=item Parameters
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns
+
+    PauseKeywordsResponse
+
+=back
 
 =cut
 
@@ -1785,12 +2139,18 @@ sub PauseKeywords {
 
 =head2 PauseSitePlacements
 
-Parameters:
-  AdGroupId (long)
-  SitePlacementIds (ArrayOflong)
+=over 3
 
-Returns:
-  PauseSitePlacementsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacementIds (ArrayOflong)
+
+=item Returns
+
+    PauseSitePlacementsResponse
+
+=back
 
 =cut
 
@@ -1814,12 +2174,18 @@ sub PauseSitePlacements {
 
 =head2 ResumeAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroupIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns
+
+    ResumeAdGroupsResponse
+
+=back
 
 =cut
 
@@ -1843,12 +2209,18 @@ sub ResumeAdGroups {
 
 =head2 ResumeAds
 
-Parameters:
-  AdGroupId (long)
-  AdIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeAdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    AdIds (ArrayOflong)
+
+=item Returns
+
+    ResumeAdsResponse
+
+=back
 
 =cut
 
@@ -1872,12 +2244,18 @@ sub ResumeAds {
 
 =head2 ResumeBehavioralBids
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBidIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeBehavioralBidsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBidIds (ArrayOflong)
+
+=item Returns
+
+    ResumeBehavioralBidsResponse
+
+=back
 
 =cut
 
@@ -1901,12 +2279,18 @@ sub ResumeBehavioralBids {
 
 =head2 ResumeCampaigns
 
-Parameters:
-  AccountId (long)
-  CampaignIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns
+
+    ResumeCampaignsResponse
+
+=back
 
 =cut
 
@@ -1930,12 +2314,18 @@ sub ResumeCampaigns {
 
 =head2 ResumeKeywords
 
-Parameters:
-  AdGroupId (long)
-  KeywordIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeKeywordsResponse
+=item Parameters
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns
+
+    ResumeKeywordsResponse
+
+=back
 
 =cut
 
@@ -1959,12 +2349,18 @@ sub ResumeKeywords {
 
 =head2 ResumeSitePlacements
 
-Parameters:
-  AdGroupId (long)
-  SitePlacementIds (ArrayOflong)
+=over 3
 
-Returns:
-  ResumeSitePlacementsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacementIds (ArrayOflong)
+
+=item Returns
+
+    ResumeSitePlacementsResponse
+
+=back
 
 =cut
 
@@ -1988,12 +2384,18 @@ sub ResumeSitePlacements {
 
 =head2 SetNegativeKeywordsToAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroupNegativeKeywords (ArrayOfAdGroupNegativeKeywords)
+=over 3
 
-Returns:
-  SetNegativeKeywordsToAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroupNegativeKeywords (ArrayOfAdGroupNegativeKeywords)
+
+=item Returns
+
+    SetNegativeKeywordsToAdGroupsResponse
+
+=back
 
 =cut
 
@@ -2017,12 +2419,18 @@ sub SetNegativeKeywordsToAdGroups {
 
 =head2 SetNegativeKeywordsToCampaigns
 
-Parameters:
-  AccountId (long)
-  CampaignNegativeKeywords (ArrayOfCampaignNegativeKeywords)
+=over 3
 
-Returns:
-  SetNegativeKeywordsToCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    CampaignNegativeKeywords (ArrayOfCampaignNegativeKeywords)
+
+=item Returns
+
+    SetNegativeKeywordsToCampaignsResponse
+
+=back
 
 =cut
 
@@ -2046,12 +2454,18 @@ sub SetNegativeKeywordsToCampaigns {
 
 =head2 SetTargetToAdGroup
 
-Parameters:
-  AdGroupId (long)
-  TargetId (long)
+=over 3
 
-Returns:
-  SetTargetToAdGroupResponse
+=item Parameters
+
+    AdGroupId (long)
+    TargetId (long)
+
+=item Returns
+
+    SetTargetToAdGroupResponse
+
+=back
 
 =cut
 
@@ -2075,12 +2489,18 @@ sub SetTargetToAdGroup {
 
 =head2 SetTargetToCampaign
 
-Parameters:
-  CampaignId (long)
-  TargetId (long)
+=over 3
 
-Returns:
-  SetTargetToCampaignResponse
+=item Parameters
+
+    CampaignId (long)
+    TargetId (long)
+
+=item Returns
+
+    SetTargetToCampaignResponse
+
+=back
 
 =cut
 
@@ -2104,12 +2524,18 @@ sub SetTargetToCampaign {
 
 =head2 SetUsersToSegments
 
-Parameters:
-  SegmentId (long)
-  UserHash (ArrayOfbase64Binary)
+=over 3
 
-Returns:
-  SetUsersToSegmentsResponse
+=item Parameters
+
+    SegmentId (long)
+    UserHash (ArrayOfbase64Binary)
+
+=item Returns
+
+    SetUsersToSegmentsResponse
+
+=back
 
 =cut
 
@@ -2133,11 +2559,17 @@ sub SetUsersToSegments {
 
 =head2 SubmitAdGroupForApproval
 
-Parameters:
-  AdGroupId (long)
+=over 3
 
-Returns:
-  SubmitAdGroupForApprovalResponse
+=item Parameters
+
+    AdGroupId (long)
+
+=item Returns
+
+    SubmitAdGroupForApprovalResponse
+
+=back
 
 =cut
 
@@ -2160,12 +2592,18 @@ sub SubmitAdGroupForApproval {
 
 =head2 UpdateAdGroups
 
-Parameters:
-  CampaignId (long)
-  AdGroups (ArrayOfAdGroup)
+=over 3
 
-Returns:
-  UpdateAdGroupsResponse
+=item Parameters
+
+    CampaignId (long)
+    AdGroups (ArrayOfAdGroup)
+
+=item Returns
+
+    UpdateAdGroupsResponse
+
+=back
 
 =cut
 
@@ -2189,12 +2627,18 @@ sub UpdateAdGroups {
 
 =head2 UpdateAds
 
-Parameters:
-  AdGroupId (long)
-  Ads (ArrayOfAd)
+=over 3
 
-Returns:
-  UpdateAdsResponse
+=item Parameters
+
+    AdGroupId (long)
+    Ads (ArrayOfAd)
+
+=item Returns
+
+    UpdateAdsResponse
+
+=back
 
 =cut
 
@@ -2218,12 +2662,18 @@ sub UpdateAds {
 
 =head2 UpdateBehavioralBids
 
-Parameters:
-  AdGroupId (long)
-  BehavioralBids (ArrayOfBehavioralBid)
+=over 3
 
-Returns:
-  UpdateBehavioralBidsResponse
+=item Parameters
+
+    AdGroupId (long)
+    BehavioralBids (ArrayOfBehavioralBid)
+
+=item Returns
+
+    UpdateBehavioralBidsResponse
+
+=back
 
 =cut
 
@@ -2247,11 +2697,17 @@ sub UpdateBehavioralBids {
 
 =head2 UpdateBusinesses
 
-Parameters:
-  Businesses (ArrayOfBusiness)
+=over 3
 
-Returns:
-  UpdateBusinessesResponse
+=item Parameters
+
+    Businesses (ArrayOfBusiness)
+
+=item Returns
+
+    UpdateBusinessesResponse
+
+=back
 
 =cut
 
@@ -2274,12 +2730,18 @@ sub UpdateBusinesses {
 
 =head2 UpdateCampaigns
 
-Parameters:
-  AccountId (long)
-  Campaigns (ArrayOfCampaign)
+=over 3
 
-Returns:
-  UpdateCampaignsResponse
+=item Parameters
+
+    AccountId (long)
+    Campaigns (ArrayOfCampaign)
+
+=item Returns
+
+    UpdateCampaignsResponse
+
+=back
 
 =cut
 
@@ -2303,12 +2765,18 @@ sub UpdateCampaigns {
 
 =head2 UpdateKeywords
 
-Parameters:
-  AdGroupId (long)
-  Keywords (ArrayOfKeyword)
+=over 3
 
-Returns:
-  UpdateKeywordsResponse
+=item Parameters
+
+    AdGroupId (long)
+    Keywords (ArrayOfKeyword)
+
+=item Returns
+
+    UpdateKeywordsResponse
+
+=back
 
 =cut
 
@@ -2332,12 +2800,18 @@ sub UpdateKeywords {
 
 =head2 UpdateSitePlacements
 
-Parameters:
-  AdGroupId (long)
-  SitePlacements (ArrayOfSitePlacement)
+=over 3
 
-Returns:
-  UpdateSitePlacementsResponse
+=item Parameters
+
+    AdGroupId (long)
+    SitePlacements (ArrayOfSitePlacement)
+
+=item Returns
+
+    UpdateSitePlacementsResponse
+
+=back
 
 =cut
 
@@ -2361,12 +2835,18 @@ sub UpdateSitePlacements {
 
 =head2 UpdateTarget
 
-Parameters:
-  AdGroupId (long)
-  Target (Target)
+=over 3
 
-Returns:
-  UpdateTargetResponse
+=item Parameters
+
+    AdGroupId (long)
+    Target (Target)
+
+=item Returns
+
+    UpdateTargetResponse
+
+=back
 
 =cut
 
@@ -2390,11 +2870,17 @@ sub UpdateTarget {
 
 =head2 UpdateTargetsInLibrary
 
-Parameters:
-  Targets (ArrayOfTarget)
+=over 3
 
-Returns:
-  UpdateTargetsInLibraryResponse
+=item Parameters
+
+    Targets (ArrayOfTarget)
+
+=item Returns
+
+    UpdateTargetsInLibraryResponse
+
+=back
 
 =cut
 

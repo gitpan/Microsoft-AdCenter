@@ -133,11 +133,17 @@ sub _response_headers_expanded {
 
 =head2 PollGenerateReport
 
-Parameters:
-  ReportRequestId (string)
+=over
 
-Returns:
-  PollGenerateReportResponse
+=item Parameters
+
+    ReportRequestId (string)
+
+=item Returns
+
+    PollGenerateReportResponse
+
+=back
 
 =cut
 
@@ -160,11 +166,17 @@ sub PollGenerateReport {
 
 =head2 SubmitGenerateReport
 
-Parameters:
-  ReportRequest (ReportRequest)
+=over
 
-Returns:
-  SubmitGenerateReportResponse
+=item Parameters
+
+    ReportRequest (ReportRequest)
+
+=item Returns
+
+    SubmitGenerateReportResponse
+
+=back
 
 =cut
 
