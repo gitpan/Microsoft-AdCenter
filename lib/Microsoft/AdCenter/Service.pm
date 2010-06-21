@@ -185,8 +185,15 @@ sub _serialize_argument {
         $object = $object->value(\eval($type . '->value(@elements)'));
     }
     elsif (blessed($value) and $value->UNIVERSAL::isa('Microsoft::AdCenter::ComplexType')) {
+        die "Type mismatch" unless $value->UNIVERSAL::isa(ref($self) . '::' . $value_type);
+        if ($value_type ne $value->_type_name) {
+            $value_type = $value->_type_name;
+            $type_namespace = $self->_type_namespace($value_type);
+            $type_full_name = $self->_type_full_name($value_type);
+            $object->type($type_full_name);
+        }
         my @attributes = map { $self->_serialize_argument($type, $type_namespace, $_, $value->$_, $value->_attribute_type($_)) } $value->_attributes;
-        $object = $object->value(\eval($type . '->value(@attributes)'));
+        $object = $object->value(\eval($type . '->value(@attributes)')) if (scalar(@attributes) > 0);
     }
     else {
         $object = $object->value($self->_escape_xml_baddies($value))
@@ -326,7 +333,7 @@ sub _deserialize_array {
 sub _deserialize_complex_type {
     my ($self, $type, $value) = @_;
     return unless defined $value;
-    $type = ref($value) if (ref($value) ne 'HASH');
+    $type = ref($value) if (length(ref($value)) > 0 && ref($value) ne 'HASH');
     my $object = $self->_create_complex_type($type);
     foreach my $attribute_name ($object->_attributes) {
         my $attribute_value = $value->{$attribute_name};
