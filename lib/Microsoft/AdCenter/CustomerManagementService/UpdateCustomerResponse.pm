@@ -19,11 +19,11 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'http://adcenter.microsoft.com/syncapis';
+    return 'https://adcenter.microsoft.com/api/customermanagement';
 }
 
 our @_attributes = (qw/
-    UpdateCustomerResult
+    LastModifiedTime
 /);
 
 sub _attributes {
@@ -32,7 +32,7 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    UpdateCustomerResult => 'CustomerUpdateResponseMsg',
+    LastModifiedTime => 'dateTime',
 );
 
 sub _attribute_type {
@@ -49,7 +49,7 @@ __PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
 
 =head1 SYNOPSIS
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for documentation of the various data objects.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for documentation of the various data objects.
 
 =cut
 
@@ -59,9 +59,9 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Creates a new instance
 
-=head2 UpdateCustomerResult
+=head2 LastModifiedTime
 
-Gets/sets UpdateCustomerResult (CustomerUpdateResponseMsg)
+Gets/sets LastModifiedTime (dateTime)
 
 =cut
 

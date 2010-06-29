@@ -14,12 +14,12 @@ use Microsoft::AdCenter::CustomerManagementService::UpdateCustomerResponse;
 
 sub test_can_create_update_customer_response_and_set_all_fields : Test(2) {
     my $update_customer_response = Microsoft::AdCenter::CustomerManagementService::UpdateCustomerResponse->new
-        ->UpdateCustomerResult('update customer result')
+        ->LastModifiedTime('2010-05-31T12:23:34')
     ;
 
     ok($update_customer_response);
 
-    is($update_customer_response->UpdateCustomerResult, 'update customer result', 'can get update customer result');
+    is($update_customer_response->LastModifiedTime, '2010-05-31T12:23:34', 'can get 2010-05-31T12:23:34');
 };
 
 1;

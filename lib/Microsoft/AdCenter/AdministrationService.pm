@@ -25,7 +25,7 @@ Microsoft::AdCenter::AdministrationService - Service client for Microsoft AdCent
     my $response = $service_client->GetAssignedQuota(
     );
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for detailed documentation for this service.
 
 =head1 METHODS
 
@@ -33,7 +33,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V7/Administration/AdministrationService.svc
 
 =head2 ApplicationToken
 
@@ -76,24 +76,24 @@ sub _class_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 sub _default_location {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V6/Administration/AdministrationService.svc';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V7/Administration/AdministrationService.svc';
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/Administration/AdministrationService.svc?wsdl';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v7/Administration/AdministrationService.svc?wsdl';
 }
 
 our $_request_headers = [
-    { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'CustomerAccountId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'CustomerId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' }
+    { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'CustomerAccountId', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'CustomerId', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' }
 ];
 
 our $_request_headers_expanded = {

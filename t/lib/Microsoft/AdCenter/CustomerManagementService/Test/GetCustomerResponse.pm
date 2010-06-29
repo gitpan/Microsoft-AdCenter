@@ -14,12 +14,12 @@ use Microsoft::AdCenter::CustomerManagementService::GetCustomerResponse;
 
 sub test_can_create_get_customer_response_and_set_all_fields : Test(2) {
     my $get_customer_response = Microsoft::AdCenter::CustomerManagementService::GetCustomerResponse->new
-        ->GetCustomerResult('get customer result')
+        ->Customer('customer')
     ;
 
     ok($get_customer_response);
 
-    is($get_customer_response->GetCustomerResult, 'get customer result', 'can get get customer result');
+    is($get_customer_response->Customer, 'customer', 'can get customer');
 };
 
 1;

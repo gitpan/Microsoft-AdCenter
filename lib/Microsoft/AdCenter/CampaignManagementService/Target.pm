@@ -19,13 +19,14 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
     Age
     Behavior
     Day
+    Device
     Gender
     Hour
     Id
@@ -44,6 +45,7 @@ our %_attribute_type = (
     Age => 'AgeTarget',
     Behavior => 'BehavioralTarget',
     Day => 'DayTarget',
+    Device => 'DeviceTarget',
     Gender => 'GenderTarget',
     Hour => 'HourTarget',
     Id => 'long',
@@ -67,7 +69,7 @@ __PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
 
 =head1 SYNOPSIS
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for documentation of the various data objects.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for documentation of the various data objects.
 
 =cut
 
@@ -88,6 +90,10 @@ Gets/sets Behavior (BehavioralTarget)
 =head2 Day
 
 Gets/sets Day (DayTarget)
+
+=head2 Device
+
+Gets/sets Device (DeviceTarget)
 
 =head2 Gender
 

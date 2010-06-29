@@ -12,13 +12,13 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '6.02';
+our $VERSION = '7.00';
 
 =head1 SYNOPSIS
 
 This collection of modules makes interacting with Microsoft adCenter APIs as easy as possible.
 
-B<Note that this version (6.x) is intended to be used with version 6 of Microsoft adCenter API.>
+B<Note that this version (7.x) is intended to be used with version 7 of Microsoft adCenter API.>
 
 Sample Usage:
 
@@ -54,7 +54,7 @@ Sample Usage:
 
 =head1 VERSIONING
 
-This version of Microsoft::AdCenter is intended to be used with V6 of Microsoft adCenter API.  If you need to access both V5 and V6 simultaneously, you'll need to install 2 versions of Microsoft::AdCenter.  In order to have 2 versions of the same perl module installed, you'll need to put one in a non-standard location, for example ~/perl/.  See perldoc CPAN for more information.
+This version of Microsoft::AdCenter is intended to be used with V7 of Microsoft adCenter API.  If you need to access both V6 and V7 simultaneously, you'll need to install 2 versions of Microsoft::AdCenter.  In order to have 2 versions of the same perl module installed, you'll need to put one in a non-standard location, for example ~/perl/.  See perldoc CPAN for more information.
 
 =head1 OVERVIEW
 
@@ -62,7 +62,7 @@ Microsoft adCenter API allows you to manage your adCenter account in an automate
 
 The calls you can make to the various services are documented on MSDN.  See
 
-L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx>
+L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx>
 
 Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate
 Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that an array of Campaigns be passed in:
@@ -158,7 +158,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
     # Create the service client
     my $customer_mgmt_service = Microsoft::AdCenter::CustomerManagementService->new(
-        EndPoint      => "https://sandboxapi.adcenter.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx",
+        EndPoint      => "https://sandboxapi.adcenter.microsoft.com/Api/Advertiser/v7/CustomerManagement/CustomerManagement.asmx",
         UserAccessKey => "your user access key",
         UserName      => "your user name",
         Password      => "your password"

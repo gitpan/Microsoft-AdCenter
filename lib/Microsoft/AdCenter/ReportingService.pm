@@ -26,7 +26,7 @@ Microsoft::AdCenter::ReportingService - Service client for Microsoft AdCenter Re
         ReportRequestId => ...
     );
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for detailed documentation for this service.
 
 =head1 METHODS
 
@@ -208,6 +208,7 @@ our %_simple_types = (
     AgeGenderDemographicReportColumn => 'https://adcenter.microsoft.com/v6',
     BehavioralPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     BehavioralTargetReportColumn => 'https://adcenter.microsoft.com/v6',
+    BiddedMatchTypeReportFilter => 'https://adcenter.microsoft.com/v6',
     BudgetSummaryReportColumn => 'https://adcenter.microsoft.com/v6',
     BudgetSummaryReportTimePeriod => 'https://adcenter.microsoft.com/v6',
     CampaignPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',

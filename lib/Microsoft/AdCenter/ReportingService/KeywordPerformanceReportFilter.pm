@@ -25,6 +25,7 @@ sub _namespace_uri {
 our @_attributes = (qw/
     AdDistribution
     AdType
+    BiddedMatchType
     Cashback
     DeliveredMatchType
     Keywords
@@ -39,6 +40,7 @@ sub _attributes {
 our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
     AdType => 'AdTypeReportFilter',
+    BiddedMatchType => 'BiddedMatchTypeReportFilter',
     Cashback => 'CashbackReportFilter',
     DeliveredMatchType => 'DeliveredMatchTypeReportFilter',
     Keywords => 'ArrayOfstring',
@@ -59,7 +61,7 @@ __PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
 
 =head1 SYNOPSIS
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for documentation of the various data objects.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for documentation of the various data objects.
 
 =cut
 
@@ -76,6 +78,10 @@ Gets/sets AdDistribution (AdDistributionReportFilter)
 =head2 AdType
 
 Gets/sets AdType (AdTypeReportFilter)
+
+=head2 BiddedMatchType
+
+Gets/sets BiddedMatchType (BiddedMatchTypeReportFilter)
 
 =head2 Cashback
 

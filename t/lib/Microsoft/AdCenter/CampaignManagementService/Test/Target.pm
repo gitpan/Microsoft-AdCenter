@@ -12,11 +12,12 @@ use Test::More;
 use Microsoft::AdCenter::CampaignManagementService;
 use Microsoft::AdCenter::CampaignManagementService::Target;
 
-sub test_can_create_target_and_set_all_fields : Test(11) {
+sub test_can_create_target_and_set_all_fields : Test(12) {
     my $target = Microsoft::AdCenter::CampaignManagementService::Target->new
         ->Age('age')
         ->Behavior('behavior')
         ->Day('day')
+        ->Device('device')
         ->Gender('gender')
         ->Hour('hour')
         ->Id('id')
@@ -31,6 +32,7 @@ sub test_can_create_target_and_set_all_fields : Test(11) {
     is($target->Age, 'age', 'can get age');
     is($target->Behavior, 'behavior', 'can get behavior');
     is($target->Day, 'day', 'can get day');
+    is($target->Device, 'device', 'can get device');
     is($target->Gender, 'gender', 'can get gender');
     is($target->Hour, 'hour', 'can get hour');
     is($target->Id, 'id', 'can get id');

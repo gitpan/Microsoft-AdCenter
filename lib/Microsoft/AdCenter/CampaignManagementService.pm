@@ -27,7 +27,7 @@ Microsoft::AdCenter::CampaignManagementService - Service client for Microsoft Ad
         AdGroups => ...
     );
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for detailed documentation for this service.
 
 =head1 METHODS
 
@@ -35,7 +35,7 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v6/CampaignManagement/CampaignManagementService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v7/CampaignManagement/CampaignManagementService.svc
 
 =head2 ApplicationToken
 
@@ -78,24 +78,24 @@ sub _class_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 sub _default_location {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/CampaignManagement/CampaignManagementService.svc';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v7/CampaignManagement/CampaignManagementService.svc';
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/CampaignManagement/CampaignManagementService.svc?wsdl';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v7/CampaignManagement/CampaignManagementService.svc?wsdl';
 }
 
 our $_request_headers = [
-    { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'CustomerAccountId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'CustomerId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' }
+    { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'CustomerAccountId', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'CustomerId', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' }
 ];
 
 our $_request_headers_expanded = {
@@ -116,7 +116,7 @@ sub _request_headers_expanded {
 }
 
 our $_response_headers = [
-    { name => 'TrackingId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' }
+    { name => 'TrackingId', type => 'string', namespace => 'https://adapi.microsoft.com' }
 ];
 
 our $_response_headers_expanded = {
@@ -155,8 +155,8 @@ sub AddAdGroups {
         request => {
             name => 'AddAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroups', type => 'ArrayOfAdGroup', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroups', type => 'ArrayOfAdGroup', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -190,8 +190,8 @@ sub AddAds {
         request => {
             name => 'AddAdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Ads', type => 'ArrayOfAd', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Ads', type => 'ArrayOfAd', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -225,8 +225,8 @@ sub AddBehavioralBids {
         request => {
             name => 'AddBehavioralBidsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBids', type => 'ArrayOfBehavioralBid', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBids', type => 'ArrayOfBehavioralBid', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -259,7 +259,7 @@ sub AddBusinesses {
         request => {
             name => 'AddBusinessesRequest',
             parameters => [
-                { name => 'Businesses', type => 'ArrayOfBusiness', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Businesses', type => 'ArrayOfBusiness', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -293,8 +293,8 @@ sub AddCampaigns {
         request => {
             name => 'AddCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Campaigns', type => 'ArrayOfCampaign', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Campaigns', type => 'ArrayOfCampaign', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -328,8 +328,8 @@ sub AddKeywords {
         request => {
             name => 'AddKeywordsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Keywords', type => 'ArrayOfKeyword', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Keywords', type => 'ArrayOfKeyword', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -362,7 +362,7 @@ sub AddSegments {
         request => {
             name => 'AddSegmentsRequest',
             parameters => [
-                { name => 'Segments', type => 'ArrayOfSegment', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Segments', type => 'ArrayOfSegment', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -396,8 +396,8 @@ sub AddSitePlacements {
         request => {
             name => 'AddSitePlacementsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacements', type => 'ArrayOfSitePlacement', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacements', type => 'ArrayOfSitePlacement', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -431,8 +431,8 @@ sub AddTarget {
         request => {
             name => 'AddTargetRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Target', type => 'Target', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Target', type => 'Target', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -465,7 +465,7 @@ sub AddTargetsToLibrary {
         request => {
             name => 'AddTargetsToLibraryRequest',
             parameters => [
-                { name => 'Targets', type => 'ArrayOfTarget', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Targets', type => 'ArrayOfTarget', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -499,8 +499,8 @@ sub DeleteAdGroups {
         request => {
             name => 'DeleteAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -534,8 +534,8 @@ sub DeleteAds {
         request => {
             name => 'DeleteAdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -569,8 +569,8 @@ sub DeleteBehavioralBids {
         request => {
             name => 'DeleteBehavioralBidsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -603,7 +603,7 @@ sub DeleteBusinesses {
         request => {
             name => 'DeleteBusinessesRequest',
             parameters => [
-                { name => 'BusinessIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'BusinessIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -637,8 +637,8 @@ sub DeleteCampaigns {
         request => {
             name => 'DeleteCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -672,8 +672,8 @@ sub DeleteKeywords {
         request => {
             name => 'DeleteKeywordsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -706,7 +706,7 @@ sub DeleteSegments {
         request => {
             name => 'DeleteSegmentsRequest',
             parameters => [
-                { name => 'SegmentIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'SegmentIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -740,8 +740,8 @@ sub DeleteSitePlacements {
         request => {
             name => 'DeleteSitePlacementsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -774,7 +774,7 @@ sub DeleteTarget {
         request => {
             name => 'DeleteTargetRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -807,7 +807,7 @@ sub DeleteTargetFromAdGroup {
         request => {
             name => 'DeleteTargetFromAdGroupRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -840,7 +840,7 @@ sub DeleteTargetFromCampaign {
         request => {
             name => 'DeleteTargetFromCampaignRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -873,7 +873,7 @@ sub DeleteTargetsFromLibrary {
         request => {
             name => 'DeleteTargetsFromLibraryRequest',
             parameters => [
-                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -906,11 +906,46 @@ sub DeleteUsersFromSegment {
         request => {
             name => 'DeleteUsersFromSegmentRequest',
             parameters => [
-                { name => 'UserHash', type => 'ArrayOfbase64Binary', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'UserHash', type => 'ArrayOfbase64Binary', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
             name => 'DeleteUsersFromSegmentResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAdEditorialReasonsByIds
+
+=over
+
+=item Parameters:
+
+    AdIds (ArrayOflong)
+    AccountId (long)
+
+=item Returns:
+
+    GetAdEditorialReasonsByIdsResponse
+
+=back
+
+=cut
+
+sub GetAdEditorialReasonsByIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAdEditorialReasonsByIds',
+        request => {
+            name => 'GetAdEditorialReasonsByIdsRequest',
+            parameters => [
+                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetAdEditorialReasonsByIdsResponse'
         },
         parameters => \%args
     );
@@ -939,7 +974,7 @@ sub GetAdGroupsByCampaignId {
         request => {
             name => 'GetAdGroupsByCampaignIdRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -973,8 +1008,8 @@ sub GetAdGroupsByIds {
         request => {
             name => 'GetAdGroupsByIdsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1007,7 +1042,7 @@ sub GetAdGroupsInfoByCampaignId {
         request => {
             name => 'GetAdGroupsInfoByCampaignIdRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1040,7 +1075,7 @@ sub GetAdsByAdGroupId {
         request => {
             name => 'GetAdsByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1074,8 +1109,8 @@ sub GetAdsByEditorialStatus {
         request => {
             name => 'GetAdsByEditorialStatusRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'EditorialStatus', type => 'AdEditorialStatus', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'EditorialStatus', type => 'AdEditorialStatus', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1109,8 +1144,8 @@ sub GetAdsByIds {
         request => {
             name => 'GetAdsByIdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1143,7 +1178,7 @@ sub GetBehavioralBidsByAdGroupId {
         request => {
             name => 'GetBehavioralBidsByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1177,8 +1212,8 @@ sub GetBehavioralBidsByIds {
         request => {
             name => 'GetBehavioralBidsByIdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1211,7 +1246,7 @@ sub GetBusinessesByIds {
         request => {
             name => 'GetBusinessesByIdsRequest',
             parameters => [
-                { name => 'BusinessIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'BusinessIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1275,7 +1310,7 @@ sub GetCampaignsByAccountId {
         request => {
             name => 'GetCampaignsByAccountIdRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1309,8 +1344,8 @@ sub GetCampaignsByIds {
         request => {
             name => 'GetCampaignsByIdsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1343,7 +1378,7 @@ sub GetCampaignsInfoByAccountId {
         request => {
             name => 'GetCampaignsInfoByAccountIdRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1384,6 +1419,41 @@ sub GetCustomSegments {
     );
 }
 
+=head2 GetKeywordEditorialReasonsByIds
+
+=over
+
+=item Parameters:
+
+    KeywordIds (ArrayOflong)
+    AccountId (long)
+
+=item Returns:
+
+    GetKeywordEditorialReasonsByIdsResponse
+
+=back
+
+=cut
+
+sub GetKeywordEditorialReasonsByIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetKeywordEditorialReasonsByIds',
+        request => {
+            name => 'GetKeywordEditorialReasonsByIdsRequest',
+            parameters => [
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetKeywordEditorialReasonsByIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetKeywordEstimatesByBids
 
 =over
@@ -1411,50 +1481,15 @@ sub GetKeywordEstimatesByBids {
         request => {
             name => 'GetKeywordEstimatesByBidsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'LanguageAndRegion', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Currency', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordBids', type => 'ArrayOfKeywordBid', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'PricingModel', type => 'PricingModel', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'LanguageAndRegion', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Currency', type => 'string', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'KeywordBids', type => 'ArrayOfKeywordBid', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'PricingModel', type => 'PricingModel', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
             name => 'GetKeywordEstimatesByBidsResponse'
-        },
-        parameters => \%args
-    );
-}
-
-=head2 GetKeywordQualityScoresByIds
-
-=over
-
-=item Parameters:
-
-    AdGroupId (long)
-    KeywordIds (ArrayOflong)
-
-=item Returns:
-
-    GetKeywordQualityScoresByIdsResponse
-
-=back
-
-=cut
-
-sub GetKeywordQualityScoresByIds {
-    my ($self, %args) = @_;
-    return $self->_invoke(
-        soap_action => 'GetKeywordQualityScoresByIds',
-        request => {
-            name => 'GetKeywordQualityScoresByIdsRequest',
-            parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
-            ]
-        },
-        response => {
-            name => 'GetKeywordQualityScoresByIdsResponse'
         },
         parameters => \%args
     );
@@ -1483,7 +1518,7 @@ sub GetKeywordsByAdGroupId {
         request => {
             name => 'GetKeywordsByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1517,8 +1552,8 @@ sub GetKeywordsByEditorialStatus {
         request => {
             name => 'GetKeywordsByEditorialStatusRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'EditorialStatus', type => 'KeywordEditorialStatus', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'EditorialStatus', type => 'KeywordEditorialStatus', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1552,8 +1587,8 @@ sub GetKeywordsByIds {
         request => {
             name => 'GetKeywordsByIdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1587,8 +1622,8 @@ sub GetNegativeKeywordsByAdGroupIds {
         request => {
             name => 'GetNegativeKeywordsByAdGroupIdsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1622,12 +1657,47 @@ sub GetNegativeKeywordsByCampaignIds {
         request => {
             name => 'GetNegativeKeywordsByCampaignIdsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
             name => 'GetNegativeKeywordsByCampaignIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetNormalizedStrings
+
+=over
+
+=item Parameters:
+
+    Strings (ArrayOfstring)
+    Language (Language)
+
+=item Returns:
+
+    GetNormalizedStringsResponse
+
+=back
+
+=cut
+
+sub GetNormalizedStrings {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetNormalizedStrings',
+        request => {
+            name => 'GetNormalizedStringsRequest',
+            parameters => [
+                { name => 'Strings', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Language', type => 'Language', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetNormalizedStringsResponse'
         },
         parameters => \%args
     );
@@ -1656,7 +1726,7 @@ sub GetPlacementDetailsForUrls {
         request => {
             name => 'GetPlacementDetailsForUrlsRequest',
             parameters => [
-                { name => 'Urls', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Urls', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1720,7 +1790,7 @@ sub GetSegmentsByIds {
         request => {
             name => 'GetSegmentsByIdsRequest',
             parameters => [
-                { name => 'SegmentIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'SegmentIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1753,7 +1823,7 @@ sub GetSitePlacementsByAdGroupId {
         request => {
             name => 'GetSitePlacementsByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1787,8 +1857,8 @@ sub GetSitePlacementsByIds {
         request => {
             name => 'GetSitePlacementsByIdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1821,7 +1891,7 @@ sub GetTargetByAdGroupId {
         request => {
             name => 'GetTargetByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1854,7 +1924,7 @@ sub GetTargetsByAdGroupIds {
         request => {
             name => 'GetTargetsByAdGroupIdsRequest',
             parameters => [
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1887,7 +1957,7 @@ sub GetTargetsByCampaignIds {
         request => {
             name => 'GetTargetsByCampaignIdsRequest',
             parameters => [
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1920,7 +1990,7 @@ sub GetTargetsByIds {
         request => {
             name => 'GetTargetsByIdsRequest',
             parameters => [
-                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -1985,8 +2055,8 @@ sub PauseAdGroups {
         request => {
             name => 'PauseAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2020,8 +2090,8 @@ sub PauseAds {
         request => {
             name => 'PauseAdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2055,8 +2125,8 @@ sub PauseBehavioralBids {
         request => {
             name => 'PauseBehavioralBidsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2090,8 +2160,8 @@ sub PauseCampaigns {
         request => {
             name => 'PauseCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2125,8 +2195,8 @@ sub PauseKeywords {
         request => {
             name => 'PauseKeywordsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2160,8 +2230,8 @@ sub PauseSitePlacements {
         request => {
             name => 'PauseSitePlacementsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2195,8 +2265,8 @@ sub ResumeAdGroups {
         request => {
             name => 'ResumeAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2230,8 +2300,8 @@ sub ResumeAds {
         request => {
             name => 'ResumeAdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2265,8 +2335,8 @@ sub ResumeBehavioralBids {
         request => {
             name => 'ResumeBehavioralBidsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBidIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2300,8 +2370,8 @@ sub ResumeCampaigns {
         request => {
             name => 'ResumeCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2335,8 +2405,8 @@ sub ResumeKeywords {
         request => {
             name => 'ResumeKeywordsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2370,8 +2440,8 @@ sub ResumeSitePlacements {
         request => {
             name => 'ResumeSitePlacementsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacementIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2405,8 +2475,8 @@ sub SetNegativeKeywordsToAdGroups {
         request => {
             name => 'SetNegativeKeywordsToAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroupNegativeKeywords', type => 'ArrayOfAdGroupNegativeKeywords', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupNegativeKeywords', type => 'ArrayOfAdGroupNegativeKeywords', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2440,8 +2510,8 @@ sub SetNegativeKeywordsToCampaigns {
         request => {
             name => 'SetNegativeKeywordsToCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'CampaignNegativeKeywords', type => 'ArrayOfCampaignNegativeKeywords', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'CampaignNegativeKeywords', type => 'ArrayOfCampaignNegativeKeywords', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2475,8 +2545,8 @@ sub SetTargetToAdGroup {
         request => {
             name => 'SetTargetToAdGroupRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'TargetId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'TargetId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2510,8 +2580,8 @@ sub SetTargetToCampaign {
         request => {
             name => 'SetTargetToCampaignRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'TargetId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'TargetId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2545,8 +2615,8 @@ sub SetUsersToSegments {
         request => {
             name => 'SetUsersToSegmentsRequest',
             parameters => [
-                { name => 'SegmentId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'UserHash', type => 'ArrayOfbase64Binary', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'SegmentId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'UserHash', type => 'ArrayOfbase64Binary', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2579,7 +2649,7 @@ sub SubmitAdGroupForApproval {
         request => {
             name => 'SubmitAdGroupForApprovalRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2613,8 +2683,8 @@ sub UpdateAdGroups {
         request => {
             name => 'UpdateAdGroupsRequest',
             parameters => [
-                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'AdGroups', type => 'ArrayOfAdGroup', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroups', type => 'ArrayOfAdGroup', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2648,8 +2718,8 @@ sub UpdateAds {
         request => {
             name => 'UpdateAdsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Ads', type => 'ArrayOfAd', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Ads', type => 'ArrayOfAd', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2683,8 +2753,8 @@ sub UpdateBehavioralBids {
         request => {
             name => 'UpdateBehavioralBidsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'BehavioralBids', type => 'ArrayOfBehavioralBid', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'BehavioralBids', type => 'ArrayOfBehavioralBid', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2717,7 +2787,7 @@ sub UpdateBusinesses {
         request => {
             name => 'UpdateBusinessesRequest',
             parameters => [
-                { name => 'Businesses', type => 'ArrayOfBusiness', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Businesses', type => 'ArrayOfBusiness', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2751,8 +2821,8 @@ sub UpdateCampaigns {
         request => {
             name => 'UpdateCampaignsRequest',
             parameters => [
-                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Campaigns', type => 'ArrayOfCampaign', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Campaigns', type => 'ArrayOfCampaign', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2786,8 +2856,8 @@ sub UpdateKeywords {
         request => {
             name => 'UpdateKeywordsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Keywords', type => 'ArrayOfKeyword', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Keywords', type => 'ArrayOfKeyword', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2821,8 +2891,8 @@ sub UpdateSitePlacements {
         request => {
             name => 'UpdateSitePlacementsRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'SitePlacements', type => 'ArrayOfSitePlacement', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'SitePlacements', type => 'ArrayOfSitePlacement', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2856,8 +2926,8 @@ sub UpdateTarget {
         request => {
             name => 'UpdateTargetRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v6' },
-                { name => 'Target', type => 'Target', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Target', type => 'Target', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2890,7 +2960,7 @@ sub UpdateTargetsInLibrary {
         request => {
             name => 'UpdateTargetsInLibraryRequest',
             parameters => [
-                { name => 'Targets', type => 'ArrayOfTarget', namespace => 'https://adcenter.microsoft.com/v6' }
+                { name => 'Targets', type => 'ArrayOfTarget', namespace => 'https://adcenter.microsoft.com/v7' }
             ]
         },
         response => {
@@ -2901,31 +2971,33 @@ sub UpdateTargetsInLibrary {
 }
 
 our %_simple_types = (
-    AdDistribution => 'https://adcenter.microsoft.com/v6',
-    AdEditorialStatus => 'https://adcenter.microsoft.com/v6',
-    AdGroupStatus => 'https://adcenter.microsoft.com/v6',
-    AdStatus => 'https://adcenter.microsoft.com/v6',
-    AdType => 'https://adcenter.microsoft.com/v6',
-    AgeRange => 'https://adcenter.microsoft.com/v6',
-    BehavioralBidStatus => 'https://adcenter.microsoft.com/v6',
-    BiddingModel => 'https://adcenter.microsoft.com/v6',
-    BudgetLimitType => 'https://adcenter.microsoft.com/v6',
-    BusinessGeoCodeStatus => 'https://adcenter.microsoft.com/v6',
-    BusinessStatus => 'https://adcenter.microsoft.com/v6',
-    CampaignStatus => 'https://adcenter.microsoft.com/v6',
-    CashBackStatus => 'https://adcenter.microsoft.com/v6',
-    Day => 'https://adcenter.microsoft.com/v6',
-    GenderType => 'https://adcenter.microsoft.com/v6',
-    HourRange => 'https://adcenter.microsoft.com/v6',
-    IncrementalBidPercentage => 'https://adcenter.microsoft.com/v6',
-    KeywordEditorialStatus => 'https://adcenter.microsoft.com/v6',
-    KeywordStatus => 'https://adcenter.microsoft.com/v6',
-    OverridePriority => 'https://adcenter.microsoft.com/v6',
-    PaymentType => 'https://adcenter.microsoft.com/v6',
-    PricingModel => 'https://adcenter.microsoft.com/v6',
-    QualityScore => 'https://adcenter.microsoft.com/v6',
-    SitePlacementStatus => 'https://adcenter.microsoft.com/v6',
-    StandardBusinessIcon => 'https://adcenter.microsoft.com/v6',
+    AdComponent => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+    AdDistribution => 'https://adcenter.microsoft.com/v7',
+    AdEditorialStatus => 'https://adcenter.microsoft.com/v7',
+    AdGroupStatus => 'https://adcenter.microsoft.com/v7',
+    AdStatus => 'https://adcenter.microsoft.com/v7',
+    AdType => 'https://adcenter.microsoft.com/v7',
+    AgeRange => 'https://adcenter.microsoft.com/v7',
+    BehavioralBidStatus => 'https://adcenter.microsoft.com/v7',
+    BiddingModel => 'https://adcenter.microsoft.com/v7',
+    BudgetLimitType => 'https://adcenter.microsoft.com/v7',
+    BusinessGeoCodeStatus => 'https://adcenter.microsoft.com/v7',
+    BusinessStatus => 'https://adcenter.microsoft.com/v7',
+    CampaignStatus => 'https://adcenter.microsoft.com/v7',
+    CashBackStatus => 'https://adcenter.microsoft.com/v7',
+    Day => 'https://adcenter.microsoft.com/v7',
+    DeviceType => 'https://adcenter.microsoft.com/v7',
+    GenderType => 'https://adcenter.microsoft.com/v7',
+    HourRange => 'https://adcenter.microsoft.com/v7',
+    IncrementalBidPercentage => 'https://adcenter.microsoft.com/v7',
+    KeywordEditorialStatus => 'https://adcenter.microsoft.com/v7',
+    KeywordStatus => 'https://adcenter.microsoft.com/v7',
+    Language => 'https://adcenter.microsoft.com/v7',
+    OverridePriority => 'https://adcenter.microsoft.com/v7',
+    PaymentType => 'https://adcenter.microsoft.com/v7',
+    PricingModel => 'https://adcenter.microsoft.com/v7',
+    SitePlacementStatus => 'https://adcenter.microsoft.com/v7',
+    StandardBusinessIcon => 'https://adcenter.microsoft.com/v7',
     char => 'http://schemas.microsoft.com/2003/10/Serialization/',
     duration => 'http://schemas.microsoft.com/2003/10/Serialization/',
     guid => 'http://schemas.microsoft.com/2003/10/Serialization/',
@@ -2991,11 +3063,15 @@ our @_complex_types = (qw/
     DeleteTargetResponse
     DeleteTargetsFromLibraryResponse
     DeleteUsersFromSegmentResponse
+    DeviceTarget
     Dimension
     EditorialApiFaultDetail
     EditorialError
+    EditorialReason
+    EditorialReasonCollection
     GenderTarget
     GenderTargetBid
+    GetAdEditorialReasonsByIdsResponse
     GetAdGroupsByCampaignIdResponse
     GetAdGroupsByIdsResponse
     GetAdGroupsInfoByCampaignIdResponse
@@ -3010,13 +3086,14 @@ our @_complex_types = (qw/
     GetCampaignsByIdsResponse
     GetCampaignsInfoByAccountIdResponse
     GetCustomSegmentsResponse
+    GetKeywordEditorialReasonsByIdsResponse
     GetKeywordEstimatesByBidsResponse
-    GetKeywordQualityScoresByIdsResponse
     GetKeywordsByAdGroupIdResponse
     GetKeywordsByEditorialStatusResponse
     GetKeywordsByIdsResponse
     GetNegativeKeywordsByAdGroupIdsResponse
     GetNegativeKeywordsByCampaignIdsResponse
+    GetNormalizedStringsResponse
     GetPlacementDetailsForUrlsResponse
     GetSegmentsByIdsResponse
     GetSegmentsResponse
@@ -3034,8 +3111,6 @@ our @_complex_types = (qw/
     Keyword
     KeywordBid
     KeywordEstimate
-    KeywordQuality
-    KeywordQualityDetail
     LocationTarget
     MatchTypeEstimate
     MediaType
@@ -3091,7 +3166,7 @@ sub _complex_types {
 
 our %_array_types = (
     ArrayOfAd => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Ad',
         element_type => 'Ad'
     },
@@ -3101,192 +3176,202 @@ our %_array_types = (
         element_type => 'AdApiError'
     },
     ArrayOfAdGroup => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AdGroup',
         element_type => 'AdGroup'
     },
     ArrayOfAdGroupInfo => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AdGroupInfo',
         element_type => 'AdGroupInfo'
     },
     ArrayOfAdGroupNegativeKeywords => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AdGroupNegativeKeywords',
         element_type => 'AdGroupNegativeKeywords'
     },
     ArrayOfAgeTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AgeTargetBid',
         element_type => 'AgeTargetBid'
     },
     ArrayOfArrayOfPlacementDetail => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'ArrayOfPlacementDetail',
         element_type => 'ArrayOfPlacementDetail'
     },
     ArrayOfBatchError => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'BatchError',
         element_type => 'BatchError'
     },
     ArrayOfBehavioralBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'BehavioralBid',
         element_type => 'BehavioralBid'
     },
     ArrayOfBehavioralTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'BehavioralTargetBid',
         element_type => 'BehavioralTargetBid'
     },
     ArrayOfBusiness => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Business',
         element_type => 'Business'
     },
     ArrayOfBusinessInfo => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'BusinessInfo',
         element_type => 'BusinessInfo'
     },
     ArrayOfBusinessTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'BusinessTargetBid',
         element_type => 'BusinessTargetBid'
     },
     ArrayOfCampaign => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Campaign',
         element_type => 'Campaign'
     },
     ArrayOfCampaignInfo => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'CampaignInfo',
         element_type => 'CampaignInfo'
     },
     ArrayOfCampaignNegativeKeywords => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'CampaignNegativeKeywords',
         element_type => 'CampaignNegativeKeywords'
     },
     ArrayOfCityTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'CityTargetBid',
         element_type => 'CityTargetBid'
     },
     ArrayOfCountryTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'CountryTargetBid',
         element_type => 'CountryTargetBid'
     },
     ArrayOfDayTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'DayTargetBid',
         element_type => 'DayTargetBid'
     },
+    ArrayOfDeviceType => {
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
+        element_name => 'DeviceType',
+        element_type => 'DeviceType'
+    },
     ArrayOfDimension => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Dimension',
         element_type => 'Dimension'
     },
     ArrayOfEditorialError => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'EditorialError',
         element_type => 'EditorialError'
     },
+    ArrayOfEditorialReason => {
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
+        element_name => 'EditorialReason',
+        element_type => 'EditorialReason'
+    },
+    ArrayOfEditorialReasonCollection => {
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
+        element_name => 'EditorialReasonCollection',
+        element_type => 'EditorialReasonCollection'
+    },
     ArrayOfGenderTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'GenderTargetBid',
         element_type => 'GenderTargetBid'
     },
     ArrayOfHourTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'HourTargetBid',
         element_type => 'HourTargetBid'
     },
     ArrayOfHoursOfOperation => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'HoursOfOperation',
         element_type => 'HoursOfOperation'
     },
     ArrayOfKeyword => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Keyword',
         element_type => 'Keyword'
     },
     ArrayOfKeywordBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'KeywordBid',
         element_type => 'KeywordBid'
     },
     ArrayOfKeywordEstimate => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'KeywordEstimate',
         element_type => 'KeywordEstimate'
     },
-    ArrayOfKeywordQuality => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
-        element_name => 'KeywordQuality',
-        element_type => 'KeywordQuality'
-    },
     ArrayOfMediaType => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'MediaType',
         element_type => 'MediaType'
     },
     ArrayOfMetroAreaTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'MetroAreaTargetBid',
         element_type => 'MetroAreaTargetBid'
     },
     ArrayOfOperationError => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'OperationError',
         element_type => 'OperationError'
     },
     ArrayOfPaymentType => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'PaymentType',
         element_type => 'PaymentType'
     },
     ArrayOfPlacementDetail => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'PlacementDetail',
         element_type => 'PlacementDetail'
     },
     ArrayOfRadiusTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'RadiusTargetBid',
         element_type => 'RadiusTargetBid'
     },
     ArrayOfSegment => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Segment',
         element_type => 'Segment'
     },
     ArrayOfSegmentTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'SegmentTargetBid',
         element_type => 'SegmentTargetBid'
     },
     ArrayOfSitePlacement => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'SitePlacement',
         element_type => 'SitePlacement'
     },
     ArrayOfStateTargetBid => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'StateTargetBid',
         element_type => 'StateTargetBid'
     },
     ArrayOfTarget => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Target',
         element_type => 'Target'
     },
     ArrayOfTargetInfo => {
-        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'TargetInfo',
         element_type => 'TargetInfo'
     },

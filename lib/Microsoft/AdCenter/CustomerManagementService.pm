@@ -15,20 +15,16 @@ Microsoft::AdCenter::CustomerManagementService - Service client for Microsoft Ad
     use Microsoft::AdCenter::CustomerManagementService;
 
     my $service_client = Microsoft::AdCenter::CustomerManagementService->new
-        ->Password("password");
-        ->UserAccessKey("user access key")
-        ->UserName("user name")
+        ->ApplicationToken("application token")
+        ->DeveloperToken("developer token")
+        ->Password("password")
+        ->UserName("user name");
 
-    my $response = $service_client->CustomerSignUp(
-        apiFlags => ...
-        user => ...
-        customer => ...
-        account => ...
-        consentToTermsAndConditions => ...
-        couponCode => ...
+    my $response = $service_client->AddAccount(
+        Account => ...
     );
 
-See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for detailed documentation for this service.
+See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for detailed documentation for this service.
 
 =head1 METHODS
 
@@ -36,26 +32,34 @@ See L<http://msdn.microsoft.com/en-US/library/ee730327%28v=MSADS.60%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx
+Default value: https://sharedservices.adcenterapi.microsoft.com/Api/CustomerManagement/v7/CustomerManagementService.svc
+
+=head2 ApplicationToken
+
+Gets/sets ApplicationToken (string) in the request header
+
+=head2 DeveloperToken
+
+Gets/sets DeveloperToken (string) in the request header
 
 =head2 Password
 
 Gets/sets Password (string) in the request header
 
-=head2 UserAccessKey
-
-Gets/sets UserAccessKey (string) in the request header
-
 =head2 UserName
 
 Gets/sets UserName (string) in the request header
+
+=head2 TrackingId
+
+Gets TrackingId (string) in the response header
 
 =cut
 
 use base qw/Microsoft::AdCenter::Service/;
 
 sub _service_name {
-    return 'CustomerManagement';
+    return 'CustomerManagementService';
 }
 
 sub _class_name {
@@ -63,24 +67,28 @@ sub _class_name {
 }
 
 sub _namespace_uri {
-    return 'http://adcenter.microsoft.com/syncapis';
+    return 'https://adcenter.microsoft.com/api/customermanagement';
 }
 
 sub _default_location {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx';
+    return 'https://sharedservices.adcenterapi.microsoft.com/Api/CustomerManagement/v7/CustomerManagementService.svc';
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/CustomerManagement/CustomerManagement.asmx?wsdl';
+    return 'https://sharedservices.adcenterapi.microsoft.com/Api/CustomerManagement/v7/CustomerManagementService.svc?wsdl';
 }
 
 our $_request_headers = [
-    { name => 'ApiUserAuthHeader', type => 'ApiUserAuthHeader', namespace => 'http://adcenter.microsoft.com/syncapis' }
+    { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+    { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement/Entities' },
+    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement/Entities' }
 ];
 
 our $_request_headers_expanded = {
+    ApplicationToken => 'string',
+    DeveloperToken => 'string',
     Password => 'string',
-    UserAccessKey => 'string',
     UserName => 'string'
 };
 
@@ -93,9 +101,11 @@ sub _request_headers_expanded {
 }
 
 our $_response_headers = [
+    { name => 'TrackingId', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
 ];
 
 our $_response_headers_expanded = {
+    TrackingId => 'string'
 };
 
 sub _response_headers {
@@ -106,192 +116,242 @@ sub _response_headers_expanded {
     return $_response_headers_expanded;
 }
 
-=head2 CustomerSignUp
+=head2 AddAccount
 
 =over
 
 =item Parameters:
 
-    apiFlags (int)
-    user (AdCenterUser)
-    customer (AdCenterCustomer)
-    account (AdCenterAccount)
-    consentToTermsAndConditions (boolean)
-    couponCode (string)
+    Account (Account)
 
 =item Returns:
 
-    CustomerSignUpResponse
+    AddAccountResponse
 
 =back
 
 =cut
 
-sub CustomerSignUp {
+sub AddAccount {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/CustomerSignUp',
+        soap_action => 'AddAccount',
         request => {
-            name => 'CustomerSignUp',
+            name => 'AddAccountRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'user', type => 'AdCenterUser', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'customer', type => 'AdCenterCustomer', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'account', type => 'AdCenterAccount', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'consentToTermsAndConditions', type => 'boolean', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'couponCode', type => 'string', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'Account', type => 'Account', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'CustomerSignUpResponse'
+            name => 'AddAccountResponse'
         },
         parameters => \%args
     );
 }
 
-=head2 GetAccountBillingInfo
+=head2 AddUser
 
 =over
 
 =item Parameters:
 
-    apiFlags (int)
-    accountId (int)
-    customerId (int)
-    userId (int)
-    activityDays (int)
+    User (User)
+    Role (UserRole)
+    AccountIds (ArrayOflong)
 
 =item Returns:
 
-    GetAccountBillingInfoResponse
+    AddUserResponse
 
 =back
 
 =cut
 
-sub GetAccountBillingInfo {
+sub AddUser {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetAccountBillingInfo',
+        soap_action => 'AddUser',
         request => {
-            name => 'GetAccountBillingInfo',
+            name => 'AddUserRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'accountId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'customerId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'userId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'activityDays', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'User', type => 'User', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'Role', type => 'UserRole', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'AccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'GetAccountBillingInfoResponse'
+            name => 'AddUserResponse'
         },
         parameters => \%args
     );
 }
 
-=head2 GetAccounts
+=head2 DeleteAccount
 
 =over
 
 =item Parameters:
 
-    APIFlags (int)
+    AccountId (long)
+    TimeStamp (base64Binary)
 
 =item Returns:
 
-    GetAccountsResponse
+    DeleteAccountResponse
 
 =back
 
 =cut
 
-sub GetAccounts {
+sub DeleteAccount {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetAccounts',
+        soap_action => 'DeleteAccount',
         request => {
-            name => 'GetAccounts',
+            name => 'DeleteAccountRequest',
             parameters => [
-                { name => 'APIFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'TimeStamp', type => 'base64Binary', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'GetAccountsResponse'
+            name => 'DeleteAccountResponse'
         },
         parameters => \%args
     );
 }
 
-=head2 GetAccountsByIds
+=head2 DeleteCustomer
 
 =over
 
 =item Parameters:
 
-    APIFlags (int)
-    accountIds (ArrayOfInt)
+    CustomerId (long)
+    TimeStamp (base64Binary)
 
 =item Returns:
 
-    GetAccountsByIdsResponse
+    DeleteCustomerResponse
 
 =back
 
 =cut
 
-sub GetAccountsByIds {
+sub DeleteCustomer {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetAccountsByIds',
+        soap_action => 'DeleteCustomer',
         request => {
-            name => 'GetAccountsByIds',
+            name => 'DeleteCustomerRequest',
             parameters => [
-                { name => 'APIFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'accountIds', type => 'ArrayOfInt', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'TimeStamp', type => 'base64Binary', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'GetAccountsByIdsResponse'
+            name => 'DeleteCustomerResponse'
         },
         parameters => \%args
     );
 }
 
-=head2 GetCardInvoice
+=head2 DeleteUser
 
 =over
 
 =item Parameters:
 
-    apiFlags (int)
-    customerId (int)
-    userId (int)
-    handle (AdCenterCardInvoiceHandle)
+    UserId (long)
+    TimeStamp (base64Binary)
 
 =item Returns:
 
-    GetCardInvoiceResponse
+    DeleteUserResponse
 
 =back
 
 =cut
 
-sub GetCardInvoice {
+sub DeleteUser {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetCardInvoice',
+        soap_action => 'DeleteUser',
         request => {
-            name => 'GetCardInvoice',
+            name => 'DeleteUserRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'customerId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'userId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'handle', type => 'AdCenterCardInvoiceHandle', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'UserId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'TimeStamp', type => 'base64Binary', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'GetCardInvoiceResponse'
+            name => 'DeleteUserResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAccount
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+
+=item Returns:
+
+    GetAccountResponse
+
+=back
+
+=cut
+
+sub GetAccount {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAccount',
+        request => {
+            name => 'GetAccountRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetAccountResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAccountsInfo
+
+=over
+
+=item Parameters:
+
+    CustomerId (long)
+
+=item Returns:
+
+    GetAccountsInfoResponse
+
+=back
+
+=cut
+
+sub GetAccountsInfo {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAccountsInfo',
+        request => {
+            name => 'GetAccountsInfoRequest',
+            parameters => [
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetAccountsInfoResponse'
         },
         parameters => \%args
     );
@@ -303,8 +363,7 @@ sub GetCardInvoice {
 
 =item Parameters:
 
-    apiFlags (int)
-    customerId (int)
+    CustomerId (long)
 
 =item Returns:
 
@@ -317,12 +376,11 @@ sub GetCardInvoice {
 sub GetCustomer {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetCustomer',
+        soap_action => 'GetCustomer',
         request => {
-            name => 'GetCustomer',
+            name => 'GetCustomerRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'customerId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
@@ -332,36 +390,213 @@ sub GetCustomer {
     );
 }
 
-=head2 GetPaymentInstrument
+=head2 GetCustomerPilotFeature
 
 =over
 
 =item Parameters:
 
-    apiFlags (int)
-    accountId (int)
+    CustomerId (long)
 
 =item Returns:
 
-    GetPaymentInstrumentResponse
+    GetCustomerPilotFeatureResponse
 
 =back
 
 =cut
 
-sub GetPaymentInstrument {
+sub GetCustomerPilotFeature {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/GetPaymentInstrument',
+        soap_action => 'GetCustomerPilotFeature',
         request => {
-            name => 'GetPaymentInstrument',
+            name => 'GetCustomerPilotFeatureRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'accountId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'GetPaymentInstrumentResponse'
+            name => 'GetCustomerPilotFeatureResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetCustomersInfo
+
+=over
+
+=item Parameters:
+
+    CustomerNameFilter (string)
+    TopN (int)
+    ApplicationScope (ApplicationType)
+
+=item Returns:
+
+    GetCustomersInfoResponse
+
+=back
+
+=cut
+
+sub GetCustomersInfo {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetCustomersInfo',
+        request => {
+            name => 'GetCustomersInfoRequest',
+            parameters => [
+                { name => 'CustomerNameFilter', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'TopN', type => 'int', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ApplicationScope', type => 'ApplicationType', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetCustomersInfoResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetUser
+
+=over
+
+=item Parameters:
+
+    UserId (long)
+
+=item Returns:
+
+    GetUserResponse
+
+=back
+
+=cut
+
+sub GetUser {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetUser',
+        request => {
+            name => 'GetUserRequest',
+            parameters => [
+                { name => 'UserId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetUserResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetUsersInfo
+
+=over
+
+=item Parameters:
+
+    CustomerId (long)
+    StatusFilter (UserStatus)
+
+=item Returns:
+
+    GetUsersInfoResponse
+
+=back
+
+=cut
+
+sub GetUsersInfo {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetUsersInfo',
+        request => {
+            name => 'GetUsersInfoRequest',
+            parameters => [
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'StatusFilter', type => 'UserStatus', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetUsersInfoResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SignupCustomer
+
+=over
+
+=item Parameters:
+
+    Customer (Customer)
+    User (User)
+    Account (Account)
+    ParentCustomerId (long)
+    ApplicationScope (ApplicationType)
+
+=item Returns:
+
+    SignupCustomerResponse
+
+=back
+
+=cut
+
+sub SignupCustomer {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SignupCustomer',
+        request => {
+            name => 'SignupCustomerRequest',
+            parameters => [
+                { name => 'Customer', type => 'Customer', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'User', type => 'User', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'Account', type => 'Account', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ParentCustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ApplicationScope', type => 'ApplicationType', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'SignupCustomerResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 UpdateAccount
+
+=over
+
+=item Parameters:
+
+    Account (Account)
+
+=item Returns:
+
+    UpdateAccountResponse
+
+=back
+
+=cut
+
+sub UpdateAccount {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpdateAccount',
+        request => {
+            name => 'UpdateAccountRequest',
+            parameters => [
+                { name => 'Account', type => 'Account', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'UpdateAccountResponse'
         },
         parameters => \%args
     );
@@ -373,8 +608,7 @@ sub GetPaymentInstrument {
 
 =item Parameters:
 
-    apiFlags (int)
-    customer (AdCenterCustomer)
+    Customer (Customer)
 
 =item Returns:
 
@@ -387,12 +621,11 @@ sub GetPaymentInstrument {
 sub UpdateCustomer {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/UpdateCustomer',
+        soap_action => 'UpdateCustomer',
         request => {
-            name => 'UpdateCustomer',
+            name => 'UpdateCustomerRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'customer', type => 'AdCenterCustomer', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'Customer', type => 'Customer', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
@@ -402,58 +635,108 @@ sub UpdateCustomer {
     );
 }
 
-=head2 UpdatePaymentInstrument
+=head2 UpdateUser
 
 =over
 
 =item Parameters:
 
-    apiFlags (int)
-    accountId (int)
-    creditCard (AdCenterCreditCard)
+    User (User)
 
 =item Returns:
 
-    UpdatePaymentInstrumentResponse
+    UpdateUserResponse
 
 =back
 
 =cut
 
-sub UpdatePaymentInstrument {
+sub UpdateUser {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'http://adcenter.microsoft.com/syncapis/UpdatePaymentInstrument',
+        soap_action => 'UpdateUser',
         request => {
-            name => 'UpdatePaymentInstrument',
+            name => 'UpdateUserRequest',
             parameters => [
-                { name => 'apiFlags', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'accountId', type => 'int', namespace => 'http://adcenter.microsoft.com/syncapis' },
-                { name => 'creditCard', type => 'AdCenterCreditCard', namespace => 'http://adcenter.microsoft.com/syncapis' }
+                { name => 'User', type => 'User', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
             ]
         },
         response => {
-            name => 'UpdatePaymentInstrumentResponse'
+            name => 'UpdateUserResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 UpdateUserRoles
+
+=over
+
+=item Parameters:
+
+    CustomerId (long)
+    UserId (long)
+    NewRoleId (int)
+    NewAccountIds (ArrayOflong)
+    NewCustomerIds (ArrayOflong)
+    DeleteRoleId (int)
+    DeleteAccountIds (ArrayOflong)
+    DeleteCustomerIds (ArrayOflong)
+
+=item Returns:
+
+    UpdateUserRolesResponse
+
+=back
+
+=cut
+
+sub UpdateUserRoles {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpdateUserRoles',
+        request => {
+            name => 'UpdateUserRolesRequest',
+            parameters => [
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'UserId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'NewRoleId', type => 'int', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'NewAccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'NewCustomerIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'DeleteRoleId', type => 'int', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'DeleteAccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'DeleteCustomerIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'UpdateUserRolesResponse'
         },
         parameters => \%args
     );
 }
 
 our %_simple_types = (
-    AccountStatus => 'http://adcenter.microsoft.com/syncapis',
-    CountryCode => 'http://adcenter.microsoft.com/syncapis',
-    CreditCardType => 'http://adcenter.microsoft.com/syncapis',
-    Currency => 'http://adcenter.microsoft.com/syncapis',
-    CurrencyType => 'http://adcenter.microsoft.com/syncapis',
-    EmailFormat => 'http://adcenter.microsoft.com/syncapis',
-    ErrorLevel => 'http://adcenter.microsoft.com/syncapis',
-    Industry => 'http://adcenter.microsoft.com/syncapis',
-    LCID => 'http://adcenter.microsoft.com/syncapis',
-    LanguageType => 'http://adcenter.microsoft.com/syncapis',
-    Market => 'http://adcenter.microsoft.com/syncapis',
-    PaymentOption => 'http://adcenter.microsoft.com/syncapis',
-    ResultStatus => 'http://adcenter.microsoft.com/syncapis',
-    SecretQuestions => 'http://adcenter.microsoft.com/syncapis',
+    AccountFinancialStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    AccountLifeCycleStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    AccountType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    ApplicationType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    CurrencyType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    CustomerFinancialStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    CustomerLifeCycleStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    EmailFormat => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    Industry => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    LCID => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    LanguageType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    Market => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    PaymentMethodType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    SecretQuestion => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    ServiceLevel => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    TimeZoneType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    UserRole => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    UserStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    char => 'http://schemas.microsoft.com/2003/10/Serialization/',
+    duration => 'http://schemas.microsoft.com/2003/10/Serialization/',
+    guid => 'http://schemas.microsoft.com/2003/10/Serialization/',
 );
 
 sub _simple_types {
@@ -461,41 +744,39 @@ sub _simple_types {
 }
 
 our @_complex_types = (qw/
-    AdCenterAccount
-    AdCenterAddress
-    AdCenterCardBillingStatement
-    AdCenterCardBillingStatementEntry
-    AdCenterCardInvoice
-    AdCenterCardInvoiceEntry
-    AdCenterCardInvoiceHandle
-    AdCenterCardInvoiceHeader
-    AdCenterContactInfo
-    AdCenterCreditCard
-    AdCenterCustomer
-    AdCenterPaymentInstrument
-    AdCenterSap
-    AdCenterStatementEntry
-    AdCenterUser
-    ApiUserAuthHeader
-    CardInvoiceResponseMsg
-    CreditCardInfoUpdateResponseMsg
-    CustomerSignUpResponse
-    CustomerSignUpResponseMsg
-    CustomerUpdateResponseMsg
-    ErrorInfo
-    GetAccountBillingInfoResponse
-    GetAccountBillingInfoResponseMsg
-    GetAccountsByIdsResponse
-    GetAccountsResponse
-    GetCardInvoiceResponse
-    GetCreditCardInfoResponseMsg
+    Account
+    AccountInfo
+    AdApiError
+    AdApiFaultDetail
+    AddAccountResponse
+    AddUserResponse
+    Address
+    AdvertiserAccount
+    ApiFault
+    ApplicationFault
+    ContactInfo
+    Customer
+    CustomerInfo
+    DeleteAccountResponse
+    DeleteCustomerResponse
+    DeleteUserResponse
+    GetAccountResponse
+    GetAccountsInfoResponse
+    GetCustomerPilotFeatureResponse
     GetCustomerResponse
-    GetCustomerResponseMsg
-    GetPaymentInstrumentResponse
-    OperationResult
-    ResponseMsg
+    GetCustomersInfoResponse
+    GetUserResponse
+    GetUsersInfoResponse
+    OperationError
+    PersonName
+    PublisherAccount
+    SignupCustomerResponse
+    UpdateAccountResponse
     UpdateCustomerResponse
-    UpdatePaymentInstrumentResponse
+    UpdateUserResponse
+    UpdateUserRolesResponse
+    User
+    UserInfo
 /);
 
 sub _complex_types {
@@ -503,40 +784,40 @@ sub _complex_types {
 }
 
 our %_array_types = (
-    ArrayOfAdCenterAccount => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'AdCenterAccount',
-        element_type => 'AdCenterAccount'
+    ArrayOfAccountInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'AccountInfo',
+        element_type => 'AccountInfo'
     },
-    ArrayOfAdCenterCardBillingStatementEntry => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'AdCenterCardBillingStatementEntry',
-        element_type => 'AdCenterCardBillingStatementEntry'
+    ArrayOfAdApiError => {
+        namespace_uri => 'https://adapi.microsoft.com',
+        element_name => 'AdApiError',
+        element_type => 'AdApiError'
     },
-    ArrayOfAdCenterCardInvoiceEntry => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'AdCenterCardInvoiceEntry',
-        element_type => 'AdCenterCardInvoiceEntry'
+    ArrayOfCustomerInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'CustomerInfo',
+        element_type => 'CustomerInfo'
     },
-    ArrayOfAdCenterCreditCard => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'AdCenterCreditCard',
-        element_type => 'AdCenterCreditCard'
+    ArrayOfOperationError => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Exception',
+        element_name => 'OperationError',
+        element_type => 'OperationError'
     },
-    ArrayOfErrorInfo => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'ErrorInfo',
-        element_type => 'ErrorInfo'
+    ArrayOfUserInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'UserInfo',
+        element_type => 'UserInfo'
     },
-    ArrayOfInt => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
+    ArrayOfint => {
+        namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
         element_name => 'int',
         element_type => 'int'
     },
-    ArrayOfString => {
-        namespace_uri => 'http://adcenter.microsoft.com/syncapis',
-        element_name => 'string',
-        element_type => 'string'
+    ArrayOflong => {
+        namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
+        element_name => 'long',
+        element_type => 'long'
     },
 );
 
@@ -546,9 +827,11 @@ sub _array_types {
 
 __PACKAGE__->mk_accessors(qw/
     EndPoint
+    ApplicationToken
+    DeveloperToken
     Password
-    UserAccessKey
     UserName
+    TrackingId
 /);
 
 1;
