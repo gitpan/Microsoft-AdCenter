@@ -115,7 +115,7 @@ sub _request_headers_expanded {
 }
 
 our $_response_headers = [
-    { name => 'TrackingId', type => 'string', namespace => 'https://adapi.microsoft.com' }
+    { name => 'TrackingId', type => 'string', namespace => 'https://adcenter.microsoft.com/v6' }
 ];
 
 our $_response_headers_expanded = {

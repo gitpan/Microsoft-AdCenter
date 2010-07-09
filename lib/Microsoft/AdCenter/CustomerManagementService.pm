@@ -81,8 +81,8 @@ sub _wsdl {
 our $_request_headers = [
     { name => 'ApplicationToken', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
     { name => 'DeveloperToken', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
-    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement/Entities' },
-    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement/Entities' }
+    { name => 'Password', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+    { name => 'UserName', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
 ];
 
 our $_request_headers_expanded = {

@@ -154,18 +154,17 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 =head2 Example 2 - Get accounts
 
     use Microsoft::AdCenter::CustomerManagementService;
-    use Microsoft::AdCenter::CustomerManagementService::ApiUserAuthHeader;
 
     # Create the service client
     my $customer_mgmt_service = Microsoft::AdCenter::CustomerManagementService->new(
-        EndPoint      => "https://sandboxapi.adcenter.microsoft.com/Api/Advertiser/v7/CustomerManagement/CustomerManagement.asmx",
-        UserAccessKey => "your user access key",
-        UserName      => "your user name",
-        Password      => "your password"
+        UserName         => "your_user_name",
+        Password         => "your_password",
+        ApplicationToken => "your_application_token",
+        DeveloperToken   => "your_developer_token"
     );
 
     # Get accounts
-    my $response = $customer_mgmt_service->GetAccounts(APIFlags => 0);
+    my $response = $customer_mgmt_service->GetAccountsInfo(CustomerId => "your_customer_id");
 
     # Check the response
     foreach my $account (@{$response->GetAccountsResult}) {
