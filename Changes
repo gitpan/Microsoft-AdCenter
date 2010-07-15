@@ -9,3 +9,5 @@ Revision history for Microsoft-AdCenter
         Ticket 58425 - _deserialize_complex_type still called when response object body is empty
         Ticket 58455 - Empty Bid elements are not returned from _serialize_argument
 
+7.01    16 July 2010
+        Updates for Microsoft adCenter API Version 7
