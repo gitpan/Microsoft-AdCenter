@@ -12,9 +12,10 @@ use Test::More;
 use Microsoft::AdCenter::ReportingService;
 use Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter;
 
-sub test_can_create_ad_group_performance_report_filter_and_set_all_fields : Test(4) {
+sub test_can_create_ad_group_performance_report_filter_and_set_all_fields : Test(5) {
     my $ad_group_performance_report_filter = Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter->new
         ->AdDistribution('ad distribution')
+        ->DeviceType('device type')
         ->LanguageAndRegion('language and region')
         ->Status('status')
     ;
@@ -22,6 +23,7 @@ sub test_can_create_ad_group_performance_report_filter_and_set_all_fields : Test
     ok($ad_group_performance_report_filter);
 
     is($ad_group_performance_report_filter->AdDistribution, 'ad distribution', 'can get ad distribution');
+    is($ad_group_performance_report_filter->DeviceType, 'device type', 'can get device type');
     is($ad_group_performance_report_filter->LanguageAndRegion, 'language and region', 'can get language and region');
     is($ad_group_performance_report_filter->Status, 'status', 'can get status');
 };

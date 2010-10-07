@@ -1,4 +1,4 @@
-package Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter;
+package Microsoft::AdCenter::ReportingService::SegmentationReportFilter;
 # Copyright (C) 2010 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
@@ -10,12 +10,12 @@ use base qw/Microsoft::AdCenter::ComplexType/;
 
 =head1 NAME
 
-Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter - Represents "AdGroupPerformanceReportFilter" in Microsoft AdCenter Reporting Service.
+Microsoft::AdCenter::ReportingService::SegmentationReportFilter - Represents "SegmentationReportFilter" in Microsoft AdCenter Reporting Service.
 
 =cut
 
 sub _type_name {
-    return 'AdGroupPerformanceReportFilter';
+    return 'SegmentationReportFilter';
 }
 
 sub _namespace_uri {
@@ -23,10 +23,11 @@ sub _namespace_uri {
 }
 
 our @_attributes = (qw/
-    AdDistribution
-    DeviceType
-    LanguageAndRegion
-    Status
+    AgeGroup
+    Country
+    Gender
+    GoalIds
+    Keywords
 /);
 
 sub _attributes {
@@ -35,10 +36,11 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdDistribution => 'AdDistributionReportFilter',
-    DeviceType => 'DeviceTypeReportFilter',
-    LanguageAndRegion => 'LanguageAndRegionReportFilter',
-    Status => 'AdGroupStatusReportFilter',
+    AgeGroup => 'AgeGroupReportFilter',
+    Country => 'CountryReportFilter',
+    Gender => 'GenderReportFilter',
+    GoalIds => 'ArrayOflong',
+    Keywords => 'ArrayOfstring',
 );
 
 sub _attribute_type {
@@ -65,21 +67,25 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 
 Creates a new instance
 
-=head2 AdDistribution
+=head2 AgeGroup
 
-Gets/sets AdDistribution (AdDistributionReportFilter)
+Gets/sets AgeGroup (AgeGroupReportFilter)
 
-=head2 DeviceType
+=head2 Country
 
-Gets/sets DeviceType (DeviceTypeReportFilter)
+Gets/sets Country (CountryReportFilter)
 
-=head2 LanguageAndRegion
+=head2 Gender
 
-Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+Gets/sets Gender (GenderReportFilter)
 
-=head2 Status
+=head2 GoalIds
 
-Gets/sets Status (AdGroupStatusReportFilter)
+Gets/sets GoalIds (ArrayOflong)
+
+=head2 Keywords
+
+Gets/sets Keywords (ArrayOfstring)
 
 =cut
 

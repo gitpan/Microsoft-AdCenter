@@ -1,4 +1,4 @@
-package Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter;
+package Microsoft::AdCenter::ReportingService::TacticChannelReportFilter;
 # Copyright (C) 2010 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
@@ -10,12 +10,12 @@ use base qw/Microsoft::AdCenter::ComplexType/;
 
 =head1 NAME
 
-Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter - Represents "AdGroupPerformanceReportFilter" in Microsoft AdCenter Reporting Service.
+Microsoft::AdCenter::ReportingService::TacticChannelReportFilter - Represents "TacticChannelReportFilter" in Microsoft AdCenter Reporting Service.
 
 =cut
 
 sub _type_name {
-    return 'AdGroupPerformanceReportFilter';
+    return 'TacticChannelReportFilter';
 }
 
 sub _namespace_uri {
@@ -23,10 +23,10 @@ sub _namespace_uri {
 }
 
 our @_attributes = (qw/
-    AdDistribution
-    DeviceType
-    LanguageAndRegion
-    Status
+    ChannelIds
+    TacticIds
+    ThirdPartyAdGroupIds
+    ThirdPartyCampaignIds
 /);
 
 sub _attributes {
@@ -35,10 +35,10 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdDistribution => 'AdDistributionReportFilter',
-    DeviceType => 'DeviceTypeReportFilter',
-    LanguageAndRegion => 'LanguageAndRegionReportFilter',
-    Status => 'AdGroupStatusReportFilter',
+    ChannelIds => 'ArrayOflong',
+    TacticIds => 'ArrayOflong',
+    ThirdPartyAdGroupIds => 'ArrayOflong',
+    ThirdPartyCampaignIds => 'ArrayOflong',
 );
 
 sub _attribute_type {
@@ -65,21 +65,21 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 
 Creates a new instance
 
-=head2 AdDistribution
+=head2 ChannelIds
 
-Gets/sets AdDistribution (AdDistributionReportFilter)
+Gets/sets ChannelIds (ArrayOflong)
 
-=head2 DeviceType
+=head2 TacticIds
 
-Gets/sets DeviceType (DeviceTypeReportFilter)
+Gets/sets TacticIds (ArrayOflong)
 
-=head2 LanguageAndRegion
+=head2 ThirdPartyAdGroupIds
 
-Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+Gets/sets ThirdPartyAdGroupIds (ArrayOflong)
 
-=head2 Status
+=head2 ThirdPartyCampaignIds
 
-Gets/sets Status (AdGroupStatusReportFilter)
+Gets/sets ThirdPartyCampaignIds (ArrayOflong)
 
 =cut
 

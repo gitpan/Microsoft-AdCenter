@@ -1,4 +1,4 @@
-package Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter;
+package Microsoft::AdCenter::ReportingService::ConversionPerformanceReportFilter;
 # Copyright (C) 2010 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
@@ -10,12 +10,12 @@ use base qw/Microsoft::AdCenter::ComplexType/;
 
 =head1 NAME
 
-Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter - Represents "AdGroupPerformanceReportFilter" in Microsoft AdCenter Reporting Service.
+Microsoft::AdCenter::ReportingService::ConversionPerformanceReportFilter - Represents "ConversionPerformanceReportFilter" in Microsoft AdCenter Reporting Service.
 
 =cut
 
 sub _type_name {
-    return 'AdGroupPerformanceReportFilter';
+    return 'ConversionPerformanceReportFilter';
 }
 
 sub _namespace_uri {
@@ -23,10 +23,7 @@ sub _namespace_uri {
 }
 
 our @_attributes = (qw/
-    AdDistribution
-    DeviceType
-    LanguageAndRegion
-    Status
+    Keywords
 /);
 
 sub _attributes {
@@ -35,10 +32,7 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdDistribution => 'AdDistributionReportFilter',
-    DeviceType => 'DeviceTypeReportFilter',
-    LanguageAndRegion => 'LanguageAndRegionReportFilter',
-    Status => 'AdGroupStatusReportFilter',
+    Keywords => 'ArrayOfstring',
 );
 
 sub _attribute_type {
@@ -65,21 +59,9 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 
 Creates a new instance
 
-=head2 AdDistribution
+=head2 Keywords
 
-Gets/sets AdDistribution (AdDistributionReportFilter)
-
-=head2 DeviceType
-
-Gets/sets DeviceType (DeviceTypeReportFilter)
-
-=head2 LanguageAndRegion
-
-Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
-
-=head2 Status
-
-Gets/sets Status (AdGroupStatusReportFilter)
+Gets/sets Keywords (ArrayOfstring)
 
 =cut
 

@@ -1,4 +1,4 @@
-package Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter;
+package Microsoft::AdCenter::CampaignManagementService::SetNetworksToAdGroupsResponse;
 # Copyright (C) 2010 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
@@ -10,23 +10,19 @@ use base qw/Microsoft::AdCenter::ComplexType/;
 
 =head1 NAME
 
-Microsoft::AdCenter::ReportingService::AdGroupPerformanceReportFilter - Represents "AdGroupPerformanceReportFilter" in Microsoft AdCenter Reporting Service.
+Microsoft::AdCenter::CampaignManagementService::SetNetworksToAdGroupsResponse - Represents "SetNetworksToAdGroupsResponse" in Microsoft AdCenter Campaign Management Service.
 
 =cut
 
 sub _type_name {
-    return 'AdGroupPerformanceReportFilter';
+    return 'SetNetworksToAdGroupsResponse';
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
-    AdDistribution
-    DeviceType
-    LanguageAndRegion
-    Status
 /);
 
 sub _attributes {
@@ -35,10 +31,6 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdDistribution => 'AdDistributionReportFilter',
-    DeviceType => 'DeviceTypeReportFilter',
-    LanguageAndRegion => 'LanguageAndRegionReportFilter',
-    Status => 'AdGroupStatusReportFilter',
 );
 
 sub _attribute_type {
@@ -64,22 +56,6 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 =head2 new
 
 Creates a new instance
-
-=head2 AdDistribution
-
-Gets/sets AdDistribution (AdDistributionReportFilter)
-
-=head2 DeviceType
-
-Gets/sets DeviceType (DeviceTypeReportFilter)
-
-=head2 LanguageAndRegion
-
-Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
-
-=head2 Status
-
-Gets/sets Status (AdGroupStatusReportFilter)
 
 =cut
 

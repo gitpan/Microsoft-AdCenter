@@ -24,6 +24,7 @@ sub _namespace_uri {
 
 our @_attributes = (qw/
     AdDistribution
+    DeviceType
 /);
 
 sub _attributes {
@@ -33,6 +34,7 @@ sub _attributes {
 
 our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
+    DeviceType => 'DeviceTypeReportFilter',
 );
 
 sub _attribute_type {
@@ -62,6 +64,10 @@ Creates a new instance
 =head2 AdDistribution
 
 Gets/sets AdDistribution (AdDistributionReportFilter)
+
+=head2 DeviceType
+
+Gets/sets DeviceType (DeviceTypeReportFilter)
 
 =cut
 

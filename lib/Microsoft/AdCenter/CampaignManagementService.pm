@@ -1668,6 +1668,41 @@ sub GetNegativeKeywordsByCampaignIds {
     );
 }
 
+=head2 GetNetworksByAdGroupIds
+
+=over
+
+=item Parameters:
+
+    CampaignId (long)
+    AdGroupIds (ArrayOflong)
+
+=item Returns:
+
+    GetNetworksByAdGroupIdsResponse
+
+=back
+
+=cut
+
+sub GetNetworksByAdGroupIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetNetworksByAdGroupIds',
+        request => {
+            name => 'GetNetworksByAdGroupIdsRequest',
+            parameters => [
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetNetworksByAdGroupIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetNormalizedStrings
 
 =over
@@ -2521,6 +2556,41 @@ sub SetNegativeKeywordsToCampaigns {
     );
 }
 
+=head2 SetNetworksToAdGroups
+
+=over
+
+=item Parameters:
+
+    CampaignId (long)
+    AdGroupNetworks (ArrayOfAdGroupNetwork)
+
+=item Returns:
+
+    SetNetworksToAdGroupsResponse
+
+=back
+
+=cut
+
+sub SetNetworksToAdGroups {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetNetworksToAdGroups',
+        request => {
+            name => 'SetNetworksToAdGroupsRequest',
+            parameters => [
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'AdGroupNetworks', type => 'ArrayOfAdGroupNetwork', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'SetNetworksToAdGroupsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 SetTargetToAdGroup
 
 =over
@@ -2993,6 +3063,7 @@ our %_simple_types = (
     KeywordEditorialStatus => 'https://adcenter.microsoft.com/v7',
     KeywordStatus => 'https://adcenter.microsoft.com/v7',
     Language => 'https://adcenter.microsoft.com/v7',
+    Network => 'https://adcenter.microsoft.com/v7',
     OverridePriority => 'https://adcenter.microsoft.com/v7',
     PaymentType => 'https://adcenter.microsoft.com/v7',
     PricingModel => 'https://adcenter.microsoft.com/v7',
@@ -3014,6 +3085,7 @@ our @_complex_types = (qw/
     AdGroup
     AdGroupInfo
     AdGroupNegativeKeywords
+    AdGroupNetwork
     AddAdGroupsResponse
     AddAdsResponse
     AddBehavioralBidsResponse
@@ -3093,6 +3165,7 @@ our @_complex_types = (qw/
     GetKeywordsByIdsResponse
     GetNegativeKeywordsByAdGroupIdsResponse
     GetNegativeKeywordsByCampaignIdsResponse
+    GetNetworksByAdGroupIdsResponse
     GetNormalizedStringsResponse
     GetPlacementDetailsForUrlsResponse
     GetSegmentsByIdsResponse
@@ -3138,6 +3211,7 @@ our @_complex_types = (qw/
     SegmentTargetBid
     SetNegativeKeywordsToAdGroupsResponse
     SetNegativeKeywordsToCampaignsResponse
+    SetNetworksToAdGroupsResponse
     SetTargetToAdGroupResponse
     SetTargetToCampaignResponse
     SetUsersToSegmentsResponse
@@ -3189,6 +3263,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AdGroupNegativeKeywords',
         element_type => 'AdGroupNegativeKeywords'
+    },
+    ArrayOfAdGroupNetwork => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'AdGroupNetwork',
+        element_type => 'AdGroupNetwork'
     },
     ArrayOfAgeTargetBid => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',

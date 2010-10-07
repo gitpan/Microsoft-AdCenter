@@ -206,6 +206,7 @@ our %_simple_types = (
     AdStatusReportFilter => 'https://adcenter.microsoft.com/v6',
     AdTypeReportFilter => 'https://adcenter.microsoft.com/v6',
     AgeGenderDemographicReportColumn => 'https://adcenter.microsoft.com/v6',
+    AgeGroupReportFilter => 'https://adcenter.microsoft.com/v6',
     BehavioralPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     BehavioralTargetReportColumn => 'https://adcenter.microsoft.com/v6',
     BiddedMatchTypeReportFilter => 'https://adcenter.microsoft.com/v6',
@@ -214,9 +215,13 @@ our %_simple_types = (
     CampaignPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     CampaignStatusReportFilter => 'https://adcenter.microsoft.com/v6',
     CashbackReportFilter => 'https://adcenter.microsoft.com/v6',
+    ConversionPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     CountryReportFilter => 'https://adcenter.microsoft.com/v6',
     DeliveredMatchTypeReportFilter => 'https://adcenter.microsoft.com/v6',
     DestinationUrlPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
+    DeviceTypeReportFilter => 'https://adcenter.microsoft.com/v6',
+    GenderReportFilter => 'https://adcenter.microsoft.com/v6',
+    GoalsAndFunnelsReportColumn => 'https://adcenter.microsoft.com/v6',
     KeywordPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     LanguageAndRegionReportFilter => 'https://adcenter.microsoft.com/v6',
     MetroAreaDemographicReportColumn => 'https://adcenter.microsoft.com/v6',
@@ -229,7 +234,10 @@ our %_simple_types = (
     ReportTimePeriod => 'https://adcenter.microsoft.com/v6',
     SearchQueryPerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
     SearchQueryReportAggregation => 'https://adcenter.microsoft.com/v6',
+    SegmentationReportColumn => 'https://adcenter.microsoft.com/v6',
     SitePerformanceReportColumn => 'https://adcenter.microsoft.com/v6',
+    TacticChannelReportColumn => 'https://adcenter.microsoft.com/v6',
+    TrafficSourcesReportColumn => 'https://adcenter.microsoft.com/v6',
     char => 'http://schemas.microsoft.com/2003/10/Serialization/',
     duration => 'http://schemas.microsoft.com/2003/10/Serialization/',
     guid => 'http://schemas.microsoft.com/2003/10/Serialization/',
@@ -268,9 +276,13 @@ our @_complex_types = (qw/
     CampaignPerformanceReportFilter
     CampaignPerformanceReportRequest
     CampaignReportScope
+    ConversionPerformanceReportFilter
+    ConversionPerformanceReportRequest
     Date
     DestinationUrlPerformanceReportFilter
     DestinationUrlPerformanceReportRequest
+    GoalsAndFunnelsReportFilter
+    GoalsAndFunnelsReportRequest
     KeywordPerformanceReportFilter
     KeywordPerformanceReportRequest
     MetroAreaDemographicReportFilter
@@ -284,9 +296,15 @@ our @_complex_types = (qw/
     ReportTime
     SearchQueryPerformanceReportFilter
     SearchQueryPerformanceReportRequest
+    SegmentationReportFilter
+    SegmentationReportRequest
     SitePerformanceReportFilter
     SitePerformanceReportRequest
     SubmitGenerateReportResponse
+    TacticChannelReportFilter
+    TacticChannelReportRequest
+    TrafficSourcesReportFilter
+    TrafficSourcesReportRequest
 /);
 
 sub _complex_types {
@@ -359,6 +377,11 @@ our %_array_types = (
         element_name => 'CampaignReportScope',
         element_type => 'CampaignReportScope'
     },
+    ArrayOfConversionPerformanceReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        element_name => 'ConversionPerformanceReportColumn',
+        element_type => 'ConversionPerformanceReportColumn'
+    },
     ArrayOfDate => {
         namespace_uri => 'https://adcenter.microsoft.com/v6',
         element_name => 'Date',
@@ -368,6 +391,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v6',
         element_name => 'DestinationUrlPerformanceReportColumn',
         element_type => 'DestinationUrlPerformanceReportColumn'
+    },
+    ArrayOfGoalsAndFunnelsReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        element_name => 'GoalsAndFunnelsReportColumn',
+        element_type => 'GoalsAndFunnelsReportColumn'
     },
     ArrayOfKeywordPerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v6',
@@ -394,10 +422,25 @@ our %_array_types = (
         element_name => 'SearchQueryPerformanceReportColumn',
         element_type => 'SearchQueryPerformanceReportColumn'
     },
+    ArrayOfSegmentationReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        element_name => 'SegmentationReportColumn',
+        element_type => 'SegmentationReportColumn'
+    },
     ArrayOfSitePerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v6',
         element_name => 'SitePerformanceReportColumn',
         element_type => 'SitePerformanceReportColumn'
+    },
+    ArrayOfTacticChannelReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        element_name => 'TacticChannelReportColumn',
+        element_type => 'TacticChannelReportColumn'
+    },
+    ArrayOfTrafficSourcesReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v6',
+        element_name => 'TrafficSourcesReportColumn',
+        element_type => 'TrafficSourcesReportColumn'
     },
     ArrayOfint => {
         namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
