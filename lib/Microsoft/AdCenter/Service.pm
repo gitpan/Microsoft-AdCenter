@@ -25,7 +25,13 @@ use Encode qw/is_utf8 _utf8_on/;
 use Scalar::Util qw/blessed/;
 use SOAP::Lite;
 
+use Microsoft::AdCenter::Retry qw/:ErrorTypes/;
 use Microsoft::AdCenter::SOAPFault;
+
+__PACKAGE__->mk_accessors(qw/
+    EndPoint
+    RetrySettings
+/);
 
 sub new {
     my ($class, %args) = @_;
@@ -33,6 +39,7 @@ sub new {
     my $self = bless {}, $class;
 
     $self->EndPoint((defined $args{EndPoint}) ? $args{EndPoint} : $self->_default_location);
+    $self->RetrySettings($args{RetrySettings});
 
     my $request_headers = $self->_request_headers_expanded;
     foreach my $header_name (keys %$request_headers) {
@@ -104,10 +111,72 @@ sub _invoke {
         push @soap_body, $self->_serialize_argument("SOAP::Data", $request_paramter_ns, $request_paramter_name, $parameter_value, $request_paramter_type);
     }
 
-    # Call the actual web service
-    my $som = $soap->call($request_name, @soap_header, @soap_body);
+    # Reset the retries counter
+    $self->{_retries} = 0;
 
-    # Store the response header values in the service client
+    # Define a coderef to call the web service in recursive way so we can retry it
+    my $call_webservice;
+    $call_webservice = sub {
+        my $result;
+        eval {
+            # Call the actual web service
+            my $som = $soap->call($request_name, @soap_header, @soap_body);
+    
+            # Check for HTTP 400's errors (which we can't recover from)
+            if ( $soap->transport->proxy->code =~ /^4[0-9]{2}$/ ) {
+                die $soap->transport->proxy->status . " for " . $soap->transport->proxy->endpoint;
+            }
+
+            # Store the response header values in the service client
+            $self->_store_response_headers($som, $response_headers, $response_headers_expanded);
+
+            # If it fails, die with a SOAPFault object
+            if ($som->fault) {
+                my $fault = Microsoft::AdCenter::SOAPFault->new
+                    ->faultcode($som->faultcode)
+                    ->faultstring($som->faultstring);
+
+                my $faultdetail = $som->faultdetail;
+                if (defined $faultdetail) {
+                    if (ref $faultdetail eq 'HASH') {
+                        $faultdetail = $self->_deserialize_array($faultdetail);
+                        if (scalar(@$faultdetail) == 1) {
+                            $fault->detail($faultdetail->[0]);
+                        }
+                        elsif (scalar(@$faultdetail) > 1) {
+                            $fault->detail($faultdetail);
+                        }
+                    }
+                    else {
+                        $fault->detail($faultdetail);
+                    }
+                }
+                die $fault;
+            }
+
+            # Parse the response body
+            my $response_body = $som->body;
+            if (defined $response_body) {
+                die "Type mismatch" unless exists $response_body->{$response_name};
+                $result = $self->_deserialize_complex_type($response_name, $response_body->{$response_name});
+            }
+        # End of eval
+        };
+        if (my $e = $@) {
+            $result = $self->_retry($call_webservice, $e);
+        }
+        return $result;
+    # End of the web service call coderef
+    };
+
+    # Kicks off the SOAP call
+    return $call_webservice->();
+}
+
+# Store the response header values in the service client
+sub _store_response_headers {
+    my ($self, $som, $response_headers, $response_headers_expanded) = @_;
+
     my $response_header_values = $som->header;
     my $expanded_response_headers = {};
     foreach my $header (@$response_headers) {
@@ -132,39 +201,6 @@ sub _invoke {
     foreach my $header_name (keys %$response_headers_expanded) {
         $self->$header_name($expanded_response_headers->{$header_name});
     }
-
-    # If it fails, die with a SOAPFault object
-    if ($som->fault) {
-        my $fault = Microsoft::AdCenter::SOAPFault->new
-            ->faultcode($som->faultcode)
-            ->faultstring($som->faultstring);
-
-        my $faultdetail = $som->faultdetail;
-        if (defined $faultdetail) {
-            if (ref $faultdetail eq 'HASH') {
-                $faultdetail = $self->_deserialize_array($faultdetail);
-                if (scalar(@$faultdetail) == 1) {
-                    $fault->detail($faultdetail->[0]);
-                }
-                elsif (scalar(@$faultdetail) > 1) {
-                    $fault->detail($faultdetail);
-                }
-            }
-            else {
-                $fault->detail($faultdetail);
-            }
-        }
-
-        die $fault;
-    }
-
-    # Parse the response body
-    my $response_body = $som->body;
-    if (defined $response_body) {
-        die "Type mismatch" unless exists $response_body->{$response_name};
-        return $self->_deserialize_complex_type($response_name, $response_body->{$response_name});
-    }
-    return undef;
 }
 
 sub _serialize_argument {
@@ -201,6 +237,80 @@ sub _serialize_argument {
 
     return unless defined $object;
     return $object->name($name);
+}
+
+sub _is_connection_error {
+    my ($self, $error) = @_;
+    if (ref($error) ne 'Microsoft::AdCenter::SOAPFault') {
+        return $error =~ /^(500 SSL negotiation failed|500 Can't connect)/;
+    }
+    return 0;
+}
+
+sub _is_internal_server_error {
+    my ($self, $error) = @_;
+    # adCenter API documentation for error codes: http://msdn.microsoft.com/en-us/library/bb672016.aspx
+    return 0 unless (ref($error) eq 'Microsoft::AdCenter::SOAPFault' && (defined $error->detail) && $error->detail->can('OperationErrors') && (defined $error->detail->OperationErrors));
+    my @internal_server_errors = grep { $_->Code == 0 } @{$error->detail->OperationErrors};
+    return (scalar(@internal_server_errors) == 0) ? 0 : 1;
+}
+
+sub _retry {
+    my ($self, $call_webservice, $error) = @_;
+
+    die $error unless ((defined $self->RetrySettings) && ref($self->RetrySettings) eq 'ARRAY');
+
+    my $error_type;
+    if ($self->_is_connection_error($error)) {
+        $error_type = CONNECTION_ERROR;
+    }
+    elsif ($self->_is_internal_server_error($error)) {
+        $error_type = INTERNAL_SERVER_ERROR;
+    }
+    else {
+        # Re-throw exception for other types of errors
+        die $error;
+    }
+
+    my $retry_times = undef;
+    my $wait_time = undef;
+    my $scaling_wait_time = undef;
+    my $should_retry = 0;
+
+    foreach my $retry_obj ( @{$self->RetrySettings} ) {
+        die "Invalid Retry object" if (ref($retry_obj) ne 'Microsoft::AdCenter::Retry');
+        next unless ($retry_obj->ErrorType & $error_type);
+
+        $should_retry = 1;
+
+        if ((not defined $retry_times) && (defined $retry_obj->RetryTimes)) {
+            $retry_times = $retry_obj->RetryTimes;
+        }
+
+        if ((not defined $wait_time) && (defined $retry_obj->WaitTime)) {
+            $wait_time = $retry_obj->WaitTime;
+        }
+
+        if ((not defined $scaling_wait_time) && (defined $retry_obj->ScalingWaitTime)) {
+            $scaling_wait_time = $retry_obj->ScalingWaitTime;
+        }
+
+        $retry_obj->Callback->($error) if (defined $retry_obj->Callback);
+    }
+
+    die $error unless $should_retry;
+
+    $retry_times = 0 unless (defined $retry_times);
+    $wait_time = 1 unless (defined $wait_time);
+    $scaling_wait_time = 1 unless (defined $scaling_wait_time);
+
+    if ($self->{_retries} < $retry_times) {
+        sleep($wait_time + ($wait_time * $self->{_retries} * ($scaling_wait_time - 1)));
+        $self->{_retries}++;
+        return $call_webservice->();
+    }
+
+    die $error;
 }
 
 sub _escape_xml_baddies {

@@ -292,6 +292,7 @@ lib/Microsoft/AdCenter/ReportingService/TacticChannelReportFilter.pm
 lib/Microsoft/AdCenter/ReportingService/TacticChannelReportRequest.pm
 lib/Microsoft/AdCenter/ReportingService/TrafficSourcesReportFilter.pm
 lib/Microsoft/AdCenter/ReportingService/TrafficSourcesReportRequest.pm
+lib/Microsoft/AdCenter/Retry.pm
 lib/Microsoft/AdCenter/SOAPFault.pm
 lib/Microsoft/AdCenter/SecureDataManagementService.pm
 lib/Microsoft/AdCenter/SecureDataManagementService/AdApiError.pm

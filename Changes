@@ -14,3 +14,6 @@ Revision history for Microsoft-AdCenter
 
 7.02    07 October 2010
         Updates for the September 24, 2010 release of V7
+
+7.03    29 Octobar 2010
+        New automatic retry feature (experimental)

@@ -194,7 +194,6 @@ sub _array_types {
 }
 
 __PACKAGE__->mk_accessors(qw/
-    EndPoint
     ApplicationToken
     DeveloperToken
     Password
