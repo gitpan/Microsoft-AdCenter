@@ -13,7 +13,8 @@ our %EXPORT_TAGS = (
     ErrorTypes => [qw/CONNECTION_ERROR INTERNAL_SERVER_ERROR/]
 );
 
-__PACKAGE__->mk_accessors(qw/ErrorType RetryTimes WaitTime ScalingWaitTime Callback/);
+use constant CONNECTION_ERROR => 0x01;
+use constant INTERNAL_SERVER_ERROR => 0x02;
 
 sub new {
     my ($pkg, %args) = @_;
@@ -26,12 +27,6 @@ sub new {
     return $self;
 }
 
-sub CONNECTION_ERROR {
-    return 1;
-}
-
-sub INTERNAL_SERVER_ERROR {
-    return 2;
-}
+__PACKAGE__->mk_accessors(qw/ErrorType RetryTimes WaitTime ScalingWaitTime Callback/);
 
 1;
