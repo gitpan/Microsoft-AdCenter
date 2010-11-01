@@ -55,7 +55,25 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    BusinessTarget => 0,
+    CityTarget => 0,
+    CountryTarget => 0,
+    MetroAreaTarget => 0,
+    RadiusTarget => 0,
+    StateTarget => 0,
+    TargetAllLocations => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

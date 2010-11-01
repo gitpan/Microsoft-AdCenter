@@ -51,7 +51,23 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    Bid => 0,
+    Id => 0,
+    PlacementId => 0,
+    Status => 0,
+    Url => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

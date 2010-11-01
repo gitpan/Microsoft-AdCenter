@@ -77,7 +77,36 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    AccountType => 0,
+    BillToCustomerId => 0,
+    CountryCode => 0,
+    CurrencyType => 0,
+    FinancialStatus => 0,
+    Id => 0,
+    Language => 0,
+    LastModifiedByUserId => 0,
+    LastModifiedTime => 0,
+    Name => 0,
+    Number => 0,
+    ParentCustomerId => 0,
+    PaymentMethodId => 0,
+    PaymentMethodType => 0,
+    PrimaryUserId => 0,
+    Status => 0,
+    TimeStamp => 0,
+    TimeZone => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

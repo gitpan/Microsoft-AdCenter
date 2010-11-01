@@ -73,7 +73,34 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    AdDistribution => 0,
+    BiddingModel => 0,
+    BroadMatchBid => 0,
+    CashBackInfo => 0,
+    ContentMatchBid => 0,
+    EndDate => 0,
+    ExactMatchBid => 0,
+    Id => 0,
+    LanguageAndRegion => 0,
+    Name => 0,
+    NegativeKeywords => 0,
+    NegativeSiteUrls => 0,
+    PhraseMatchBid => 0,
+    PricingModel => 0,
+    StartDate => 0,
+    Status => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

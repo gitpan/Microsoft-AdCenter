@@ -97,7 +97,44 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    AccountId => 1,
+    AccountName => 0,
+    AccountNumber => 0,
+    AdDescription => 0,
+    AdId => 1,
+    AdTitle => 0,
+    CampaignId => 1,
+    CampaignName => 0,
+    CustomerName => 0,
+    DestinationURL => 0,
+    DisplayURL => 0,
+    KeywordsAccepted => 1,
+    KeywordsPending => 1,
+    KeywordsRejected => 1,
+    OrderId => 1,
+    OrderName => 0,
+    Top1Keyword => 0,
+    Top1KeywordReason => 0,
+    Top2Keyword => 0,
+    Top2KeywordReason => 0,
+    Top3Keyword => 0,
+    Top3KeywordReason => 0,
+    Top4Keyword => 0,
+    Top4KeywordReason => 0,
+    Top5Keyword => 0,
+    Top5KeywordReason => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

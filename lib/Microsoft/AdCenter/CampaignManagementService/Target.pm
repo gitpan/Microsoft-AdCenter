@@ -63,7 +63,29 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    Age => 0,
+    Behavior => 0,
+    Day => 0,
+    Device => 0,
+    Gender => 0,
+    Hour => 0,
+    Id => 0,
+    IsLibraryTarget => 0,
+    Location => 0,
+    Name => 0,
+    Segment => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

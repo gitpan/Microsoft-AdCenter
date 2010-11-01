@@ -98,7 +98,7 @@ sub _invoke {
         my $header_type = $header->{type};
         my $type_category = $self->_type_category($header_type);
         my $header_value = ($type_category eq 'COMPLEX') ? $self->_populate_complex_type($header_type) : $self->$header_name;
-        push @soap_header, $self->_serialize_argument("SOAP::Header", $header_ns, $header_name, $header_value, $header_type);
+        push @soap_header, $self->_serialize_argument("SOAP::Header", $header_ns, $header_name, $header_value, $header_type, 0);
     }
 
     # Create request body
@@ -108,7 +108,7 @@ sub _invoke {
         my $request_paramter_name = $request_paramter->{name};
         my $request_paramter_type = $request_paramter->{type};
         my $parameter_value = $parameter_values->{$request_paramter_name};
-        push @soap_body, $self->_serialize_argument("SOAP::Data", $request_paramter_ns, $request_paramter_name, $parameter_value, $request_paramter_type);
+        push @soap_body, $self->_serialize_argument("SOAP::Data", $request_paramter_ns, $request_paramter_name, $parameter_value, $request_paramter_type, 1);
     }
 
     # Reset the retries counter
@@ -121,7 +121,7 @@ sub _invoke {
         eval {
             # Call the actual web service
             my $som = $soap->call($request_name, @soap_header, @soap_body);
-    
+
             # Check for HTTP 400's errors (which we can't recover from)
             if ( $soap->transport->proxy->code =~ /^4[0-9]{2}$/ ) {
                 die $soap->transport->proxy->status . " for " . $soap->transport->proxy->endpoint;
@@ -204,7 +204,7 @@ sub _store_response_headers {
 }
 
 sub _serialize_argument {
-    my ($self, $type, $namespace, $name, $value, $value_type) = @_;
+    my ($self, $type, $namespace, $name, $value, $value_type, $min_occurs) = @_;
 
     my $prefix = $self->_get_namespace_prefix($namespace);
     my $type_namespace = $self->_type_namespace($value_type);
@@ -212,13 +212,15 @@ sub _serialize_argument {
     my $object = eval($type . '->type($type_full_name)');
     $object->prefix($prefix);
 
-    if (ref $value eq 'ARRAY') {
+    if (ref($value) eq 'ARRAY') {
         my %array_types = $self->_array_types;
         die "Type mismatch" unless (exists $array_types{$value_type});
-        my $element_name = $array_types{$value_type}->{element_name};
-        my $element_type = $array_types{$value_type}->{element_type};
-        my @elements = map { $self->_serialize_argument($type, $type_namespace, $element_name, $_, $element_type) } @$value;
-        $object = $object->value(\eval($type . '->value(@elements)'));
+        if (scalar(@$value) > 0) {
+            my $element_name = $array_types{$value_type}->{element_name};
+            my $element_type = $array_types{$value_type}->{element_type};
+            my @elements = map { $self->_serialize_argument($type, $type_namespace, $element_name, $_, $element_type, 1) } @$value;
+            $object = $object->value(\eval($type . '->value(@elements)'));
+        }
     }
     elsif (blessed($value) and $value->UNIVERSAL::isa('Microsoft::AdCenter::ComplexType')) {
         die "Type mismatch" unless $value->UNIVERSAL::isa(ref($self) . '::' . $value_type);
@@ -228,11 +230,14 @@ sub _serialize_argument {
             $type_full_name = $self->_type_full_name($value_type);
             $object->type($type_full_name);
         }
-        my @attributes = map { $self->_serialize_argument($type, $type_namespace, $_, $value->$_, $value->_attribute_type($_)) } $value->_attributes;
+        my @attributes = map { $self->_serialize_argument($type, $type_namespace, $_, $value->$_, $value->_attribute_type($_), $value->_attribute_min_occurs($_)) } $value->_attributes;
         $object = $object->value(\eval($type . '->value(@attributes)')) if (scalar(@attributes) > 0);
     }
+    elsif ((not defined $value) && $min_occurs > 0) {
+        $object = $object->attr({'xsi:nil' => "true"});
+    }
     else {
-        $object = $object->value($self->_escape_xml_baddies($value))
+        $object = $object->value($self->_escape_xml_baddies($value));
     }
 
     return unless defined $object;

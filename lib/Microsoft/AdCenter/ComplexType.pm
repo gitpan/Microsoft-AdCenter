@@ -72,6 +72,16 @@ sub _attribute_type {
     die "Invalid attribute '$attribute'";
 }
 
+sub attribute_min_occurs {
+    my $self = shift;
+    return $self->_attribute_min_occurs(@_);
+}
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    die "Invalid attribute '$attribute'";
+}
+
 sub _force_datetime_object {
     my ($self, $value) = @_;
     if (defined $value) {

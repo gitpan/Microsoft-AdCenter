@@ -17,3 +17,6 @@ Revision history for Microsoft-AdCenter
 
 7.03    29 Octobar 2010
         New automatic retry feature (experimental)
+
+7.04    01 November 2010
+        Misc bug fixes in SOAP request generation logic

@@ -61,7 +61,28 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    City => 0,
+    CountryCode => 0,
+    Id => 0,
+    Line1 => 0,
+    Line2 => 0,
+    Line3 => 0,
+    Line4 => 0,
+    PostalCode => 0,
+    StateOrProvince => 0,
+    TimeStamp => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 

@@ -83,7 +83,39 @@ sub _attribute_type {
     return $self->SUPER::_attribute_type($attribute);
 }
 
-__PACKAGE__->mk_accessors(__PACKAGE__->_attributes);
+our %_attribute_min_occurs = (
+    AddressLine1 => 0,
+    AddressLine2 => 0,
+    BusinessImageIcon => 0,
+    City => 0,
+    CountryOrRegion => 0,
+    Description => 1,
+    Email => 0,
+    GeoCodeStatus => 0,
+    HrsOfOperation => 0,
+    Id => 0,
+    IsOpen24Hours => 0,
+    LatitudeDegrees => 0,
+    LongitudeDegrees => 0,
+    Name => 1,
+    OtherPaymentTypeDesc => 0,
+    Payment => 0,
+    Phone => 0,
+    StateOrProvince => 0,
+    Status => 0,
+    URL => 0,
+    ZipOrPostalCode => 0,
+);
+
+sub _attribute_min_occurs {
+    my ($self, $attribute) = @_;
+    if (exists $_attribute_min_occurs{$attribute}) {
+        return $_attribute_min_occurs{$attribute};
+    }
+    return $self->SUPER::_attribute_min_occurs($attribute);
+}
+
+__PACKAGE__->mk_accessors(@_attributes);
 
 1;
 
