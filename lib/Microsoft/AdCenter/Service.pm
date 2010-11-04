@@ -25,7 +25,7 @@ use Encode qw/is_utf8 _utf8_on/;
 use Scalar::Util qw/blessed/;
 use SOAP::Lite;
 
-use Microsoft::AdCenter::Retry qw/:ErrorTypes/;
+use Microsoft::AdCenter::Retry;
 use Microsoft::AdCenter::SOAPFault;
 
 __PACKAGE__->mk_accessors(qw/
@@ -237,7 +237,7 @@ sub _serialize_argument {
         $object = $object->attr({'xsi:nil' => "true"});
     }
     else {
-        $object = $object->value($self->_escape_xml_baddies($value));
+        $object = $object->value($value);
     }
 
     return unless defined $object;
@@ -267,10 +267,10 @@ sub _retry {
 
     my $error_type;
     if ($self->_is_connection_error($error)) {
-        $error_type = CONNECTION_ERROR;
+        $error_type = Microsoft::AdCenter::Retry->CONNECTION_ERROR;
     }
     elsif ($self->_is_internal_server_error($error)) {
-        $error_type = INTERNAL_SERVER_ERROR;
+        $error_type = Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR;
     }
     else {
         # Re-throw exception for other types of errors
@@ -316,29 +316,6 @@ sub _retry {
     }
 
     die $error;
-}
-
-sub _escape_xml_baddies {
-    my ($self, $input) = @_;
-    return unless defined $input;
-
-    # Trouble with HTML::Entities::encode_entities is it will happily double encode things
-    # SOAP::Lite::encode_data also appears to have this problem
-
-    my $on_utf8 = is_utf8($input);
-    $input =~ s/&(?![#\w]+;)/&amp;/g; # Encode &, but not the & in already encoded string (&amp;)
-
-    # If string is already wrapped <![CDATA[ ... ]]>, leave it as is. multi-line allowed by /s modifier.
-    if ($input =~ /^<\!\[CDATA\[(.+)\]\]>$/s) {
-        return $input;
-    }
-
-    # Otherwise, encode < and >
-    $input =~ s/</&lt;/g;
-    $input =~ s/>/&gt;/g;
-
-    _utf8_on($input) if $on_utf8;
-    return $input;
 }
 
 sub _get_namespace_prefix {

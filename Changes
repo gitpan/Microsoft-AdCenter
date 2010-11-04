@@ -20,3 +20,6 @@ Revision history for Microsoft-AdCenter
 
 7.04    01 November 2010
         Misc bug fixes in SOAP request generation logic
+
+7.05    04 November 2010
+        Bug fix: Ampersands are double-encoded
