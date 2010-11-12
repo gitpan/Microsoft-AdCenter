@@ -12,7 +12,7 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '7.05';
+our $VERSION = '7.06';
 
 =head1 SYNOPSIS
 
@@ -25,6 +25,14 @@ Sample Usage:
     use Microsoft::AdCenter::CampaignManagementService;
     use Microsoft::AdCenter::CampaignManagementService::Bid;
     use Microsoft::AdCenter::CampaignManagementService::Keyword;
+    use Microsoft::AdCenter::Retry;
+
+    # Defines when and how to retry an failed API call due to a connection or internal server error
+    my $retry = Microsoft::AdCenter::Retry->new(
+        ErrorType => Microsoft::AdCenter::Retry->CONNECTION_ERROR | Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR,
+        RetryTimes => 3,
+        WaitTime => 30,
+    );
 
     # Create the service client
     my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
@@ -33,7 +41,8 @@ Sample Usage:
         CustomerId        => "your_customer_id",
         DeveloperToken    => "your_developer_token",
         Password          => "your_password",
-        UserName          => "your_user_name"
+        UserName          => "your_user_name",
+        RetrySettings     => $retry,
     );
 
     # Create a Keyword object
@@ -205,6 +214,49 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
         print "Error messages:\n";
         print $_->Message . "\n" foreach @{$e->detail->Errors};
     }
+
+=head2 Example 4 - Retrying an API call when an expected temporary network issue comes up
+
+    use Microsoft::AdCenter::CampaignManagementService;
+    use Microsoft::AdCenter::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+    use Microsoft::AdCenter::Retry;
+
+    # Defines when and how to retry an failed API call due to a temporary network connection issue
+    my $retry = Microsoft::AdCenter::Retry->new(
+        ErrorType => Microsoft::AdCenter::Retry->CONNECTION_ERROR,
+        RetryTimes => 3,
+        WaitTime => 30,
+        ScalingWaitTime => 2,
+        Callback => sub { my $e = shift; warn "Successfully retried API call for " . __PACKAGE__ . " after error $e was caught"; },
+    );
+
+    # Create the service client
+    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+        ApplicationToken  => "your_application_token",
+        CustomerAccountId => "your_customer_account_id",
+        CustomerId        => "your_customer_id",
+        DeveloperToken    => "your_developer_token",
+        Password          => "your_password",
+        UserName          => "your_user_name",
+        RetrySettings     => $retry,
+    );
+
+    # Create a Keyword object
+    my $keyword = Microsoft::AdCenter::CampaignManagementService::Keyword->new
+        ->Text("some text")
+        ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
+        ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1));
+
+    # Call AddKeywords
+    my $response = $campaign_mgmt_service->AddKeywords(
+        AdGroupId => "",
+        Keywords => [$keyword]
+    );
+
+    # Check the response
+    my $keyword_ids = $response->KeywordIds;
+    ...
 
 =head1 DEBUGGING
 

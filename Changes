@@ -23,3 +23,7 @@ Revision history for Microsoft-AdCenter
 
 7.05    04 November 2010
         Bug fix: Ampersands are double-encoded
+
+7.06    12 November
+        Enhancement: New 500 error added to the regex and also documented the new retry class
+
