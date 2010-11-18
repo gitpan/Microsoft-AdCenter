@@ -60,7 +60,7 @@ Returns / sets an optional interval that, will increase the wait time by the int
 
 =head2 Callback
 
-Returns / sets an optional callback sub that will be called upon every retry 
+Returns / sets an optional callback sub that will be called upon every retry
 
 =cut
 

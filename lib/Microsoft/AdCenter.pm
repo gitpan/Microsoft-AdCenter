@@ -12,7 +12,7 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '7.06';
+our $VERSION = '7.07';
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ Sample Usage:
     my $retry = Microsoft::AdCenter::Retry->new(
         ErrorType => Microsoft::AdCenter::Retry->CONNECTION_ERROR | Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR,
         RetryTimes => 3,
-        WaitTime => 30,
+        WaitTime => 30
     );
 
     # Create the service client
@@ -42,7 +42,7 @@ Sample Usage:
         DeveloperToken    => "your_developer_token",
         Password          => "your_password",
         UserName          => "your_user_name",
-        RetrySettings     => $retry,
+        RetrySettings     => [$retry]
     );
 
     # Create a Keyword object
@@ -228,7 +228,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
         RetryTimes => 3,
         WaitTime => 30,
         ScalingWaitTime => 2,
-        Callback => sub { my $e = shift; warn "Successfully retried API call for " . __PACKAGE__ . " after error $e was caught"; },
+        Callback => sub { my $e = shift; warn "Successfully retried API call for " . __PACKAGE__ . " after error $e was caught"; }
     );
 
     # Create the service client
@@ -239,7 +239,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
         DeveloperToken    => "your_developer_token",
         Password          => "your_password",
         UserName          => "your_user_name",
-        RetrySettings     => $retry,
+        RetrySettings     => [$retry]
     );
 
     # Create a Keyword object

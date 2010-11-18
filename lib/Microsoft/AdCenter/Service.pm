@@ -111,19 +111,15 @@ sub _invoke {
         push @soap_body, $self->_serialize_argument("SOAP::Data", $request_paramter_ns, $request_paramter_name, $parameter_value, $request_paramter_type, 1);
     }
 
-    # Reset the retries counter
-    $self->{_retries} = 0;
-
-    # Define a coderef to call the web service in recursive way so we can retry it
-    my $call_webservice;
-    $call_webservice = sub {
+    my $retries = 0;
+    while (1) {
         my $result;
         eval {
             # Call the actual web service
             my $som = $soap->call($request_name, @soap_header, @soap_body);
 
             # Check for HTTP 400's errors (which we can't recover from)
-            if ( $soap->transport->proxy->code =~ /^4[0-9]{2}$/ ) {
+            if ($soap->transport->proxy->code =~ /^4[0-9]{2}$/) {
                 die $soap->transport->proxy->status . " for " . $soap->transport->proxy->endpoint;
             }
 
@@ -160,17 +156,66 @@ sub _invoke {
                 die "Type mismatch" unless exists $response_body->{$response_name};
                 $result = $self->_deserialize_complex_type($response_name, $response_body->{$response_name});
             }
-        # End of eval
         };
         if (my $e = $@) {
-            $result = $self->_retry($call_webservice, $e);
-        }
-        return $result;
-    # End of the web service call coderef
-    };
+            die $e unless ((defined $self->RetrySettings) && ref($self->RetrySettings) eq 'ARRAY');
 
-    # Kicks off the SOAP call
-    return $call_webservice->();
+            my $error_type;
+            if ($self->_is_connection_error($e)) {
+                $error_type = Microsoft::AdCenter::Retry->CONNECTION_ERROR;
+            }
+            elsif ($self->_is_internal_server_error($e)) {
+                $error_type = Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR;
+            }
+            else {
+                # Re-throw exception for other types of errors
+                die $e;
+            }
+
+            my $retry_times = undef;
+            my $wait_time = undef;
+            my $scaling_wait_time = undef;
+            my $should_retry = 0;
+
+            foreach my $retry_obj ( @{$self->RetrySettings} ) {
+                die "Invalid Retry object" if (ref($retry_obj) ne 'Microsoft::AdCenter::Retry');
+                next unless ($retry_obj->ErrorType & $error_type);
+
+                $should_retry = 1;
+
+                if ((not defined $retry_times) && (defined $retry_obj->RetryTimes)) {
+                    $retry_times = $retry_obj->RetryTimes;
+                }
+
+                if ((not defined $wait_time) && (defined $retry_obj->WaitTime)) {
+                    $wait_time = $retry_obj->WaitTime;
+                }
+
+                if ((not defined $scaling_wait_time) && (defined $retry_obj->ScalingWaitTime)) {
+                    $scaling_wait_time = $retry_obj->ScalingWaitTime;
+                }
+
+                $retry_obj->Callback->($e) if (defined $retry_obj->Callback);
+            }
+
+            die $e unless $should_retry;
+
+            $retry_times = 0 unless (defined $retry_times);
+            $wait_time = 1 unless (defined $wait_time);
+            $scaling_wait_time = 1 unless (defined $scaling_wait_time);
+
+            if ($retries < $retry_times) {
+                sleep($wait_time + ($wait_time * $retries * ($scaling_wait_time - 1)));
+                $retries++;
+            }
+            else {
+                die $e;
+            }
+        }
+        else {
+            return $result;
+        }
+    }
 }
 
 # Store the response header values in the service client
@@ -258,64 +303,6 @@ sub _is_internal_server_error {
     return 0 unless (ref($error) eq 'Microsoft::AdCenter::SOAPFault' && (defined $error->detail) && $error->detail->can('OperationErrors') && (defined $error->detail->OperationErrors));
     my @internal_server_errors = grep { $_->Code == 0 } @{$error->detail->OperationErrors};
     return (scalar(@internal_server_errors) == 0) ? 0 : 1;
-}
-
-sub _retry {
-    my ($self, $call_webservice, $error) = @_;
-
-    die $error unless ((defined $self->RetrySettings) && ref($self->RetrySettings) eq 'ARRAY');
-
-    my $error_type;
-    if ($self->_is_connection_error($error)) {
-        $error_type = Microsoft::AdCenter::Retry->CONNECTION_ERROR;
-    }
-    elsif ($self->_is_internal_server_error($error)) {
-        $error_type = Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR;
-    }
-    else {
-        # Re-throw exception for other types of errors
-        die $error;
-    }
-
-    my $retry_times = undef;
-    my $wait_time = undef;
-    my $scaling_wait_time = undef;
-    my $should_retry = 0;
-
-    foreach my $retry_obj ( @{$self->RetrySettings} ) {
-        die "Invalid Retry object" if (ref($retry_obj) ne 'Microsoft::AdCenter::Retry');
-        next unless ($retry_obj->ErrorType & $error_type);
-
-        $should_retry = 1;
-
-        if ((not defined $retry_times) && (defined $retry_obj->RetryTimes)) {
-            $retry_times = $retry_obj->RetryTimes;
-        }
-
-        if ((not defined $wait_time) && (defined $retry_obj->WaitTime)) {
-            $wait_time = $retry_obj->WaitTime;
-        }
-
-        if ((not defined $scaling_wait_time) && (defined $retry_obj->ScalingWaitTime)) {
-            $scaling_wait_time = $retry_obj->ScalingWaitTime;
-        }
-
-        $retry_obj->Callback->($error) if (defined $retry_obj->Callback);
-    }
-
-    die $error unless $should_retry;
-
-    $retry_times = 0 unless (defined $retry_times);
-    $wait_time = 1 unless (defined $wait_time);
-    $scaling_wait_time = 1 unless (defined $scaling_wait_time);
-
-    if ($self->{_retries} < $retry_times) {
-        sleep($wait_time + ($wait_time * $self->{_retries} * ($scaling_wait_time - 1)));
-        $self->{_retries}++;
-        return $call_webservice->();
-    }
-
-    die $error;
 }
 
 sub _get_namespace_prefix {
