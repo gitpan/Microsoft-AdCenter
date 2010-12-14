@@ -29,3 +29,6 @@ Revision history for Microsoft-AdCenter
 
 7.07    18 November 2010
         Bug fix: Memory leak in Microsoft::AdCenter::Service::_invoke
+
+7.08    14 December 2010
+        Enhancement: Add support for auto-retry on "500 write failed"

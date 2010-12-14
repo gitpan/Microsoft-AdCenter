@@ -292,7 +292,7 @@ sub _serialize_argument {
 sub _is_connection_error {
     my ($self, $error) = @_;
     if (ref($error) ne 'Microsoft::AdCenter::SOAPFault') {
-        return $error =~ /^(500 SSL negotiation failed|500 Can't connect|500 read failed)/;
+        return $error =~ /^(500 SSL negotiation failed|500 Can't connect|500 read failed|500 write failed)/;
     }
     return 0;
 }
