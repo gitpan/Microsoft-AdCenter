@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::DestinationUrlPerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,11 +19,12 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
     AdDistribution
+    DeviceType
     LanguageAndRegion
 /);
 
@@ -34,6 +35,7 @@ sub _attributes {
 
 our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
+    DeviceType => 'DeviceTypeReportFilter',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
 );
 
@@ -47,6 +49,7 @@ sub _attribute_type {
 
 our %_attribute_min_occurs = (
     AdDistribution => 0,
+    DeviceType => 0,
     LanguageAndRegion => 0,
 );
 
@@ -77,6 +80,10 @@ Creates a new instance
 =head2 AdDistribution
 
 Gets/sets AdDistribution (AdDistributionReportFilter)
+
+=head2 DeviceType
+
+Gets/sets DeviceType (DeviceTypeReportFilter)
 
 =head2 LanguageAndRegion
 

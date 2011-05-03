@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::BudgetSummaryReportTime;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,13 +19,12 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
     CustomDateRangeEnd
     CustomDateRangeStart
-    CustomDates
     PredefinedTime
 /);
 
@@ -37,7 +36,6 @@ sub _attributes {
 our %_attribute_type = (
     CustomDateRangeEnd => 'Date',
     CustomDateRangeStart => 'Date',
-    CustomDates => 'ArrayOfDate',
     PredefinedTime => 'BudgetSummaryReportTimePeriod',
 );
 
@@ -52,7 +50,6 @@ sub _attribute_type {
 our %_attribute_min_occurs = (
     CustomDateRangeEnd => 0,
     CustomDateRangeStart => 0,
-    CustomDates => 0,
     PredefinedTime => 0,
 );
 
@@ -87,10 +84,6 @@ Gets/sets CustomDateRangeEnd (Date)
 =head2 CustomDateRangeStart
 
 Gets/sets CustomDateRangeStart (Date)
-
-=head2 CustomDates
-
-Gets/sets CustomDates (ArrayOfDate)
 
 =head2 PredefinedTime
 

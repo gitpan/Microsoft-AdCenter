@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::ConversionPerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,10 +19,11 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
+    DeviceType
     Keywords
 /);
 
@@ -32,6 +33,7 @@ sub _attributes {
 }
 
 our %_attribute_type = (
+    DeviceType => 'DeviceTypeReportFilter',
     Keywords => 'ArrayOfstring',
 );
 
@@ -44,6 +46,7 @@ sub _attribute_type {
 }
 
 our %_attribute_min_occurs = (
+    DeviceType => 0,
     Keywords => 0,
 );
 
@@ -70,6 +73,10 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 =head2 new
 
 Creates a new instance
+
+=head2 DeviceType
+
+Gets/sets DeviceType (DeviceTypeReportFilter)
 
 =head2 Keywords
 

@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::AccountThroughCampaignReportScope;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,7 +19,7 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
@@ -33,7 +33,7 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AccountIds => 'ArrayOfint',
+    AccountIds => 'ArrayOflong',
     Campaigns => 'ArrayOfCampaignReportScope',
 );
 
@@ -76,7 +76,7 @@ Creates a new instance
 
 =head2 AccountIds
 
-Gets/sets AccountIds (ArrayOfint)
+Gets/sets AccountIds (ArrayOflong)
 
 =head2 Campaigns
 

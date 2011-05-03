@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::CampaignManagementService;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -299,6 +299,41 @@ sub AddCampaigns {
         },
         response => {
             name => 'AddCampaignsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 AddGoals
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    Goals (ArrayOfGoal)
+
+=item Returns:
+
+    AddGoalsResponse
+
+=back
+
+=cut
+
+sub AddGoals {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'AddGoals',
+        request => {
+            name => 'AddGoalsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Goals', type => 'ArrayOfGoal', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'AddGoalsResponse'
         },
         parameters => \%args
     );
@@ -643,6 +678,41 @@ sub DeleteCampaigns {
         },
         response => {
             name => 'DeleteCampaignsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 DeleteGoals
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    GoalIds (ArrayOflong)
+
+=item Returns:
+
+    DeleteGoalsResponse
+
+=back
+
+=cut
+
+sub DeleteGoals {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'DeleteGoals',
+        request => {
+            name => 'DeleteGoalsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'GoalIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'DeleteGoalsResponse'
         },
         parameters => \%args
     );
@@ -1155,6 +1225,39 @@ sub GetAdsByIds {
     );
 }
 
+=head2 GetAnalyticsType
+
+=over
+
+=item Parameters:
+
+    AccountIds (ArrayOflong)
+
+=item Returns:
+
+    GetAnalyticsTypeResponse
+
+=back
+
+=cut
+
+sub GetAnalyticsType {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAnalyticsType',
+        request => {
+            name => 'GetAnalyticsTypeRequest',
+            parameters => [
+                { name => 'AccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetAnalyticsTypeResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetBehavioralBidsByAdGroupId
 
 =over
@@ -1414,6 +1517,39 @@ sub GetCustomSegments {
         },
         response => {
             name => 'GetCustomSegmentsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetGoals
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+
+=item Returns:
+
+    GetGoalsResponse
+
+=back
+
+=cut
+
+sub GetGoals {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetGoals',
+        request => {
+            name => 'GetGoalsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'GetGoalsResponse'
         },
         parameters => \%args
     );
@@ -2486,6 +2622,39 @@ sub ResumeSitePlacements {
     );
 }
 
+=head2 SetAnalyticsType
+
+=over
+
+=item Parameters:
+
+    AccountAnalyticsTypes (ArrayOfAccountAnalyticsType)
+
+=item Returns:
+
+    SetAnalyticsTypeResponse
+
+=back
+
+=cut
+
+sub SetAnalyticsType {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetAnalyticsType',
+        request => {
+            name => 'SetAnalyticsTypeRequest',
+            parameters => [
+                { name => 'AccountAnalyticsTypes', type => 'ArrayOfAccountAnalyticsType', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'SetAnalyticsTypeResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 SetNegativeKeywordsToAdGroups
 
 =over
@@ -2902,6 +3071,41 @@ sub UpdateCampaigns {
     );
 }
 
+=head2 UpdateGoals
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    Goals (ArrayOfGoal)
+
+=item Returns:
+
+    UpdateGoalsResponse
+
+=back
+
+=cut
+
+sub UpdateGoals {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpdateGoals',
+        request => {
+            name => 'UpdateGoalsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v7' },
+                { name => 'Goals', type => 'ArrayOfGoal', namespace => 'https://adcenter.microsoft.com/v7' }
+            ]
+        },
+        response => {
+            name => 'UpdateGoalsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 UpdateKeywords
 
 =over
@@ -3048,6 +3252,7 @@ our %_simple_types = (
     AdStatus => 'https://adcenter.microsoft.com/v7',
     AdType => 'https://adcenter.microsoft.com/v7',
     AgeRange => 'https://adcenter.microsoft.com/v7',
+    AnalyticsType => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     BehavioralBidStatus => 'https://adcenter.microsoft.com/v7',
     BiddingModel => 'https://adcenter.microsoft.com/v7',
     BudgetLimitType => 'https://adcenter.microsoft.com/v7',
@@ -3055,7 +3260,9 @@ our %_simple_types = (
     BusinessStatus => 'https://adcenter.microsoft.com/v7',
     CampaignStatus => 'https://adcenter.microsoft.com/v7',
     CashBackStatus => 'https://adcenter.microsoft.com/v7',
+    CostModel => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     Day => 'https://adcenter.microsoft.com/v7',
+    DaysApplicableForConversion => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     DeviceType => 'https://adcenter.microsoft.com/v7',
     GenderType => 'https://adcenter.microsoft.com/v7',
     HourRange => 'https://adcenter.microsoft.com/v7',
@@ -3067,8 +3274,10 @@ our %_simple_types = (
     OverridePriority => 'https://adcenter.microsoft.com/v7',
     PaymentType => 'https://adcenter.microsoft.com/v7',
     PricingModel => 'https://adcenter.microsoft.com/v7',
+    RevenueModelType => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     SitePlacementStatus => 'https://adcenter.microsoft.com/v7',
     StandardBusinessIcon => 'https://adcenter.microsoft.com/v7',
+    StepType => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     char => 'http://schemas.microsoft.com/2003/10/Serialization/',
     duration => 'http://schemas.microsoft.com/2003/10/Serialization/',
     guid => 'http://schemas.microsoft.com/2003/10/Serialization/',
@@ -3079,6 +3288,7 @@ sub _simple_types {
 }
 
 our @_complex_types = (qw/
+    AccountAnalyticsType
     Ad
     AdApiError
     AdApiFaultDetail
@@ -3091,6 +3301,7 @@ our @_complex_types = (qw/
     AddBehavioralBidsResponse
     AddBusinessesResponse
     AddCampaignsResponse
+    AddGoalsResponse
     AddKeywordsResponse
     AddSegmentsResponse
     AddSitePlacementsResponse
@@ -3098,6 +3309,7 @@ our @_complex_types = (qw/
     AddTargetsToLibraryResponse
     AgeTarget
     AgeTargetBid
+    AnalyticsApiFaultDetail
     ApiFaultDetail
     ApplicationFault
     BatchError
@@ -3127,6 +3339,7 @@ our @_complex_types = (qw/
     DeleteBehavioralBidsResponse
     DeleteBusinessesResponse
     DeleteCampaignsResponse
+    DeleteGoalsResponse
     DeleteKeywordsResponse
     DeleteSegmentsResponse
     DeleteSitePlacementsResponse
@@ -3150,6 +3363,7 @@ our @_complex_types = (qw/
     GetAdsByAdGroupIdResponse
     GetAdsByEditorialStatusResponse
     GetAdsByIdsResponse
+    GetAnalyticsTypeResponse
     GetBehavioralBidsByAdGroupIdResponse
     GetBehavioralBidsByIdsResponse
     GetBusinessesByIdsResponse
@@ -3158,6 +3372,7 @@ our @_complex_types = (qw/
     GetCampaignsByIdsResponse
     GetCampaignsInfoByAccountIdResponse
     GetCustomSegmentsResponse
+    GetGoalsResponse
     GetKeywordEditorialReasonsByIdsResponse
     GetKeywordEstimatesByBidsResponse
     GetKeywordsByAdGroupIdResponse
@@ -3177,6 +3392,9 @@ our @_complex_types = (qw/
     GetTargetsByCampaignIdsResponse
     GetTargetsByIdsResponse
     GetTargetsInfoFromLibraryResponse
+    Goal
+    GoalError
+    GoalResult
     HourTarget
     HourTargetBid
     HoursOfOperation
@@ -3206,9 +3424,11 @@ our @_complex_types = (qw/
     ResumeCampaignsResponse
     ResumeKeywordsResponse
     ResumeSitePlacementsResponse
+    RevenueModel
     Segment
     SegmentTarget
     SegmentTargetBid
+    SetAnalyticsTypeResponse
     SetNegativeKeywordsToAdGroupsResponse
     SetNegativeKeywordsToCampaignsResponse
     SetNetworksToAdGroupsResponse
@@ -3218,6 +3438,7 @@ our @_complex_types = (qw/
     SitePlacement
     StateTarget
     StateTargetBid
+    Step
     SubmitAdGroupForApprovalResponse
     Target
     TargetInfo
@@ -3228,6 +3449,7 @@ our @_complex_types = (qw/
     UpdateBehavioralBidsResponse
     UpdateBusinessesResponse
     UpdateCampaignsResponse
+    UpdateGoalsResponse
     UpdateKeywordsResponse
     UpdateSitePlacementsResponse
     UpdateTargetResponse
@@ -3239,6 +3461,11 @@ sub _complex_types {
 }
 
 our %_array_types = (
+    ArrayOfAccountAnalyticsType => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'AccountAnalyticsType',
+        element_type => 'AccountAnalyticsType'
+    },
     ArrayOfAd => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'Ad',
@@ -3273,6 +3500,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'AgeTargetBid',
         element_type => 'AgeTargetBid'
+    },
+    ArrayOfAnalyticsType => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'AnalyticsType',
+        element_type => 'AnalyticsType'
     },
     ArrayOfArrayOfPlacementDetail => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',
@@ -3369,6 +3601,21 @@ our %_array_types = (
         element_name => 'GenderTargetBid',
         element_type => 'GenderTargetBid'
     },
+    ArrayOfGoal => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'Goal',
+        element_type => 'Goal'
+    },
+    ArrayOfGoalError => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'GoalError',
+        element_type => 'GoalError'
+    },
+    ArrayOfGoalResult => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'GoalResult',
+        element_type => 'GoalResult'
+    },
     ArrayOfHourTargetBid => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'HourTargetBid',
@@ -3443,6 +3690,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'StateTargetBid',
         element_type => 'StateTargetBid'
+    },
+    ArrayOfStep => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'Step',
+        element_type => 'Step'
     },
     ArrayOfTarget => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',

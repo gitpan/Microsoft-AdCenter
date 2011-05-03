@@ -1,5 +1,5 @@
 package Microsoft::AdCenter;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -12,7 +12,7 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '7.08';
+our $VERSION = '7.50';
 
 =head1 SYNOPSIS
 

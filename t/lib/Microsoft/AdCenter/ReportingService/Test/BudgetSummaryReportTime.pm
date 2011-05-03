@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::Test::BudgetSummaryReportTime;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -12,11 +12,10 @@ use Test::More;
 use Microsoft::AdCenter::ReportingService;
 use Microsoft::AdCenter::ReportingService::BudgetSummaryReportTime;
 
-sub test_can_create_budget_summary_report_time_and_set_all_fields : Test(5) {
+sub test_can_create_budget_summary_report_time_and_set_all_fields : Test(4) {
     my $budget_summary_report_time = Microsoft::AdCenter::ReportingService::BudgetSummaryReportTime->new
         ->CustomDateRangeEnd('custom date range end')
         ->CustomDateRangeStart('custom date range start')
-        ->CustomDates('custom dates')
         ->PredefinedTime('predefined time')
     ;
 
@@ -24,7 +23,6 @@ sub test_can_create_budget_summary_report_time_and_set_all_fields : Test(5) {
 
     is($budget_summary_report_time->CustomDateRangeEnd, 'custom date range end', 'can get custom date range end');
     is($budget_summary_report_time->CustomDateRangeStart, 'custom date range start', 'can get custom date range start');
-    is($budget_summary_report_time->CustomDates, 'custom dates', 'can get custom dates');
     is($budget_summary_report_time->PredefinedTime, 'predefined time', 'can get predefined time');
 };
 

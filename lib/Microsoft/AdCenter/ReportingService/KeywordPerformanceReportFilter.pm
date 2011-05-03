@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::KeywordPerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,15 +19,16 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
     AdDistribution
     AdType
-    BiddedMatchType
+    BidMatchType
     Cashback
     DeliveredMatchType
+    DeviceType
     Keywords
     LanguageAndRegion
 /);
@@ -40,9 +41,10 @@ sub _attributes {
 our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
     AdType => 'AdTypeReportFilter',
-    BiddedMatchType => 'BiddedMatchTypeReportFilter',
+    BidMatchType => 'BidMatchTypeReportFilter',
     Cashback => 'CashbackReportFilter',
     DeliveredMatchType => 'DeliveredMatchTypeReportFilter',
+    DeviceType => 'DeviceTypeReportFilter',
     Keywords => 'ArrayOfstring',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
 );
@@ -58,9 +60,10 @@ sub _attribute_type {
 our %_attribute_min_occurs = (
     AdDistribution => 0,
     AdType => 0,
-    BiddedMatchType => 0,
+    BidMatchType => 0,
     Cashback => 0,
     DeliveredMatchType => 0,
+    DeviceType => 0,
     Keywords => 0,
     LanguageAndRegion => 0,
 );
@@ -97,9 +100,9 @@ Gets/sets AdDistribution (AdDistributionReportFilter)
 
 Gets/sets AdType (AdTypeReportFilter)
 
-=head2 BiddedMatchType
+=head2 BidMatchType
 
-Gets/sets BiddedMatchType (BiddedMatchTypeReportFilter)
+Gets/sets BidMatchType (BidMatchTypeReportFilter)
 
 =head2 Cashback
 
@@ -108,6 +111,10 @@ Gets/sets Cashback (CashbackReportFilter)
 =head2 DeliveredMatchType
 
 Gets/sets DeliveredMatchType (DeliveredMatchTypeReportFilter)
+
+=head2 DeviceType
+
+Gets/sets DeviceType (DeviceTypeReportFilter)
 
 =head2 Keywords
 

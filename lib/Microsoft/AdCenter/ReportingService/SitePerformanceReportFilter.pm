@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::ReportingService::SitePerformanceReportFilter;
-# Copyright (C) 2010 Xerxes Tsang
+# Copyright (C) 2011 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,13 +19,14 @@ sub _type_name {
 }
 
 sub _namespace_uri {
-    return 'https://adcenter.microsoft.com/v6';
+    return 'https://adcenter.microsoft.com/v7';
 }
 
 our @_attributes = (qw/
     AdDistribution
     AdType
     DeliveredMatchType
+    DeviceType
     LanguageAndRegion
     SiteIds
 /);
@@ -39,6 +40,7 @@ our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
     AdType => 'AdTypeReportFilter',
     DeliveredMatchType => 'DeliveredMatchTypeReportFilter',
+    DeviceType => 'DeviceTypeReportFilter',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
     SiteIds => 'ArrayOflong',
 );
@@ -55,6 +57,7 @@ our %_attribute_min_occurs = (
     AdDistribution => 0,
     AdType => 0,
     DeliveredMatchType => 0,
+    DeviceType => 0,
     LanguageAndRegion => 0,
     SiteIds => 0,
 );
@@ -94,6 +97,10 @@ Gets/sets AdType (AdTypeReportFilter)
 =head2 DeliveredMatchType
 
 Gets/sets DeliveredMatchType (DeliveredMatchTypeReportFilter)
+
+=head2 DeviceType
+
+Gets/sets DeviceType (DeviceTypeReportFilter)
 
 =head2 LanguageAndRegion
 
