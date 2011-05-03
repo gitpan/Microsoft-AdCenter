@@ -35,7 +35,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for
 
 Changes the end point for this service client.
 
-Default value: https://api.si.adcenter.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc
+Default value:
 
 =head2 ApplicationToken
 
@@ -82,11 +82,11 @@ sub _namespace_uri {
 }
 
 sub _default_location {
-    return 'https://api.si.adcenter.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc';
+    return '';
 }
 
 sub _wsdl {
-    return 'https://api.si.adcenter.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc?wsdl';
+    return '';
 }
 
 our $_request_headers = [
