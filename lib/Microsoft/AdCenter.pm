@@ -12,19 +12,17 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '7.50';
+our $VERSION = '8.00';
 
 =head1 SYNOPSIS
 
-This collection of modules makes interacting with Microsoft adCenter APIs as easy as possible.
-
-B<Note that this version (7.x) is intended to be used with version 7 of Microsoft adCenter API.>
+This collection of modules makes interacting with Microsoft adCenter APIs easier.
 
 Sample Usage:
 
-    use Microsoft::AdCenter::CampaignManagementService;
-    use Microsoft::AdCenter::CampaignManagementService::Bid;
-    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+    use Microsoft::AdCenter::V7::CampaignManagementService;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Keyword;
     use Microsoft::AdCenter::Retry;
 
     # Defines when and how to retry an failed API call due to a connection or internal server error
@@ -35,7 +33,7 @@ Sample Usage:
     );
 
     # Create the service client
-    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+    my $campaign_mgmt_service = Microsoft::AdCenter::V7::CampaignManagementService->new(
         ApplicationToken  => "your_application_token",
         CustomerAccountId => "your_customer_account_id",
         CustomerId        => "your_customer_id",
@@ -46,10 +44,10 @@ Sample Usage:
     );
 
     # Create a Keyword object
-    my $keyword = Microsoft::AdCenter::CampaignManagementService::Keyword->new
+    my $keyword = Microsoft::AdCenter::V7::CampaignManagementService::Keyword->new
         ->Text("some text")
-        ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
-        ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1));
+        ->BroadMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1))
+        ->ExactMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1));
 
     # Call AddKeywords
     my $response = $campaign_mgmt_service->AddKeywords(
@@ -61,26 +59,21 @@ Sample Usage:
     my $keyword_ids = $response->KeywordIds;
     ...
 
-=head1 VERSIONING
-
-This version of Microsoft::AdCenter is intended to be used with V7 of Microsoft adCenter API.  If you need to access both V6 and V7 simultaneously, you'll need to install 2 versions of Microsoft::AdCenter.  In order to have 2 versions of the same perl module installed, you'll need to put one in a non-standard location, for example ~/perl/.  See perldoc CPAN for more information.
-
 =head1 OVERVIEW
 
-Microsoft adCenter API allows you to manage your adCenter account in an automated fashion rather than manually.  The API is exposed as a standard SOAP service that you can make calls to.  This set of modules is designed to make using the SOAP service easier than using SOAP::Lite (for example) directly.  There are 2 main types of modules available.  The service modules (AdministrationService, CampaignManagementService, CustomerManagementService, etc) are used to make the actual calls to each of the SOAP services in the API.  The other type of module provided are the complex type modules, each of which represents one of the complex types defined in one of the WSDLs of the SOAP service.  Examples include Campaign, AdGroup, Ad, Keyword, etc.
+Microsoft adCenter API allows you to manage your adCenter account in an automated fashion rather than manually.  The API is exposed as a standard SOAP service that you can make calls to.  This set of modules is designed to make using the SOAP service easier than using SOAP::Lite (for example) directly.  There are 2 main types of modules available.  The service modules (AdministrationService, CampaignManagementService, CustomerManagementService, etc.) are used to make the actual calls to each of the SOAP services in the API.  The other type of module provided are the complex type modules, each of which represents one of the complex types defined in one of the WSDLs of the SOAP service.  Examples include Campaign, AdGroup, Ad, Keyword, etc.
 
 The calls you can make to the various services are documented on MSDN.  See
 
 L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx>
 
-Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate
-Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that an array of Campaigns be passed in:
+Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that an array of Campaigns be passed in:
 
-    use Microsoft::AdCenter::CampaignManagementService;
-    use Microsoft::AdCenter::CampaignManagementService::Campaign;
+    use Microsoft::AdCenter::V7::CampaignManagementService;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Campaign;
 
     # Create the service client
-    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+    my $campaign_mgmt_service = Microsoft::AdCenter::V7::CampaignManagementService->new(
         ApplicationToken  => "your_application_token",
         CustomerAccountId => "your_customer_account_id",
         CustomerId        => "your_customer_id",
@@ -90,7 +83,7 @@ Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService
     );
 
     # Create a Campaign object
-    my $campaign = Microsoft::AdCenter::CampaignManagementService::Campaign->new
+    my $campaign = Microsoft::AdCenter::V7::CampaignManagementService::Campaign->new
         ->BudgetType("MonthlyBudgetDivideDailyAcrossMonth")
         ->ConversionTrackingEnabled("false")
         ->DaylightSaving("true")
@@ -125,11 +118,11 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
 =head2 Example 1 - Create a new campaign
 
-    use Microsoft::AdCenter::CampaignManagementService;
-    use Microsoft::AdCenter::CampaignManagementService::Campaign;
+    use Microsoft::AdCenter::V7::CampaignManagementService;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Campaign;
 
     # Create the service client
-    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new
+    my $campaign_mgmt_service = Microsoft::AdCenter::V7::CampaignManagementService->new
         ->ApplicationToken("your_application_token")
         ->CustomerAccountId("your_customer_account_id")
         ->CustomerId("your_customer_id")
@@ -138,7 +131,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
         ->UserName("your_user_name");
 
     # Create a Campaign object
-    my $campaign = Microsoft::AdCenter::CampaignManagementService::Campaign->new
+    my $campaign = Microsoft::AdCenter::V7::CampaignManagementService::Campaign->new
         ->BudgetType("MonthlyBudgetDivideDailyAcrossMonth")
         ->ConversionTrackingEnabled("false")
         ->DaylightSaving("true")
@@ -162,10 +155,10 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
 =head2 Example 2 - Get accounts
 
-    use Microsoft::AdCenter::CustomerManagementService;
+    use Microsoft::AdCenter::V7::CustomerManagementService;
 
     # Create the service client
-    my $customer_mgmt_service = Microsoft::AdCenter::CustomerManagementService->new(
+    my $customer_mgmt_service = Microsoft::AdCenter::V7::CustomerManagementService->new(
         UserName         => "your_user_name",
         Password         => "your_password",
         ApplicationToken => "your_application_token",
@@ -182,12 +175,12 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
 =head2 Example 3 - Error handling
 
-    use Microsoft::AdCenter::CampaignManagementService;
-    use Microsoft::AdCenter::CampaignManagementService::Bid;
-    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+    use Microsoft::AdCenter::V7::CampaignManagementService;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Keyword;
 
     # Create the service client
-    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+    my $campaign_mgmt_service = Microsoft::AdCenter::V7::CampaignManagementService->new(
         ApplicationToken  => "your_application_token",
         CustomerAccountId => "your_customer_account_id",
         CustomerId        => "your_customer_id",
@@ -201,10 +194,10 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
         $response = $campaign_mgmt_service->AddKeywords(
             AdGroupId => "",
             Keywords => [
-                Microsoft::AdCenter::CampaignManagementService::Keyword->new
+                Microsoft::AdCenter::V7::CampaignManagementService::Keyword->new
                     ->Text("some text")
-                    ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
-                    ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
+                    ->BroadMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1))
+                    ->ExactMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1))
             ]
         );
     };
@@ -217,9 +210,9 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
 
 =head2 Example 4 - Retrying an API call when an expected temporary network issue comes up
 
-    use Microsoft::AdCenter::CampaignManagementService;
-    use Microsoft::AdCenter::CampaignManagementService::Bid;
-    use Microsoft::AdCenter::CampaignManagementService::Keyword;
+    use Microsoft::AdCenter::V7::CampaignManagementService;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Bid;
+    use Microsoft::AdCenter::V7::CampaignManagementService::Keyword;
     use Microsoft::AdCenter::Retry;
 
     # Defines when and how to retry an failed API call due to a temporary network connection issue
@@ -232,7 +225,7 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
     );
 
     # Create the service client
-    my $campaign_mgmt_service = Microsoft::AdCenter::CampaignManagementService->new(
+    my $campaign_mgmt_service = Microsoft::AdCenter::V7::CampaignManagementService->new(
         ApplicationToken  => "your_application_token",
         CustomerAccountId => "your_customer_account_id",
         CustomerId        => "your_customer_id",
@@ -243,10 +236,10 @@ There are no methods available in Microsoft::AdCenter directly.  All functionali
     );
 
     # Create a Keyword object
-    my $keyword = Microsoft::AdCenter::CampaignManagementService::Keyword->new
+    my $keyword = Microsoft::AdCenter::V7::CampaignManagementService::Keyword->new
         ->Text("some text")
-        ->BroadMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1))
-        ->ExactMatchBid(Microsoft::AdCenter::CampaignManagementService::Bid->new->Amount(0.1));
+        ->BroadMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1))
+        ->ExactMatchBid(Microsoft::AdCenter::V7::CampaignManagementService::Bid->new->Amount(0.1));
 
     # Call AddKeywords
     my $response = $campaign_mgmt_service->AddKeywords(

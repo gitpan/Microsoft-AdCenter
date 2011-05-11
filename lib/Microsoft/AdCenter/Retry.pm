@@ -29,7 +29,7 @@ Microsoft::AdCenter::Retry - Defines when and how to retry a failed API call.
         Callback => sub { my $e = shift; warn "Successfully retried API call for " . __PACKAGE__ . " after error $e was caught"; },
     );
 
-    my $service_client = Microsoft::AdCenter::CampaignManagementService->new
+    my $service_client = Microsoft::AdCenter::V7::CampaignManagementService->new
         ->ApplicationToken("application token")
         ->CustomerAccountId("customer account id")
         ->CustomerId("customer id")

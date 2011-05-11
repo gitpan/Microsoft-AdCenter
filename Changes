@@ -33,7 +33,8 @@ Revision history for Microsoft-AdCenter
 7.08    14 December 2010
         Enhancement: Add support for auto-retry on "500 write failed"
 
-7.50    03 May 2011
-        Updated CampaignManagementService and ReportingService according to the latest WSDL
-        Added AdIntelligenceService from adCenter API Version 8 in the package
-        Removed SecureDataManagementService as it is not listed in MSDN anymore
+8.00    05 May 2011
+        Fundamental changes to the way the service clients are organized
+        Added adCenter API Version 8 services
+        Updated V7::CampaignManagementService and V7::ReportingService according to the latest WSDL
+        Removed V7::SecureDataManagementService as it is not listed in MSDN anymore
