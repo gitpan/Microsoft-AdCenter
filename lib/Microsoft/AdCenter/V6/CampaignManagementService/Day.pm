@@ -6,6 +6,26 @@ package Microsoft::AdCenter::V6::CampaignManagementService::Day;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::CampaignManagementService::Day - Represents "Day" in Microsoft AdCenter Campaign Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Friday
+Monday
+Saturday
+Sunday
+Thursday
+Tuesday
+Wednesday
+
+=cut
+
 sub Friday {
     return 'Friday';
 }

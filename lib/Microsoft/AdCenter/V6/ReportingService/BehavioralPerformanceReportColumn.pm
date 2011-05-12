@@ -6,6 +6,48 @@ package Microsoft::AdCenter::V6::ReportingService::BehavioralPerformanceReportCo
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::ReportingService::BehavioralPerformanceReportColumn - Represents "BehavioralPerformanceReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountId
+AccountName
+AccountNumber
+AdDistribution
+AdGroupId
+AdGroupName
+AdId
+AdType
+AverageCpc
+AverageCpm
+AveragePosition
+BehavioralId
+BehavioralName
+CampaignId
+CampaignName
+Clicks
+ConversionRate
+Conversions
+CostPerConversion
+Ctr
+CurrencyCode
+CurrentMaxCpc
+DestinationUrl
+Impressions
+LanguageAndRegion
+MatchType
+PricingModel
+Spend
+TimePeriod
+
+=cut
+
 sub AccountId {
     return 'AccountId';
 }

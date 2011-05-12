@@ -6,6 +6,27 @@ package Microsoft::AdCenter::V6::ReportingService::AgeGroupReportFilter;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::ReportingService::AgeGroupReportFilter - Represents "AgeGroupReportFilter" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Ages0to12
+Ages13to17
+Ages18to24
+Ages25to34
+Ages35to49
+Ages50to64
+Ages65plus
+Unknown
+
+=cut
+
 sub Ages0to12 {
     return 'Ages0to12';
 }

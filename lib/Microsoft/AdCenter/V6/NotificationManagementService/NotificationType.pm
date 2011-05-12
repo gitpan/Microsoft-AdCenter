@@ -6,6 +6,29 @@ package Microsoft::AdCenter::V6::NotificationManagementService::NotificationType
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::NotificationManagementService::NotificationType - Represents "NotificationType" in Microsoft AdCenter Notification Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountClosed
+AccountSignupPaymentReceipt
+ApproachingCreditCardExpiration
+CreditCardExpired
+EditorialRejection
+NewCustomerSignup
+NewUserAdded
+UnableToChargeCreditCard
+UserNameReminder
+UserPasswordReset
+
+=cut
+
 sub AccountClosed {
     return 'AccountClosed';
 }

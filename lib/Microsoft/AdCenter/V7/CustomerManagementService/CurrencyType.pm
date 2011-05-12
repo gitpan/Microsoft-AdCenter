@@ -6,6 +6,111 @@ package Microsoft::AdCenter::V7::CustomerManagementService::CurrencyType;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CustomerManagementService::CurrencyType - Represents "CurrencyType" in Microsoft AdCenter Customer Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AlgerianDinar
+ArgentinePeso
+ArmenianDram
+AustralianDollar
+AzerbaijanianManat
+BahrainiDinar
+Baht
+Balboa
+BelarussianRuble
+BelizeDollar
+Bolivar
+Boliviano
+BrazilianReal
+BruneiDollar
+CanadianDollar
+ChileanPeso
+ColombianPeso
+CordobaOro
+CostaRicanColon
+Croatiankuna
+CzechKoruna
+DanishKrone
+Denar
+DominicanPeso
+Dong
+EgyptianPound
+Euro
+Forint
+Guarani
+HongKongDollar
+Hryvnia
+IcelandKrona
+IndianRupee
+IranianRial
+IraqiDinar
+JamaicanDollar
+JapaneseYen
+JordanianDinar
+KenyanShilling
+Kroon
+KuwaitiDinar
+Lari
+LatvianLats
+LebanesePound
+Lek
+Lempira
+Leu
+Lev
+LibyanDinar
+LithuanianLitus
+MalaysianRinggit
+MexicanPeso
+MoroccanDirham
+NewIsraeliSheqel
+NewTaiwanDollar
+NewZealandDollar
+NorwegianKrone
+NuevoSol
+PakistanRupee
+Pataca
+PesoUruguayo
+PhilippinePeso
+QatariRial
+Quetzal
+RialOmani
+Rufiyaa
+Rupiah
+RussianRuble
+SaudiRiyal
+SingaporeDollar
+SlovakKoruna
+Som
+SouthAfricanRand
+SwedishKrona
+SwissFranc
+SyrianPound
+Tenge
+Tolar
+TrinidadandTobagoDollar
+Tugrik
+TunisianDinar
+TurkishLira
+UAEDirham
+UKPound
+USDollar
+UzbekistanSum
+Won
+YemeniRial
+YuanRenminbi
+YugoslavianNewDinar
+ZimbabweDollar
+Zloty
+
+=cut
+
 sub AlgerianDinar {
     return 'AlgerianDinar';
 }

@@ -65,7 +65,7 @@ Microsoft adCenter API allows you to manage your adCenter account in an automate
 
 The calls you can make to the various services are documented on MSDN.  See
 
-L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx>
+L<http://msdn.microsoft.com/en-us/library/ee730327.aspx>
 
 Where the documentation indicates that a complex type must be passed in to a particular service call, you must pass in the appropriate Microsoft::AdCenter::ComplexType object.  For example, CampaignManagementService->AddCampaigns requires that an array of Campaigns be passed in:
 

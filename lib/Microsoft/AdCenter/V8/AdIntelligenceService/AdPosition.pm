@@ -6,6 +6,34 @@ package Microsoft::AdCenter::V8::AdIntelligenceService::AdPosition;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V8::AdIntelligenceService::AdPosition - Represents "AdPosition" in Microsoft AdCenter Ad Intelligence Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+All
+MainLine1
+MainLine2
+MainLine3
+MainLine4
+SideBar1
+SideBar10
+SideBar2
+SideBar3
+SideBar4
+SideBar5
+SideBar6
+SideBar7
+SideBar8
+SideBar9
+
+=cut
+
 sub All {
     return 'All';
 }

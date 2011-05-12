@@ -6,6 +6,31 @@ package Microsoft::AdCenter::V7::ReportingService::ReportTimePeriod;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::ReportingService::ReportTimePeriod - Represents "ReportTimePeriod" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+LastFourWeeks
+LastMonth
+LastSevenDays
+LastSixMonths
+LastThreeMonths
+LastWeek
+LastYear
+ThisMonth
+ThisWeek
+ThisYear
+Today
+Yesterday
+
+=cut
+
 sub LastFourWeeks {
     return 'LastFourWeeks';
 }

@@ -6,6 +6,46 @@ package Microsoft::AdCenter::V7::ReportingService::SegmentationReportColumn;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::ReportingService::SegmentationReportColumn - Represents "SegmentationReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountId
+AccountName
+AccountNumber
+AdGroupId
+AdGroupName
+AgeGroup
+Assists
+CampaignId
+CampaignName
+Conversions
+Country
+FunnelConversionRate
+Gender
+Goal
+Keyword
+KeywordId
+MetroArea
+ReturnOnAdSpend
+Revenue
+Spend
+State
+Step1Count
+Step2Count
+Step3Count
+Step4Count
+Step5Count
+TimePeriod
+
+=cut
+
 sub AccountId {
     return 'AccountId';
 }

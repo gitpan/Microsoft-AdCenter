@@ -6,6 +6,47 @@ package Microsoft::AdCenter::V7::CampaignManagementService::AdComponent;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CampaignManagementService::AdComponent - Represents "AdComponent" in Microsoft AdCenter Campaign Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Ad
+AdDescription
+AdTitle
+AdTitleDescription
+AltText
+Asset
+Association
+Audio
+BiddingKeyword
+BusinessName
+CashbackTextParam
+CAsset
+Destination
+DestinationUrl
+DisplayUrl
+Flash
+Image
+Keyword
+KeywordParam1
+KeywordParam2
+KeywordParam3
+LandingUrl
+Order
+PhoneNumber
+Script
+SiteDomain
+Unknown
+Video
+
+=cut
+
 sub Ad {
     return 'Ad';
 }

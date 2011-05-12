@@ -6,6 +6,25 @@ package Microsoft::AdCenter::V7::CampaignManagementService::HourRange;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CampaignManagementService::HourRange - Represents "HourRange" in Microsoft AdCenter Campaign Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+ElevenAMToTwoPM
+ElevenPMToThreeAM
+SevenAMToElevenAM
+SixPMToElevenPM
+ThreeAMToSevenAM
+TwoPMToSixPM
+
+=cut
+
 sub ElevenAMToTwoPM {
     return 'ElevenAMToTwoPM';
 }

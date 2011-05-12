@@ -6,6 +6,42 @@ package Microsoft::AdCenter::V6::ReportingService::DestinationUrlPerformanceRepo
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::ReportingService::DestinationUrlPerformanceReportColumn - Represents "DestinationUrlPerformanceReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountName
+AccountNumber
+AdDistribution
+AdGroupId
+AdGroupName
+AdId
+AverageCpc
+AverageCpm
+AveragePosition
+CampaignId
+CampaignName
+Clicks
+ConversionRate
+Conversions
+CostPerConversion
+Ctr
+CurrencyCode
+DestinationUrl
+Impressions
+LanguageAndRegion
+PricingModel
+Spend
+TimePeriod
+
+=cut
+
 sub AccountName {
     return 'AccountName';
 }

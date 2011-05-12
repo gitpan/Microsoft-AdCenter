@@ -6,6 +6,23 @@ package Microsoft::AdCenter::V7::CustomerManagementService::UserStatus;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CustomerManagementService::UserStatus - Represents "UserStatus" in Microsoft AdCenter Customer Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Active
+Deleted
+Inactive
+New
+
+=cut
+
 sub Active {
     return 'Active';
 }

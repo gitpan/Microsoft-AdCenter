@@ -6,6 +6,42 @@ package Microsoft::AdCenter::V6::ReportingService::PublisherUsagePerformanceRepo
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::ReportingService::PublisherUsagePerformanceReportColumn - Represents "PublisherUsagePerformanceReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountId
+AccountName
+AccountNumber
+AdDistribution
+AdGroupId
+AdGroupName
+AverageCpc
+AverageCpm
+AveragePosition
+CampaignId
+CampaignName
+Clicks
+ConversionRate
+Conversions
+CostPerConversion
+Ctr
+CurrencyCode
+Impressions
+LanguageAndRegion
+PricingModel
+PublisherUrl
+Spend
+TimePeriod
+
+=cut
+
 sub AccountId {
     return 'AccountId';
 }

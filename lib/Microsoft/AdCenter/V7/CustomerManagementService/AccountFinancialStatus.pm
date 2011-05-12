@@ -6,6 +6,28 @@ package Microsoft::AdCenter::V7::CustomerManagementService::AccountFinancialStat
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CustomerManagementService::AccountFinancialStatus - Represents "AccountFinancialStatus" in Microsoft AdCenter Customer Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+ClearFinancialStatus
+CreditWarning
+Hold
+PendingCreditCheck
+Proposed
+SoldToOnly
+TaxOnHold
+UserHold
+WriteOff
+
+=cut
+
 sub ClearFinancialStatus {
     return 'ClearFinancialStatus';
 }

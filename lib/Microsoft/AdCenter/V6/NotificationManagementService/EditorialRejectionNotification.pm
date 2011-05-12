@@ -140,7 +140,7 @@ __PACKAGE__->mk_accessors(@_attributes);
 
 =head1 SYNOPSIS
 
-See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for documentation of the various data objects.
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
 
 =cut
 

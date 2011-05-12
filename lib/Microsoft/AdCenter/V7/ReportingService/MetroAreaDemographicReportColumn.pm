@@ -6,6 +6,37 @@ package Microsoft::AdCenter::V7::ReportingService::MetroAreaDemographicReportCol
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::ReportingService::MetroAreaDemographicReportColumn - Represents "MetroAreaDemographicReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountName
+AccountNumber
+AdDistribution
+AdGroupName
+AverageCpc
+AverageCpm
+AveragePosition
+CampaignName
+Clicks
+Country
+Ctr
+CurrencyCode
+Impressions
+LanguageAndRegion
+MetroArea
+Spend
+State
+TimePeriod
+
+=cut
+
 sub AccountName {
     return 'AccountName';
 }

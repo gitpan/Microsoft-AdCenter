@@ -6,6 +6,24 @@ package Microsoft::AdCenter::V7::ReportingService::NonHourlyReportAggregation;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::ReportingService::NonHourlyReportAggregation - Represents "NonHourlyReportAggregation" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Daily
+Monthly
+Summary
+Weekly
+Yearly
+
+=cut
+
 sub Daily {
     return 'Daily';
 }

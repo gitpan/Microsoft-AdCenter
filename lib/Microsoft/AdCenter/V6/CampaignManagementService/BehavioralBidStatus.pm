@@ -6,6 +6,23 @@ package Microsoft::AdCenter::V6::CampaignManagementService::BehavioralBidStatus;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::CampaignManagementService::BehavioralBidStatus - Represents "BehavioralBidStatus" in Microsoft AdCenter Campaign Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Active
+Deleted
+Inactive
+Paused
+
+=cut
+
 sub Active {
     return 'Active';
 }

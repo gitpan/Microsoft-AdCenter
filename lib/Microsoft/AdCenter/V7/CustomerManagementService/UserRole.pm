@@ -6,6 +6,29 @@ package Microsoft::AdCenter::V7::CustomerManagementService::UserRole;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V7::CustomerManagementService::UserRole - Represents "UserRole" in Microsoft AdCenter Customer Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AdvertiserCampaignManager
+ClientAdmin
+ClientManager
+ClientViewer
+PublisherAccountManager
+PublisherAdmin
+PublisherAdViewer
+PublisherListManager
+PublisherReportUser
+SuperAdmin
+
+=cut
+
 sub AdvertiserCampaignManager {
     return 'AdvertiserCampaignManager';
 }

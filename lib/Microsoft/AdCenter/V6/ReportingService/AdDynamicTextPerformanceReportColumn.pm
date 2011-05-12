@@ -6,6 +6,46 @@ package Microsoft::AdCenter::V6::ReportingService::AdDynamicTextPerformanceRepor
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::ReportingService::AdDynamicTextPerformanceReportColumn - Represents "AdDynamicTextPerformanceReportColumn" in Microsoft AdCenter Reporting Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AccountName
+AccountNumber
+AdDistribution
+AdGroupId
+AdGroupName
+AdId
+AdTitle
+AdType
+AverageCpc
+AverageCpm
+AveragePosition
+Clicks
+ConversionRate
+Conversions
+CostPerConversion
+Ctr
+CurrencyCode
+DestinationUrl
+Impressions
+Keyword
+LanguageAndRegion
+Param1
+Param2
+Param3
+PricingModel
+Spend
+TimePeriod
+
+=cut
+
 sub AccountName {
     return 'AccountName';
 }

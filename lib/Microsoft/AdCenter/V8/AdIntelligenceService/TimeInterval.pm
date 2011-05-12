@@ -6,6 +6,21 @@ package Microsoft::AdCenter::V8::AdIntelligenceService::TimeInterval;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V8::AdIntelligenceService::TimeInterval - Represents "TimeInterval" in Microsoft AdCenter Ad Intelligence Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+Last30Days
+Last7Days
+
+=cut
+
 sub Last30Days {
     return 'Last30Days';
 }

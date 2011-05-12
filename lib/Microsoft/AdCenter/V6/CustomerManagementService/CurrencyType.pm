@@ -6,6 +6,31 @@ package Microsoft::AdCenter::V6::CustomerManagementService::CurrencyType;
 use strict;
 use warnings;
 
+=head1 NAME
+
+Microsoft::AdCenter::V6::CustomerManagementService::CurrencyType - Represents "CurrencyType" in Microsoft AdCenter Customer Management Service.
+
+=head1 SYNOPSIS
+
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation of the various data objects.
+
+=head1 ENUMERATION VALUES
+
+AustralianDollar
+CanadianDollar
+DanishKrone
+EURO
+JapaneseYen
+NewZealandDollar
+NorwegianKrone
+SingaporeDollar
+SouthAfricanRand
+SwissFranc
+UKPound
+USDollar
+
+=cut
+
 sub AustralianDollar {
     return 'AustralianDollar';
 }

@@ -24,7 +24,7 @@ Microsoft::AdCenter::V7::CustomerBillingService - Service client for Microsoft A
         InsertionOrder => ...
     );
 
-See L<http://msdn.microsoft.com/en-us/library/ee730328%28v=MSADS.70%29.aspx> for detailed documentation for this service.
+See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed documentation for this service.
 
 =head1 METHODS
 
