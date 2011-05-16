@@ -16,16 +16,16 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AccountClosed
-AccountSignupPaymentReceipt
-ApproachingCreditCardExpiration
-CreditCardExpired
-EditorialRejection
-NewCustomerSignup
-NewUserAdded
-UnableToChargeCreditCard
-UserNameReminder
-UserPasswordReset
+    AccountClosed
+    AccountSignupPaymentReceipt
+    ApproachingCreditCardExpiration
+    CreditCardExpired
+    EditorialRejection
+    NewCustomerSignup
+    NewUserAdded
+    UnableToChargeCreditCard
+    UserNameReminder
+    UserPasswordReset
 
 =cut
 

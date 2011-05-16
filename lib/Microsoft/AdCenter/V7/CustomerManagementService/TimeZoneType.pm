@@ -16,81 +16,81 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AbuDhabiMuscat
-Adelaide
-Alaska
-AlmatyNovosibirsk
-AmsterdamBerlinBernRomeStockholmVienna
-Arizona
-AstanaDhaka
-AthensBuckarestIstanbul
-AtlanticTimeCanada
-AucklandWellington
-Azores
-Baghdad
-BakuTbilisiYerevan
-BangkokHanoiJakarta
-BeijingChongqingHongKongUrumqi
-BelgradeBratislavaBudapestLjubljanaPrague
-BogotaLimaQuito
-Brasilia
-Brisbane
-BrusselsCopenhagenMadridParis
-Bucharest
-BuenosAiresGeorgetown
-Cairo
-CanberraMelbourneSydney
-CapeVerdeIsland
-CaracasLaPaz
-CasablancaMonrovia
-CentralAmerica
-CentralTimeUSCanada
-ChennaiKolkataMumbaiNewDelhi
-ChihuahuaLaPazMazatlan
-Darwin
-EasternTimeUSCanada
-Ekaterinburg
-FijiKamchatkaMarshallIsland
-Greenland
-GreenwichMeanTimeDublinEdinburghLisbonLondon
-GuadalajaraMexicoCityMonterrey
-GuamPortMoresby
-HararePretoria
-Hawaii
-HelsinkiKyivRigaSofiaTallinnVilnius
-Hobart
-IndianaEast
-InternationalDatelineWest
-IrkutskUlaanBataar
-IslamabadKarachiTashkent
-Jerusalem
-Kabul
-Kathmandu
-Krasnoyarsk
-KualaLumpurSingapore
-KuwaitRiyadh
-MagadanSolomonIslandNewCaledonia
-MidAtlantic
-MidwayIslandAndSamoa
-MoscowStPetersburgVolgograd
-MountainTimeUSCanada
-Nairobi
-Newfoundland
-Nukualofa
-OsakaSapporoTokyo
-PacificTimeUSCanadaTijuana
-Perth
-Rangoon
-Santiago
-SarajevoSkopjeWarsawZagreb
-Saskatchewan
-Seoul
-SriJayawardenepura
-Taipei
-Tehran
-Vladivostok
-WestCentralAfrica
-Yakutsk
+    AbuDhabiMuscat
+    Adelaide
+    Alaska
+    AlmatyNovosibirsk
+    AmsterdamBerlinBernRomeStockholmVienna
+    Arizona
+    AstanaDhaka
+    AthensBuckarestIstanbul
+    AtlanticTimeCanada
+    AucklandWellington
+    Azores
+    Baghdad
+    BakuTbilisiYerevan
+    BangkokHanoiJakarta
+    BeijingChongqingHongKongUrumqi
+    BelgradeBratislavaBudapestLjubljanaPrague
+    BogotaLimaQuito
+    Brasilia
+    Brisbane
+    BrusselsCopenhagenMadridParis
+    Bucharest
+    BuenosAiresGeorgetown
+    Cairo
+    CanberraMelbourneSydney
+    CapeVerdeIsland
+    CaracasLaPaz
+    CasablancaMonrovia
+    CentralAmerica
+    CentralTimeUSCanada
+    ChennaiKolkataMumbaiNewDelhi
+    ChihuahuaLaPazMazatlan
+    Darwin
+    EasternTimeUSCanada
+    Ekaterinburg
+    FijiKamchatkaMarshallIsland
+    Greenland
+    GreenwichMeanTimeDublinEdinburghLisbonLondon
+    GuadalajaraMexicoCityMonterrey
+    GuamPortMoresby
+    HararePretoria
+    Hawaii
+    HelsinkiKyivRigaSofiaTallinnVilnius
+    Hobart
+    IndianaEast
+    InternationalDatelineWest
+    IrkutskUlaanBataar
+    IslamabadKarachiTashkent
+    Jerusalem
+    Kabul
+    Kathmandu
+    Krasnoyarsk
+    KualaLumpurSingapore
+    KuwaitRiyadh
+    MagadanSolomonIslandNewCaledonia
+    MidAtlantic
+    MidwayIslandAndSamoa
+    MoscowStPetersburgVolgograd
+    MountainTimeUSCanada
+    Nairobi
+    Newfoundland
+    Nukualofa
+    OsakaSapporoTokyo
+    PacificTimeUSCanadaTijuana
+    Perth
+    Rangoon
+    Santiago
+    SarajevoSkopjeWarsawZagreb
+    Saskatchewan
+    Seoul
+    SriJayawardenepura
+    Taipei
+    Tehran
+    Vladivostok
+    WestCentralAfrica
+    Yakutsk
 
 =cut
 

@@ -16,31 +16,31 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AccountId
-AccountName
-AccountNumber
-AdGroupId
-AdGroupName
-Assists
-CampaignId
-CampaignName
-Clicks
-ConversionRate
-Conversions
-CostPerAssist
-CostPerConversion
-Ctr
-DeviceType
-ExtendedCost
-Impressions
-Keyword
-KeywordId
-ReturnOnAdSpend
-Revenue
-RevenuePerAssist
-RevenuePerConversion
-Spend
-TimePeriod
+    AccountId
+    AccountName
+    AccountNumber
+    AdGroupId
+    AdGroupName
+    Assists
+    CampaignId
+    CampaignName
+    Clicks
+    ConversionRate
+    Conversions
+    CostPerAssist
+    CostPerConversion
+    Ctr
+    DeviceType
+    ExtendedCost
+    Impressions
+    Keyword
+    KeywordId
+    ReturnOnAdSpend
+    Revenue
+    RevenuePerAssist
+    RevenuePerConversion
+    Spend
+    TimePeriod
 
 =cut
 

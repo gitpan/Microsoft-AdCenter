@@ -16,15 +16,15 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AccountName
-AccountNumber
-CampaignName
-CurrencyCode
-DailySpend
-Date
-MonthlyBudget
-MonthToDateSpend
-ParticipationRate
+    AccountName
+    AccountNumber
+    CampaignName
+    CurrencyCode
+    DailySpend
+    Date
+    MonthlyBudget
+    MonthToDateSpend
+    ParticipationRate
 
 =cut
 

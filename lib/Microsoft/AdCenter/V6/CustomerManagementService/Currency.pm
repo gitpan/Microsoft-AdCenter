@@ -16,98 +16,98 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AED
-ALL
-AMD
-ARS
-AUD
-AZM
-BGL
-BHD
-BND
-BOB
-BRL
-BYB
-BZD
-CAD
-CHF
-CLP
-CNY
-COP
-CRC
-CZK
-DKK
-DOP
-DZD
-EEK
-EGP
-EUR
-GBP
-GEL
-GTQ
-HKD
-HNL
-HRK
-HUF
-IDR
-ILS
-INR
-IQD
-IRR
-ISK
-JMD
-JOD
-JPY
-KES
-KGS
-KRW
-KWD
-KZT
-LBP
-LTL
-LVL
-LYD
-MAD
-MKD
-MNT
-MOP
-MVR
-MXN
-MYR
-NIO
-NOK
-NZD
-OMR
-PAB
-PEN
-PHP
-PKR
-PLN
-PYG
-QAR
-ROL
-RUR
-SAR
-SEK
-SGD
-SIT
-SKK
-SYP
-THB
-TND
-TRL
-TTD
-TWD
-UAH
-USD
-UYU
-UZS
-VEB
-VND
-YER
-YUN
-ZAR
-ZWD
+    AED
+    ALL
+    AMD
+    ARS
+    AUD
+    AZM
+    BGL
+    BHD
+    BND
+    BOB
+    BRL
+    BYB
+    BZD
+    CAD
+    CHF
+    CLP
+    CNY
+    COP
+    CRC
+    CZK
+    DKK
+    DOP
+    DZD
+    EEK
+    EGP
+    EUR
+    GBP
+    GEL
+    GTQ
+    HKD
+    HNL
+    HRK
+    HUF
+    IDR
+    ILS
+    INR
+    IQD
+    IRR
+    ISK
+    JMD
+    JOD
+    JPY
+    KES
+    KGS
+    KRW
+    KWD
+    KZT
+    LBP
+    LTL
+    LVL
+    LYD
+    MAD
+    MKD
+    MNT
+    MOP
+    MVR
+    MXN
+    MYR
+    NIO
+    NOK
+    NZD
+    OMR
+    PAB
+    PEN
+    PHP
+    PKR
+    PLN
+    PYG
+    QAR
+    ROL
+    RUR
+    SAR
+    SEK
+    SGD
+    SIT
+    SKK
+    SYP
+    THB
+    TND
+    TRL
+    TTD
+    TWD
+    UAH
+    USD
+    UYU
+    UZS
+    VEB
+    VND
+    YER
+    YUN
+    ZAR
+    ZWD
 
 =cut
 

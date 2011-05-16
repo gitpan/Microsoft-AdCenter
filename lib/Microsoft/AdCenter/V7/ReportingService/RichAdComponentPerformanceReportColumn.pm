@@ -16,23 +16,23 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AccountName
-AccountNumber
-AdGroupId
-AdGroupName
-AdId
-AdTitle
-CampaignName
-ComponentClicks
-ComponentCTR
-ComponentDestinationURL
-ComponentNonBillableClicks
-ComponentPosition
-ComponentTitle
-ComponentTotalClicks
-ComponentType
-RichAdSubType
-TimePeriod
+    AccountName
+    AccountNumber
+    AdGroupId
+    AdGroupName
+    AdId
+    AdTitle
+    CampaignName
+    ComponentClicks
+    ComponentCTR
+    ComponentDestinationURL
+    ComponentNonBillableClicks
+    ComponentPosition
+    ComponentTitle
+    ComponentTotalClicks
+    ComponentType
+    RichAdSubType
+    TimePeriod
 
 =cut
 

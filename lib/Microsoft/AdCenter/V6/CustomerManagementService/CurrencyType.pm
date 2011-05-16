@@ -16,18 +16,18 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AustralianDollar
-CanadianDollar
-DanishKrone
-EURO
-JapaneseYen
-NewZealandDollar
-NorwegianKrone
-SingaporeDollar
-SouthAfricanRand
-SwissFranc
-UKPound
-USDollar
+    AustralianDollar
+    CanadianDollar
+    DanishKrone
+    EURO
+    JapaneseYen
+    NewZealandDollar
+    NorwegianKrone
+    SingaporeDollar
+    SouthAfricanRand
+    SwissFranc
+    UKPound
+    USDollar
 
 =cut
 

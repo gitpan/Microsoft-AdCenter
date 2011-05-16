@@ -16,16 +16,16 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Anniversary
-FatherMiddleName
-FavoriteMovie
-FavoritePetsName
-FavoriteSportsTeam
-FavoriteTeacherName
-FirstChildMiddleName
-HighSchoolName
-None
-SpouseMiddleName
+    Anniversary
+    FatherMiddleName
+    FavoriteMovie
+    FavoritePetsName
+    FavoriteSportsTeam
+    FavoriteTeacherName
+    FirstChildMiddleName
+    HighSchoolName
+    None
+    SpouseMiddleName
 
 =cut
 

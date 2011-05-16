@@ -16,10 +16,10 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Browse
-Conversion
-Lead
-Prospect
+    Browse
+    Conversion
+    Lead
+    Prospect
 
 =cut
 

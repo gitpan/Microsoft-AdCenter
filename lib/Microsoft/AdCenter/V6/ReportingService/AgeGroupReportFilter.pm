@@ -16,14 +16,14 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Ages0to12
-Ages13to17
-Ages18to24
-Ages25to34
-Ages35to49
-Ages50to64
-Ages65plus
-Unknown
+    Ages0to12
+    Ages13to17
+    Ages18to24
+    Ages25to34
+    Ages35to49
+    Ages50to64
+    Ages65plus
+    Unknown
 
 =cut
 

@@ -16,27 +16,27 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-EightyPercent
-FiftyPercent
-FortyPercent
-NegativeEightyPercent
-NegativeFiftyPercent
-NegativeFortyPercent
-NegativeNinetyPercent
-NegativeOneHundredPercent
-NegativeSeventyPercent
-NegativeSixtyPercent
-NegativeTenPercent
-NegativeThirtyPercent
-NegativeTwentyPercent
-NinetyPercent
-OneHundredPercent
-SeventyPercent
-SixtyPercent
-TenPercent
-ThirtyPercent
-TwentyPercent
-ZeroPercent
+    EightyPercent
+    FiftyPercent
+    FortyPercent
+    NegativeEightyPercent
+    NegativeFiftyPercent
+    NegativeFortyPercent
+    NegativeNinetyPercent
+    NegativeOneHundredPercent
+    NegativeSeventyPercent
+    NegativeSixtyPercent
+    NegativeTenPercent
+    NegativeThirtyPercent
+    NegativeTwentyPercent
+    NinetyPercent
+    OneHundredPercent
+    SeventyPercent
+    SixtyPercent
+    TenPercent
+    ThirtyPercent
+    TwentyPercent
+    ZeroPercent
 
 =cut
 

@@ -16,13 +16,13 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-CanadaEN
-CanadaFR
-France
-Singapore
-UK
-Undefined
-US
+    CanadaEN
+    CanadaFR
+    France
+    Singapore
+    UK
+    Undefined
+    US
 
 =cut
 

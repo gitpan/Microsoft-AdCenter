@@ -16,11 +16,11 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Rais1Video2Links1Form
-Rais1Video4Links
-Rais2Images2Links1Form
-Rais2Images4Links
-RaisPharma
+    Rais1Video2Links1Form
+    Rais1Video4Links
+    Rais2Images2Links1Form
+    Rais2Images4Links
+    RaisPharma
 
 =cut
 

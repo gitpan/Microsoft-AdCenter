@@ -16,12 +16,12 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-ElevenAMToTwoPM
-ElevenPMToThreeAM
-SevenAMToElevenAM
-SixPMToElevenPM
-ThreeAMToSevenAM
-TwoPMToSixPM
+    ElevenAMToTwoPM
+    ElevenPMToThreeAM
+    SevenAMToElevenAM
+    SixPMToElevenPM
+    ThreeAMToSevenAM
+    TwoPMToSixPM
 
 =cut
 

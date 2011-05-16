@@ -16,18 +16,18 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Danish
-Dutch
-English
-Finnish
-French
-German
-Italian
-Japanese
-Norwegian
-Portuguese
-Spanish
-Swedish
+    Danish
+    Dutch
+    English
+    Finnish
+    French
+    German
+    Italian
+    Japanese
+    Norwegian
+    Portuguese
+    Spanish
+    Swedish
 
 =cut
 

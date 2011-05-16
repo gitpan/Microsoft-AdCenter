@@ -16,9 +16,9 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-MainLine
-MainLine1
-SideBar
+    MainLine
+    MainLine1
+    SideBar
 
 =cut
 

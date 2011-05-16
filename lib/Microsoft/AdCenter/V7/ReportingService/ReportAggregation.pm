@@ -16,12 +16,12 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Daily
-Hourly
-Monthly
-Summary
-Weekly
-Yearly
+    Daily
+    Hourly
+    Monthly
+    Summary
+    Weekly
+    Yearly
 
 =cut
 

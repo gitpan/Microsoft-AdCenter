@@ -16,21 +16,21 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-All
-MainLine1
-MainLine2
-MainLine3
-MainLine4
-SideBar1
-SideBar10
-SideBar2
-SideBar3
-SideBar4
-SideBar5
-SideBar6
-SideBar7
-SideBar8
-SideBar9
+    All
+    MainLine1
+    MainLine2
+    MainLine3
+    MainLine4
+    SideBar1
+    SideBar10
+    SideBar2
+    SideBar3
+    SideBar4
+    SideBar5
+    SideBar6
+    SideBar7
+    SideBar8
+    SideBar9
 
 =cut
 

@@ -16,15 +16,15 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-ClearFinancialStatus
-CreditWarning
-Hold
-PendingCreditCheck
-Proposed
-SoldToOnly
-TaxOnHold
-UserHold
-WriteOff
+    ClearFinancialStatus
+    CreditWarning
+    Hold
+    PendingCreditCheck
+    Proposed
+    SoldToOnly
+    TaxOnHold
+    UserHold
+    WriteOff
 
 =cut
 

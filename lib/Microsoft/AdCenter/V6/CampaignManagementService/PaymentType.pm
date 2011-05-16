@@ -16,17 +16,17 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-AmericanExpress
-Cash
-CashOnDelivery
-DinersClub
-DirectDebit
-Invoice
-MasterCard
-Other
-PayPal
-TravellersCheck
-Visa
+    AmericanExpress
+    Cash
+    CashOnDelivery
+    DinersClub
+    DirectDebit
+    Invoice
+    MasterCard
+    Other
+    PayPal
+    TravellersCheck
+    Visa
 
 =cut
 

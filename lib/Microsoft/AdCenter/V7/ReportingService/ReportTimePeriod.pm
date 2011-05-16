@@ -16,18 +16,18 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-LastFourWeeks
-LastMonth
-LastSevenDays
-LastSixMonths
-LastThreeMonths
-LastWeek
-LastYear
-ThisMonth
-ThisWeek
-ThisYear
-Today
-Yesterday
+    LastFourWeeks
+    LastMonth
+    LastSevenDays
+    LastSixMonths
+    LastThreeMonths
+    LastWeek
+    LastYear
+    ThisMonth
+    ThisWeek
+    ThisYear
+    Today
+    Yesterday
 
 =cut
 

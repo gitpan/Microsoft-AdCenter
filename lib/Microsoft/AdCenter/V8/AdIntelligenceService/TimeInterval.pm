@@ -16,8 +16,8 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Last30Days
-Last7Days
+    Last30Days
+    Last7Days
 
 =cut
 

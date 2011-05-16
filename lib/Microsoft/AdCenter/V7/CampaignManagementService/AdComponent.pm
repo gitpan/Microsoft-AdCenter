@@ -16,34 +16,34 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-Ad
-AdDescription
-AdTitle
-AdTitleDescription
-AltText
-Asset
-Association
-Audio
-BiddingKeyword
-BusinessName
-CashbackTextParam
-CAsset
-Destination
-DestinationUrl
-DisplayUrl
-Flash
-Image
-Keyword
-KeywordParam1
-KeywordParam2
-KeywordParam3
-LandingUrl
-Order
-PhoneNumber
-Script
-SiteDomain
-Unknown
-Video
+    Ad
+    AdDescription
+    AdTitle
+    AdTitleDescription
+    AltText
+    Asset
+    Association
+    Audio
+    BiddingKeyword
+    BusinessName
+    CashbackTextParam
+    CAsset
+    Destination
+    DestinationUrl
+    DisplayUrl
+    Flash
+    Image
+    Keyword
+    KeywordParam1
+    KeywordParam2
+    KeywordParam3
+    LandingUrl
+    Order
+    PhoneNumber
+    Script
+    SiteDomain
+    Unknown
+    Video
 
 =cut
 

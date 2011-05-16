@@ -16,11 +16,11 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
-EighteenToTwentyFive
-FiftyToSixtyFive
-SixtyFiveAndAbove
-ThirtyFiveToFifty
-TwentyFiveToThirtyFive
+    EighteenToTwentyFive
+    FiftyToSixtyFive
+    SixtyFiveAndAbove
+    ThirtyFiveToFifty
+    TwentyFiveToThirtyFive
 
 =cut
 
