@@ -31,6 +31,8 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     Impressions
     LanguageAndRegion
     MetroArea
+    ProximityTargetLocation
+    Radius
     Spend
     State
     TimePeriod
@@ -95,6 +97,14 @@ sub LanguageAndRegion {
 
 sub MetroArea {
     return 'MetroArea';
+}
+
+sub ProximityTargetLocation {
+    return 'ProximityTargetLocation';
+}
+
+sub Radius {
+    return 'Radius';
 }
 
 sub Spend {

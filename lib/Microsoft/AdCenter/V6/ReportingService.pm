@@ -89,7 +89,7 @@ sub _default_location {
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v6/Reporting/ReportingService.svc?wsdl';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V6/Reporting/ReportingService.svc?wsdl';
 }
 
 our $_request_headers = [

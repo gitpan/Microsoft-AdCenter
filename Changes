@@ -38,3 +38,9 @@ Revision history for Microsoft-AdCenter
         Added adCenter API Version 8 services
         Updated V7::CampaignManagementService and V7::ReportingService according to the latest WSDL
         Removed V7::SecureDataManagementService as it is not listed in MSDN anymore
+
+8.02    30 July 2011
+        Added V8::CampaignManagementService and V8::CustomerManagementService
+
+8.03    29 August 2011
+        Added V8::CustomerBillingService, V8::NotificationService and V8::ReportingService

@@ -74,7 +74,7 @@ sub _invoke {
     my $soap_action = $args{soap_action};
     my $request_name = $args{request}->{name};
     my $request_headers = $self->_request_headers;
-    my $request_paramters = $args{request}->{parameters};
+    my $request_parameters = $args{request}->{parameters};
     my $response_name = $args{response}->{name};
     my $response_headers = $self->_request_headers;
     my $response_headers_expanded = $self->_response_headers_expanded;
@@ -103,12 +103,12 @@ sub _invoke {
 
     # Create request body
     my @soap_body;
-    foreach my $request_paramter (@$request_paramters) {
-        my $request_paramter_ns = $request_paramter->{namespace};
-        my $request_paramter_name = $request_paramter->{name};
-        my $request_paramter_type = $request_paramter->{type};
-        my $parameter_value = $parameter_values->{$request_paramter_name};
-        push @soap_body, $self->_serialize_argument("SOAP::Data", $request_paramter_ns, $request_paramter_name, $parameter_value, $request_paramter_type, 1);
+    foreach my $request_parameter (@$request_parameters) {
+        my $request_parameter_ns = $request_parameter->{namespace};
+        my $request_parameter_name = $request_parameter->{name};
+        my $request_parameter_type = $request_parameter->{type};
+        my $parameter_value = $parameter_values->{$request_parameter_name};
+        push @soap_body, $self->_serialize_argument("SOAP::Data", $request_parameter_ns, $request_parameter_name, $parameter_value, $request_parameter_type, 1);
     }
 
     my $retries = 0;
@@ -153,7 +153,7 @@ sub _invoke {
             # Parse the response body
             my $response_body = $som->body;
             if (defined $response_body) {
-                die "Type mismatch" unless exists $response_body->{$response_name};
+                die "Type mismatch" unless (exists $response_body->{$response_name});
                 $result = $self->_deserialize_complex_type($response_name, $response_body->{$response_name});
             }
         };

@@ -90,7 +90,7 @@ sub _default_location {
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v8/CampaignManagement/AdIntelligenceService.svc?wsdl';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc?wsdl';
 }
 
 our $_request_headers = [

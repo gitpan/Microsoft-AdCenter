@@ -30,9 +30,13 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     CampaignName
     CampaignStatus
     Clicks
+    ConversionRate
+    Conversions
+    CostPerConversion
     Ctr
     DestinationUrl
     Impressions
+    Keyword
     LanguageAndRegion
     MatchType
     SearchQuery
@@ -97,6 +101,18 @@ sub Clicks {
     return 'Clicks';
 }
 
+sub ConversionRate {
+    return 'ConversionRate';
+}
+
+sub Conversions {
+    return 'Conversions';
+}
+
+sub CostPerConversion {
+    return 'CostPerConversion';
+}
+
 sub Ctr {
     return 'Ctr';
 }
@@ -107,6 +123,10 @@ sub DestinationUrl {
 
 sub Impressions {
     return 'Impressions';
+}
+
+sub Keyword {
+    return 'Keyword';
 }
 
 sub LanguageAndRegion {

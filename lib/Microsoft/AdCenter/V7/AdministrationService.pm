@@ -88,7 +88,7 @@ sub _default_location {
 }
 
 sub _wsdl {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v7/Administration/AdministrationService.svc?wsdl';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V7/Administration/AdministrationService.svc?wsdl';
 }
 
 our $_request_headers = [

@@ -35,7 +35,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed docume
 
 Changes the end point for this service client.
 
-Default value: https://adcenterapi.microsoft.com/Api/Advertiser/v7/CampaignManagement/CampaignManagementService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V7/CampaignManagement/CampaignManagementService.svc
 
 =head2 ApplicationToken
 
@@ -86,7 +86,7 @@ sub _namespace_uri {
 }
 
 sub _default_location {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/v7/CampaignManagement/CampaignManagementService.svc';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V7/CampaignManagement/CampaignManagementService.svc';
 }
 
 sub _wsdl {
