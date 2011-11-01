@@ -1163,6 +1163,41 @@ sub GetBusinessesInfo {
     );
 }
 
+=head2 GetCampaignAdExtensions
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+
+=item Returns:
+
+    GetCampaignAdExtensionsResponse
+
+=back
+
+=cut
+
+sub GetCampaignAdExtensions {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetCampaignAdExtensions',
+        request => {
+            name => 'GetCampaignAdExtensionsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetCampaignAdExtensionsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetCampaignsByAccountId
 
 =over
@@ -1226,6 +1261,39 @@ sub GetCampaignsByIds {
         },
         response => {
             name => 'GetCampaignsByIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetDeviceOSTargetsByIds
+
+=over
+
+=item Parameters:
+
+    TargetIds (ArrayOflong)
+
+=item Returns:
+
+    GetDeviceOSTargetsByIdsResponse
+
+=back
+
+=cut
+
+sub GetDeviceOSTargetsByIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetDeviceOSTargetsByIds',
+        request => {
+            name => 'GetDeviceOSTargetsByIdsRequest',
+            parameters => [
+                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetDeviceOSTargetsByIdsResponse'
         },
         parameters => \%args
     );
@@ -2257,6 +2325,41 @@ sub SetAnalyticsType {
     );
 }
 
+=head2 SetCampaignAdExtensions
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensions (ArrayOfAdExtension)
+
+=item Returns:
+
+    SetCampaignAdExtensionsResponse
+
+=back
+
+=cut
+
+sub SetCampaignAdExtensions {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetCampaignAdExtensions',
+        request => {
+            name => 'SetCampaignAdExtensionsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensions', type => 'ArrayOfAdExtension', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'SetCampaignAdExtensionsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 SetNegativeKeywordsToAdGroups
 
 =over
@@ -2638,6 +2741,39 @@ sub UpdateCampaigns {
     );
 }
 
+=head2 UpdateDeviceOSTargets
+
+=over
+
+=item Parameters:
+
+    TargetAssociations (ArrayOfTargetAssociation)
+
+=item Returns:
+
+    UpdateDeviceOSTargetsResponse
+
+=back
+
+=cut
+
+sub UpdateDeviceOSTargets {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpdateDeviceOSTargets',
+        request => {
+            name => 'UpdateDeviceOSTargetsRequest',
+            parameters => [
+                { name => 'TargetAssociations', type => 'ArrayOfTargetAssociation', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'UpdateDeviceOSTargetsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 UpdateGoals
 
 =over
@@ -2857,6 +2993,7 @@ our @_complex_types = (qw/
     Ad
     AdApiError
     AdApiFaultDetail
+    AdExtension
     AdGroup
     AdGroupNegativeKeywords
     AdGroupNegativeSites
@@ -2904,6 +3041,8 @@ our @_complex_types = (qw/
     DeleteTargetFromCampaignResponse
     DeleteTargetResponse
     DeleteTargetsFromLibraryResponse
+    DeviceOS
+    DeviceOSTarget
     DeviceTarget
     Dimension
     DownloadCampaignHierarchyResponse
@@ -2922,8 +3061,10 @@ our @_complex_types = (qw/
     GetAnalyticsTypeResponse
     GetBusinessesByIdsResponse
     GetBusinessesInfoResponse
+    GetCampaignAdExtensionsResponse
     GetCampaignsByAccountIdResponse
     GetCampaignsByIdsResponse
+    GetDeviceOSTargetsByIdsResponse
     GetDownloadStatusResponse
     GetGoalsResponse
     GetKeywordEditorialReasonsByIdsResponse
@@ -2962,6 +3103,7 @@ our @_complex_types = (qw/
     PauseCampaignsResponse
     PauseKeywordsResponse
     PauseSitePlacementsResponse
+    PhoneExtension
     PlacementDetail
     PublisherCountry
     RadiusTarget
@@ -2973,6 +3115,7 @@ our @_complex_types = (qw/
     ResumeSitePlacementsResponse
     RevenueModel
     SetAnalyticsTypeResponse
+    SetCampaignAdExtensionsResponse
     SetNegativeKeywordsToAdGroupsResponse
     SetNegativeKeywordsToCampaignsResponse
     SetNegativeSitesToAdGroupsResponse
@@ -2985,6 +3128,7 @@ our @_complex_types = (qw/
     Step
     SubmitAdGroupForApprovalResponse
     Target
+    TargetAssociation
     TargetInfo
     TextAd
     TimeOfTheDay
@@ -2992,6 +3136,7 @@ our @_complex_types = (qw/
     UpdateAdsResponse
     UpdateBusinessesResponse
     UpdateCampaignsResponse
+    UpdateDeviceOSTargetsResponse
     UpdateGoalsResponse
     UpdateKeywordsResponse
     UpdateSitePlacementsResponse
@@ -3018,6 +3163,11 @@ our %_array_types = (
         namespace_uri => 'https://adapi.microsoft.com',
         element_name => 'AdApiError',
         element_type => 'AdApiError'
+    },
+    ArrayOfAdExtension => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtension',
+        element_type => 'AdExtension'
     },
     ArrayOfAdGroup => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3103,6 +3253,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'DayTargetBid',
         element_type => 'DayTargetBid'
+    },
+    ArrayOfDeviceOS => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'DeviceOS',
+        element_type => 'DeviceOS'
     },
     ArrayOfDeviceType => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3218,6 +3373,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'Target',
         element_type => 'Target'
+    },
+    ArrayOfTargetAssociation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'TargetAssociation',
+        element_type => 'TargetAssociation'
     },
     ArrayOfTargetInfo => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

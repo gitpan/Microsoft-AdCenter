@@ -334,6 +334,43 @@ sub FindAccounts {
     );
 }
 
+=head2 FindAccountsOrCustomersInfo
+
+=over
+
+=item Parameters:
+
+    Filter (string)
+    TopN (int)
+    ApplicationScope (ApplicationType)
+
+=item Returns:
+
+    FindAccountsOrCustomersInfoResponse
+
+=back
+
+=cut
+
+sub FindAccountsOrCustomersInfo {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'FindAccountsOrCustomersInfo',
+        request => {
+            name => 'FindAccountsOrCustomersInfoRequest',
+            parameters => [
+                { name => 'Filter', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'TopN', type => 'int', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ApplicationScope', type => 'ApplicationType', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'FindAccountsOrCustomersInfoResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetAccessibleCustomer
 
 =over
@@ -430,6 +467,37 @@ sub GetAccountsInfo {
         },
         response => {
             name => 'GetAccountsInfoResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetCurrentUser
+
+=over
+
+=item Parameters:
+
+
+=item Returns:
+
+    GetCurrentUserResponse
+
+=back
+
+=cut
+
+sub GetCurrentUser {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetCurrentUser',
+        request => {
+            name => 'GetCurrentUserRequest',
+            parameters => [
+            ]
+        },
+        response => {
+            name => 'GetCurrentUserResponse'
         },
         parameters => \%args
     );
@@ -854,6 +922,7 @@ sub _simple_types {
 our @_complex_types = (qw/
     Account
     AccountInfo
+    AccountInfoWithCustomerData
     AdApiError
     AdApiFaultDetail
     AddAccountResponse
@@ -868,10 +937,12 @@ our @_complex_types = (qw/
     DeleteAccountResponse
     DeleteCustomerResponse
     DeleteUserResponse
+    FindAccountsOrCustomersInfoResponse
     FindAccountsResponse
     GetAccessibleCustomerResponse
     GetAccountResponse
     GetAccountsInfoResponse
+    GetCurrentUserResponse
     GetCustomerPilotFeatureResponse
     GetCustomerResponse
     GetCustomersInfoResponse
@@ -900,6 +971,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
         element_name => 'AccountInfo',
         element_type => 'AccountInfo'
+    },
+    ArrayOfAccountInfoWithCustomerData => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'AccountInfoWithCustomerData',
+        element_type => 'AccountInfoWithCustomerData'
     },
     ArrayOfAdApiError => {
         namespace_uri => 'https://adapi.microsoft.com',

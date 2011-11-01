@@ -257,7 +257,15 @@ sub _serialize_argument {
     my $object = eval($type . '->type($type_full_name)');
     $object->prefix($prefix);
 
-    if (ref($value) eq 'ARRAY') {
+    if (not defined $value) {
+        if ($min_occurs > 0) {
+            $object = $object->attr({'xsi:nil' => "true"});
+        }
+        else {
+            $object = undef;
+        }
+    }
+    elsif (ref($value) eq 'ARRAY') {
         my %array_types = $self->_array_types;
         die "Type mismatch" unless (exists $array_types{$value_type});
         if (scalar(@$value) > 0) {
@@ -275,17 +283,19 @@ sub _serialize_argument {
             $type_full_name = $self->_type_full_name($value_type);
             $object->type($type_full_name);
         }
-        my @attributes = map { $self->_serialize_argument($type, $type_namespace, $_, $value->$_, $value->_attribute_type($_), $value->_attribute_min_occurs($_)) } $value->_attributes;
+
+        my @attributes =
+            grep { defined $_ }
+                map { $self->_serialize_argument($type, $type_namespace, $_, $value->$_, $value->_attribute_type($_), $value->_attribute_min_occurs($_)) }
+                    $value->_attributes;
+
         $object = $object->value(\eval($type . '->value(@attributes)')) if (scalar(@attributes) > 0);
-    }
-    elsif ((not defined $value) && $min_occurs > 0) {
-        $object = $object->attr({'xsi:nil' => "true"});
     }
     else {
         $object = $object->value($value);
     }
 
-    return unless defined $object;
+    return undef unless (defined $object);
     return $object->name($name);
 }
 

@@ -44,3 +44,9 @@ Revision history for Microsoft-AdCenter
 
 8.03    29 August 2011
         Added V8::CustomerBillingService, V8::NotificationService and V8::ReportingService
+
+8.04    25 October 2011
+        Optimize request size
+
+8.05    1 November 2011
+        Updated various services according to the latest WSDLs
