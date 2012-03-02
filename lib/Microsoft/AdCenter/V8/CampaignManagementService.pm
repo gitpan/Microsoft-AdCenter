@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::CampaignManagementService;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -855,6 +855,41 @@ sub DownloadCampaignHierarchy {
         },
         response => {
             name => 'DownloadCampaignHierarchyResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAccountMigrationStatuses
+
+=over
+
+=item Parameters:
+
+    AccountIds (ArrayOflong)
+    MigrationType (string)
+
+=item Returns:
+
+    GetAccountMigrationStatusesResponse
+
+=back
+
+=cut
+
+sub GetAccountMigrationStatuses {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAccountMigrationStatuses',
+        request => {
+            name => 'GetAccountMigrationStatusesRequest',
+            parameters => [
+                { name => 'AccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'MigrationType', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetAccountMigrationStatusesResponse'
         },
         parameters => \%args
     );
@@ -2972,6 +3007,7 @@ our %_simple_types = (
     IncrementalBidPercentage => 'https://adcenter.microsoft.com/v8',
     KeywordEditorialStatus => 'https://adcenter.microsoft.com/v8',
     KeywordStatus => 'https://adcenter.microsoft.com/v8',
+    MigrationStatus => 'https://adcenter.microsoft.com/v8',
     Network => 'https://adcenter.microsoft.com/v8',
     PaymentType => 'https://adcenter.microsoft.com/v8',
     PricingModel => 'https://adcenter.microsoft.com/v8',
@@ -2990,6 +3026,7 @@ sub _simple_types {
 
 our @_complex_types = (qw/
     AccountAnalyticsType
+    AccountMigrationStatusesInfo
     Ad
     AdApiError
     AdApiFaultDetail
@@ -3052,6 +3089,7 @@ our @_complex_types = (qw/
     EditorialReasonCollection
     GenderTarget
     GenderTargetBid
+    GetAccountMigrationStatusesResponse
     GetAdEditorialReasonsByIdsResponse
     GetAdGroupsByCampaignIdResponse
     GetAdGroupsByIdsResponse
@@ -3096,6 +3134,7 @@ our @_complex_types = (qw/
     MediaType
     MetroAreaTarget
     MetroAreaTargetBid
+    MigrationStatusInfo
     MobileAd
     OperationError
     PauseAdGroupsResponse
@@ -3153,6 +3192,11 @@ our %_array_types = (
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
         element_name => 'AccountAnalyticsType',
         element_type => 'AccountAnalyticsType'
+    },
+    ArrayOfAccountMigrationStatusesInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AccountMigrationStatusesInfo',
+        element_type => 'AccountMigrationStatusesInfo'
     },
     ArrayOfAd => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3328,6 +3372,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'MetroAreaTargetBid',
         element_type => 'MetroAreaTargetBid'
+    },
+    ArrayOfMigrationStatusInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'MigrationStatusInfo',
+        element_type => 'MigrationStatusInfo'
     },
     ArrayOfOperationError => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::DestinationUrlPerformanceReportFilter;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -26,6 +26,7 @@ our @_attributes = (qw/
     AdDistribution
     DeviceType
     LanguageAndRegion
+    LanguageCode
 /);
 
 sub _attributes {
@@ -37,6 +38,7 @@ our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
     DeviceType => 'DeviceTypeReportFilter',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
+    LanguageCode => 'ArrayOfstring',
 );
 
 sub _attribute_type {
@@ -51,6 +53,7 @@ our %_attribute_min_occurs = (
     AdDistribution => 0,
     DeviceType => 0,
     LanguageAndRegion => 0,
+    LanguageCode => 0,
 );
 
 sub _attribute_min_occurs {
@@ -88,6 +91,10 @@ Gets/sets DeviceType (DeviceTypeReportFilter)
 =head2 LanguageAndRegion
 
 Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+
+=head2 LanguageCode
+
+Gets/sets LanguageCode (ArrayOfstring)
 
 =cut
 

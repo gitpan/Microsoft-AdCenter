@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::AccountPerformanceReportColumn;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -28,8 +28,14 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     CostPerConversion
     Ctr
     CurrencyCode
+    DeviceOS
     DeviceType
+    ImpressionLostToBudgetPercent
+    ImpressionLostToOthersPercent
+    ImpressionLostToRankPercent
+    ImpressionLostToRelevancePercent
     Impressions
+    ImpressionSharePercent
     LowQualityClicks
     LowQualityClicksPercent
     LowQualityConversionRate
@@ -89,12 +95,36 @@ sub CurrencyCode {
     return 'CurrencyCode';
 }
 
+sub DeviceOS {
+    return 'DeviceOS';
+}
+
 sub DeviceType {
     return 'DeviceType';
 }
 
+sub ImpressionLostToBudgetPercent {
+    return 'ImpressionLostToBudgetPercent';
+}
+
+sub ImpressionLostToOthersPercent {
+    return 'ImpressionLostToOthersPercent';
+}
+
+sub ImpressionLostToRankPercent {
+    return 'ImpressionLostToRankPercent';
+}
+
+sub ImpressionLostToRelevancePercent {
+    return 'ImpressionLostToRelevancePercent';
+}
+
 sub Impressions {
     return 'Impressions';
+}
+
+sub ImpressionSharePercent {
+    return 'ImpressionSharePercent';
 }
 
 sub LowQualityClicks {

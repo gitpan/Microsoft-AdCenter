@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V7::ReportingService::MetroAreaDemographicReportColumn;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -29,6 +29,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     Ctr
     CurrencyCode
     Impressions
+    Language
     LanguageAndRegion
     MetroArea
     ProximityTargetLocation
@@ -89,6 +90,10 @@ sub CurrencyCode {
 
 sub Impressions {
     return 'Impressions';
+}
+
+sub Language {
+    return 'Language';
 }
 
 sub LanguageAndRegion {

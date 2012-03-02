@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::Test::AdDynamicTextPerformanceReportFilter;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -12,12 +12,13 @@ use Test::More;
 use Microsoft::AdCenter::V8::ReportingService;
 use Microsoft::AdCenter::V8::ReportingService::AdDynamicTextPerformanceReportFilter;
 
-sub test_can_create_ad_dynamic_text_performance_report_filter_and_set_all_fields : Test(5) {
+sub test_can_create_ad_dynamic_text_performance_report_filter_and_set_all_fields : Test(6) {
     my $ad_dynamic_text_performance_report_filter = Microsoft::AdCenter::V8::ReportingService::AdDynamicTextPerformanceReportFilter->new
         ->AdDistribution('ad distribution')
         ->AdType('ad type')
         ->DeviceType('device type')
         ->LanguageAndRegion('language and region')
+        ->LanguageCode('language code')
     ;
 
     ok($ad_dynamic_text_performance_report_filter);
@@ -26,6 +27,7 @@ sub test_can_create_ad_dynamic_text_performance_report_filter_and_set_all_fields
     is($ad_dynamic_text_performance_report_filter->AdType, 'ad type', 'can get ad type');
     is($ad_dynamic_text_performance_report_filter->DeviceType, 'device type', 'can get device type');
     is($ad_dynamic_text_performance_report_filter->LanguageAndRegion, 'language and region', 'can get language and region');
+    is($ad_dynamic_text_performance_report_filter->LanguageCode, 'language code', 'can get language code');
 };
 
 1;

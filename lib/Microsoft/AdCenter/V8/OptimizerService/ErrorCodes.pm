@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::OptimizerService::ErrorCodes;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -19,6 +19,8 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     AccountIdHasToBeSpecified
     APIExecutionError
     ApiInputValidationError
+    BidAmountsLessThanFloorPrice
+    BidsAmountsGreaterThanCeilingPrice
     CampaignBudgetAmountIsAboveLimit
     CampaignBudgetAmountIsBelowConfiguredLimit
     CampaignBudgetAmountIsLessThanSpendAmount
@@ -39,6 +41,12 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     InvalidOpportunityKey
     InvalidOpportunityKeysList
     InvalidVersion
+    KeywordBroadBidAmountsGreaterThanCeilingPrice
+    KeywordBroadBidAmountsLessThanFloorPrice
+    KeywordExactBidAmountsGreaterThanCeilingPrice
+    KeywordExactBidAmountsLessThanFloorPrice
+    KeywordPhraseBidAmountsGreaterThanCeilingPrice
+    KeywordPhraseBidAmountsLessThanFloorPrice
     NameTooLong
     NullArrayArgument
     NullParameter
@@ -65,6 +73,14 @@ sub APIExecutionError {
 
 sub ApiInputValidationError {
     return 'ApiInputValidationError';
+}
+
+sub BidAmountsLessThanFloorPrice {
+    return 'BidAmountsLessThanFloorPrice';
+}
+
+sub BidsAmountsGreaterThanCeilingPrice {
+    return 'BidsAmountsGreaterThanCeilingPrice';
 }
 
 sub CampaignBudgetAmountIsAboveLimit {
@@ -145,6 +161,30 @@ sub InvalidOpportunityKeysList {
 
 sub InvalidVersion {
     return 'InvalidVersion';
+}
+
+sub KeywordBroadBidAmountsGreaterThanCeilingPrice {
+    return 'KeywordBroadBidAmountsGreaterThanCeilingPrice';
+}
+
+sub KeywordBroadBidAmountsLessThanFloorPrice {
+    return 'KeywordBroadBidAmountsLessThanFloorPrice';
+}
+
+sub KeywordExactBidAmountsGreaterThanCeilingPrice {
+    return 'KeywordExactBidAmountsGreaterThanCeilingPrice';
+}
+
+sub KeywordExactBidAmountsLessThanFloorPrice {
+    return 'KeywordExactBidAmountsLessThanFloorPrice';
+}
+
+sub KeywordPhraseBidAmountsGreaterThanCeilingPrice {
+    return 'KeywordPhraseBidAmountsGreaterThanCeilingPrice';
+}
+
+sub KeywordPhraseBidAmountsLessThanFloorPrice {
+    return 'KeywordPhraseBidAmountsLessThanFloorPrice';
 }
 
 sub NameTooLong {

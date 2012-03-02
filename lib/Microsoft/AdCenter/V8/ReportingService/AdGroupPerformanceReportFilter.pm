@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::AdGroupPerformanceReportFilter;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -26,6 +26,7 @@ our @_attributes = (qw/
     AdDistribution
     DeviceType
     LanguageAndRegion
+    LanguageCode
     Status
 /);
 
@@ -38,6 +39,7 @@ our %_attribute_type = (
     AdDistribution => 'AdDistributionReportFilter',
     DeviceType => 'DeviceTypeReportFilter',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
+    LanguageCode => 'ArrayOfstring',
     Status => 'AdGroupStatusReportFilter',
 );
 
@@ -53,6 +55,7 @@ our %_attribute_min_occurs = (
     AdDistribution => 0,
     DeviceType => 0,
     LanguageAndRegion => 0,
+    LanguageCode => 0,
     Status => 0,
 );
 
@@ -91,6 +94,10 @@ Gets/sets DeviceType (DeviceTypeReportFilter)
 =head2 LanguageAndRegion
 
 Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+
+=head2 LanguageCode
+
+Gets/sets LanguageCode (ArrayOfstring)
 
 =head2 Status
 

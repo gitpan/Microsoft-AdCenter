@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::Test::KeywordPerformanceReportFilter;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -12,7 +12,7 @@ use Test::More;
 use Microsoft::AdCenter::V8::ReportingService;
 use Microsoft::AdCenter::V8::ReportingService::KeywordPerformanceReportFilter;
 
-sub test_can_create_keyword_performance_report_filter_and_set_all_fields : Test(9) {
+sub test_can_create_keyword_performance_report_filter_and_set_all_fields : Test(10) {
     my $keyword_performance_report_filter = Microsoft::AdCenter::V8::ReportingService::KeywordPerformanceReportFilter->new
         ->AdDistribution('ad distribution')
         ->AdType('ad type')
@@ -22,6 +22,7 @@ sub test_can_create_keyword_performance_report_filter_and_set_all_fields : Test(
         ->DeviceType('device type')
         ->Keywords('keywords')
         ->LanguageAndRegion('language and region')
+        ->LanguageCode('language code')
     ;
 
     ok($keyword_performance_report_filter);
@@ -34,6 +35,7 @@ sub test_can_create_keyword_performance_report_filter_and_set_all_fields : Test(
     is($keyword_performance_report_filter->DeviceType, 'device type', 'can get device type');
     is($keyword_performance_report_filter->Keywords, 'keywords', 'can get keywords');
     is($keyword_performance_report_filter->LanguageAndRegion, 'language and region', 'can get language and region');
+    is($keyword_performance_report_filter->LanguageCode, 'language code', 'can get language code');
 };
 
 1;

@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Microsoft-AdCenter
-version:            8.05
+version:            8.07
 abstract:           An interface which abstracts Microsoft adCenter API.
 author:
     - Xerxes Tsang

@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::KeywordPerformanceReportColumn;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -40,12 +40,18 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     CurrentMaxCpc
     DestinationUrl
     DeviceType
+    HistoricKeywordRelevance
+    HistoricLandingPageRelevance
+    HistoricLandingPageUserExperience
+    HistoricQualityScore
     Impressions
     Keyword
     KeywordId
+    KeywordMatchTypeId
     KeywordRelevance
     LandingPageRelevance
     LandingPageUserExperience
+    Language
     LanguageAndRegion
     MatchType
     PricingModel
@@ -151,6 +157,22 @@ sub DeviceType {
     return 'DeviceType';
 }
 
+sub HistoricKeywordRelevance {
+    return 'HistoricKeywordRelevance';
+}
+
+sub HistoricLandingPageRelevance {
+    return 'HistoricLandingPageRelevance';
+}
+
+sub HistoricLandingPageUserExperience {
+    return 'HistoricLandingPageUserExperience';
+}
+
+sub HistoricQualityScore {
+    return 'HistoricQualityScore';
+}
+
 sub Impressions {
     return 'Impressions';
 }
@@ -163,6 +185,10 @@ sub KeywordId {
     return 'KeywordId';
 }
 
+sub KeywordMatchTypeId {
+    return 'KeywordMatchTypeId';
+}
+
 sub KeywordRelevance {
     return 'KeywordRelevance';
 }
@@ -173,6 +199,10 @@ sub LandingPageRelevance {
 
 sub LandingPageUserExperience {
     return 'LandingPageUserExperience';
+}
+
+sub Language {
+    return 'Language';
 }
 
 sub LanguageAndRegion {

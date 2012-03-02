@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::SearchQueryPerformanceReportColumn;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -37,6 +37,8 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     DestinationUrl
     Impressions
     Keyword
+    KeywordId
+    Language
     LanguageAndRegion
     MatchType
     SearchQuery
@@ -127,6 +129,14 @@ sub Impressions {
 
 sub Keyword {
     return 'Keyword';
+}
+
+sub KeywordId {
+    return 'KeywordId';
+}
+
+sub Language {
+    return 'Language';
 }
 
 sub LanguageAndRegion {

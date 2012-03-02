@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V7::ReportingService::SearchQueryPerformanceReportFilter;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -28,6 +28,7 @@ our @_attributes = (qw/
     CampaignStatus
     DeliveredMatchType
     LanguageAndRegion
+    LanguageCode
     SearchQueries
 /);
 
@@ -42,6 +43,7 @@ our %_attribute_type = (
     CampaignStatus => 'CampaignStatusReportFilter',
     DeliveredMatchType => 'DeliveredMatchTypeReportFilter',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
+    LanguageCode => 'ArrayOfstring',
     SearchQueries => 'ArrayOfstring',
 );
 
@@ -59,6 +61,7 @@ our %_attribute_min_occurs = (
     CampaignStatus => 0,
     DeliveredMatchType => 0,
     LanguageAndRegion => 0,
+    LanguageCode => 0,
     SearchQueries => 0,
 );
 
@@ -105,6 +108,10 @@ Gets/sets DeliveredMatchType (DeliveredMatchTypeReportFilter)
 =head2 LanguageAndRegion
 
 Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
+
+=head2 LanguageCode
+
+Gets/sets LanguageCode (ArrayOfstring)
 
 =head2 SearchQueries
 

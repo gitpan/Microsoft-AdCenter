@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::CustomerManagementService;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -20,8 +20,9 @@ Microsoft::AdCenter::V8::CustomerManagementService - Service client for Microsof
         ->Password("password")
         ->UserName("user name");
 
-    my $response = $service_client->AddAccount(
-        Account => ...
+    my $response = $service_client->AcceptRequestToManageAccounts(
+        ManageAccountsRequestId => ...
+        PaymentMethodId => ...
     );
 
 See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed documentation for this service.
@@ -120,6 +121,41 @@ sub _response_headers_expanded {
     return $_response_headers_expanded;
 }
 
+=head2 AcceptRequestToManageAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequestId (long)
+    PaymentMethodId (long)
+
+=item Returns:
+
+    AcceptRequestToManageAccountsResponse
+
+=back
+
+=cut
+
+sub AcceptRequestToManageAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'AcceptRequestToManageAccounts',
+        request => {
+            name => 'AcceptRequestToManageAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequestId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'PaymentMethodId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'AcceptRequestToManageAccountsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 AddAccount
 
 =over
@@ -185,6 +221,72 @@ sub AddUser {
         },
         response => {
             name => 'AddUserResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 CancelRequestToManageAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequestId (long)
+
+=item Returns:
+
+    CancelRequestToManageAccountsResponse
+
+=back
+
+=cut
+
+sub CancelRequestToManageAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'CancelRequestToManageAccounts',
+        request => {
+            name => 'CancelRequestToManageAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequestId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'CancelRequestToManageAccountsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 DeclineRequestToManageAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequestId (long)
+
+=item Returns:
+
+    DeclineRequestToManageAccountsResponse
+
+=back
+
+=cut
+
+sub DeclineRequestToManageAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'DeclineRequestToManageAccounts',
+        request => {
+            name => 'DeclineRequestToManageAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequestId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'DeclineRequestToManageAccountsResponse'
         },
         parameters => \%args
     );
@@ -637,6 +739,82 @@ sub GetPilotFeaturesCountries {
     );
 }
 
+=head2 GetRequestToManageAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequestId (long)
+
+=item Returns:
+
+    GetRequestToManageAccountsResponse
+
+=back
+
+=cut
+
+sub GetRequestToManageAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetRequestToManageAccounts',
+        request => {
+            name => 'GetRequestToManageAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequestId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetRequestToManageAccountsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetRequestToManageAccountsInfos
+
+=over
+
+=item Parameters:
+
+    AccountNumber (string)
+    CustomerNumber (string)
+    RequestsSentAfter (dateTime)
+    RequestsSentBefore (dateTime)
+    RequestStatusFilter (ArrayOfManageAccountsRequestStatus)
+    RequestTypeFilter (ArrayOfManageAccountsRequestType)
+
+=item Returns:
+
+    GetRequestToManageAccountsInfosResponse
+
+=back
+
+=cut
+
+sub GetRequestToManageAccountsInfos {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetRequestToManageAccountsInfos',
+        request => {
+            name => 'GetRequestToManageAccountsInfosRequest',
+            parameters => [
+                { name => 'AccountNumber', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'CustomerNumber', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'RequestsSentAfter', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'RequestsSentBefore', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'RequestStatusFilter', type => 'ArrayOfManageAccountsRequestStatus', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'RequestTypeFilter', type => 'ArrayOfManageAccountsRequestType', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'GetRequestToManageAccountsInfosResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetUser
 
 =over
@@ -700,6 +878,72 @@ sub GetUsersInfo {
         },
         response => {
             name => 'GetUsersInfoResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SendRequestToManageAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequest (ManageAccountsRequest)
+
+=item Returns:
+
+    SendRequestToManageAccountsResponse
+
+=back
+
+=cut
+
+sub SendRequestToManageAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SendRequestToManageAccounts',
+        request => {
+            name => 'SendRequestToManageAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequest', type => 'ManageAccountsRequest', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'SendRequestToManageAccountsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SendRequestToStopManagingAccounts
+
+=over
+
+=item Parameters:
+
+    ManageAccountsRequest (ManageAccountsRequest)
+
+=item Returns:
+
+    SendRequestToStopManagingAccountsResponse
+
+=back
+
+=cut
+
+sub SendRequestToStopManagingAccounts {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SendRequestToStopManagingAccounts',
+        request => {
+            name => 'SendRequestToStopManagingAccountsRequest',
+            parameters => [
+                { name => 'ManageAccountsRequest', type => 'ManageAccountsRequest', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'SendRequestToStopManagingAccountsResponse'
         },
         parameters => \%args
     );
@@ -892,6 +1136,39 @@ sub UpdateUserRoles {
     );
 }
 
+=head2 UpgradeCustomerToAgency
+
+=over
+
+=item Parameters:
+
+    CustomerId (long)
+
+=item Returns:
+
+    UpgradeCustomerToAgencyResponse
+
+=back
+
+=cut
+
+sub UpgradeCustomerToAgency {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpgradeCustomerToAgency',
+        request => {
+            name => 'UpgradeCustomerToAgencyRequest',
+            parameters => [
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'UpgradeCustomerToAgencyResponse'
+        },
+        parameters => \%args
+    );
+}
+
 our %_simple_types = (
     AccountFinancialStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     AccountLifeCycleStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
@@ -904,6 +1181,8 @@ our %_simple_types = (
     Industry => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     LCID => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     LanguageType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    ManageAccountsRequestStatus => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+    ManageAccountsRequestType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     PaymentMethodType => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     SecretQuestion => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
     ServiceLevel => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
@@ -920,6 +1199,7 @@ sub _simple_types {
 }
 
 our @_complex_types = (qw/
+    AcceptRequestToManageAccountsResponse
     Account
     AccountInfo
     AccountInfoWithCustomerData
@@ -931,9 +1211,12 @@ our @_complex_types = (qw/
     AdvertiserAccount
     ApiFault
     ApplicationFault
+    CancelRequestToManageAccountsResponse
     ContactInfo
     Customer
     CustomerInfo
+    Date
+    DeclineRequestToManageAccountsResponse
     DeleteAccountResponse
     DeleteCustomerResponse
     DeleteUserResponse
@@ -947,17 +1230,24 @@ our @_complex_types = (qw/
     GetCustomerResponse
     GetCustomersInfoResponse
     GetPilotFeaturesCountriesResponse
+    GetRequestToManageAccountsInfosResponse
+    GetRequestToManageAccountsResponse
     GetUserResponse
     GetUsersInfoResponse
+    ManageAccountsRequest
+    ManageAccountsRequestInfo
     OperationError
     PersonName
     PilotFeature
     PublisherAccount
+    SendRequestToManageAccountsResponse
+    SendRequestToStopManagingAccountsResponse
     SignupCustomerResponse
     UpdateAccountResponse
     UpdateCustomerResponse
     UpdateUserResponse
     UpdateUserRolesResponse
+    UpgradeCustomerToAgencyResponse
     User
     UserInfo
 /);
@@ -986,6 +1276,21 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
         element_name => 'CustomerInfo',
         element_type => 'CustomerInfo'
+    },
+    ArrayOfManageAccountsRequestInfo => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'ManageAccountsRequestInfo',
+        element_type => 'ManageAccountsRequestInfo'
+    },
+    ArrayOfManageAccountsRequestStatus => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'ManageAccountsRequestStatus',
+        element_type => 'ManageAccountsRequestStatus'
+    },
+    ArrayOfManageAccountsRequestType => {
+        namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Entities',
+        element_name => 'ManageAccountsRequestType',
+        element_type => 'ManageAccountsRequestType'
     },
     ArrayOfOperationError => {
         namespace_uri => 'https://adcenter.microsoft.com/api/customermanagement/Exception',

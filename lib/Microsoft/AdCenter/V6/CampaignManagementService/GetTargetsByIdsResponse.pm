@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V6::CampaignManagementService::GetTargetsByIdsResponse;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 

@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V7::ReportingService;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -230,6 +230,7 @@ our %_simple_types = (
     KeywordPerformanceReportColumn => 'https://adcenter.microsoft.com/v7',
     LanguageAndRegionReportFilter => 'https://adcenter.microsoft.com/v7',
     MetroAreaDemographicReportColumn => 'https://adcenter.microsoft.com/v7',
+    NegativeKeywordConflictReportColumn => 'https://adcenter.microsoft.com/v7',
     NonHourlyReportAggregation => 'https://adcenter.microsoft.com/v7',
     PublisherUsagePerformanceReportColumn => 'https://adcenter.microsoft.com/v7',
     ReportAggregation => 'https://adcenter.microsoft.com/v7',
@@ -294,6 +295,7 @@ our @_complex_types = (qw/
     KeywordPerformanceReportRequest
     MetroAreaDemographicReportFilter
     MetroAreaDemographicReportRequest
+    NegativeKeywordConflictReportRequest
     OperationError
     PollGenerateReportResponse
     PublisherUsagePerformanceReportFilter
@@ -410,6 +412,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v7',
         element_name => 'MetroAreaDemographicReportColumn',
         element_type => 'MetroAreaDemographicReportColumn'
+    },
+    ArrayOfNegativeKeywordConflictReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v7',
+        element_name => 'NegativeKeywordConflictReportColumn',
+        element_type => 'NegativeKeywordConflictReportColumn'
     },
     ArrayOfOperationError => {
         namespace_uri => 'https://adcenter.microsoft.com/v7',

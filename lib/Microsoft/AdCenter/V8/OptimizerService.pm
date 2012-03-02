@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::OptimizerService;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -170,6 +170,78 @@ sub ApplyBudgetOpportunities {
     );
 }
 
+=head2 ApplyOpportunities
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    OpportunityKeys (ArrayOfstring)
+
+=item Returns:
+
+    ApplyOpportunitiesResponse
+
+=back
+
+=cut
+
+sub ApplyOpportunities {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'ApplyOpportunities',
+        request => {
+            name => 'ApplyOpportunitiesRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'OpportunityKeys', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'ApplyOpportunitiesResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetBidOpportunities
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdGroupID (long)
+    CampaignID (long)
+
+=item Returns:
+
+    GetBidOpportunitiesResponse
+
+=back
+
+=cut
+
+sub GetBidOpportunities {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetBidOpportunities',
+        request => {
+            name => 'GetBidOpportunitiesRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdGroupID', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignID', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetBidOpportunitiesResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetBudgetOpportunities
 
 =over
@@ -221,8 +293,11 @@ our @_complex_types = (qw/
     ApiFaultDetail
     ApplicationFault
     ApplyBudgetOpportunitiesResponse
+    ApplyOpportunitiesResponse
     BatchError
+    BidOpportunity
     BudgetOpportunity
+    GetBidOpportunitiesResponse
     GetBudgetOpportunitiesResponse
     OperationError
     Opportunity
@@ -242,6 +317,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'BatchError',
         element_type => 'BatchError'
+    },
+    ArrayOfBidOpportunity => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.Optimizer.Api.DataContracts.Entities',
+        element_name => 'BidOpportunity',
+        element_type => 'BidOpportunity'
     },
     ArrayOfBudgetOpportunity => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.Optimizer.Api.DataContracts.Entities',

@@ -1,5 +1,5 @@
 package Microsoft::AdCenter::V8::ReportingService::CampaignPerformanceReportColumn;
-# Copyright (C) 2011 Xerxes Tsang
+# Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
 
@@ -30,14 +30,28 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     CostPerConversion
     Ctr
     CurrencyCode
+    DeviceOS
     DeviceType
+    HistoricKeywordRelevance
+    HistoricLandingPageRelevance
+    HistoricLandingPageUserExperience
+    HistoricQualityScore
+    ImpressionLostToBudgetPercent
+    ImpressionLostToOthersPercent
+    ImpressionLostToRankPercent
+    ImpressionLostToRelevancePercent
     Impressions
+    ImpressionSharePercent
+    KeywordRelevance
+    LandingPageRelevance
+    LandingPageUserExperience
     LowQualityClicks
     LowQualityClicksPercent
     LowQualityConversionRate
     LowQualityConversions
     LowQualityImpressions
     LowQualityImpressionsPercent
+    QualityScore
     Spend
     Status
     TimePeriod
@@ -100,12 +114,64 @@ sub CurrencyCode {
     return 'CurrencyCode';
 }
 
+sub DeviceOS {
+    return 'DeviceOS';
+}
+
 sub DeviceType {
     return 'DeviceType';
 }
 
+sub HistoricKeywordRelevance {
+    return 'HistoricKeywordRelevance';
+}
+
+sub HistoricLandingPageRelevance {
+    return 'HistoricLandingPageRelevance';
+}
+
+sub HistoricLandingPageUserExperience {
+    return 'HistoricLandingPageUserExperience';
+}
+
+sub HistoricQualityScore {
+    return 'HistoricQualityScore';
+}
+
+sub ImpressionLostToBudgetPercent {
+    return 'ImpressionLostToBudgetPercent';
+}
+
+sub ImpressionLostToOthersPercent {
+    return 'ImpressionLostToOthersPercent';
+}
+
+sub ImpressionLostToRankPercent {
+    return 'ImpressionLostToRankPercent';
+}
+
+sub ImpressionLostToRelevancePercent {
+    return 'ImpressionLostToRelevancePercent';
+}
+
 sub Impressions {
     return 'Impressions';
+}
+
+sub ImpressionSharePercent {
+    return 'ImpressionSharePercent';
+}
+
+sub KeywordRelevance {
+    return 'KeywordRelevance';
+}
+
+sub LandingPageRelevance {
+    return 'LandingPageRelevance';
+}
+
+sub LandingPageUserExperience {
+    return 'LandingPageUserExperience';
 }
 
 sub LowQualityClicks {
@@ -130,6 +196,10 @@ sub LowQualityImpressions {
 
 sub LowQualityImpressionsPercent {
     return 'LowQualityImpressionsPercent';
+}
+
+sub QualityScore {
+    return 'QualityScore';
 }
 
 sub Spend {
