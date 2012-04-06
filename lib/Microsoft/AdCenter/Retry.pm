@@ -8,9 +8,9 @@ use warnings;
 
 use base qw/Class::Accessor::Chained Exporter Microsoft::AdCenter/;
 
-our @EXPORT_OK = qw/CONNECTION_ERROR INTERNAL_SERVER_ERROR/;
+our @EXPORT_OK = qw/CALL_RATE_EXCEEDED CONNECTION_ERROR INTERNAL_SERVER_ERROR/;
 our %EXPORT_TAGS = (
-    ErrorTypes => [qw/CONNECTION_ERROR INTERNAL_SERVER_ERROR/]
+    ErrorTypes => [qw/CALL_RATE_EXCEEDED CONNECTION_ERROR INTERNAL_SERVER_ERROR/]
 );
 
 =head1 NAME
@@ -36,7 +36,7 @@ Microsoft::AdCenter::Retry - Defines when and how to retry a failed API call.
         ->DeveloperToken("developer token")
         ->Password("password")
         ->UserName("user name")
-        ->RetrySettings( $retry );
+        ->RetrySettings([ $retry ]);
 
 
 =head1 METHODS
@@ -66,6 +66,7 @@ Returns / sets an optional callback sub that will be called upon every retry
 
 use constant CONNECTION_ERROR => 0x01;
 use constant INTERNAL_SERVER_ERROR => 0x02;
+use constant CALL_RATE_EXCEEDED => 0x04;
 
 sub new {
     my ($pkg, %args) = @_;
@@ -76,6 +77,53 @@ sub new {
         }
     }
     return $self;
+}
+
+sub match {
+    my ($self, $error) = @_;
+
+    if (ref($error) eq 'Microsoft::AdCenter::SOAPFault') {
+        my %error_codes;
+        if (defined $error->detail) {
+            _get_error_codes_from_fault_object(\%error_codes, $error->detail);
+            if ($self->ErrorType & INTERNAL_SERVER_ERROR && exists $error_codes{'0'}) {
+                return 1;
+            }
+            if ($self->ErrorType & CALL_RATE_EXCEEDED && exists $error_codes{'117'}) {
+                return 1;
+            }
+        }
+    }
+    else {
+        if ($self->ErrorType & CONNECTION_ERROR && $error =~ /^(500 SSL negotiation failed|500 Can't connect|500 read failed|500 write failed)/) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+sub _get_error_codes_from_fault_object {
+    my ($results, $error) = @_;
+    _get_error_codes_from_error_object($results, $error->Errors) if ($error->can('Errors'));
+    _get_error_codes_from_error_object($results, $error->BatchErrors) if ($error->can('BatchErrors'));
+    _get_error_codes_from_error_object($results, $error->EditorialErrors) if ($error->can('EditorialErrors'));
+    _get_error_codes_from_error_object($results, $error->OperationErrors) if ($error->can('OperationErrors'));
+    if ($error->can('GoalErrors') && (defined $error->GoalErrors)) {
+        foreach my $e (@{$error->GoalErrors}) {
+            _get_error_codes_from_fault_object($results, $e);
+        }
+    }
+}
+
+sub _get_error_codes_from_error_object {
+    my ($results, $errors) = @_;
+    return unless (defined $errors);
+    foreach my $error (@$errors) {
+        if ($error->can('Code')) {
+            $results->{$error->Code} = 1;
+        }
+    }
 }
 
 __PACKAGE__->mk_accessors(qw/ErrorType RetryTimes WaitTime ScalingWaitTime Callback/);

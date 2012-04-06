@@ -16,6 +16,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
+    Aggregate
     All
     MainLine1
     MainLine2
@@ -33,6 +34,10 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     SideBar9
 
 =cut
+
+sub Aggregate {
+    return 'Aggregate';
+}
 
 sub All {
     return 'All';

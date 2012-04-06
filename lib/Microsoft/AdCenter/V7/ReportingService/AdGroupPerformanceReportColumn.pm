@@ -38,7 +38,10 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     HistoricLandingPageRelevance
     HistoricLandingPageUserExperience
     HistoricQualityScore
+    ImpressionLostToBidPercent
     ImpressionLostToBudgetPercent
+    ImpressionLostToKeywordRelevancePercent
+    ImpressionLostToLandingPageRelevancePercent
     ImpressionLostToOthersPercent
     ImpressionLostToRankPercent
     ImpressionLostToRelevancePercent
@@ -145,8 +148,20 @@ sub HistoricQualityScore {
     return 'HistoricQualityScore';
 }
 
+sub ImpressionLostToBidPercent {
+    return 'ImpressionLostToBidPercent';
+}
+
 sub ImpressionLostToBudgetPercent {
     return 'ImpressionLostToBudgetPercent';
+}
+
+sub ImpressionLostToKeywordRelevancePercent {
+    return 'ImpressionLostToKeywordRelevancePercent';
+}
+
+sub ImpressionLostToLandingPageRelevancePercent {
+    return 'ImpressionLostToLandingPageRelevancePercent';
 }
 
 sub ImpressionLostToOthersPercent {

@@ -35,7 +35,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed docume
 
 Changes the end point for this service client.
 
-Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc
+Default value: https://adcenterapi.microsoft.com/Api/Advertiser/V8/AdIntelligence/AdIntelligenceService.svc
 
 =head2 ApplicationToken
 
@@ -86,7 +86,7 @@ sub _namespace_uri {
 }
 
 sub _default_location {
-    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V8/CampaignManagement/AdIntelligenceService.svc';
+    return 'https://adcenterapi.microsoft.com/Api/Advertiser/V8/AdIntelligence/AdIntelligenceService.svc';
 }
 
 sub _wsdl {
@@ -334,6 +334,51 @@ sub GetHistoricalKeywordPerformance {
     );
 }
 
+=head2 GetHistoricalKeywordPerformanceByDevice
+
+=over
+
+=item Parameters:
+
+    Keywords (ArrayOfstring)
+    TimeInterval (TimeInterval)
+    TargetAdPosition (AdPosition)
+    MatchTypes (ArrayOfMatchType)
+    Language (string)
+    PublisherCountries (ArrayOfstring)
+    Devices (ArrayOfstring)
+
+=item Returns:
+
+    GetHistoricalKeywordPerformanceByDeviceResponse
+
+=back
+
+=cut
+
+sub GetHistoricalKeywordPerformanceByDevice {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetHistoricalKeywordPerformanceByDevice',
+        request => {
+            name => 'GetHistoricalKeywordPerformanceByDeviceRequest',
+            parameters => [
+                { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'TimeInterval', type => 'TimeInterval', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'TargetAdPosition', type => 'AdPosition', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'MatchTypes', type => 'ArrayOfMatchType', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'PublisherCountries', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Devices', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetHistoricalKeywordPerformanceByDeviceResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetHistoricalSearchCount
 
 =over
@@ -370,6 +415,174 @@ sub GetHistoricalSearchCount {
         },
         response => {
             name => 'GetHistoricalSearchCountResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetHistoricalSearchCountByDevice
+
+=over
+
+=item Parameters:
+
+    Keywords (ArrayOfstring)
+    Language (string)
+    PublisherCountries (ArrayOfstring)
+    StartTimePeriod (DayMonthAndYear)
+    EndTimePeriod (DayMonthAndYear)
+    TimePeriodRollup (string)
+    Devices (ArrayOfstring)
+
+=item Returns:
+
+    GetHistoricalSearchCountByDeviceResponse
+
+=back
+
+=cut
+
+sub GetHistoricalSearchCountByDevice {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetHistoricalSearchCountByDevice',
+        request => {
+            name => 'GetHistoricalSearchCountByDeviceRequest',
+            parameters => [
+                { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'PublisherCountries', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'StartTimePeriod', type => 'DayMonthAndYear', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'EndTimePeriod', type => 'DayMonthAndYear', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'TimePeriodRollup', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Devices', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetHistoricalSearchCountByDeviceResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetKeywordCategories
+
+=over
+
+=item Parameters:
+
+    Keywords (ArrayOfstring)
+    Language (string)
+    PublisherCountry (string)
+    MaxCategories (int)
+
+=item Returns:
+
+    GetKeywordCategoriesResponse
+
+=back
+
+=cut
+
+sub GetKeywordCategories {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetKeywordCategories',
+        request => {
+            name => 'GetKeywordCategoriesRequest',
+            parameters => [
+                { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'PublisherCountry', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'MaxCategories', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetKeywordCategoriesResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetKeywordDemographics
+
+=over
+
+=item Parameters:
+
+    Keywords (ArrayOfstring)
+    Language (string)
+    PublisherCountry (string)
+    Device (ArrayOfstring)
+
+=item Returns:
+
+    GetKeywordDemographicsResponse
+
+=back
+
+=cut
+
+sub GetKeywordDemographics {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetKeywordDemographics',
+        request => {
+            name => 'GetKeywordDemographicsRequest',
+            parameters => [
+                { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'PublisherCountry', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Device', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetKeywordDemographicsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetKeywordLocations
+
+=over
+
+=item Parameters:
+
+    Keywords (ArrayOfstring)
+    Language (string)
+    PublisherCountry (string)
+    Device (ArrayOfstring)
+    Level (int)
+    ParentCountry (string)
+    MaxLocations (int)
+
+=item Returns:
+
+    GetKeywordLocationsResponse
+
+=back
+
+=cut
+
+sub GetKeywordLocations {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetKeywordLocations',
+        request => {
+            name => 'GetKeywordLocationsRequest',
+            parameters => [
+                { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'PublisherCountry', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Device', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'Level', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'ParentCountry', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'MaxLocations', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetKeywordLocationsResponse'
         },
         parameters => \%args
     );
@@ -459,6 +672,7 @@ sub SuggestKeywordsForUrl {
     Language (string)
     PublisherCountries (ArrayOfstring)
     MaxSuggestionsPerKeyword (int)
+    SuggestionType (int)
 
 =item Returns:
 
@@ -478,7 +692,8 @@ sub SuggestKeywordsFromExistingKeywords {
                 { name => 'Keywords', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'PublisherCountries', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'MaxSuggestionsPerKeyword', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'MaxSuggestionsPerKeyword', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'SuggestionType', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -510,25 +725,40 @@ our @_complex_types = (qw/
     ApiFaultDetail
     ApplicationFault
     BatchError
+    DayMonthAndYear
     EstimatedBidAndTraffic
     EstimatedPositionAndTraffic
     GetEstimatedBidByKeywordIdsResponse
     GetEstimatedBidByKeywordsResponse
     GetEstimatedPositionByKeywordIdsResponse
     GetEstimatedPositionByKeywordsResponse
+    GetHistoricalKeywordPerformanceByDeviceResponse
     GetHistoricalKeywordPerformanceResponse
+    GetHistoricalSearchCountByDeviceResponse
     GetHistoricalSearchCountResponse
+    GetKeywordCategoriesResponse
+    GetKeywordDemographicsResponse
+    GetKeywordLocationsResponse
     GetPublisherKeywordPerformanceResponse
     HistoricalSearchCount
+    HistoricalSearchCountPeriodic
     KeywordAndConfidence
+    KeywordCategory
+    KeywordCategoryResult
+    KeywordDemographic
+    KeywordDemographicResult
     KeywordEstimatedBid
     KeywordEstimatedPosition
     KeywordHistoricalPerformance
+    KeywordHistoricalPerformanceByDevice
     KeywordIdEstimatedBid
     KeywordIdEstimatedPosition
     KeywordKPI
+    KeywordLocation
+    KeywordLocationResult
     KeywordPerformance
     KeywordSearchCount
+    KeywordSearchCountByDevice
     KeywordSuggestion
     MonthAndYear
     OperationError
@@ -566,10 +796,30 @@ our %_array_types = (
         element_name => 'HistoricalSearchCount',
         element_type => 'HistoricalSearchCount'
     },
+    ArrayOfHistoricalSearchCountPeriodic => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'HistoricalSearchCountPeriodic',
+        element_type => 'HistoricalSearchCountPeriodic'
+    },
     ArrayOfKeywordAndConfidence => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
         element_name => 'KeywordAndConfidence',
         element_type => 'KeywordAndConfidence'
+    },
+    ArrayOfKeywordCategory => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordCategory',
+        element_type => 'KeywordCategory'
+    },
+    ArrayOfKeywordCategoryResult => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordCategoryResult',
+        element_type => 'KeywordCategoryResult'
+    },
+    ArrayOfKeywordDemographicResult => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordDemographicResult',
+        element_type => 'KeywordDemographicResult'
     },
     ArrayOfKeywordEstimatedBid => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
@@ -586,6 +836,11 @@ our %_array_types = (
         element_name => 'KeywordHistoricalPerformance',
         element_type => 'KeywordHistoricalPerformance'
     },
+    ArrayOfKeywordHistoricalPerformanceByDevice => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordHistoricalPerformanceByDevice',
+        element_type => 'KeywordHistoricalPerformanceByDevice'
+    },
     ArrayOfKeywordIdEstimatedBid => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
         element_name => 'KeywordIdEstimatedBid',
@@ -601,6 +856,16 @@ our %_array_types = (
         element_name => 'KeywordKPI',
         element_type => 'KeywordKPI'
     },
+    ArrayOfKeywordLocation => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordLocation',
+        element_type => 'KeywordLocation'
+    },
+    ArrayOfKeywordLocationResult => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordLocationResult',
+        element_type => 'KeywordLocationResult'
+    },
     ArrayOfKeywordPerformance => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
         element_name => 'KeywordPerformance',
@@ -610,6 +875,11 @@ our %_array_types = (
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
         element_name => 'KeywordSearchCount',
         element_type => 'KeywordSearchCount'
+    },
+    ArrayOfKeywordSearchCountByDevice => {
+        namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+        element_name => 'KeywordSearchCountByDevice',
+        element_type => 'KeywordSearchCountByDevice'
     },
     ArrayOfKeywordSuggestion => {
         namespace_uri => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',

@@ -189,6 +189,39 @@ sub AddAccount {
     );
 }
 
+=head2 AddPrepayAccount
+
+=over
+
+=item Parameters:
+
+    Account (Account)
+
+=item Returns:
+
+    AddPrepayAccountResponse
+
+=back
+
+=cut
+
+sub AddPrepayAccount {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'AddPrepayAccount',
+        request => {
+            name => 'AddPrepayAccountRequest',
+            parameters => [
+                { name => 'Account', type => 'Account', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'AddPrepayAccountResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 AddUser
 
 =over
@@ -1206,6 +1239,7 @@ our @_complex_types = (qw/
     AdApiError
     AdApiFaultDetail
     AddAccountResponse
+    AddPrepayAccountResponse
     AddUserResponse
     Address
     AdvertiserAccount

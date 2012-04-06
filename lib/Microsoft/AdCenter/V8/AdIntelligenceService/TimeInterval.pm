@@ -18,6 +18,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
     Last30Days
     Last7Days
+    LastDay
 
 =cut
 
@@ -27,6 +28,10 @@ sub Last30Days {
 
 sub Last7Days {
     return 'Last7Days';
+}
+
+sub LastDay {
+    return 'LastDay';
 }
 
 1;

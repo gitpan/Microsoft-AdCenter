@@ -219,6 +219,8 @@ our %_simple_types = (
     CampaignPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     CampaignStatusReportFilter => 'https://adcenter.microsoft.com/v8',
     CashbackReportFilter => 'https://adcenter.microsoft.com/v8',
+    ChangeEntityReportFilter => 'https://adcenter.microsoft.com/v8',
+    ChangeTypeReportFilter => 'https://adcenter.microsoft.com/v8',
     ComponentTypeFilter => 'https://adcenter.microsoft.com/v8',
     ConversionPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     CountryReportFilter => 'https://adcenter.microsoft.com/v8',
@@ -227,6 +229,7 @@ our %_simple_types = (
     DeviceTypeReportFilter => 'https://adcenter.microsoft.com/v8',
     GenderReportFilter => 'https://adcenter.microsoft.com/v8',
     GoalsAndFunnelsReportColumn => 'https://adcenter.microsoft.com/v8',
+    KeywordMigrationReportColumn => 'https://adcenter.microsoft.com/v8',
     KeywordPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     LanguageAndRegionReportFilter => 'https://adcenter.microsoft.com/v8',
     MetroAreaDemographicReportColumn => 'https://adcenter.microsoft.com/v8',
@@ -240,6 +243,7 @@ our %_simple_types = (
     ReportTimePeriod => 'https://adcenter.microsoft.com/v8',
     RichAdComponentPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     RichAdSubTypeFilter => 'https://adcenter.microsoft.com/v8',
+    SearchCampaignChangeHistoryReportColumn => 'https://adcenter.microsoft.com/v8',
     SearchQueryPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     SearchQueryReportAggregation => 'https://adcenter.microsoft.com/v8',
     SegmentationReportColumn => 'https://adcenter.microsoft.com/v8',
@@ -291,6 +295,7 @@ our @_complex_types = (qw/
     DestinationUrlPerformanceReportRequest
     GoalsAndFunnelsReportFilter
     GoalsAndFunnelsReportRequest
+    KeywordMigrationReportRequest
     KeywordPerformanceReportFilter
     KeywordPerformanceReportRequest
     MetroAreaDemographicReportFilter
@@ -305,6 +310,8 @@ our @_complex_types = (qw/
     ReportTime
     RichAdComponentPerformanceReportFilter
     RichAdComponentPerformanceReportRequest
+    SearchCampaignChangeHistoryReportFilter
+    SearchCampaignChangeHistoryReportRequest
     SearchQueryPerformanceReportFilter
     SearchQueryPerformanceReportRequest
     SegmentationReportFilter
@@ -403,6 +410,11 @@ our %_array_types = (
         element_name => 'GoalsAndFunnelsReportColumn',
         element_type => 'GoalsAndFunnelsReportColumn'
     },
+    ArrayOfKeywordMigrationReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'KeywordMigrationReportColumn',
+        element_type => 'KeywordMigrationReportColumn'
+    },
     ArrayOfKeywordPerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'KeywordPerformanceReportColumn',
@@ -432,6 +444,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'RichAdComponentPerformanceReportColumn',
         element_type => 'RichAdComponentPerformanceReportColumn'
+    },
+    ArrayOfSearchCampaignChangeHistoryReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'SearchCampaignChangeHistoryReportColumn',
+        element_type => 'SearchCampaignChangeHistoryReportColumn'
     },
     ArrayOfSearchQueryPerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

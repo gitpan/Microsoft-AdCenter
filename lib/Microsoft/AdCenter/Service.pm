@@ -160,42 +160,30 @@ sub _invoke {
         if (my $e = $@) {
             die $e unless ((defined $self->RetrySettings) && ref($self->RetrySettings) eq 'ARRAY');
 
-            my $error_type;
-            if ($self->_is_connection_error($e)) {
-                $error_type = Microsoft::AdCenter::Retry->CONNECTION_ERROR;
-            }
-            elsif ($self->_is_internal_server_error($e)) {
-                $error_type = Microsoft::AdCenter::Retry->INTERNAL_SERVER_ERROR;
-            }
-            else {
-                # Re-throw exception for other types of errors
-                die $e;
-            }
-
             my $retry_times = undef;
             my $wait_time = undef;
             my $scaling_wait_time = undef;
             my $should_retry = 0;
 
-            foreach my $retry_obj ( @{$self->RetrySettings} ) {
-                die "Invalid Retry object" if (ref($retry_obj) ne 'Microsoft::AdCenter::Retry');
-                next unless ($retry_obj->ErrorType & $error_type);
+            foreach my $retry_settings ( @{$self->RetrySettings} ) {
+                die "Invalid Retry setting" if (ref($retry_settings) ne 'Microsoft::AdCenter::Retry');
+                next unless ($retry_settings->match($e));
 
                 $should_retry = 1;
 
-                if ((not defined $retry_times) && (defined $retry_obj->RetryTimes)) {
-                    $retry_times = $retry_obj->RetryTimes;
+                if ((not defined $retry_times) && (defined $retry_settings->RetryTimes)) {
+                    $retry_times = $retry_settings->RetryTimes;
                 }
 
-                if ((not defined $wait_time) && (defined $retry_obj->WaitTime)) {
-                    $wait_time = $retry_obj->WaitTime;
+                if ((not defined $wait_time) && (defined $retry_settings->WaitTime)) {
+                    $wait_time = $retry_settings->WaitTime;
                 }
 
-                if ((not defined $scaling_wait_time) && (defined $retry_obj->ScalingWaitTime)) {
-                    $scaling_wait_time = $retry_obj->ScalingWaitTime;
+                if ((not defined $scaling_wait_time) && (defined $retry_settings->ScalingWaitTime)) {
+                    $scaling_wait_time = $retry_settings->ScalingWaitTime;
                 }
 
-                $retry_obj->Callback->($e) if (defined $retry_obj->Callback);
+                $retry_settings->Callback->($e) if (defined $retry_settings->Callback);
             }
 
             die $e unless $should_retry;
@@ -297,22 +285,6 @@ sub _serialize_argument {
 
     return undef unless (defined $object);
     return $object->name($name);
-}
-
-sub _is_connection_error {
-    my ($self, $error) = @_;
-    if (ref($error) ne 'Microsoft::AdCenter::SOAPFault') {
-        return $error =~ /^(500 SSL negotiation failed|500 Can't connect|500 read failed|500 write failed)/;
-    }
-    return 0;
-}
-
-sub _is_internal_server_error {
-    my ($self, $error) = @_;
-    # adCenter API documentation for error codes: http://msdn.microsoft.com/en-us/library/bb672016.aspx
-    return 0 unless (ref($error) eq 'Microsoft::AdCenter::SOAPFault' && (defined $error->detail) && $error->detail->can('OperationErrors') && (defined $error->detail->OperationErrors));
-    my @internal_server_errors = grep { $_->Code == 0 } @{$error->detail->OperationErrors};
-    return (scalar(@internal_server_errors) == 0) ? 0 : 1;
 }
 
 sub _get_namespace_prefix {
