@@ -42,6 +42,8 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
     PhoneNumber
     Script
     SiteDomain
+    SiteLinkDestinationUrl
+    SiteLinkDisplayText
     Unknown
     Video
 
@@ -149,6 +151,14 @@ sub Script {
 
 sub SiteDomain {
     return 'SiteDomain';
+}
+
+sub SiteLinkDestinationUrl {
+    return 'SiteLinkDestinationUrl';
+}
+
+sub SiteLinkDisplayText {
+    return 'SiteLinkDisplayText';
 }
 
 sub Unknown {

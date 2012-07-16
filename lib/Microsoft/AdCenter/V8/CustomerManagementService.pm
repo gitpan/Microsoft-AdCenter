@@ -916,6 +916,76 @@ sub GetUsersInfo {
     );
 }
 
+=head2 MapAccountIdToExternalAccountIds
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    ExternalAccountIds (ArrayOfstring)
+
+=item Returns:
+
+    MapAccountIdToExternalAccountIdsResponse
+
+=back
+
+=cut
+
+sub MapAccountIdToExternalAccountIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'MapAccountIdToExternalAccountIds',
+        request => {
+            name => 'MapAccountIdToExternalAccountIdsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ExternalAccountIds', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'MapAccountIdToExternalAccountIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 MapCustomerIdToExternalCustomerId
+
+=over
+
+=item Parameters:
+
+    CustomerId (long)
+    ExternalCustomerId (string)
+
+=item Returns:
+
+    MapCustomerIdToExternalCustomerIdResponse
+
+=back
+
+=cut
+
+sub MapCustomerIdToExternalCustomerId {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'MapCustomerIdToExternalCustomerId',
+        request => {
+            name => 'MapCustomerIdToExternalCustomerIdRequest',
+            parameters => [
+                { name => 'CustomerId', type => 'long', namespace => 'https://adcenter.microsoft.com/api/customermanagement' },
+                { name => 'ExternalCustomerId', type => 'string', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'MapCustomerIdToExternalCustomerIdResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 SendRequestToManageAccounts
 
 =over
@@ -1270,6 +1340,8 @@ our @_complex_types = (qw/
     GetUsersInfoResponse
     ManageAccountsRequest
     ManageAccountsRequestInfo
+    MapAccountIdToExternalAccountIdsResponse
+    MapCustomerIdToExternalCustomerIdResponse
     OperationError
     PersonName
     PilotFeature

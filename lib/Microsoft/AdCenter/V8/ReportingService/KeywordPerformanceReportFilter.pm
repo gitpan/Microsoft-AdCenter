@@ -29,9 +29,13 @@ our @_attributes = (qw/
     Cashback
     DeliveredMatchType
     DeviceType
+    KeywordRelevance
     Keywords
+    LandingPageRelevance
+    LandingPageUserExperience
     LanguageAndRegion
     LanguageCode
+    QualityScore
 /);
 
 sub _attributes {
@@ -46,9 +50,13 @@ our %_attribute_type = (
     Cashback => 'CashbackReportFilter',
     DeliveredMatchType => 'DeliveredMatchTypeReportFilter',
     DeviceType => 'DeviceTypeReportFilter',
+    KeywordRelevance => 'ArrayOfint',
     Keywords => 'ArrayOfstring',
+    LandingPageRelevance => 'ArrayOfint',
+    LandingPageUserExperience => 'ArrayOfint',
     LanguageAndRegion => 'LanguageAndRegionReportFilter',
     LanguageCode => 'ArrayOfstring',
+    QualityScore => 'ArrayOfint',
 );
 
 sub _attribute_type {
@@ -66,9 +74,13 @@ our %_attribute_min_occurs = (
     Cashback => 0,
     DeliveredMatchType => 0,
     DeviceType => 0,
+    KeywordRelevance => 0,
     Keywords => 0,
+    LandingPageRelevance => 0,
+    LandingPageUserExperience => 0,
     LanguageAndRegion => 0,
     LanguageCode => 0,
+    QualityScore => 0,
 );
 
 sub _attribute_min_occurs {
@@ -119,9 +131,21 @@ Gets/sets DeliveredMatchType (DeliveredMatchTypeReportFilter)
 
 Gets/sets DeviceType (DeviceTypeReportFilter)
 
+=head2 KeywordRelevance
+
+Gets/sets KeywordRelevance (ArrayOfint)
+
 =head2 Keywords
 
 Gets/sets Keywords (ArrayOfstring)
+
+=head2 LandingPageRelevance
+
+Gets/sets LandingPageRelevance (ArrayOfint)
+
+=head2 LandingPageUserExperience
+
+Gets/sets LandingPageUserExperience (ArrayOfint)
 
 =head2 LanguageAndRegion
 
@@ -130,6 +154,10 @@ Gets/sets LanguageAndRegion (LanguageAndRegionReportFilter)
 =head2 LanguageCode
 
 Gets/sets LanguageCode (ArrayOfstring)
+
+=head2 QualityScore
+
+Gets/sets QualityScore (ArrayOfint)
 
 =cut
 

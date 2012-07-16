@@ -212,8 +212,8 @@ sub ApplyOpportunities {
 =item Parameters:
 
     AccountId (long)
-    AdGroupID (long)
-    CampaignID (long)
+    AdGroupId (long)
+    CampaignId (long)
 
 =item Returns:
 
@@ -231,8 +231,8 @@ sub GetBidOpportunities {
             name => 'GetBidOpportunitiesRequest',
             parameters => [
                 { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'AdGroupID', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'CampaignID', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {

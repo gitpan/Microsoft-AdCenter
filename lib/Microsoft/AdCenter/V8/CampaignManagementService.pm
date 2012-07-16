@@ -22,9 +22,9 @@ Microsoft::AdCenter::V8::CampaignManagementService - Service client for Microsof
         ->Password("password")
         ->UserName("user name");
 
-    my $response = $service_client->AddAdGroups(
-        CampaignId => ...
-        AdGroups => ...
+    my $response = $service_client->AddAdExtensions(
+        AccountId => ...
+        AdExtensions => ...
     );
 
 See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed documentation for this service.
@@ -133,6 +133,41 @@ sub _response_headers {
 
 sub _response_headers_expanded {
     return $_response_headers_expanded;
+}
+
+=head2 AddAdExtensions
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensions (ArrayOfAdExtension2)
+
+=item Returns:
+
+    AddAdExtensionsResponse
+
+=back
+
+=cut
+
+sub AddAdExtensions {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'AddAdExtensions',
+        request => {
+            name => 'AddAdExtensionsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensions', type => 'ArrayOfAdExtension2', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'AddAdExtensionsResponse'
+        },
+        parameters => \%args
+    );
 }
 
 =head2 AddAdGroups
@@ -441,6 +476,76 @@ sub AddTargetsToLibrary {
         },
         response => {
             name => 'AddTargetsToLibraryResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 DeleteAdExtensions
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensionIds (ArrayOflong)
+
+=item Returns:
+
+    DeleteAdExtensionsResponse
+
+=back
+
+=cut
+
+sub DeleteAdExtensions {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'DeleteAdExtensions',
+        request => {
+            name => 'DeleteAdExtensionsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'DeleteAdExtensionsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 DeleteAdExtensionsFromCampaigns
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensionIdToCampaignIdAssociations (ArrayOfAdExtensionIdToCampaignIdAssociation)
+
+=item Returns:
+
+    DeleteAdExtensionsFromCampaignsResponse
+
+=back
+
+=cut
+
+sub DeleteAdExtensionsFromCampaigns {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'DeleteAdExtensionsFromCampaigns',
+        request => {
+            name => 'DeleteAdExtensionsFromCampaignsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionIdToCampaignIdAssociations', type => 'ArrayOfAdExtensionIdToCampaignIdAssociation', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'DeleteAdExtensionsFromCampaignsResponse'
         },
         parameters => \%args
     );
@@ -930,6 +1035,117 @@ sub GetAdEditorialReasonsByIds {
     );
 }
 
+=head2 GetAdExtensionsByCampaignIds
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    CampaignIds (ArrayOflong)
+    AdExtensionType (AdExtensionsTypeFilter)
+
+=item Returns:
+
+    GetAdExtensionsByCampaignIdsResponse
+
+=back
+
+=cut
+
+sub GetAdExtensionsByCampaignIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAdExtensionsByCampaignIds',
+        request => {
+            name => 'GetAdExtensionsByCampaignIdsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionType', type => 'AdExtensionsTypeFilter', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetAdExtensionsByCampaignIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAdExtensionsByIds
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensionIds (ArrayOflong)
+    AdExtensionType (AdExtensionsTypeFilter)
+
+=item Returns:
+
+    GetAdExtensionsByIdsResponse
+
+=back
+
+=cut
+
+sub GetAdExtensionsByIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAdExtensionsByIds',
+        request => {
+            name => 'GetAdExtensionsByIdsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionType', type => 'AdExtensionsTypeFilter', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetAdExtensionsByIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAdExtensionsEditorialReasonsByCampaignIds
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensionIdToCampaignIdAssociations (ArrayOfAdExtensionIdToCampaignIdAssociation)
+    AdExtensionType (AdExtensionsTypeFilter)
+
+=item Returns:
+
+    GetAdExtensionsEditorialReasonsByCampaignIdsResponse
+
+=back
+
+=cut
+
+sub GetAdExtensionsEditorialReasonsByCampaignIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAdExtensionsEditorialReasonsByCampaignIds',
+        request => {
+            name => 'GetAdExtensionsEditorialReasonsByCampaignIdsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionIdToCampaignIdAssociations', type => 'ArrayOfAdExtensionIdToCampaignIdAssociation', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionType', type => 'AdExtensionsTypeFilter', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetAdExtensionsEditorialReasonsByCampaignIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetAdGroupsByCampaignId
 
 =over
@@ -993,6 +1209,41 @@ sub GetAdGroupsByIds {
         },
         response => {
             name => 'GetAdGroupsByIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 GetAdRotationByAdGroupIds
+
+=over
+
+=item Parameters:
+
+    AdGroupIds (ArrayOflong)
+    CampaignId (long)
+
+=item Returns:
+
+    GetAdRotationByAdGroupIdsResponse
+
+=back
+
+=cut
+
+sub GetAdRotationByAdGroupIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetAdRotationByAdGroupIds',
+        request => {
+            name => 'GetAdRotationByAdGroupIdsRequest',
+            parameters => [
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetAdRotationByAdGroupIdsResponse'
         },
         parameters => \%args
     );
@@ -1686,6 +1937,7 @@ sub GetNegativeSitesByCampaignIds {
 
     Strings (ArrayOfstring)
     Language (string)
+    RemoveNoise (boolean)
 
 =item Returns:
 
@@ -1703,7 +1955,8 @@ sub GetNormalizedStrings {
             name => 'GetNormalizedStringsRequest',
             parameters => [
                 { name => 'Strings', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'RemoveNoise', type => 'boolean', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2322,6 +2575,76 @@ sub ResumeSitePlacements {
         },
         response => {
             name => 'ResumeSitePlacementsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SetAdExtensionsToCampaigns
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    AdExtensionIdToCampaignIdAssociations (ArrayOfAdExtensionIdToCampaignIdAssociation)
+
+=item Returns:
+
+    SetAdExtensionsToCampaignsResponse
+
+=back
+
+=cut
+
+sub SetAdExtensionsToCampaigns {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetAdExtensionsToCampaigns',
+        request => {
+            name => 'SetAdExtensionsToCampaignsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'AdExtensionIdToCampaignIdAssociations', type => 'ArrayOfAdExtensionIdToCampaignIdAssociation', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'SetAdExtensionsToCampaignsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SetAdRotationToAdGroups
+
+=over
+
+=item Parameters:
+
+    AdGroupAdRotations (ArrayOfAdGroupAdRotation)
+    CampaignId (long)
+
+=item Returns:
+
+    SetAdRotationToAdGroupsResponse
+
+=back
+
+=cut
+
+sub SetAdRotationToAdGroups {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetAdRotationToAdGroups',
+        request => {
+            name => 'SetAdRotationToAdGroupsRequest',
+            parameters => [
+                { name => 'AdGroupAdRotations', type => 'ArrayOfAdGroupAdRotation', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'CampaignId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'SetAdRotationToAdGroupsResponse'
         },
         parameters => \%args
     );
@@ -2986,7 +3309,10 @@ our %_simple_types = (
     AdComponent => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     AdDistribution => 'https://adcenter.microsoft.com/v8',
     AdEditorialStatus => 'https://adcenter.microsoft.com/v8',
+    AdExtensionStatus => 'https://adcenter.microsoft.com/v8',
+    AdExtensionsTypeFilter => 'https://adcenter.microsoft.com/v8',
     AdGroupStatus => 'https://adcenter.microsoft.com/v8',
+    AdRotationType => 'https://adcenter.microsoft.com/v8',
     AdStatus => 'https://adcenter.microsoft.com/v8',
     AdType => 'https://adcenter.microsoft.com/v8',
     AgeRange => 'https://adcenter.microsoft.com/v8',
@@ -2995,6 +3321,7 @@ our %_simple_types = (
     BudgetLimitType => 'https://adcenter.microsoft.com/v8',
     BusinessGeoCodeStatus => 'https://adcenter.microsoft.com/v8',
     BusinessStatus => 'https://adcenter.microsoft.com/v8',
+    CampaignAdExtensionEditorialStatus => 'https://adcenter.microsoft.com/v8',
     CampaignStatus => 'https://adcenter.microsoft.com/v8',
     CostModel => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     Day => 'https://adcenter.microsoft.com/v8',
@@ -3031,9 +3358,17 @@ our @_complex_types = (qw/
     AdApiError
     AdApiFaultDetail
     AdExtension
+    AdExtension2
+    AdExtensionEditorialReason
+    AdExtensionEditorialReasonCollection
+    AdExtensionIdToCampaignIdAssociation
+    AdExtensionIdentity
     AdGroup
+    AdGroupAdRotation
     AdGroupNegativeKeywords
     AdGroupNegativeSites
+    AdRotation
+    AddAdExtensionsResponse
     AddAdGroupsResponse
     AddAdsResponse
     AddBusinessesResponse
@@ -3056,6 +3391,8 @@ our @_complex_types = (qw/
     BusinessTarget
     BusinessTargetBid
     Campaign
+    CampaignAdExtension
+    CampaignAdExtensionCollection
     CampaignNegativeKeywords
     CampaignNegativeSites
     CampaignScope
@@ -3067,6 +3404,8 @@ our @_complex_types = (qw/
     DayTarget
     DayTargetBid
     DayTimeInterval
+    DeleteAdExtensionsFromCampaignsResponse
+    DeleteAdExtensionsResponse
     DeleteAdGroupsResponse
     DeleteAdsResponse
     DeleteBusinessesResponse
@@ -3091,8 +3430,12 @@ our @_complex_types = (qw/
     GenderTargetBid
     GetAccountMigrationStatusesResponse
     GetAdEditorialReasonsByIdsResponse
+    GetAdExtensionsByCampaignIdsResponse
+    GetAdExtensionsByIdsResponse
+    GetAdExtensionsEditorialReasonsByCampaignIdsResponse
     GetAdGroupsByCampaignIdResponse
     GetAdGroupsByIdsResponse
+    GetAdRotationByAdGroupIdsResponse
     GetAdsByAdGroupIdResponse
     GetAdsByEditorialStatusResponse
     GetAdsByIdsResponse
@@ -3153,6 +3496,8 @@ our @_complex_types = (qw/
     ResumeKeywordsResponse
     ResumeSitePlacementsResponse
     RevenueModel
+    SetAdExtensionsToCampaignsResponse
+    SetAdRotationToAdGroupsResponse
     SetAnalyticsTypeResponse
     SetCampaignAdExtensionsResponse
     SetNegativeKeywordsToAdGroupsResponse
@@ -3161,6 +3506,8 @@ our @_complex_types = (qw/
     SetNegativeSitesToCampaignsResponse
     SetTargetToAdGroupResponse
     SetTargetToCampaignResponse
+    SiteLink
+    SiteLinksAdExtension
     SitePlacement
     StateTarget
     StateTargetBid
@@ -3213,10 +3560,40 @@ our %_array_types = (
         element_name => 'AdExtension',
         element_type => 'AdExtension'
     },
+    ArrayOfAdExtension2 => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtension2',
+        element_type => 'AdExtension2'
+    },
+    ArrayOfAdExtensionEditorialReason => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionEditorialReason',
+        element_type => 'AdExtensionEditorialReason'
+    },
+    ArrayOfAdExtensionEditorialReasonCollection => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionEditorialReasonCollection',
+        element_type => 'AdExtensionEditorialReasonCollection'
+    },
+    ArrayOfAdExtensionIdToCampaignIdAssociation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionIdToCampaignIdAssociation',
+        element_type => 'AdExtensionIdToCampaignIdAssociation'
+    },
+    ArrayOfAdExtensionIdentity => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionIdentity',
+        element_type => 'AdExtensionIdentity'
+    },
     ArrayOfAdGroup => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'AdGroup',
         element_type => 'AdGroup'
+    },
+    ArrayOfAdGroupAdRotation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdGroupAdRotation',
+        element_type => 'AdGroupAdRotation'
     },
     ArrayOfAdGroupNegativeKeywords => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3227,6 +3604,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'AdGroupNegativeSites',
         element_type => 'AdGroupNegativeSites'
+    },
+    ArrayOfAdRotation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdRotation',
+        element_type => 'AdRotation'
     },
     ArrayOfAgeTargetBid => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3267,6 +3649,16 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'Campaign',
         element_type => 'Campaign'
+    },
+    ArrayOfCampaignAdExtension => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'CampaignAdExtension',
+        element_type => 'CampaignAdExtension'
+    },
+    ArrayOfCampaignAdExtensionCollection => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'CampaignAdExtensionCollection',
+        element_type => 'CampaignAdExtensionCollection'
     },
     ArrayOfCampaignNegativeKeywords => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -3402,6 +3794,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'RadiusTargetBid',
         element_type => 'RadiusTargetBid'
+    },
+    ArrayOfSiteLink => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'SiteLink',
+        element_type => 'SiteLink'
     },
     ArrayOfSitePlacement => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

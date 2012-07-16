@@ -458,6 +458,11 @@ our %_array_types = (
         element_name => 'TrafficSourcesReportColumn',
         element_type => 'TrafficSourcesReportColumn'
     },
+    ArrayOfint => {
+        namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
+        element_name => 'int',
+        element_type => 'int'
+    },
     ArrayOflong => {
         namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
         element_name => 'long',

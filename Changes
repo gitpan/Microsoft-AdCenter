@@ -60,3 +60,6 @@ Revision history for Microsoft-AdCenter
 8.08    05 April 2012
         Updated various services according to the latest WSDLs
         Added support for retrying on CallRateExceeded error
+
+8.09    16 July 2012
+        Updated various services according to the latest WSDLs

@@ -18,6 +18,7 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
     Failed
     InProgress
+    PartialSuccess
     Success
 
 =cut
@@ -28,6 +29,10 @@ sub Failed {
 
 sub InProgress {
     return 'InProgress';
+}
+
+sub PartialSuccess {
+    return 'PartialSuccess';
 }
 
 sub Success {

@@ -27,12 +27,12 @@ sub _namespace_uri {
 }
 
 our @_attributes = (qw/
-    AdGroupID
+    AdGroupId
     CurrentBid
     EstimatedIncreaseInClicks
     EstimatedIncreaseInCost
     EstimatedIncreaseInImpressions
-    KeywordID
+    KeywordId
     MatchType
     SuggestedBid
 /);
@@ -43,12 +43,12 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdGroupID => 'long',
+    AdGroupId => 'long',
     CurrentBid => 'double',
     EstimatedIncreaseInClicks => 'int',
     EstimatedIncreaseInCost => 'double',
     EstimatedIncreaseInImpressions => 'int',
-    KeywordID => 'long',
+    KeywordId => 'long',
     MatchType => 'string',
     SuggestedBid => 'double',
 );
@@ -62,12 +62,12 @@ sub _attribute_type {
 }
 
 our %_attribute_min_occurs = (
-    AdGroupID => 0,
+    AdGroupId => 0,
     CurrentBid => 0,
     EstimatedIncreaseInClicks => 0,
     EstimatedIncreaseInCost => 0,
     EstimatedIncreaseInImpressions => 0,
-    KeywordID => 0,
+    KeywordId => 0,
     MatchType => 0,
     SuggestedBid => 0,
 );
@@ -98,9 +98,9 @@ Remark: Inherited methods are not listed.
 
 Creates a new instance
 
-=head2 AdGroupID
+=head2 AdGroupId
 
-Gets/sets AdGroupID (long)
+Gets/sets AdGroupId (long)
 
 =head2 CurrentBid
 
@@ -118,9 +118,9 @@ Gets/sets EstimatedIncreaseInCost (double)
 
 Gets/sets EstimatedIncreaseInImpressions (int)
 
-=head2 KeywordID
+=head2 KeywordId
 
-Gets/sets KeywordID (long)
+Gets/sets KeywordId (long)
 
 =head2 MatchType
 

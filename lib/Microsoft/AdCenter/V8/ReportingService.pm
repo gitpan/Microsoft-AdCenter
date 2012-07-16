@@ -204,6 +204,9 @@ our %_simple_types = (
     AccountPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     AdDistributionReportFilter => 'https://adcenter.microsoft.com/v8',
     AdDynamicTextPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
+    AdExtensionByAdsReportColumn => 'https://adcenter.microsoft.com/v8',
+    AdExtensionByKeywordReportColumn => 'https://adcenter.microsoft.com/v8',
+    AdExtensionDimensionReportColumn => 'https://adcenter.microsoft.com/v8',
     AdGroupPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     AdGroupStatusReportFilter => 'https://adcenter.microsoft.com/v8',
     AdPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
@@ -269,6 +272,9 @@ our @_complex_types = (qw/
     AdApiFaultDetail
     AdDynamicTextPerformanceReportFilter
     AdDynamicTextPerformanceReportRequest
+    AdExtensionByAdsReportRequest
+    AdExtensionByKeywordReportRequest
+    AdExtensionDimensionReportRequest
     AdGroupPerformanceReportFilter
     AdGroupPerformanceReportRequest
     AdGroupReportScope
@@ -344,6 +350,21 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'AdDynamicTextPerformanceReportColumn',
         element_type => 'AdDynamicTextPerformanceReportColumn'
+    },
+    ArrayOfAdExtensionByAdsReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionByAdsReportColumn',
+        element_type => 'AdExtensionByAdsReportColumn'
+    },
+    ArrayOfAdExtensionByKeywordReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionByKeywordReportColumn',
+        element_type => 'AdExtensionByKeywordReportColumn'
+    },
+    ArrayOfAdExtensionDimensionReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'AdExtensionDimensionReportColumn',
+        element_type => 'AdExtensionDimensionReportColumn'
     },
     ArrayOfAdGroupPerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
@@ -474,6 +495,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'TrafficSourcesReportColumn',
         element_type => 'TrafficSourcesReportColumn'
+    },
+    ArrayOfint => {
+        namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
+        element_name => 'int',
+        element_type => 'int'
     },
     ArrayOflong => {
         namespace_uri => 'http://schemas.microsoft.com/2003/10/Serialization/Arrays',
