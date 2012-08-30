@@ -673,6 +673,7 @@ sub SuggestKeywordsForUrl {
     PublisherCountries (ArrayOfstring)
     MaxSuggestionsPerKeyword (int)
     SuggestionType (int)
+    RemoveDuplicates (boolean)
 
 =item Returns:
 
@@ -693,7 +694,8 @@ sub SuggestKeywordsFromExistingKeywords {
                 { name => 'Language', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'PublisherCountries', type => 'ArrayOfstring', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'MaxSuggestionsPerKeyword', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'SuggestionType', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'SuggestionType', type => 'int', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'RemoveDuplicates', type => 'boolean', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {

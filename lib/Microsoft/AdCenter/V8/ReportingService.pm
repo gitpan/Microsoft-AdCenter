@@ -250,6 +250,7 @@ our %_simple_types = (
     SearchQueryPerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     SearchQueryReportAggregation => 'https://adcenter.microsoft.com/v8',
     SegmentationReportColumn => 'https://adcenter.microsoft.com/v8',
+    ShareOfVoiceReportColumn => 'https://adcenter.microsoft.com/v8',
     SitePerformanceReportColumn => 'https://adcenter.microsoft.com/v8',
     TacticChannelReportColumn => 'https://adcenter.microsoft.com/v8',
     TrafficSourcesReportColumn => 'https://adcenter.microsoft.com/v8',
@@ -322,6 +323,8 @@ our @_complex_types = (qw/
     SearchQueryPerformanceReportRequest
     SegmentationReportFilter
     SegmentationReportRequest
+    ShareOfVoiceReportFilter
+    ShareOfVoiceReportRequest
     SitePerformanceReportFilter
     SitePerformanceReportRequest
     SubmitGenerateReportResponse
@@ -480,6 +483,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'SegmentationReportColumn',
         element_type => 'SegmentationReportColumn'
+    },
+    ArrayOfShareOfVoiceReportColumn => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'ShareOfVoiceReportColumn',
+        element_type => 'ShareOfVoiceReportColumn'
     },
     ArrayOfSitePerformanceReportColumn => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

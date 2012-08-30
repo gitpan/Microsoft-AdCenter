@@ -926,45 +926,6 @@ sub DeleteTargetsFromLibrary {
     );
 }
 
-=head2 DownloadCampaignHierarchy
-
-=over
-
-=item Parameters:
-
-    AccountIds (ArrayOflong)
-    Campaigns (ArrayOfCampaignScope)
-    LastSyncTimeInUTC (dateTime)
-    EntityFilter (DownloadEntityFilter)
-
-=item Returns:
-
-    DownloadCampaignHierarchyResponse
-
-=back
-
-=cut
-
-sub DownloadCampaignHierarchy {
-    my ($self, %args) = @_;
-    return $self->_invoke(
-        soap_action => 'DownloadCampaignHierarchy',
-        request => {
-            name => 'DownloadCampaignHierarchyRequest',
-            parameters => [
-                { name => 'AccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'Campaigns', type => 'ArrayOfCampaignScope', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'LastSyncTimeInUTC', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'EntityFilter', type => 'DownloadEntityFilter', namespace => 'https://adcenter.microsoft.com/v8' }
-            ]
-        },
-        response => {
-            name => 'DownloadCampaignHierarchyResponse'
-        },
-        parameters => \%args
-    );
-}
-
 =head2 GetAccountMigrationStatuses
 
 =over
@@ -1585,34 +1546,36 @@ sub GetDeviceOSTargetsByIds {
     );
 }
 
-=head2 GetDownloadStatus
+=head2 GetExclusionsByAssociatedEntityIds
 
 =over
 
 =item Parameters:
 
-    DownloadRequestId (string)
+    Entities (ArrayOfEntity)
+    ExclusionType (ExclusionType)
 
 =item Returns:
 
-    GetDownloadStatusResponse
+    GetExclusionsByAssociatedEntityIdsResponse
 
 =back
 
 =cut
 
-sub GetDownloadStatus {
+sub GetExclusionsByAssociatedEntityIds {
     my ($self, %args) = @_;
     return $self->_invoke(
-        soap_action => 'GetDownloadStatus',
+        soap_action => 'GetExclusionsByAssociatedEntityIds',
         request => {
-            name => 'GetDownloadStatusRequest',
+            name => 'GetExclusionsByAssociatedEntityIdsRequest',
             parameters => [
-                { name => 'DownloadRequestId', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'Entities', type => 'ArrayOfEntity', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'ExclusionType', type => 'ExclusionType', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
-            name => 'GetDownloadStatusResponse'
+            name => 'GetExclusionsByAssociatedEntityIdsResponse'
         },
         parameters => \%args
     );
@@ -2718,6 +2681,39 @@ sub SetCampaignAdExtensions {
     );
 }
 
+=head2 SetExclusionsToAssociatedEntities
+
+=over
+
+=item Parameters:
+
+    ExclusionToEntityAssociations (ArrayOfExclusionToEntityAssociation)
+
+=item Returns:
+
+    SetExclusionsToAssociatedEntitiesResponse
+
+=back
+
+=cut
+
+sub SetExclusionsToAssociatedEntities {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetExclusionsToAssociatedEntities',
+        request => {
+            name => 'SetExclusionsToAssociatedEntitiesRequest',
+            parameters => [
+                { name => 'ExclusionToEntityAssociations', type => 'ArrayOfExclusionToEntityAssociation', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'SetExclusionsToAssociatedEntitiesResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 SetNegativeKeywordsToAdGroups
 
 =over
@@ -3327,9 +3323,10 @@ our %_simple_types = (
     Day => 'https://adcenter.microsoft.com/v8',
     DaysApplicableForConversion => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
     DeviceType => 'https://adcenter.microsoft.com/v8',
-    DownloadEntityFilter => 'https://adcenter.microsoft.com/v8',
-    DownloadStatus => 'https://adcenter.microsoft.com/v8',
+    EntityType => 'https://adcenter.microsoft.com/v8',
+    ExclusionType => 'https://adcenter.microsoft.com/v8',
     GenderType => 'https://adcenter.microsoft.com/v8',
+    GeoLocationType => 'https://adcenter.microsoft.com/v8',
     HourRange => 'https://adcenter.microsoft.com/v8',
     IncrementalBidPercentage => 'https://adcenter.microsoft.com/v8',
     KeywordEditorialStatus => 'https://adcenter.microsoft.com/v8',
@@ -3395,7 +3392,6 @@ our @_complex_types = (qw/
     CampaignAdExtensionCollection
     CampaignNegativeKeywords
     CampaignNegativeSites
-    CampaignScope
     CityTarget
     CityTargetBid
     CountryTarget
@@ -3421,11 +3417,17 @@ our @_complex_types = (qw/
     DeviceOSTarget
     DeviceTarget
     Dimension
-    DownloadCampaignHierarchyResponse
     EditorialApiFaultDetail
     EditorialError
     EditorialReason
     EditorialReasonCollection
+    Entity
+    EntityToExclusionsAssociation
+    ExcludedGeoLocation
+    ExcludedRadiusLocation
+    ExcludedRadiusTarget
+    Exclusion
+    ExclusionToEntityAssociation
     GenderTarget
     GenderTargetBid
     GetAccountMigrationStatusesResponse
@@ -3446,7 +3448,7 @@ our @_complex_types = (qw/
     GetCampaignsByAccountIdResponse
     GetCampaignsByIdsResponse
     GetDeviceOSTargetsByIdsResponse
-    GetDownloadStatusResponse
+    GetExclusionsByAssociatedEntityIdsResponse
     GetGoalsResponse
     GetKeywordEditorialReasonsByIdsResponse
     GetKeywordsByAdGroupIdResponse
@@ -3473,6 +3475,7 @@ our @_complex_types = (qw/
     HoursOfOperation
     ImpressionsPerDayRange
     Keyword
+    LocationExclusion
     LocationTarget
     MediaType
     MetroAreaTarget
@@ -3500,6 +3503,7 @@ our @_complex_types = (qw/
     SetAdRotationToAdGroupsResponse
     SetAnalyticsTypeResponse
     SetCampaignAdExtensionsResponse
+    SetExclusionsToAssociatedEntitiesResponse
     SetNegativeKeywordsToAdGroupsResponse
     SetNegativeKeywordsToCampaignsResponse
     SetNegativeSitesToAdGroupsResponse
@@ -3670,11 +3674,6 @@ our %_array_types = (
         element_name => 'CampaignNegativeSites',
         element_type => 'CampaignNegativeSites'
     },
-    ArrayOfCampaignScope => {
-        namespace_uri => 'https://adcenter.microsoft.com/v8',
-        element_name => 'CampaignScope',
-        element_type => 'CampaignScope'
-    },
     ArrayOfCityTargetBid => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'CityTargetBid',
@@ -3719,6 +3718,36 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'EditorialReasonCollection',
         element_type => 'EditorialReasonCollection'
+    },
+    ArrayOfEntity => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'Entity',
+        element_type => 'Entity'
+    },
+    ArrayOfEntityToExclusionsAssociation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'EntityToExclusionsAssociation',
+        element_type => 'EntityToExclusionsAssociation'
+    },
+    ArrayOfExcludedGeoLocation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'ExcludedGeoLocation',
+        element_type => 'ExcludedGeoLocation'
+    },
+    ArrayOfExcludedRadiusLocation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'ExcludedRadiusLocation',
+        element_type => 'ExcludedRadiusLocation'
+    },
+    ArrayOfExclusion => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'Exclusion',
+        element_type => 'Exclusion'
+    },
+    ArrayOfExclusionToEntityAssociation => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'ExclusionToEntityAssociation',
+        element_type => 'ExclusionToEntityAssociation'
     },
     ArrayOfGenderTargetBid => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

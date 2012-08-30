@@ -1159,6 +1159,39 @@ sub UpdateCustomer {
     );
 }
 
+=head2 UpdatePrepayAccount
+
+=over
+
+=item Parameters:
+
+    Account (Account)
+
+=item Returns:
+
+    UpdatePrepayAccountResponse
+
+=back
+
+=cut
+
+sub UpdatePrepayAccount {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'UpdatePrepayAccount',
+        request => {
+            name => 'UpdatePrepayAccountRequest',
+            parameters => [
+                { name => 'Account', type => 'Account', namespace => 'https://adcenter.microsoft.com/api/customermanagement' }
+            ]
+        },
+        response => {
+            name => 'UpdatePrepayAccountResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 UpdateUser
 
 =over
@@ -1351,6 +1384,7 @@ our @_complex_types = (qw/
     SignupCustomerResponse
     UpdateAccountResponse
     UpdateCustomerResponse
+    UpdatePrepayAccountResponse
     UpdateUserResponse
     UpdateUserRolesResponse
     UpgradeCustomerToAgencyResponse
