@@ -26,6 +26,7 @@ Microsoft::AdCenter::V8::BulkService - Service client for Microsoft AdCenter Bul
         AccountIds => ...
         AdditionalEntities => ...
         LastSyncTimeInUTC => ...
+        LocationTargetVersion => ...
     );
 
 See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for detailed documentation for this service.
@@ -145,6 +146,7 @@ sub _response_headers_expanded {
     AccountIds (ArrayOflong)
     AdditionalEntities (AdditionalEntity)
     LastSyncTimeInUTC (dateTime)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -163,7 +165,8 @@ sub DownloadCampaignsByAccountIds {
             parameters => [
                 { name => 'AccountIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'AdditionalEntities', type => 'AdditionalEntity', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'LastSyncTimeInUTC', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'LastSyncTimeInUTC', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -182,6 +185,7 @@ sub DownloadCampaignsByAccountIds {
     AdditionalEntities (AdditionalEntity)
     Campaigns (ArrayOfCampaignScope)
     LastSyncTimeInUTC (dateTime)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -200,7 +204,8 @@ sub DownloadCampaignsByCampaignIds {
             parameters => [
                 { name => 'AdditionalEntities', type => 'AdditionalEntity', namespace => 'https://adcenter.microsoft.com/v8' },
                 { name => 'Campaigns', type => 'ArrayOfCampaignScope', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'LastSyncTimeInUTC', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'LastSyncTimeInUTC', type => 'dateTime', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {

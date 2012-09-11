@@ -853,6 +853,8 @@ lib/Microsoft/AdCenter/V8/CampaignManagementService/AgeTargetBid.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/AnalyticsApiFaultDetail.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/AnalyticsType.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/ApiFaultDetail.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/AppealEditorialRejectionsResponse.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/AppealStatus.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/ApplicationFault.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/BatchError.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/Bid.pm
@@ -939,8 +941,10 @@ lib/Microsoft/AdCenter/V8/CampaignManagementService/GetBusinessesInfoResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetCampaignAdExtensionsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetCampaignsByAccountIdResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetCampaignsByIdsResponse.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/GetDestinationUrlByKeywordIdsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetDeviceOSTargetsByIdsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetDownloadStatusResponse.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/GetEditorialReasonsByIdsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetExclusionsByAssociatedEntityIdsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetGoalsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/GetKeywordEditorialReasonsByIdsResponse.pm
@@ -970,6 +974,7 @@ lib/Microsoft/AdCenter/V8/CampaignManagementService/HoursOfOperation.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/ImpressionsPerDayRange.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/IncrementalBidPercentage.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/Keyword.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/KeywordDestinationUrl.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/KeywordEditorialStatus.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/KeywordStatus.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/LocationExclusion.pm
@@ -1005,6 +1010,7 @@ lib/Microsoft/AdCenter/V8/CampaignManagementService/SetAdExtensionsToCampaignsRe
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetAdRotationToAdGroupsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetAnalyticsTypeResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetCampaignAdExtensionsResponse.pm
+lib/Microsoft/AdCenter/V8/CampaignManagementService/SetDestinationUrlToKeywordsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetExclusionsToAssociatedEntitiesResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetNegativeKeywordsToAdGroupsResponse.pm
 lib/Microsoft/AdCenter/V8/CampaignManagementService/SetNegativeKeywordsToCampaignsResponse.pm
@@ -1941,6 +1947,7 @@ t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/AgeTarget.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/AgeTargetBid.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/AnalyticsApiFaultDetail.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/ApiFaultDetail.pm
+t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/AppealEditorialRejectionsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/ApplicationFault.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/BatchError.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/Bid.pm
@@ -2011,8 +2018,10 @@ t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetBusinessesInfoResp
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetCampaignAdExtensionsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetCampaignsByAccountIdResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetCampaignsByIdsResponse.pm
+t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetDestinationUrlByKeywordIdsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetDeviceOSTargetsByIdsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetDownloadStatusResponse.pm
+t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetEditorialReasonsByIdsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetExclusionsByAssociatedEntityIdsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetGoalsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/GetKeywordEditorialReasonsByIdsResponse.pm
@@ -2040,6 +2049,7 @@ t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/HourTargetBid.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/HoursOfOperation.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/ImpressionsPerDayRange.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/Keyword.pm
+t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/KeywordDestinationUrl.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/LocationExclusion.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/LocationTarget.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/MediaType.pm
@@ -2068,6 +2078,7 @@ t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetAdExtensionsToCamp
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetAdRotationToAdGroupsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetAnalyticsTypeResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetCampaignAdExtensionsResponse.pm
+t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetDestinationUrlToKeywordsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetExclusionsToAssociatedEntitiesResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetNegativeKeywordsToAdGroupsResponse.pm
 t/lib/Microsoft/AdCenter/V8/CampaignManagementService/Test/SetNegativeKeywordsToCampaignsResponse.pm
@@ -2926,6 +2937,7 @@ t/v8_campaign_management_service_age_target.t
 t/v8_campaign_management_service_age_target_bid.t
 t/v8_campaign_management_service_analytics_api_fault_detail.t
 t/v8_campaign_management_service_api_fault_detail.t
+t/v8_campaign_management_service_appeal_editorial_rejections_response.t
 t/v8_campaign_management_service_application_fault.t
 t/v8_campaign_management_service_batch_error.t
 t/v8_campaign_management_service_bid.t
@@ -2996,8 +3008,10 @@ t/v8_campaign_management_service_get_businesses_info_response.t
 t/v8_campaign_management_service_get_campaign_ad_extensions_response.t
 t/v8_campaign_management_service_get_campaigns_by_account_id_response.t
 t/v8_campaign_management_service_get_campaigns_by_ids_response.t
+t/v8_campaign_management_service_get_destination_url_by_keyword_ids_response.t
 t/v8_campaign_management_service_get_device_ostargets_by_ids_response.t
 t/v8_campaign_management_service_get_download_status_response.t
+t/v8_campaign_management_service_get_editorial_reasons_by_ids_response.t
 t/v8_campaign_management_service_get_exclusions_by_associated_entity_ids_response.t
 t/v8_campaign_management_service_get_goals_response.t
 t/v8_campaign_management_service_get_keyword_editorial_reasons_by_ids_response.t
@@ -3025,6 +3039,7 @@ t/v8_campaign_management_service_hour_target_bid.t
 t/v8_campaign_management_service_hours_of_operation.t
 t/v8_campaign_management_service_impressions_per_day_range.t
 t/v8_campaign_management_service_keyword.t
+t/v8_campaign_management_service_keyword_destination_url.t
 t/v8_campaign_management_service_location_exclusion.t
 t/v8_campaign_management_service_location_target.t
 t/v8_campaign_management_service_media_type.t
@@ -3053,6 +3068,7 @@ t/v8_campaign_management_service_set_ad_extensions_to_campaigns_response.t
 t/v8_campaign_management_service_set_ad_rotation_to_ad_groups_response.t
 t/v8_campaign_management_service_set_analytics_type_response.t
 t/v8_campaign_management_service_set_campaign_ad_extensions_response.t
+t/v8_campaign_management_service_set_destination_url_to_keywords_response.t
 t/v8_campaign_management_service_set_exclusions_to_associated_entities_response.t
 t/v8_campaign_management_service_set_negative_keywords_to_ad_groups_response.t
 t/v8_campaign_management_service_set_negative_keywords_to_campaigns_response.t

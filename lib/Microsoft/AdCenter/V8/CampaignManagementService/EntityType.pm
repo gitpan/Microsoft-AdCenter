@@ -16,11 +16,22 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 =head1 ENUMERATION VALUES
 
+    Ad
+    AdExtension
     AdGroup
     Campaign
+    Keyword
     Target
 
 =cut
+
+sub Ad {
+    return 'Ad';
+}
+
+sub AdExtension {
+    return 'AdExtension';
+}
 
 sub AdGroup {
     return 'AdGroup';
@@ -28,6 +39,10 @@ sub AdGroup {
 
 sub Campaign {
     return 'Campaign';
+}
+
+sub Keyword {
+    return 'Keyword';
 }
 
 sub Target {

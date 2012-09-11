@@ -1,4 +1,4 @@
-package Microsoft::AdCenter::V8::CampaignManagementService::EditorialReasonCollection;
+package Microsoft::AdCenter::V8::CampaignManagementService::KeywordDestinationUrl;
 # Copyright (C) 2012 Xerxes Tsang
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of Perl Artistic License.
@@ -10,12 +10,12 @@ use base qw/Microsoft::AdCenter::ComplexType/;
 
 =head1 NAME
 
-Microsoft::AdCenter::V8::CampaignManagementService::EditorialReasonCollection - Represents "EditorialReasonCollection" in Microsoft AdCenter Campaign Management Service.
+Microsoft::AdCenter::V8::CampaignManagementService::KeywordDestinationUrl - Represents "KeywordDestinationUrl" in Microsoft AdCenter Campaign Management Service.
 
 =cut
 
 sub _type_name {
-    return 'EditorialReasonCollection';
+    return 'KeywordDestinationUrl';
 }
 
 sub _namespace_uri {
@@ -23,9 +23,8 @@ sub _namespace_uri {
 }
 
 our @_attributes = (qw/
-    AdOrKeywordId
-    AppealStatus
-    Reasons
+    DestinationUrl
+    KeywordId
 /);
 
 sub _attributes {
@@ -34,9 +33,8 @@ sub _attributes {
 }
 
 our %_attribute_type = (
-    AdOrKeywordId => 'long',
-    AppealStatus => 'AppealStatus',
-    Reasons => 'ArrayOfEditorialReason',
+    DestinationUrl => 'string',
+    KeywordId => 'long',
 );
 
 sub _attribute_type {
@@ -48,9 +46,8 @@ sub _attribute_type {
 }
 
 our %_attribute_min_occurs = (
-    AdOrKeywordId => 0,
-    AppealStatus => 0,
-    Reasons => 0,
+    DestinationUrl => 1,
+    KeywordId => 1,
 );
 
 sub _attribute_min_occurs {
@@ -77,17 +74,13 @@ See L<http://msdn.microsoft.com/en-us/library/ee730327.aspx> for documentation o
 
 Creates a new instance
 
-=head2 AdOrKeywordId
+=head2 DestinationUrl
 
-Gets/sets AdOrKeywordId (long)
+Gets/sets DestinationUrl (string)
 
-=head2 AppealStatus
+=head2 KeywordId
 
-Gets/sets AppealStatus (AppealStatus)
-
-=head2 Reasons
-
-Gets/sets Reasons (ArrayOfEditorialReason)
+Gets/sets KeywordId (long)
 
 =cut
 

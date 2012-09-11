@@ -12,7 +12,7 @@ Microsoft::AdCenter - An interface which abstracts Microsoft adCenter API.
 
 =cut
 
-our $VERSION = '8.10';
+our $VERSION = '8.11';
 
 =head1 SYNOPSIS
 

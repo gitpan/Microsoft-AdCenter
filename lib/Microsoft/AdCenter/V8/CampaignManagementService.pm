@@ -481,6 +481,43 @@ sub AddTargetsToLibrary {
     );
 }
 
+=head2 AppealEditorialRejections
+
+=over
+
+=item Parameters:
+
+    EntityIds (ArrayOflong)
+    EntityType (EntityType)
+    JustificationText (string)
+
+=item Returns:
+
+    AppealEditorialRejectionsResponse
+
+=back
+
+=cut
+
+sub AppealEditorialRejections {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'AppealEditorialRejections',
+        request => {
+            name => 'AppealEditorialRejectionsRequest',
+            parameters => [
+                { name => 'EntityIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'EntityType', type => 'EntityType', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'JustificationText', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'AppealEditorialRejectionsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 DeleteAdExtensions
 
 =over
@@ -1513,6 +1550,41 @@ sub GetCampaignsByIds {
     );
 }
 
+=head2 GetDestinationUrlByKeywordIds
+
+=over
+
+=item Parameters:
+
+    AdGroupId (long)
+    KeywordIds (ArrayOflong)
+
+=item Returns:
+
+    GetDestinationUrlByKeywordIdsResponse
+
+=back
+
+=cut
+
+sub GetDestinationUrlByKeywordIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetDestinationUrlByKeywordIds',
+        request => {
+            name => 'GetDestinationUrlByKeywordIdsRequest',
+            parameters => [
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'KeywordIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetDestinationUrlByKeywordIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetDeviceOSTargetsByIds
 
 =over
@@ -1546,6 +1618,43 @@ sub GetDeviceOSTargetsByIds {
     );
 }
 
+=head2 GetEditorialReasonsByIds
+
+=over
+
+=item Parameters:
+
+    AccountId (long)
+    EntityIds (ArrayOflong)
+    EntityType (EntityType)
+
+=item Returns:
+
+    GetEditorialReasonsByIdsResponse
+
+=back
+
+=cut
+
+sub GetEditorialReasonsByIds {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'GetEditorialReasonsByIds',
+        request => {
+            name => 'GetEditorialReasonsByIdsRequest',
+            parameters => [
+                { name => 'AccountId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'EntityIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'EntityType', type => 'EntityType', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'GetEditorialReasonsByIdsResponse'
+        },
+        parameters => \%args
+    );
+}
+
 =head2 GetExclusionsByAssociatedEntityIds
 
 =over
@@ -1554,6 +1663,7 @@ sub GetDeviceOSTargetsByIds {
 
     Entities (ArrayOfEntity)
     ExclusionType (ExclusionType)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -1571,7 +1681,8 @@ sub GetExclusionsByAssociatedEntityIds {
             name => 'GetExclusionsByAssociatedEntityIdsRequest',
             parameters => [
                 { name => 'Entities', type => 'ArrayOfEntity', namespace => 'https://adcenter.microsoft.com/v8' },
-                { name => 'ExclusionType', type => 'ExclusionType', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'ExclusionType', type => 'ExclusionType', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2037,6 +2148,7 @@ sub GetSitePlacementsByIds {
 =item Parameters:
 
     AdGroupId (long)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -2053,7 +2165,8 @@ sub GetTargetByAdGroupId {
         request => {
             name => 'GetTargetByAdGroupIdRequest',
             parameters => [
-                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2070,6 +2183,7 @@ sub GetTargetByAdGroupId {
 =item Parameters:
 
     AdGroupIds (ArrayOflong)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -2086,7 +2200,8 @@ sub GetTargetsByAdGroupIds {
         request => {
             name => 'GetTargetsByAdGroupIdsRequest',
             parameters => [
-                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'AdGroupIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2103,6 +2218,7 @@ sub GetTargetsByAdGroupIds {
 =item Parameters:
 
     CampaignIds (ArrayOflong)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -2119,7 +2235,8 @@ sub GetTargetsByCampaignIds {
         request => {
             name => 'GetTargetsByCampaignIdsRequest',
             parameters => [
-                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'CampaignIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2136,6 +2253,7 @@ sub GetTargetsByCampaignIds {
 =item Parameters:
 
     TargetIds (ArrayOflong)
+    LocationTargetVersion (string)
 
 =item Returns:
 
@@ -2152,7 +2270,8 @@ sub GetTargetsByIds {
         request => {
             name => 'GetTargetsByIdsRequest',
             parameters => [
-                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' }
+                { name => 'TargetIds', type => 'ArrayOflong', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'LocationTargetVersion', type => 'string', namespace => 'https://adcenter.microsoft.com/v8' }
             ]
         },
         response => {
@@ -2676,6 +2795,41 @@ sub SetCampaignAdExtensions {
         },
         response => {
             name => 'SetCampaignAdExtensionsResponse'
+        },
+        parameters => \%args
+    );
+}
+
+=head2 SetDestinationUrlToKeywords
+
+=over
+
+=item Parameters:
+
+    AdGroupId (long)
+    KeywordDestinationUrls (ArrayOfKeywordDestinationUrl)
+
+=item Returns:
+
+    SetDestinationUrlToKeywordsResponse
+
+=back
+
+=cut
+
+sub SetDestinationUrlToKeywords {
+    my ($self, %args) = @_;
+    return $self->_invoke(
+        soap_action => 'SetDestinationUrlToKeywords',
+        request => {
+            name => 'SetDestinationUrlToKeywordsRequest',
+            parameters => [
+                { name => 'AdGroupId', type => 'long', namespace => 'https://adcenter.microsoft.com/v8' },
+                { name => 'KeywordDestinationUrls', type => 'ArrayOfKeywordDestinationUrl', namespace => 'https://adcenter.microsoft.com/v8' }
+            ]
+        },
+        response => {
+            name => 'SetDestinationUrlToKeywordsResponse'
         },
         parameters => \%args
     );
@@ -3313,6 +3467,7 @@ our %_simple_types = (
     AdType => 'https://adcenter.microsoft.com/v8',
     AgeRange => 'https://adcenter.microsoft.com/v8',
     AnalyticsType => 'http://schemas.datacontract.org/2004/07/Microsoft.AdCenter.Advertiser.CampaignManagement.Api.DataContracts',
+    AppealStatus => 'https://adcenter.microsoft.com/v8',
     BiddingModel => 'https://adcenter.microsoft.com/v8',
     BudgetLimitType => 'https://adcenter.microsoft.com/v8',
     BusinessGeoCodeStatus => 'https://adcenter.microsoft.com/v8',
@@ -3379,6 +3534,7 @@ our @_complex_types = (qw/
     AgeTargetBid
     AnalyticsApiFaultDetail
     ApiFaultDetail
+    AppealEditorialRejectionsResponse
     ApplicationFault
     BatchError
     Bid
@@ -3447,7 +3603,9 @@ our @_complex_types = (qw/
     GetCampaignAdExtensionsResponse
     GetCampaignsByAccountIdResponse
     GetCampaignsByIdsResponse
+    GetDestinationUrlByKeywordIdsResponse
     GetDeviceOSTargetsByIdsResponse
+    GetEditorialReasonsByIdsResponse
     GetExclusionsByAssociatedEntityIdsResponse
     GetGoalsResponse
     GetKeywordEditorialReasonsByIdsResponse
@@ -3475,6 +3633,7 @@ our @_complex_types = (qw/
     HoursOfOperation
     ImpressionsPerDayRange
     Keyword
+    KeywordDestinationUrl
     LocationExclusion
     LocationTarget
     MediaType
@@ -3503,6 +3662,7 @@ our @_complex_types = (qw/
     SetAdRotationToAdGroupsResponse
     SetAnalyticsTypeResponse
     SetCampaignAdExtensionsResponse
+    SetDestinationUrlToKeywordsResponse
     SetExclusionsToAssociatedEntitiesResponse
     SetNegativeKeywordsToAdGroupsResponse
     SetNegativeKeywordsToCampaignsResponse
@@ -3783,6 +3943,11 @@ our %_array_types = (
         namespace_uri => 'https://adcenter.microsoft.com/v8',
         element_name => 'Keyword',
         element_type => 'Keyword'
+    },
+    ArrayOfKeywordDestinationUrl => {
+        namespace_uri => 'https://adcenter.microsoft.com/v8',
+        element_name => 'KeywordDestinationUrl',
+        element_type => 'KeywordDestinationUrl'
     },
     ArrayOfMediaType => {
         namespace_uri => 'https://adcenter.microsoft.com/v8',

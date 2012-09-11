@@ -67,3 +67,6 @@ Revision history for Microsoft-AdCenter
 8.10    30 August 2012
         Added V8::BulkService
         Updated various services according to the latest WSDLs
+
+8.10    11 September 2012
+        Updated various services according to the latest WSDLs
